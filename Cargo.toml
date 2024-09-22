@@ -1,0 +1,18 @@
+[package]
+name = "github-languages"
+version = "0.1.0"
+edition = "2021"
+authors = ["Lucas Nørgård <lucasnrgaard@gmail.com>"]
+readme = "README.md"
+homepage = "https://github.com/luxass/github-languages-rs"
+repository = "https://github.com/luxass/github-languages-rs"
+description = "All GitHub's supported languages"
+
+[build-dependencies]
+proc-macro2 = "1.0"
+quote = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.9"
+reqwest = { version = "0.11", features = ["blocking"] }
+prettyplease = "0.2.22"
+syn = { version = "2", default-features = false, features = ["full", "parsing"] }
