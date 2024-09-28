@@ -3,6 +3,7 @@ use std::io::Write;
 use std::path::Path;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+    println!("cargo::rerun-if-changed=languages.yml");
     let dest_path = Path::new("./src/generated.rs");
 
     let contents = std::fs::read_to_string("./languages.yml")?;
