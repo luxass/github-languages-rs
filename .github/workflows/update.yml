@@ -1,0 +1,50 @@
+name: Update GitHub Languages
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: Run the workflow without creating a pull request
+        required: false
+        default: "false"
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+    if: github.repository_owner == 'luxass'
+    steps:
+      - uses: actions/checkout@v4.1.7
+
+      - name: Download GitHub Languages
+        run: |
+          curl -sSL https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml -o languages.yml
+
+      - name: build
+        run: cargo build --release
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6.1.0
+        if: ${{ github.event.inputs.dry-run != 'true' }}
+        with:
+          commit-message: "feat: updated github languages"
+          title: "feat: updated github languages"
+          body: |
+            I found some new changes in GitHub's Linguist Repository.
+
+            I don't know what they changed, but I'm sure it's important.
+            If you want you can go take a look yourself.
+
+            I will be waiting for your approval 👋.
+
+            This is an automated PR to update GitHub Languages.
+          branch: update-github-languages
+          base: main
+          committer: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+          author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+          reviewers: luxass

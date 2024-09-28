@@ -3,15 +3,9 @@ use std::io::Write;
 use std::path::Path;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let response = reqwest::blocking::get("https://raw.githubusercontent.com/github-linguist/linguist/refs/heads/main/lib/linguist/languages.yml")?;
-
-    if !response.status().is_success() {
-        return Err("failed to fetch languages.yml".into());
-    }
-
     let dest_path = Path::new("./src/generated.rs");
 
-    let contents = response.text()?;
+    let contents = std::fs::read_to_string("./languages.yml")?;
 
     let languages: serde_yaml::Value = serde_yaml::from_str(&contents)?;
 
