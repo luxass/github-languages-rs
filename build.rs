@@ -34,7 +34,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     if let serde_yaml::Value::Mapping(map) = languages {
         for (key, value) in map {
-            if let (serde_yaml::Value::String(name), serde_yaml::Value::Mapping(lang_map)) = (key, value) {
+            if let (serde_yaml::Value::String(name), serde_yaml::Value::Mapping(lang_map)) =
+                (key, value)
+            {
                 let struct_name = sanitize_name(&name);
 
                 let lang_struct = format!(
@@ -52,21 +54,33 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                              }}\n\
                          }}\n\
                      }}\n\n",
-                    struct_name, struct_name,
+                    struct_name,
+                    struct_name,
                     name,
                     lang_map.get("type").and_then(|v| v.as_str()).unwrap_or(""),
                     lang_map.get("color").and_then(|v| v.as_str()).unwrap_or(""),
-                    lang_map.get("extensions")
+                    lang_map
+                        .get("extensions")
                         .and_then(|v| v.as_sequence())
-                        .map(|seq| seq.iter()
+                        .map(|seq| seq
+                            .iter()
                             .filter_map(|v| v.as_str())
                             .map(|s| format!("\"{}\"", s))
                             .collect::<Vec<_>>()
                             .join(", "))
                         .unwrap_or_else(|| "".to_string()),
-                    lang_map.get("tm_scope").and_then(|v| v.as_str()).unwrap_or(""),
-                    lang_map.get("ace_mode").and_then(|v| v.as_str()).unwrap_or(""),
-                    lang_map.get("language_id").and_then(|v| v.as_u64()).unwrap_or(0)
+                    lang_map
+                        .get("tm_scope")
+                        .and_then(|v| v.as_str())
+                        .unwrap_or(""),
+                    lang_map
+                        .get("ace_mode")
+                        .and_then(|v| v.as_str())
+                        .unwrap_or(""),
+                    lang_map
+                        .get("language_id")
+                        .and_then(|v| v.as_u64())
+                        .unwrap_or(0)
                 );
 
                 language_structs.push((struct_name, lang_struct));
@@ -143,13 +157,17 @@ fn sanitize_name(name: &str) -> String {
     struct_name = struct_name.replace("(", "");
     struct_name = struct_name.replace(")", "");
 
-    struct_name = struct_name.split('_').map(|s| {
-        let mut s = s.chars();
-        match s.next() {
-            None => String::new(),
-            Some(f) => f.to_uppercase().chain(s).collect(),
-        }
-    }).collect::<Vec<_>>().join("");
+    struct_name = struct_name
+        .split('_')
+        .map(|s| {
+            let mut s = s.chars();
+            match s.next() {
+                None => String::new(),
+                Some(f) => f.to_uppercase().chain(s).collect(),
+            }
+        })
+        .collect::<Vec<_>>()
+        .join("");
 
     if struct_name == "Self" {
         struct_name = "_Self".to_string();
