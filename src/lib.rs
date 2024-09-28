@@ -1,6 +1,7 @@
 //! All GitHub's supported languages.
 //!
 //! [Linguist]: https://github.com/github-linguist/linguist
+
 #[rustfmt::skip]
 mod generated;
 
