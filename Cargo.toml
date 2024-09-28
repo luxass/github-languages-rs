@@ -7,6 +7,7 @@ readme = "README.md"
 homepage = "https://github.com/luxass/github-languages-rs"
 repository = "https://github.com/luxass/github-languages-rs"
 description = "All GitHub's supported languages"
+license = "MIT"
 
 [build-dependencies]
 proc-macro2 = "1.0"
