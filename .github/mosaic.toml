@@ -9,8 +9,9 @@ name = "github-languages-rs"
 version = true
 alternative = "github-languages"
 
-[npm]
+[package]
 enabled = true
+type = "rust"
 
 [readme]
 enabled = true
