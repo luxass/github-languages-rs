@@ -10,6 +10,20 @@ pub struct Language {
     pub ace_mode: &'static str,
     pub language_id: u64,
 }
+pub struct _1CEnterprise;
+impl _1CEnterprise {
+    pub fn info() -> Language {
+        Language {
+            name: "1C Enterprise",
+            type_: "programming",
+            color: "#814CCC",
+            extensions: &[".bsl", ".os"],
+            tm_scope: "source.bsl",
+            ace_mode: "text",
+            language_id: 0,
+        }
+    }
+}
 pub struct _2DimensionalArray;
 impl _2DimensionalArray {
     pub fn info() -> Language {
@@ -10919,10 +10933,10 @@ pub struct Languages {
 impl Languages {
     pub fn new() -> Self {
         let languages = vec![
-            _2DimensionalArray::info(), _4D::info(), ABAP::info(), ABAPCDS::info(),
-            ABNF::info(), AGSScript::info(), AIDL::info(), AL::info(), AMPL::info(),
-            ANTLR::info(), APIBlueprint::info(), APL::info(), ASL::info(), ASN1::info(),
-            ASPNET::info(), ATS::info(), ActionScript::info(), Ada::info(),
+            _1CEnterprise::info(), _2DimensionalArray::info(), _4D::info(), ABAP::info(),
+            ABAPCDS::info(), ABNF::info(), AGSScript::info(), AIDL::info(), AL::info(),
+            AMPL::info(), ANTLR::info(), APIBlueprint::info(), APL::info(), ASL::info(),
+            ASN1::info(), ASPNET::info(), ATS::info(), ActionScript::info(), Ada::info(),
             AdblockFilterList::info(), AdobeFontMetrics::info(), Agda::info(),
             Alloy::info(), AlpineAbuild::info(), AltiumDesigner::info(),
             AngelScript::info(), AntBuildSystem::info(), Antlers::info(),
