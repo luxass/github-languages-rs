@@ -2,8 +2,6 @@ use std::fs::File;
 use std::io::Write;
 use std::path::Path;
 
-use serde_yaml;
-
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let response = reqwest::blocking::get("https://raw.githubusercontent.com/github-linguist/linguist/refs/heads/main/lib/linguist/languages.yml")?;
 
@@ -137,7 +135,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     output.push_str("    Languages::new()\n");
     output.push_str("}\n");
 
-    let mut file = File::create(&dest_path)?;
+    let mut file = File::create(dest_path)?;
     let syntax_tree = syn::parse_file(&output)?;
     let formatted = prettyplease::unparse(&syntax_tree);
     file.write_all(formatted.as_bytes())?;
