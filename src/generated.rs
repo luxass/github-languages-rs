@@ -1,4 +1,5 @@
 use std::collections::HashMap;
+use once_cell::sync::Lazy;
 #[derive(Debug, Clone, PartialEq)]
 pub struct Language {
     pub name: &'static str,
@@ -11154,3 +11155,4 @@ impl Default for Languages {
         Self::new()
     }
 }
+pub static LANGUAGES: Lazy<Languages> = Lazy::new(Languages::new);

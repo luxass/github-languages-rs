@@ -16,7 +16,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let languages: serde_yaml::Value = serde_yaml::from_str(&contents)?;
 
     let mut output = String::new();
-    output.push_str("use std::collections::HashMap;\n\n");
+    output.push_str("use std::collections::HashMap;\n");
+    output.push_str("use once_cell::sync::Lazy;\n\n");
+
     output.push_str("#[derive(Debug, Clone, PartialEq)]\n");
     output.push_str("pub struct Language {\n");
     output.push_str("    pub name: &'static str,\n");
@@ -139,7 +141,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     output.push_str("    fn default() -> Self {\n");
     output.push_str("        Self::new()\n");
     output.push_str("    }\n");
-    output.push_str("}\n");
+    output.push_str("}\n\n");
+
+    output.push_str("pub static LANGUAGES: Lazy<Languages> = Lazy::new(Languages::new);\n");
 
     let mut file = File::create(dest_path)?;
     let syntax_tree = syn::parse_file(&output)?;
