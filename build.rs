@@ -133,6 +133,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     output.push_str("pub fn get_languages() -> Languages {\n");
     output.push_str("    Languages::new()\n");
+    output.push_str("}\n\n");
+
+    output.push_str("impl Default for Languages {\n");
+    output.push_str("    fn default() -> Self {\n");
+    output.push_str("        Self::new()\n");
+    output.push_str("    }\n");
     output.push_str("}\n");
 
     let mut file = File::create(dest_path)?;

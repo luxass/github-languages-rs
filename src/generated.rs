@@ -11149,3 +11149,8 @@ impl Languages {
 pub fn get_languages() -> Languages {
     Languages::new()
 }
+impl Default for Languages {
+    fn default() -> Self {
+        Self::new()
+    }
+}
