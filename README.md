@@ -39,11 +39,10 @@
 
 ## Install
 
-Add the following to your `Cargo.toml`:
+To use this library in your project, you can install by running the following command:
 
-```toml
-[dependencies]
-github-languages = "0.1"
+```sh
+cargo add github-languages
 ```
 
 ## Usage
