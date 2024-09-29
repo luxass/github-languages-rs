@@ -216,10 +216,30 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 self.by_name.get(name).map(|&index| &self.languages[index])
             }
 
+            pub fn get_by_id(&self, id: u64) -> Option<&Language> {
+                self.languages.iter().find(|lang| lang.language_id == id)
+            }
+
+            pub fn get_by_alias(&self, alias: &str) -> Vec<&Language> {
+                self.languages.iter().filter(|lang| lang.aliases.contains(&alias)).collect()
+            }
+
+            pub fn get_by_filename(&self, filename: &str) -> Vec<&Language> {
+                self.languages.iter().filter(|lang| lang.filenames.contains(&filename)).collect()
+            }
+
+            pub fn get_by_interpreter(&self, interpreter: &str) -> Vec<&Language> {
+                self.languages.iter().filter(|lang| lang.interpreters.contains(&interpreter)).collect()
+            }
+
             pub fn get_by_extension(&self, ext: &str) -> Vec<&Language> {
                 self.by_extension.get(ext)
                     .map(|indices| indices.iter().map(|&index| &self.languages[index]).collect())
                     .unwrap_or_default()
+            }
+
+            pub fn get_by_type(&self, r#type: &str) -> Vec<&Language> {
+                self.languages.iter().filter(|lang| lang.r#type == r#type).collect()
             }
 
             pub fn all_languages(&self) -> &[Language] {
