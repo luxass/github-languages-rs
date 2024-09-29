@@ -1,156 +1,253 @@
+use quote::{format_ident, quote};
 use std::env;
 use std::fs::File;
 use std::io::Write;
 use std::path::Path;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    println!("cargo::rerun-if-changed=languages.yml");
+    println!("cargo:rerun-if-changed=languages.yml");
     let dest_path = Path::new("./src/generated.rs");
     let is_docs_rs = env::var("DOCS_RS").is_ok();
 
     let contents = std::fs::read_to_string("./languages.yml")?;
-
     let languages: serde_yaml::Value = serde_yaml::from_str(&contents)?;
 
-    let mut output = String::new();
-    output.push_str("use std::collections::HashMap;\n");
-    output.push_str("use once_cell::sync::Lazy;\n\n");
-
-    output.push_str("#[derive(Debug, Clone, PartialEq)]\n");
-    output.push_str("pub struct Language {\n");
-    output.push_str("    pub name: &'static str,\n");
-    output.push_str("    pub type_: &'static str,\n");
-    output.push_str("    pub color: &'static str,\n");
-    output.push_str("    pub extensions: &'static [&'static str],\n");
-    output.push_str("    pub tm_scope: &'static str,\n");
-    output.push_str("    pub ace_mode: &'static str,\n");
-    output.push_str("    pub language_id: u64,\n");
-    output.push_str("}\n\n");
-
     let mut language_structs = Vec::new();
+    let mut language_impls = Vec::new();
+    let mut language_info_calls = Vec::new();
 
     if let serde_yaml::Value::Mapping(map) = languages {
         for (key, value) in map {
             if let (serde_yaml::Value::String(name), serde_yaml::Value::Mapping(lang_map)) =
                 (key, value)
             {
+                println!("{:?}", lang_map);
                 let struct_name = sanitize_name(&name);
+                let struct_ident = format_ident!("{}", struct_name);
 
-                let lang_struct = format!(
-                    "pub struct {};\n\n\
-                     impl {} {{\n\
-                         pub fn info() -> Language {{\n\
-                             Language {{\n\
-                                 name: \"{}\",\n\
-                                 type_: \"{}\",\n\
-                                 color: \"{}\",\n\
-                                 extensions: &[{}],\n\
-                                 tm_scope: \"{}\",\n\
-                                 ace_mode: \"{}\",\n\
-                                 language_id: {},\n\
-                             }}\n\
-                         }}\n\
-                     }}\n\n",
-                    struct_name,
-                    struct_name,
-                    name,
-                    lang_map.get("type").and_then(|v| v.as_str()).unwrap_or(""),
-                    lang_map.get("color").and_then(|v| v.as_str()).unwrap_or(""),
-                    lang_map
-                        .get("extensions")
-                        .and_then(|v| v.as_sequence())
-                        .map(|seq| seq
-                            .iter()
-                            .filter_map(|v| v.as_str())
-                            .map(|s| format!("\"{}\"", s))
-                            .collect::<Vec<_>>()
-                            .join(", "))
-                        .unwrap_or_else(|| "".to_string()),
-                    lang_map
-                        .get("tm_scope")
-                        .and_then(|v| v.as_str())
-                        .unwrap_or(""),
-                    lang_map
-                        .get("ace_mode")
-                        .and_then(|v| v.as_str())
-                        .unwrap_or(""),
-                    lang_map
-                        .get("language_id")
-                        .and_then(|v| v.as_u64())
-                        .unwrap_or(0)
-                );
+                let extensions: Vec<String> = lang_map
+                    .get("extensions")
+                    .and_then(|v| v.as_sequence())
+                    .map(|seq| {
+                        seq.iter()
+                            .filter_map(|v| v.as_str().map(|s| s.to_string()))
+                            .collect()
+                    })
+                    .unwrap_or_default();
 
-                language_structs.push((struct_name, lang_struct));
+                language_structs.push(quote! {
+                    pub struct #struct_ident;
+                });
+
+                let _type = lang_map
+                    .get("type")
+                    .and_then(|v| v.as_str())
+                    .unwrap_or_default();
+
+                let color = lang_map.get("color").and_then(|v| v.as_str()).unwrap_or("");
+
+                let tm_scope = lang_map
+                    .get("tm_scope")
+                    .and_then(|v| v.as_str())
+                    .unwrap_or_default();
+
+                let ace_mode = lang_map
+                    .get("ace_mode")
+                    .and_then(|v| v.as_str())
+                    .unwrap_or_default();
+
+                let language_id = lang_map
+                    .get("language_id")
+                    .and_then(|v| v.as_u64())
+                    .unwrap_or(0);
+
+                let aliases: Vec<String> = lang_map
+                    .get("aliases")
+                    .and_then(|v| v.as_sequence())
+                    .map(|seq| {
+                        seq.iter()
+                            .filter_map(|v| v.as_str().map(|s| s.to_string()))
+                            .collect()
+                    })
+                    .unwrap_or_default();
+
+                let codemirror_mode = lang_map
+                    .get("codemirror_mode")
+                    .and_then(|v| v.as_str())
+                    .map(|s| quote!(Some(#s)))
+                    .unwrap_or(quote!(None));
+
+                let codemirror_mime_type = lang_map
+                    .get("codemirror_mime_type")
+                    .and_then(|v| v.as_str())
+                    .map(|s| quote!(Some(#s)))
+                    .unwrap_or(quote!(None));
+
+                let wrap = lang_map
+                    .get("wrap")
+                    .and_then(|v| v.as_bool())
+                    .map(|b| quote!(Some(#b)))
+                    .unwrap_or(quote!(None));
+
+                let filenames: Vec<String> = lang_map
+                    .get("filenames")
+                    .and_then(|v| v.as_sequence())
+                    .map(|seq| {
+                        seq.iter()
+                            .filter_map(|v| v.as_str().map(|s| s.to_string()))
+                            .collect()
+                    })
+                    .unwrap_or_default();
+
+                let group = lang_map
+                    .get("group")
+                    .and_then(|v| v.as_str())
+                    .map(|s| quote!(Some(#s)))
+                    .unwrap_or(quote!(None));
+
+                let searchable = lang_map
+                    .get("searchable")
+                    .and_then(|v| v.as_bool())
+                    .map(|b| quote!(Some(#b)))
+                    .unwrap_or(quote!(None));
+
+                let fs_name = lang_map
+                    .get("fs_name")
+                    .and_then(|v| v.as_str())
+                    .map(|s| quote!(Some(#s)))
+                    .unwrap_or(quote!(None));
+
+                let interpreters: Vec<String> = lang_map
+                    .get("interpreters")
+                    .and_then(|v| v.as_sequence())
+                    .map(|seq| {
+                        seq.iter()
+                            .filter_map(|v| v.as_str().map(|s| s.to_string()))
+                            .collect()
+                    })
+                    .unwrap_or_default();
+
+                language_impls.push(quote! {
+                    impl #struct_ident {
+                        pub fn info() -> Language {
+                            Language {
+                                name: #name,
+                                r#type: #_type,
+                                color: #color,
+                                extensions: &[#(#extensions),*],
+                                tm_scope: #tm_scope,
+                                ace_mode: #ace_mode,
+                                language_id: #language_id,
+                                aliases: &[#(#aliases),*],
+                                codemirror_mode: #codemirror_mode,
+                                codemirror_mime_type: #codemirror_mime_type,
+                                wrap: #wrap,
+                                filenames: &[#(#filenames),*],
+                                group: #group,
+                                interpreters: &[#(#interpreters),*],
+                                fs_name: #fs_name,
+                                searchable: #searchable,
+                            }
+                        }
+                    }
+                });
+
+                language_info_calls.push(quote! {
+                    #struct_ident::info()
+                });
             }
         }
     }
 
-    // Write individual language structs
-    for (_, lang_struct) in &language_structs {
-        output.push_str(lang_struct);
-    }
+    let output = quote! {
+        use std::collections::HashMap;
+        use once_cell::sync::Lazy;
 
-    // Generate Languages struct and implementation
-    output.push_str("pub struct Languages {\n");
-    output.push_str("    languages: Vec<Language>,\n");
-    output.push_str("    by_name: HashMap<&'static str, usize>,\n");
-    output.push_str("    by_extension: HashMap<&'static str, Vec<usize>>,\n");
-    output.push_str("}\n\n");
+        #[derive(Debug, Clone, PartialEq)]
+        pub struct Language {
+            pub name: &'static str,
+            pub r#type: &'static str,
+            pub color: &'static str,
+            pub extensions: &'static [&'static str],
+            pub aliases: &'static [&'static str],
+            pub tm_scope: &'static str,
+            pub ace_mode: &'static str,
+            pub language_id: u64,
+            pub codemirror_mode: Option<&'static str>,
+            pub codemirror_mime_type: Option<&'static str>,
+            pub wrap: Option<bool>,
+            pub filenames: &'static [&'static str],
+            pub group: Option<&'static str>,
+            pub interpreters: &'static [&'static str],
+            pub fs_name: Option<&'static str>,
+            pub searchable: Option<bool>,
+        }
 
-    output.push_str("impl Languages {\n");
-    output.push_str("    pub fn new() -> Self {\n");
-    output.push_str("        let languages = vec![\n");
+        #(#language_structs)*
 
-    for (struct_name, _) in &language_structs {
-        output.push_str(&format!("            {}::info(),\n", struct_name));
-    }
+        #(#language_impls)*
 
-    output.push_str("        ];\n\n");
-    output.push_str("        let mut by_name = HashMap::new();\n");
-    output.push_str("        let mut by_extension = HashMap::new();\n\n");
-    output.push_str("        for (index, lang) in languages.iter().enumerate() {\n");
-    output.push_str("            by_name.insert(lang.name, index);\n");
-    output.push_str("            for ext in lang.extensions {\n");
-    output.push_str("                by_extension.entry(*ext).or_insert_with(Vec::new).push(index);\n");
-    output.push_str("            }\n");
-    output.push_str("        }\n\n");
-    output.push_str("        Self { languages, by_name, by_extension }\n");
-    output.push_str("    }\n\n");
+        pub struct Languages {
+            languages: Vec<Language>,
+            by_name: HashMap<&'static str, usize>,
+            by_extension: HashMap<&'static str, Vec<usize>>,
+        }
 
-    output.push_str("    pub fn get_by_name(&self, name: &str) -> Option<&Language> {\n");
-    output.push_str("        self.by_name.get(name).map(|&index| &self.languages[index])\n");
-    output.push_str("    }\n\n");
+        impl Languages {
+            pub fn new() -> Self {
+                let languages = vec![
+                    #(#language_info_calls),*
+                ];
 
-    output.push_str("    pub fn get_by_extension(&self, ext: &str) -> Vec<&Language> {\n");
-    output.push_str("        self.by_extension.get(ext).map(|indices| indices.iter().map(|&index| &self.languages[index]).collect()).unwrap_or_default()\n");
-    output.push_str("    }\n\n");
+                let mut by_name = HashMap::new();
+                let mut by_extension = HashMap::new();
 
-    output.push_str("    pub fn all_languages(&self) -> &[Language] {\n");
-    output.push_str("        &self.languages\n");
-    output.push_str("    }\n");
-    output.push_str("}\n\n");
+                for (index, lang) in languages.iter().enumerate() {
+                    by_name.insert(lang.name, index);
+                    for ext in lang.extensions {
+                        by_extension.entry(*ext).or_insert_with(Vec::new).push(index);
+                    }
+                }
 
-    output.push_str("pub fn get_languages() -> Languages {\n");
-    output.push_str("    Languages::new()\n");
-    output.push_str("}\n\n");
+                Self { languages, by_name, by_extension }
+            }
 
-    output.push_str("impl Default for Languages {\n");
-    output.push_str("    fn default() -> Self {\n");
-    output.push_str("        Self::new()\n");
-    output.push_str("    }\n");
-    output.push_str("}\n\n");
+            pub fn get_by_name(&self, name: &str) -> Option<&Language> {
+                self.by_name.get(name).map(|&index| &self.languages[index])
+            }
 
-    output.push_str("pub static LANGUAGES: Lazy<Languages> = Lazy::new(Languages::new);\n");
+            pub fn get_by_extension(&self, ext: &str) -> Vec<&Language> {
+                self.by_extension.get(ext)
+                    .map(|indices| indices.iter().map(|&index| &self.languages[index]).collect())
+                    .unwrap_or_default()
+            }
+
+            pub fn all_languages(&self) -> &[Language] {
+                &self.languages
+            }
+        }
+
+        impl Default for Languages {
+            fn default() -> Self {
+                Self::new()
+            }
+        }
+
+        pub fn get_languages() -> Languages {
+            Languages::new()
+        }
+
+        pub static LANGUAGES: Lazy<Languages> = Lazy::new(Languages::new);
+    };
 
     if is_docs_rs {
         println!("cargo:warning=Generated code:\n{}", output);
     } else {
         let mut file = File::create(dest_path)?;
-        let syntax_tree = syn::parse_file(&output)?;
+        let syntax_tree = syn::parse2(output)?;
         let formatted = prettyplease::unparse(&syntax_tree);
         file.write_all(formatted.as_bytes())?;
     }
-
 
     Ok(())
 }
