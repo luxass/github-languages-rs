@@ -37,6 +37,15 @@
 
 <br />
 
+## Install
+
+Add the following to your `Cargo.toml`:
+
+```toml
+[dependencies]
+github-languages = "0.1"
+```
+
 ## Usage
 
 ### Accessing Individual Language Information
