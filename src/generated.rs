@@ -10928,7 +10928,7 @@ impl XBase {
 pub struct Languages {
     languages: Vec<Language>,
     by_name: HashMap<&'static str, usize>,
-    by_extension: HashMap<&'static str, usize>,
+    by_extension: HashMap<&'static str, Vec<usize>>,
 }
 impl Languages {
     pub fn new() -> Self {
@@ -11128,7 +11128,7 @@ impl Languages {
         for (index, lang) in languages.iter().enumerate() {
             by_name.insert(lang.name, index);
             for ext in lang.extensions {
-                by_extension.insert(*ext, index);
+                by_extension.entry(*ext).or_insert_with(Vec::new).push(index);
             }
         }
         Self {
@@ -11140,8 +11140,11 @@ impl Languages {
     pub fn get_by_name(&self, name: &str) -> Option<&Language> {
         self.by_name.get(name).map(|&index| &self.languages[index])
     }
-    pub fn get_by_extension(&self, ext: &str) -> Option<&Language> {
-        self.by_extension.get(ext).map(|&index| &self.languages[index])
+    pub fn get_by_extension(&self, ext: &str) -> Vec<&Language> {
+        self.by_extension
+            .get(ext)
+            .map(|indices| indices.iter().map(|&index| &self.languages[index]).collect())
+            .unwrap_or_default()
     }
     pub fn all_languages(&self) -> &[Language] {
         &self.languages

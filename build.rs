@@ -94,7 +94,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     output.push_str("pub struct Languages {\n");
     output.push_str("    languages: Vec<Language>,\n");
     output.push_str("    by_name: HashMap<&'static str, usize>,\n");
-    output.push_str("    by_extension: HashMap<&'static str, usize>,\n");
+    output.push_str("    by_extension: HashMap<&'static str, Vec<usize>>,\n");
     output.push_str("}\n\n");
 
     output.push_str("impl Languages {\n");
@@ -111,7 +111,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     output.push_str("        for (index, lang) in languages.iter().enumerate() {\n");
     output.push_str("            by_name.insert(lang.name, index);\n");
     output.push_str("            for ext in lang.extensions {\n");
-    output.push_str("                by_extension.insert(*ext, index);\n");
+    output.push_str("                by_extension.entry(*ext).or_insert_with(Vec::new).push(index);\n");
     output.push_str("            }\n");
     output.push_str("        }\n\n");
     output.push_str("        Self { languages, by_name, by_extension }\n");
@@ -121,8 +121,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     output.push_str("        self.by_name.get(name).map(|&index| &self.languages[index])\n");
     output.push_str("    }\n\n");
 
-    output.push_str("    pub fn get_by_extension(&self, ext: &str) -> Option<&Language> {\n");
-    output.push_str("        self.by_extension.get(ext).map(|&index| &self.languages[index])\n");
+    output.push_str("    pub fn get_by_extension(&self, ext: &str) -> Vec<&Language> {\n");
+    output.push_str("        self.by_extension.get(ext).map(|indices| indices.iter().map(|&index| &self.languages[index]).collect()).unwrap_or_default()\n");
     output.push_str("    }\n\n");
 
     output.push_str("    pub fn all_languages(&self) -> &[Language] {\n");
