@@ -1,6 +1,17 @@
 //! All GitHub's supported languages.
 //!
 //! [Linguist]: https://github.com/github-linguist/linguist
+//!
+//! # Example
+//! ```
+//! use github_languages::languages;
+//!
+//! let languages = languages::get_languages();
+//!
+//! for language in languages {
+//!    println!("{:?}", language);
+//! }
+//! ```
 
 #[rustfmt::skip]
 mod generated;
