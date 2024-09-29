@@ -27,20 +27,27 @@ pub mod tests {
     use super::*;
 
     #[test]
-    fn test_get_languages() {
+    fn get_all_languages() {
         let languages = get_languages();
         assert!(languages.all_languages().len() > 0);
     }
 
     #[test]
-    fn test_get_language_by_name() {
+    fn get_language_by_name() {
         let languages = get_languages();
         let language = languages.get_by_name("Rust").unwrap();
         assert_eq!(language.name, "Rust");
     }
 
     #[test]
-    fn test_get_languages_by_extension() {
+    fn no_language_with_name() {
+        let languages = get_languages();
+        let language = languages.get_by_name("Rusttt");
+        assert!(language.is_none());
+    }
+
+    #[test]
+    fn get_languages_by_extension() {
         let languages = get_languages();
         let extension_languages = languages.get_by_extension(".rs");
         assert!(extension_languages.len() > 0);
@@ -48,7 +55,89 @@ pub mod tests {
     }
 
     #[test]
-    fn test_language_structs() {
+    fn no_languages_with_extension() {
+        let languages = get_languages();
+        let extension_languages = languages.get_by_extension(".helloworld");
+        assert!(extension_languages.is_empty());
+    }
+
+    #[test]
+    fn get_languages_by_type() {
+        let languages = get_languages();
+        let programming_languages = languages.get_by_type("programming");
+        assert!(programming_languages.len() > 0);
+        assert!(programming_languages.iter().any(|l| l.name == "Rust"));
+    }
+
+    #[test]
+    fn no_languages_with_type() {
+        let languages = get_languages();
+        let invalid_languages = languages.get_by_type("helloworld");
+        assert!(invalid_languages.is_empty());
+    }
+
+    #[test]
+    fn get_languages_by_alias() {
+        let languages = get_languages();
+        let alias_languages = languages.get_by_alias("rs");
+        assert!(alias_languages.len() > 0);
+        assert!(alias_languages.iter().any(|l| l.name == "Rust"));
+    }
+
+    #[test]
+    fn no_languages_with_alias() {
+        let languages = get_languages();
+        let invalid_languages = languages.get_by_alias("helloworld");
+        assert!(invalid_languages.is_empty());
+    }
+
+    #[test]
+    fn get_languages_by_interpreter() {
+        let languages = get_languages();
+        let interpreter_languages = languages.get_by_interpreter("rust-script");
+        assert!(interpreter_languages.len() > 0);
+        assert!(interpreter_languages.iter().any(|l| l.name == "Rust"));
+    }
+
+    #[test]
+    fn no_languages_with_interpreter() {
+        let languages = get_languages();
+        let invalid_languages = languages.get_by_interpreter("helloworld");
+        assert!(invalid_languages.is_empty());
+    }
+
+    #[test]
+    fn get_languages_by_filename() {
+        let languages = get_languages();
+        let languages_with_filenames = languages.get_by_filename("Cargo.lock");
+        assert!(languages_with_filenames.len() > 0);
+        assert!(languages_with_filenames.iter().any(|l| l.name == "TOML"));
+    }
+
+    #[test]
+    fn no_languages_with_filename() {
+        let languages = get_languages();
+        let invalid_languages = languages.get_by_filename("helloworld");
+        assert!(invalid_languages.is_empty());
+    }
+
+    #[test]
+    fn should_get_language_by_id() {
+        let languages = get_languages();
+        let language = languages.get_by_id(100);
+        assert!(language.is_some());
+        assert_eq!(language.unwrap().name, "Elixir");
+    }
+
+    #[test]
+    fn no_language_with_id() {
+        let languages = get_languages();
+        let language = languages.get_by_id(9999999);
+        assert!(language.is_none());
+    }
+
+    #[test]
+    fn language_info_structs() {
         let javascript = languages::JavaScript::info();
         assert_eq!(javascript.name, "JavaScript");
         assert_eq!(javascript.r#type, "programming");
