@@ -1,3 +1,4 @@
+use std::env;
 use std::fs::File;
 use std::io::Write;
 use std::path::Path;
@@ -5,6 +6,7 @@ use std::path::Path;
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("cargo::rerun-if-changed=languages.yml");
     let dest_path = Path::new("./src/generated.rs");
+    let is_docs_rs = env::var("DOCS_RS").is_ok();
 
     let contents = std::fs::read_to_string("./languages.yml")?;
 
@@ -140,10 +142,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     output.push_str("pub static LANGUAGES: Lazy<Languages> = Lazy::new(Languages::new);\n");
 
-    let mut file = File::create(dest_path)?;
-    let syntax_tree = syn::parse_file(&output)?;
-    let formatted = prettyplease::unparse(&syntax_tree);
-    file.write_all(formatted.as_bytes())?;
+    if is_docs_rs {
+        println!("cargo:warning=Generated code:\n{}", output);
+    } else {
+        let mut file = File::create(dest_path)?;
+        let syntax_tree = syn::parse_file(&output)?;
+        let formatted = prettyplease::unparse(&syntax_tree);
+        file.write_all(formatted.as_bytes())?;
+    }
+
 
     Ok(())
 }
