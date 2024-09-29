@@ -29,7 +29,7 @@ pub mod tests {
     #[test]
     fn get_all_languages() {
         let languages = get_languages();
-        assert!(languages.all_languages().len() > 0);
+        assert!(!languages.all_languages().is_empty());
     }
 
     #[test]
@@ -50,7 +50,7 @@ pub mod tests {
     fn get_languages_by_extension() {
         let languages = get_languages();
         let extension_languages = languages.get_by_extension(".rs");
-        assert!(extension_languages.len() > 0);
+        assert!(!extension_languages.is_empty());
         assert!(extension_languages.iter().any(|l| l.name == "Rust"));
     }
 
@@ -65,7 +65,7 @@ pub mod tests {
     fn get_languages_by_type() {
         let languages = get_languages();
         let programming_languages = languages.get_by_type("programming");
-        assert!(programming_languages.len() > 0);
+        assert!(!programming_languages.is_empty());
         assert!(programming_languages.iter().any(|l| l.name == "Rust"));
     }
 
@@ -80,7 +80,7 @@ pub mod tests {
     fn get_languages_by_alias() {
         let languages = get_languages();
         let alias_languages = languages.get_by_alias("rs");
-        assert!(alias_languages.len() > 0);
+        assert!(!alias_languages.is_empty());
         assert!(alias_languages.iter().any(|l| l.name == "Rust"));
     }
 
@@ -95,7 +95,7 @@ pub mod tests {
     fn get_languages_by_interpreter() {
         let languages = get_languages();
         let interpreter_languages = languages.get_by_interpreter("rust-script");
-        assert!(interpreter_languages.len() > 0);
+        assert!(!interpreter_languages.is_empty());
         assert!(interpreter_languages.iter().any(|l| l.name == "Rust"));
     }
 
@@ -110,7 +110,7 @@ pub mod tests {
     fn get_languages_by_filename() {
         let languages = get_languages();
         let languages_with_filenames = languages.get_by_filename("Cargo.lock");
-        assert!(languages_with_filenames.len() > 0);
+        assert!(!languages_with_filenames.is_empty());
         assert!(languages_with_filenames.iter().any(|l| l.name == "TOML"));
     }
 
