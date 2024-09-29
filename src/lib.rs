@@ -51,22 +51,22 @@ pub mod tests {
     fn test_language_structs() {
         let javascript = languages::JavaScript::info();
         assert_eq!(javascript.name, "JavaScript");
-        assert_eq!(javascript.type_, "programming");
+        assert_eq!(javascript.r#type, "programming");
 
         let typescript = languages::TypeScript::info();
         assert_eq!(typescript.name, "TypeScript");
-        assert_eq!(typescript.type_, "programming");
+        assert_eq!(typescript.r#type, "programming");
 
         let rust = languages::Rust::info();
         assert_eq!(rust.name, "Rust");
-        assert_eq!(rust.type_, "programming");
+        assert_eq!(rust.r#type, "programming");
 
         let java = languages::Java::info();
         assert_eq!(java.name, "Java");
-        assert_eq!(java.type_, "programming");
+        assert_eq!(java.r#type, "programming");
 
         let python = languages::Python::info();
         assert_eq!(python.name, "Python");
-        assert_eq!(python.type_, "programming");
+        assert_eq!(python.r#type, "programming");
     }
 }
