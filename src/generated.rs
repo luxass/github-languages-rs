@@ -213,7 +213,7 @@ pub struct Formatted;
 pub struct Forth;
 pub struct Fortran;
 pub struct FortranFreeForm;
-pub struct FreeBasic;
+pub struct FreeBASIC;
 pub struct FreeMarker;
 pub struct Frege;
 pub struct Futhark;
@@ -281,6 +281,7 @@ pub struct Hack;
 pub struct Haml;
 pub struct Handlebars;
 pub struct Harbour;
+pub struct Hare;
 pub struct Haskell;
 pub struct Haxe;
 pub struct HiveQL;
@@ -410,6 +411,7 @@ pub struct Mojo;
 pub struct Monkey;
 pub struct MonkeyC;
 pub struct Moocode;
+pub struct MoonBit;
 pub struct MoonScript;
 pub struct Motoko;
 pub struct Motorola68KAssembly;
@@ -640,10 +642,12 @@ pub struct TIProgram;
 pub struct TLVerilog;
 pub struct TLA;
 pub struct TOML;
+pub struct TSPLIBData;
 pub struct TSQL;
 pub struct TSV;
 pub struct TSX;
 pub struct TXL;
+pub struct Tact;
 pub struct Talon;
 pub struct Tcl;
 pub struct Tcsh;
@@ -663,6 +667,7 @@ pub struct Turtle;
 pub struct Twig;
 pub struct TypeLanguage;
 pub struct TypeScript;
+pub struct TypeSpec;
 pub struct Typst;
 pub struct UnifiedParallelC;
 pub struct Unity3DAsset;
@@ -750,6 +755,7 @@ pub struct Mcfunction;
 pub struct Mupad;
 pub struct Nanorc;
 pub struct NesC;
+pub struct OmnetppNed;
 pub struct Ooc;
 pub struct Q;
 pub struct ReStructuredText;
@@ -2550,7 +2556,7 @@ impl CSS {
         Language {
             name: "CSS",
             r#type: "markup",
-            color: "#563d7c",
+            color: "#663399",
             extensions: &[".css"],
             tm_scope: "source.css",
             ace_mode: "css",
@@ -4073,7 +4079,7 @@ impl Dockerfile {
             name: "Dockerfile",
             r#type: "programming",
             color: "#384d54",
-            extensions: &[".dockerfile"],
+            extensions: &[".dockerfile", ".containerfile"],
             tm_scope: "source.dockerfile",
             ace_mode: "dockerfile",
             language_id: 89u64,
@@ -5135,10 +5141,10 @@ impl FortranFreeForm {
         }
     }
 }
-impl FreeBasic {
+impl FreeBASIC {
     pub fn info() -> Language {
         Language {
-            name: "FreeBasic",
+            name: "FreeBASIC",
             r#type: "programming",
             color: "#141AC9",
             extensions: &[".bi", ".bas"],
@@ -6672,6 +6678,28 @@ impl Harbour {
         }
     }
 }
+impl Hare {
+    pub fn info() -> Language {
+        Language {
+            name: "Hare",
+            r#type: "programming",
+            color: "#9d7424",
+            extensions: &[".ha"],
+            tm_scope: "none",
+            ace_mode: "text",
+            language_id: 463518941u64,
+            aliases: &[],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
 impl Haskell {
     pub fn info() -> Language {
         Language {
@@ -6895,6 +6923,7 @@ impl INI {
             codemirror_mime_type: Some("text/x-properties"),
             wrap: None,
             filenames: &[
+                ".buckconfig",
                 ".coveragerc",
                 ".flake8",
                 ".pylintrc",
@@ -6976,9 +7005,11 @@ impl IgnoreList {
                 ".coffeelintignore",
                 ".cvsignore",
                 ".dockerignore",
+                ".easignore",
                 ".eleventyignore",
                 ".eslintignore",
                 ".gitignore",
+                ".ignore",
                 ".markdownlintignore",
                 ".nodemonignore",
                 ".npmignore",
@@ -7298,9 +7329,11 @@ impl JSON {
                 ".har",
                 ".ice",
                 ".JSON-tmLanguage",
+                ".json.example",
                 ".jsonl",
                 ".mcmeta",
                 ".sarif",
+                ".tact",
                 ".tfstate",
                 ".tfstate.backup",
                 ".topojson",
@@ -9694,6 +9727,28 @@ impl Moocode {
             tm_scope: "none",
             ace_mode: "text",
             language_id: 237u64,
+            aliases: &[],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
+impl MoonBit {
+    pub fn info() -> Language {
+        Language {
+            name: "MoonBit",
+            r#type: "programming",
+            color: "#b92381",
+            extensions: &[".mbt"],
+            tm_scope: "source.moonbit",
+            ace_mode: "text",
+            language_id: 181453007u64,
             aliases: &[],
             codemirror_mode: None,
             codemirror_mime_type: None,
@@ -13762,7 +13817,7 @@ impl SSHConfig {
             tm_scope: "source.ssh-config",
             ace_mode: "text",
             language_id: 554920715u64,
-            aliases: &[],
+            aliases: &["sshconfig", "sshdconfig", "ssh_config", "sshd_config"],
             codemirror_mode: None,
             codemirror_mime_type: None,
             wrap: None,
@@ -15076,6 +15131,28 @@ impl TOML {
         }
     }
 }
+impl TSPLIBData {
+    pub fn info() -> Language {
+        Language {
+            name: "TSPLIB data",
+            r#type: "data",
+            color: "",
+            extensions: &[".tsp"],
+            tm_scope: "none",
+            ace_mode: "text",
+            language_id: 89289301u64,
+            aliases: &["travelling salesman problem", "traveling salesman problem"],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
 impl TSQL {
     pub fn info() -> Language {
         Language {
@@ -15152,6 +15229,28 @@ impl TXL {
             tm_scope: "source.txl",
             ace_mode: "text",
             language_id: 366u64,
+            aliases: &[],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
+impl Tact {
+    pub fn info() -> Language {
+        Language {
+            name: "Tact",
+            r#type: "programming",
+            color: "#48b5ff",
+            extensions: &[".tact"],
+            tm_scope: "source.tact",
+            ace_mode: "text",
+            language_id: 606708469u64,
             aliases: &[],
             codemirror_mode: None,
             codemirror_mime_type: None,
@@ -15618,6 +15717,28 @@ impl TypeScript {
             filenames: &[],
             group: None,
             interpreters: &["deno", "ts-node", "tsx"],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
+impl TypeSpec {
+    pub fn info() -> Language {
+        Language {
+            name: "TypeSpec",
+            r#type: "programming",
+            color: "#4A3665",
+            extensions: &[".tsp"],
+            tm_scope: "source.tsp",
+            ace_mode: "text",
+            language_id: 952272597u64,
+            aliases: &["tsp"],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
             fs_name: None,
             searchable: None,
         }
@@ -16146,7 +16267,7 @@ impl Vue {
             r#type: "markup",
             color: "#41b883",
             extensions: &[".vue"],
-            tm_scope: "text.html.vue",
+            tm_scope: "source.vue",
             ace_mode: "html",
             language_id: 391u64,
             aliases: &[],
@@ -17092,9 +17213,11 @@ impl YAML {
             filenames: &[
                 ".clang-format",
                 ".clang-tidy",
+                ".clangd",
                 ".gemrc",
                 "CITATION.cff",
                 "glide.lock",
+                "pixi.lock",
                 "yarn.lock",
             ],
             group: None,
@@ -17727,6 +17850,28 @@ impl NesC {
         }
     }
 }
+impl OmnetppNed {
+    pub fn info() -> Language {
+        Language {
+            name: "omnetpp-ned",
+            r#type: "programming",
+            color: "#08607c",
+            extensions: &[".ned"],
+            tm_scope: "source.ned",
+            ace_mode: "text",
+            language_id: 924868392u64,
+            aliases: &[],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
 impl Ooc {
     pub fn info() -> Language {
         Language {
@@ -17982,7 +18127,7 @@ impl Languages {
             Factor::info(), Fancy::info(), Fantom::info(), Faust::info(), Fennel::info(),
             FilebenchWML::info(), Filterscript::info(), Fluent::info(),
             Formatted::info(), Forth::info(), Fortran::info(), FortranFreeForm::info(),
-            FreeBasic::info(), FreeMarker::info(), Frege::info(), Futhark::info(),
+            FreeBASIC::info(), FreeMarker::info(), Frege::info(), Futhark::info(),
             GCode::info(), GAML::info(), GAMS::info(), GAP::info(),
             GCCMachineDescription::info(), GDB::info(), GDScript::info(), GEDCOM::info(),
             GLSL::info(), GN::info(), GSC::info(), GameMakerLanguage::info(),
@@ -18000,7 +18145,7 @@ impl Languages {
             HLSL::info(), HOCON::info(), HTML::info(), HTMLpECR::info(),
             HTMLpEEX::info(), HTMLpERB::info(), HTMLpPHP::info(), HTMLpRazor::info(),
             HTTP::info(), HXML::info(), Hack::info(), Haml::info(), Handlebars::info(),
-            Harbour::info(), Haskell::info(), Haxe::info(), HiveQL::info(),
+            Harbour::info(), Hare::info(), Haskell::info(), Haxe::info(), HiveQL::info(),
             HolyC::info(), HostsFile::info(), Hy::info(), HyPhy::info(), IDL::info(),
             IGORPro::info(), INI::info(), IRCLog::info(), Idris::info(),
             IgnoreList::info(), ImageJMacro::info(), Imba::info(), Inform7::info(),
@@ -18032,19 +18177,19 @@ impl Languages {
             MicrosoftVisualStudioSolution::info(), MiniD::info(), MiniYAML::info(),
             Mint::info(), Mirah::info(), Modelica::info(), Modula2::info(),
             Modula3::info(), ModuleManagementSystem::info(), Mojo::info(),
-            Monkey::info(), MonkeyC::info(), Moocode::info(), MoonScript::info(),
-            Motoko::info(), Motorola68KAssembly::info(), Move::info(), Muse::info(),
-            Mustache::info(), Myghty::info(), NASL::info(), NCL::info(), NEON::info(),
-            NL::info(), NMODL::info(), NPMConfig::info(), NSIS::info(), NWScript::info(),
-            Nasal::info(), Nearley::info(), Nemerle::info(), NetLinx::info(),
-            NetLinxpERB::info(), NetLogo::info(), NewLisp::info(), Nextflow::info(),
-            Nginx::info(), Nim::info(), Ninja::info(), Nit::info(), Nix::info(),
-            Noir::info(), Nu::info(), NumPy::info(), Nunjucks::info(), Nushell::info(),
-            OASv2Json::info(), OASv2Yaml::info(), OASv3Json::info(), OASv3Yaml::info(),
-            OCaml::info(), Oberon::info(), ObjDump::info(),
-            ObjectDataInstanceNotation::info(), ObjectScript::info(), ObjectiveC::info(),
-            ObjectiveCpp::info(), ObjectiveJ::info(), Odin::info(), Omgrofl::info(),
-            Opa::info(), Opal::info(), OpenPolicyAgent::info(),
+            Monkey::info(), MonkeyC::info(), Moocode::info(), MoonBit::info(),
+            MoonScript::info(), Motoko::info(), Motorola68KAssembly::info(),
+            Move::info(), Muse::info(), Mustache::info(), Myghty::info(), NASL::info(),
+            NCL::info(), NEON::info(), NL::info(), NMODL::info(), NPMConfig::info(),
+            NSIS::info(), NWScript::info(), Nasal::info(), Nearley::info(),
+            Nemerle::info(), NetLinx::info(), NetLinxpERB::info(), NetLogo::info(),
+            NewLisp::info(), Nextflow::info(), Nginx::info(), Nim::info(), Ninja::info(),
+            Nit::info(), Nix::info(), Noir::info(), Nu::info(), NumPy::info(),
+            Nunjucks::info(), Nushell::info(), OASv2Json::info(), OASv2Yaml::info(),
+            OASv3Json::info(), OASv3Yaml::info(), OCaml::info(), Oberon::info(),
+            ObjDump::info(), ObjectDataInstanceNotation::info(), ObjectScript::info(),
+            ObjectiveC::info(), ObjectiveCpp::info(), ObjectiveJ::info(), Odin::info(),
+            Omgrofl::info(), Opa::info(), Opal::info(), OpenPolicyAgent::info(),
             OpenAPISpecificationV2::info(), OpenAPISpecificationV3::info(),
             OpenCL::info(), OpenEdgeABL::info(), OpenQASM::info(),
             OpenRCRunscript::info(), OpenSCAD::info(), OpenStepPropertyList::info(),
@@ -18091,14 +18236,15 @@ impl Languages {
             Stylus::info(), SubRipText::info(), SugarSS::info(), SuperCollider::info(),
             Svelte::info(), Sway::info(), Sweave::info(), Swift::info(),
             SystemVerilog::info(), TIProgram::info(), TLVerilog::info(), TLA::info(),
-            TOML::info(), TSQL::info(), TSV::info(), TSX::info(), TXL::info(),
-            Talon::info(), Tcl::info(), Tcsh::info(), TeX::info(), Tea::info(),
-            Terra::info(), TerraformTemplate::info(), Texinfo::info(), Text::info(),
-            TextGrid::info(), TextMateProperties::info(), Textile::info(),
-            Thrift::info(), Toit::info(), Turing::info(), Turtle::info(), Twig::info(),
-            TypeLanguage::info(), TypeScript::info(), Typst::info(),
-            UnifiedParallelC::info(), Unity3DAsset::info(), UnixAssembly::info(),
-            Uno::info(), UnrealScript::info(), UrWeb::info(), V::info(), VBA::info(),
+            TOML::info(), TSPLIBData::info(), TSQL::info(), TSV::info(), TSX::info(),
+            TXL::info(), Tact::info(), Talon::info(), Tcl::info(), Tcsh::info(),
+            TeX::info(), Tea::info(), Terra::info(), TerraformTemplate::info(),
+            Texinfo::info(), Text::info(), TextGrid::info(), TextMateProperties::info(),
+            Textile::info(), Thrift::info(), Toit::info(), Turing::info(),
+            Turtle::info(), Twig::info(), TypeLanguage::info(), TypeScript::info(),
+            TypeSpec::info(), Typst::info(), UnifiedParallelC::info(),
+            Unity3DAsset::info(), UnixAssembly::info(), Uno::info(),
+            UnrealScript::info(), UrWeb::info(), V::info(), VBA::info(),
             VBScript::info(), VCL::info(), VHDL::info(), Vala::info(),
             ValveDataFormat::info(), VelocityTemplateLanguage::info(), Verilog::info(),
             VimHelpFile::info(), VimScript::info(), VimSnippet::info(),
@@ -18119,9 +18265,9 @@ impl Languages {
             Crontab::info(), Desktop::info(), Dircolors::info(), EC::info(), Edn::info(),
             Fish::info(), Hoon::info(), ICalendar::info(), Jq::info(), Kvlang::info(),
             MIRCScript::info(), Mcfunction::info(), Mupad::info(), Nanorc::info(),
-            NesC::info(), Ooc::info(), Q::info(), ReStructuredText::info(),
-            Robotstxt::info(), Sed::info(), Templ::info(), VCard::info(), Wisp::info(),
-            XBase::info()
+            NesC::info(), OmnetppNed::info(), Ooc::info(), Q::info(),
+            ReStructuredText::info(), Robotstxt::info(), Sed::info(), Templ::info(),
+            VCard::info(), Wisp::info(), XBase::info()
         ];
         let mut by_name = HashMap::new();
         let mut by_extension = HashMap::new();
