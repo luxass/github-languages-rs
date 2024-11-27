@@ -536,6 +536,7 @@ pub struct QML;
 pub struct QMake;
 pub struct QtScript;
 pub struct Quake;
+pub struct QuickBASIC;
 pub struct R;
 pub struct RAML;
 pub struct RBS;
@@ -755,6 +756,7 @@ pub struct Mcfunction;
 pub struct Mupad;
 pub struct Nanorc;
 pub struct NesC;
+pub struct OmnetppMsg;
 pub struct OmnetppNed;
 pub struct Ooc;
 pub struct Q;
@@ -12553,6 +12555,28 @@ impl Quake {
         }
     }
 }
+impl QuickBASIC {
+    pub fn info() -> Language {
+        Language {
+            name: "QuickBASIC",
+            r#type: "programming",
+            color: "#008080",
+            extensions: &[".bas"],
+            tm_scope: "source.QB64",
+            ace_mode: "text",
+            language_id: 593107205u64,
+            aliases: &["qb", "qbasic", "qb64", "classic qbasic", "classic quickbasic"],
+            codemirror_mode: Some("vb"),
+            codemirror_mime_type: Some("text/x-vb"),
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
 impl R {
     pub fn info() -> Language {
         Language {
@@ -14785,6 +14809,7 @@ impl Starlark {
                 "Tiltfile",
                 "WORKSPACE",
                 "WORKSPACE.bazel",
+                "WORKSPACE.bzlmod",
             ],
             group: None,
             interpreters: &[],
@@ -17850,6 +17875,28 @@ impl NesC {
         }
     }
 }
+impl OmnetppMsg {
+    pub fn info() -> Language {
+        Language {
+            name: "omnetpp-msg",
+            r#type: "programming",
+            color: "#a0e0a0",
+            extensions: &[".msg"],
+            tm_scope: "source.msg",
+            ace_mode: "text",
+            language_id: 664100008u64,
+            aliases: &[],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
 impl OmnetppNed {
     pub fn info() -> Language {
         Language {
@@ -18209,10 +18256,10 @@ impl Languages {
             Pug::info(), Puppet::info(), PureData::info(), PureBasic::info(),
             PureScript::info(), Pyret::info(), Python::info(), PythonConsole::info(),
             PythonTraceback::info(), Qsharp::info(), QML::info(), QMake::info(),
-            QtScript::info(), Quake::info(), R::info(), RAML::info(), RBS::info(),
-            RDoc::info(), REALbasic::info(), REXX::info(), RMarkdown::info(),
-            RON::info(), RPC::info(), RPGLE::info(), RPMSpec::info(), RUNOFF::info(),
-            Racket::info(), Ragel::info(), Raku::info(), Rascal::info(),
+            QtScript::info(), Quake::info(), QuickBASIC::info(), R::info(), RAML::info(),
+            RBS::info(), RDoc::info(), REALbasic::info(), REXX::info(),
+            RMarkdown::info(), RON::info(), RPC::info(), RPGLE::info(), RPMSpec::info(),
+            RUNOFF::info(), Racket::info(), Ragel::info(), Raku::info(), Rascal::info(),
             RawTokenData::info(), ReScript::info(), ReadlineConfig::info(),
             Reason::info(), ReasonLIGO::info(), Rebol::info(), RecordJar::info(),
             Red::info(), Redcode::info(), RedirectRules::info(),
@@ -18265,7 +18312,7 @@ impl Languages {
             Crontab::info(), Desktop::info(), Dircolors::info(), EC::info(), Edn::info(),
             Fish::info(), Hoon::info(), ICalendar::info(), Jq::info(), Kvlang::info(),
             MIRCScript::info(), Mcfunction::info(), Mupad::info(), Nanorc::info(),
-            NesC::info(), OmnetppNed::info(), Ooc::info(), Q::info(),
+            NesC::info(), OmnetppMsg::info(), OmnetppNed::info(), Ooc::info(), Q::info(),
             ReStructuredText::info(), Robotstxt::info(), Sed::info(), Templ::info(),
             VCard::info(), Wisp::info(), XBase::info()
         ];
