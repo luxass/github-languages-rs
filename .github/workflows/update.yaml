@@ -20,15 +20,17 @@ jobs:
     if: github.repository_owner == 'luxass'
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
 
-      - name: Download GitHub Languages
+      - name: download github languages
         run: |
           curl -sSL https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml -o languages.yml
 
       - name: build
         run: cargo build
 
-      - name: Create Pull Request
+      - name: create pull request
         uses: peter-evans/create-pull-request@67ccf781d68cd99b580ae25a5c18a1cc84ffff1f # v7.0.6
         if: ${{ github.event.inputs.dry-run != 'true' }}
         with:
