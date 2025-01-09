@@ -45,6 +45,7 @@ pub struct Alloy;
 pub struct AlpineAbuild;
 pub struct AltiumDesigner;
 pub struct AngelScript;
+pub struct AnswerSetProgramming;
 pub struct AntBuildSystem;
 pub struct Antlers;
 pub struct ApacheConf;
@@ -332,6 +333,7 @@ pub struct Julia;
 pub struct JuliaREPL;
 pub struct JupyterNotebook;
 pub struct Just;
+pub struct KDL;
 pub struct KRL;
 pub struct KaitaiStruct;
 pub struct KakouneScript;
@@ -359,6 +361,7 @@ pub struct Lex;
 pub struct LigoLANG;
 pub struct LilyPond;
 pub struct Limbo;
+pub struct LinearProgramming;
 pub struct LinkerScript;
 pub struct LinuxKernelModule;
 pub struct Liquid;
@@ -401,6 +404,8 @@ pub struct MicrosoftDeveloperStudioProject;
 pub struct MicrosoftVisualStudioSolution;
 pub struct MiniD;
 pub struct MiniYAML;
+pub struct MiniZinc;
+pub struct MiniZincData;
 pub struct Mint;
 pub struct Mirah;
 pub struct Modelica;
@@ -450,6 +455,8 @@ pub struct OASv2Yaml;
 pub struct OASv3Json;
 pub struct OASv3Yaml;
 pub struct OCaml;
+pub struct OMNeTppMSG;
+pub struct OMNeTppNED;
 pub struct Oberon;
 pub struct ObjDump;
 pub struct ObjectDataInstanceNotation;
@@ -634,6 +641,7 @@ pub struct Stylus;
 pub struct SubRipText;
 pub struct SugarSS;
 pub struct SuperCollider;
+pub struct SurvexData;
 pub struct Svelte;
 pub struct Sway;
 pub struct Sweave;
@@ -753,11 +761,10 @@ pub struct Jq;
 pub struct Kvlang;
 pub struct MIRCScript;
 pub struct Mcfunction;
+pub struct Mdsvex;
 pub struct Mupad;
 pub struct Nanorc;
 pub struct NesC;
-pub struct OmnetppMsg;
-pub struct OmnetppNed;
 pub struct Ooc;
 pub struct Q;
 pub struct ReStructuredText;
@@ -1344,6 +1351,28 @@ impl AngelScript {
         }
     }
 }
+impl AnswerSetProgramming {
+    pub fn info() -> Language {
+        Language {
+            name: "Answer Set Programming",
+            r#type: "programming",
+            color: "#A9CC29",
+            extensions: &[".lp"],
+            tm_scope: "source.answersetprogramming",
+            ace_mode: "prolog",
+            language_id: 433009171u64,
+            aliases: &[],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &["clingo"],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
 impl AntBuildSystem {
     pub fn info() -> Language {
         Language {
@@ -1416,7 +1445,7 @@ impl Apex {
             name: "Apex",
             r#type: "programming",
             color: "#1797c0",
-            extensions: &[".cls", ".trigger"],
+            extensions: &[".cls", ".apex", ".trigger"],
             tm_scope: "source.apex",
             ace_mode: "java",
             language_id: 17u64,
@@ -7958,6 +7987,28 @@ impl Just {
         }
     }
 }
+impl KDL {
+    pub fn info() -> Language {
+        Language {
+            name: "KDL",
+            r#type: "data",
+            color: "#ffb3b3",
+            extensions: &[".kdl"],
+            tm_scope: "source.kdl",
+            ace_mode: "tcl",
+            language_id: 931123626u64,
+            aliases: &[],
+            codemirror_mode: Some("yacas"),
+            codemirror_mime_type: Some("text/x-yacas"),
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
 impl KRL {
     pub fn info() -> Language {
         Language {
@@ -8540,6 +8591,28 @@ impl Limbo {
             tm_scope: "none",
             ace_mode: "text",
             language_id: 201u64,
+            aliases: &[],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
+impl LinearProgramming {
+    pub fn info() -> Language {
+        Language {
+            name: "Linear Programming",
+            r#type: "programming",
+            color: "",
+            extensions: &[".lp"],
+            tm_scope: "none",
+            ace_mode: "text",
+            language_id: 377204539u64,
             aliases: &[],
             codemirror_mode: None,
             codemirror_mime_type: None,
@@ -9512,6 +9585,50 @@ impl MiniYAML {
             aliases: &[],
             codemirror_mode: Some("yaml"),
             codemirror_mime_type: Some("text/x-yaml"),
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
+impl MiniZinc {
+    pub fn info() -> Language {
+        Language {
+            name: "MiniZinc",
+            r#type: "programming",
+            color: "#06a9e6",
+            extensions: &[".mzn"],
+            tm_scope: "source.mzn",
+            ace_mode: "text",
+            language_id: 238874535u64,
+            aliases: &[],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
+impl MiniZincData {
+    pub fn info() -> Language {
+        Language {
+            name: "MiniZinc Data",
+            r#type: "data",
+            color: "",
+            extensions: &[".dzn"],
+            tm_scope: "source.mzn",
+            ace_mode: "text",
+            language_id: 938193433u64,
+            aliases: &[],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
             wrap: None,
             filenames: &[],
             group: None,
@@ -10594,6 +10711,50 @@ impl OCaml {
             filenames: &[],
             group: None,
             interpreters: &["ocaml", "ocamlrun", "ocamlscript"],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
+impl OMNeTppMSG {
+    pub fn info() -> Language {
+        Language {
+            name: "OMNeT++ MSG",
+            r#type: "programming",
+            color: "#a0e0a0",
+            extensions: &[".msg"],
+            tm_scope: "source.msg",
+            ace_mode: "text",
+            language_id: 664100008u64,
+            aliases: &["omnetpp-msg"],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
+impl OMNeTppNED {
+    pub fn info() -> Language {
+        Language {
+            name: "OMNeT++ NED",
+            r#type: "programming",
+            color: "#08607c",
+            extensions: &[".ned"],
+            tm_scope: "source.ned",
+            ace_mode: "text",
+            language_id: 924868392u64,
+            aliases: &["omnetpp-ned"],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
             fs_name: None,
             searchable: None,
         }
@@ -14950,6 +15111,28 @@ impl SuperCollider {
         }
     }
 }
+impl SurvexData {
+    pub fn info() -> Language {
+        Language {
+            name: "Survex data",
+            r#type: "data",
+            color: "#ffcc99",
+            extensions: &[".svx"],
+            tm_scope: "none",
+            ace_mode: "text",
+            language_id: 24470517u64,
+            aliases: &[],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
 impl Svelte {
     pub fn info() -> Language {
         Language {
@@ -16892,6 +17075,7 @@ impl XML {
                 ".glade",
                 ".gml",
                 ".gmx",
+                ".gpx",
                 ".grxml",
                 ".gst",
                 ".hzp",
@@ -17809,6 +17993,28 @@ impl Mcfunction {
         }
     }
 }
+impl Mdsvex {
+    pub fn info() -> Language {
+        Language {
+            name: "mdsvex",
+            r#type: "markup",
+            color: "#5f9ea0",
+            extensions: &[".svx"],
+            tm_scope: "none",
+            ace_mode: "markdown",
+            language_id: 566198445u64,
+            aliases: &[],
+            codemirror_mode: Some("gfm"),
+            codemirror_mime_type: Some("text/x-gfm"),
+            wrap: Some(true),
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
 impl Mupad {
     pub fn info() -> Language {
         Language {
@@ -17863,50 +18069,6 @@ impl NesC {
             tm_scope: "source.nesc",
             ace_mode: "text",
             language_id: 417u64,
-            aliases: &[],
-            codemirror_mode: None,
-            codemirror_mime_type: None,
-            wrap: None,
-            filenames: &[],
-            group: None,
-            interpreters: &[],
-            fs_name: None,
-            searchable: None,
-        }
-    }
-}
-impl OmnetppMsg {
-    pub fn info() -> Language {
-        Language {
-            name: "omnetpp-msg",
-            r#type: "programming",
-            color: "#a0e0a0",
-            extensions: &[".msg"],
-            tm_scope: "source.msg",
-            ace_mode: "text",
-            language_id: 664100008u64,
-            aliases: &[],
-            codemirror_mode: None,
-            codemirror_mime_type: None,
-            wrap: None,
-            filenames: &[],
-            group: None,
-            interpreters: &[],
-            fs_name: None,
-            searchable: None,
-        }
-    }
-}
-impl OmnetppNed {
-    pub fn info() -> Language {
-        Language {
-            name: "omnetpp-ned",
-            r#type: "programming",
-            color: "#08607c",
-            extensions: &[".ned"],
-            tm_scope: "source.ned",
-            ace_mode: "text",
-            language_id: 924868392u64,
             aliases: &[],
             codemirror_mode: None,
             codemirror_mime_type: None,
@@ -18131,20 +18293,20 @@ impl Languages {
             ASN1::info(), ASPNET::info(), ATS::info(), ActionScript::info(), Ada::info(),
             AdblockFilterList::info(), AdobeFontMetrics::info(), Agda::info(),
             Alloy::info(), AlpineAbuild::info(), AltiumDesigner::info(),
-            AngelScript::info(), AntBuildSystem::info(), Antlers::info(),
-            ApacheConf::info(), Apex::info(), ApolloGuidanceComputer::info(),
-            AppleScript::info(), Arc::info(), AsciiDoc::info(), AspectJ::info(),
-            Assembly::info(), Astro::info(), Asymptote::info(), Augeas::info(),
-            AutoHotkey::info(), AutoIt::info(), AvroIDL::info(), Awk::info(),
-            B4X::info(), BASIC::info(), BQN::info(), Ballerina::info(),
-            Batchfile::info(), Beef::info(), Befunge::info(), Berry::info(),
-            BibTeX::info(), Bicep::info(), Bikeshed::info(), Bison::info(),
-            BitBake::info(), Blade::info(), BlitzBasic::info(), BlitzMax::info(),
-            Bluespec::info(), BluespecBH::info(), Boo::info(), Boogie::info(),
-            Brainfuck::info(), BrighterScript::info(), Brightscript::info(),
-            Browserslist::info(), C::info(), Csharp::info(), Cpp::info(),
-            CObjDump::info(), C2hsHaskell::info(), CAPCDS::info(), CIL::info(),
-            CLIPS::info(), CMake::info(), COBOL::info(), CODEOWNERS::info(),
+            AngelScript::info(), AnswerSetProgramming::info(), AntBuildSystem::info(),
+            Antlers::info(), ApacheConf::info(), Apex::info(),
+            ApolloGuidanceComputer::info(), AppleScript::info(), Arc::info(),
+            AsciiDoc::info(), AspectJ::info(), Assembly::info(), Astro::info(),
+            Asymptote::info(), Augeas::info(), AutoHotkey::info(), AutoIt::info(),
+            AvroIDL::info(), Awk::info(), B4X::info(), BASIC::info(), BQN::info(),
+            Ballerina::info(), Batchfile::info(), Beef::info(), Befunge::info(),
+            Berry::info(), BibTeX::info(), Bicep::info(), Bikeshed::info(),
+            Bison::info(), BitBake::info(), Blade::info(), BlitzBasic::info(),
+            BlitzMax::info(), Bluespec::info(), BluespecBH::info(), Boo::info(),
+            Boogie::info(), Brainfuck::info(), BrighterScript::info(),
+            Brightscript::info(), Browserslist::info(), C::info(), Csharp::info(),
+            Cpp::info(), CObjDump::info(), C2hsHaskell::info(), CAPCDS::info(),
+            CIL::info(), CLIPS::info(), CMake::info(), COBOL::info(), CODEOWNERS::info(),
             COLLADA::info(), CSON::info(), CSS::info(), CSV::info(), CUE::info(),
             CWeb::info(), CabalConfig::info(), Caddyfile::info(), Cadence::info(),
             Cairo::info(), CairoZero::info(), CameLIGO::info(), CapnProto::info(),
@@ -18204,15 +18366,16 @@ impl Languages {
             JavaScript::info(), JavaScriptpERB::info(), JestSnapshot::info(),
             JetBrainsMPS::info(), Jinja::info(), Jison::info(), JisonLex::info(),
             Jolie::info(), Jsonnet::info(), Julia::info(), JuliaREPL::info(),
-            JupyterNotebook::info(), Just::info(), KRL::info(), KaitaiStruct::info(),
-            KakouneScript::info(), KerboScript::info(), KiCadLayout::info(),
-            KiCadLegacyLayout::info(), KiCadSchematic::info(), Kickstart::info(),
-            Kit::info(), Kotlin::info(), Kusto::info(), LFE::info(), LLVM::info(),
-            LOLCODE::info(), LSL::info(), LTspiceSymbol::info(), LabVIEW::info(),
-            Lark::info(), Lasso::info(), Latte::info(), Lean::info(), Lean4::info(),
-            Less::info(), Lex::info(), LigoLANG::info(), LilyPond::info(), Limbo::info(),
-            LinkerScript::info(), LinuxKernelModule::info(), Liquid::info(),
-            LiterateAgda::info(), LiterateCoffeeScript::info(), LiterateHaskell::info(),
+            JupyterNotebook::info(), Just::info(), KDL::info(), KRL::info(),
+            KaitaiStruct::info(), KakouneScript::info(), KerboScript::info(),
+            KiCadLayout::info(), KiCadLegacyLayout::info(), KiCadSchematic::info(),
+            Kickstart::info(), Kit::info(), Kotlin::info(), Kusto::info(), LFE::info(),
+            LLVM::info(), LOLCODE::info(), LSL::info(), LTspiceSymbol::info(),
+            LabVIEW::info(), Lark::info(), Lasso::info(), Latte::info(), Lean::info(),
+            Lean4::info(), Less::info(), Lex::info(), LigoLANG::info(), LilyPond::info(),
+            Limbo::info(), LinearProgramming::info(), LinkerScript::info(),
+            LinuxKernelModule::info(), Liquid::info(), LiterateAgda::info(),
+            LiterateCoffeeScript::info(), LiterateHaskell::info(),
             LiveCodeScript::info(), LiveScript::info(), Logos::info(), Logtalk::info(),
             LookML::info(), LoomScript::info(), Lua::info(), Luau::info(), M::info(),
             M4::info(), M4Sugar::info(), MATLAB::info(), MAXScript::info(), MDX::info(),
@@ -18222,18 +18385,19 @@ impl Languages {
             Max::info(), Mercury::info(), Mermaid::info(), Meson::info(), Metal::info(),
             MicrosoftDeveloperStudioProject::info(),
             MicrosoftVisualStudioSolution::info(), MiniD::info(), MiniYAML::info(),
-            Mint::info(), Mirah::info(), Modelica::info(), Modula2::info(),
-            Modula3::info(), ModuleManagementSystem::info(), Mojo::info(),
-            Monkey::info(), MonkeyC::info(), Moocode::info(), MoonBit::info(),
-            MoonScript::info(), Motoko::info(), Motorola68KAssembly::info(),
-            Move::info(), Muse::info(), Mustache::info(), Myghty::info(), NASL::info(),
-            NCL::info(), NEON::info(), NL::info(), NMODL::info(), NPMConfig::info(),
-            NSIS::info(), NWScript::info(), Nasal::info(), Nearley::info(),
-            Nemerle::info(), NetLinx::info(), NetLinxpERB::info(), NetLogo::info(),
-            NewLisp::info(), Nextflow::info(), Nginx::info(), Nim::info(), Ninja::info(),
-            Nit::info(), Nix::info(), Noir::info(), Nu::info(), NumPy::info(),
-            Nunjucks::info(), Nushell::info(), OASv2Json::info(), OASv2Yaml::info(),
-            OASv3Json::info(), OASv3Yaml::info(), OCaml::info(), Oberon::info(),
+            MiniZinc::info(), MiniZincData::info(), Mint::info(), Mirah::info(),
+            Modelica::info(), Modula2::info(), Modula3::info(),
+            ModuleManagementSystem::info(), Mojo::info(), Monkey::info(),
+            MonkeyC::info(), Moocode::info(), MoonBit::info(), MoonScript::info(),
+            Motoko::info(), Motorola68KAssembly::info(), Move::info(), Muse::info(),
+            Mustache::info(), Myghty::info(), NASL::info(), NCL::info(), NEON::info(),
+            NL::info(), NMODL::info(), NPMConfig::info(), NSIS::info(), NWScript::info(),
+            Nasal::info(), Nearley::info(), Nemerle::info(), NetLinx::info(),
+            NetLinxpERB::info(), NetLogo::info(), NewLisp::info(), Nextflow::info(),
+            Nginx::info(), Nim::info(), Ninja::info(), Nit::info(), Nix::info(),
+            Noir::info(), Nu::info(), NumPy::info(), Nunjucks::info(), Nushell::info(),
+            OASv2Json::info(), OASv2Yaml::info(), OASv3Json::info(), OASv3Yaml::info(),
+            OCaml::info(), OMNeTppMSG::info(), OMNeTppNED::info(), Oberon::info(),
             ObjDump::info(), ObjectDataInstanceNotation::info(), ObjectScript::info(),
             ObjectiveC::info(), ObjectiveCpp::info(), ObjectiveJ::info(), Odin::info(),
             Omgrofl::info(), Opa::info(), Opal::info(), OpenPolicyAgent::info(),
@@ -18281,17 +18445,17 @@ impl Languages {
             SplineFontDatabase::info(), Squirrel::info(), Stan::info(),
             StandardML::info(), Starlark::info(), Stata::info(), StringTemplate::info(),
             Stylus::info(), SubRipText::info(), SugarSS::info(), SuperCollider::info(),
-            Svelte::info(), Sway::info(), Sweave::info(), Swift::info(),
-            SystemVerilog::info(), TIProgram::info(), TLVerilog::info(), TLA::info(),
-            TOML::info(), TSPLIBData::info(), TSQL::info(), TSV::info(), TSX::info(),
-            TXL::info(), Tact::info(), Talon::info(), Tcl::info(), Tcsh::info(),
-            TeX::info(), Tea::info(), Terra::info(), TerraformTemplate::info(),
-            Texinfo::info(), Text::info(), TextGrid::info(), TextMateProperties::info(),
-            Textile::info(), Thrift::info(), Toit::info(), Turing::info(),
-            Turtle::info(), Twig::info(), TypeLanguage::info(), TypeScript::info(),
-            TypeSpec::info(), Typst::info(), UnifiedParallelC::info(),
-            Unity3DAsset::info(), UnixAssembly::info(), Uno::info(),
-            UnrealScript::info(), UrWeb::info(), V::info(), VBA::info(),
+            SurvexData::info(), Svelte::info(), Sway::info(), Sweave::info(),
+            Swift::info(), SystemVerilog::info(), TIProgram::info(), TLVerilog::info(),
+            TLA::info(), TOML::info(), TSPLIBData::info(), TSQL::info(), TSV::info(),
+            TSX::info(), TXL::info(), Tact::info(), Talon::info(), Tcl::info(),
+            Tcsh::info(), TeX::info(), Tea::info(), Terra::info(),
+            TerraformTemplate::info(), Texinfo::info(), Text::info(), TextGrid::info(),
+            TextMateProperties::info(), Textile::info(), Thrift::info(), Toit::info(),
+            Turing::info(), Turtle::info(), Twig::info(), TypeLanguage::info(),
+            TypeScript::info(), TypeSpec::info(), Typst::info(),
+            UnifiedParallelC::info(), Unity3DAsset::info(), UnixAssembly::info(),
+            Uno::info(), UnrealScript::info(), UrWeb::info(), V::info(), VBA::info(),
             VBScript::info(), VCL::info(), VHDL::info(), Vala::info(),
             ValveDataFormat::info(), VelocityTemplateLanguage::info(), Verilog::info(),
             VimHelpFile::info(), VimScript::info(), VimSnippet::info(),
@@ -18311,8 +18475,8 @@ impl Languages {
             Zephir::info(), Zig::info(), Zimpl::info(), CURLConfig::info(),
             Crontab::info(), Desktop::info(), Dircolors::info(), EC::info(), Edn::info(),
             Fish::info(), Hoon::info(), ICalendar::info(), Jq::info(), Kvlang::info(),
-            MIRCScript::info(), Mcfunction::info(), Mupad::info(), Nanorc::info(),
-            NesC::info(), OmnetppMsg::info(), OmnetppNed::info(), Ooc::info(), Q::info(),
+            MIRCScript::info(), Mcfunction::info(), Mdsvex::info(), Mupad::info(),
+            Nanorc::info(), NesC::info(), Ooc::info(), Q::info(),
             ReStructuredText::info(), Robotstxt::info(), Sed::info(), Templ::info(),
             VCard::info(), Wisp::info(), XBase::info()
         ];
