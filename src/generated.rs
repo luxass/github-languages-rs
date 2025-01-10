@@ -480,6 +480,7 @@ pub struct OpenStepPropertyList;
 pub struct OpenTypeFeatureFile;
 pub struct OptionList;
 pub struct Org;
+pub struct OverpassQL;
 pub struct Ox;
 pub struct Oxygene;
 pub struct Oz;
@@ -11266,6 +11267,28 @@ impl Org {
         }
     }
 }
+impl OverpassQL {
+    pub fn info() -> Language {
+        Language {
+            name: "OverpassQL",
+            r#type: "programming",
+            color: "#cce2aa",
+            extensions: &[".overpassql"],
+            tm_scope: "source.overpassql",
+            ace_mode: "text",
+            language_id: 689079655u64,
+            aliases: &[],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: Some(true),
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
 impl Ox {
     pub fn info() -> Language {
         Language {
@@ -18404,21 +18427,22 @@ impl Languages {
             OpenAPISpecificationV2::info(), OpenAPISpecificationV3::info(),
             OpenCL::info(), OpenEdgeABL::info(), OpenQASM::info(),
             OpenRCRunscript::info(), OpenSCAD::info(), OpenStepPropertyList::info(),
-            OpenTypeFeatureFile::info(), OptionList::info(), Org::info(), Ox::info(),
-            Oxygene::info(), Oz::info(), P4::info(), PDDL::info(), PEGjs::info(),
-            PHP::info(), PLSQL::info(), PLpgSQL::info(), POVRaySDL::info(), Pact::info(),
-            Pan::info(), Papyrus::info(), Parrot::info(), ParrotAssembly::info(),
-            ParrotInternalRepresentation::info(), Pascal::info(), Pawn::info(),
-            Pep8::info(), Perl::info(), Pic::info(), Pickle::info(), PicoLisp::info(),
-            PigLatin::info(), Pike::info(), PipRequirements::info(), Pkl::info(),
-            PlantUML::info(), Pod::info(), Pod6::info(), PogoScript::info(),
-            Polar::info(), Pony::info(), Portugol::info(), PostCSS::info(),
-            PostScript::info(), PowerBuilder::info(), PowerShell::info(), Praat::info(),
-            Prisma::info(), Processing::info(), Procfile::info(), Proguard::info(),
-            Prolog::info(), Promela::info(), PropellerSpin::info(),
-            ProtocolBuffer::info(), ProtocolBufferTextFormat::info(), PublicKey::info(),
-            Pug::info(), Puppet::info(), PureData::info(), PureBasic::info(),
-            PureScript::info(), Pyret::info(), Python::info(), PythonConsole::info(),
+            OpenTypeFeatureFile::info(), OptionList::info(), Org::info(),
+            OverpassQL::info(), Ox::info(), Oxygene::info(), Oz::info(), P4::info(),
+            PDDL::info(), PEGjs::info(), PHP::info(), PLSQL::info(), PLpgSQL::info(),
+            POVRaySDL::info(), Pact::info(), Pan::info(), Papyrus::info(),
+            Parrot::info(), ParrotAssembly::info(), ParrotInternalRepresentation::info(),
+            Pascal::info(), Pawn::info(), Pep8::info(), Perl::info(), Pic::info(),
+            Pickle::info(), PicoLisp::info(), PigLatin::info(), Pike::info(),
+            PipRequirements::info(), Pkl::info(), PlantUML::info(), Pod::info(),
+            Pod6::info(), PogoScript::info(), Polar::info(), Pony::info(),
+            Portugol::info(), PostCSS::info(), PostScript::info(), PowerBuilder::info(),
+            PowerShell::info(), Praat::info(), Prisma::info(), Processing::info(),
+            Procfile::info(), Proguard::info(), Prolog::info(), Promela::info(),
+            PropellerSpin::info(), ProtocolBuffer::info(),
+            ProtocolBufferTextFormat::info(), PublicKey::info(), Pug::info(),
+            Puppet::info(), PureData::info(), PureBasic::info(), PureScript::info(),
+            Pyret::info(), Python::info(), PythonConsole::info(),
             PythonTraceback::info(), Qsharp::info(), QML::info(), QMake::info(),
             QtScript::info(), Quake::info(), QuickBASIC::info(), R::info(), RAML::info(),
             RBS::info(), RDoc::info(), REALbasic::info(), REXX::info(),
