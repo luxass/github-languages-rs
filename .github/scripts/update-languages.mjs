@@ -11,7 +11,7 @@ export async function generateOldLanguages({ github, context }) {
   }
 }
 
-export async function generateDiff({ github, context }) {
+export async function generateDiff({ github, context, core }) {
   const oldLanguages = JSON.parse(fs.readFileSync("languages-old.json", "utf8"));
   const newLanguages = JSON.parse(fs.readFileSync("languages.json", "utf8"));
 

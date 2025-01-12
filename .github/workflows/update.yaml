@@ -63,7 +63,7 @@ jobs:
         with:
           script: |
             const { generateDiff } = await import('${{ github.workspace }}/.github/scripts/update-languages.mjs')
-            await generateDiff({ github, context })
+            await generateDiff({ github, context, core })
 
       - name: create pull request
         uses: peter-evans/create-pull-request@67ccf781d68cd99b580ae25a5c18a1cc84ffff1f # v7.0.6
