@@ -31,11 +31,9 @@ jobs:
           cmd: yq -p yaml -o json languages.yml
 
       - name: write old languages to file
-        run: echo "${{ steps.old-languages-json.outputs.result }}" > old-languages.json
-
-      - name: run ls
-        run: |
-          ls -la
+        env:
+          OLD_LANGUAGES: ${{ steps.old-languages-json.outputs.result }}
+        run: echo "$OLD_LANGUAGES" > languages-old.json
 
       - name: old github languages
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
@@ -56,7 +54,9 @@ jobs:
           cmd: yq -p yaml -o json languages.yml
 
       - name: write languages to file
-        run: echo "${{ steps.languages-json.outputs.result }}" > languages.json
+        env:
+          LANGUAGES: ${{ steps.languages-json.outputs.result }}
+        run: echo "$LANGUAGES" > languages.json
 
       - name: build
         run: cargo build

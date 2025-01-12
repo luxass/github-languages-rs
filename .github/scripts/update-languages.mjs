@@ -7,7 +7,7 @@ export async function generateOldLanguages({ github, context }) {
 
     fs.writeFileSync("languages-old.json", JSON.stringify(languages, null, 2));
   } catch (err) {
-    console.log("languages.json not found");
+    console.log("languages-old.json not found");
   }
 }
 
