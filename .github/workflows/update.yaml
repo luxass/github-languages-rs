@@ -26,7 +26,7 @@ jobs:
 
       - name: turn yaml to json (old)
         id: old-languages-json
-        uses: mikefarah/yq@v4.45.1
+        uses: mikefarah/yq@8bf425b4d1344db7cd469a8d10a390876e0c77fd # v4.45.1
         with:
           cmd: yq -p yaml -o json languages.yml > languages-old.json
 
@@ -44,7 +44,7 @@ jobs:
 
       - name: turn yaml to json
         id: languages-json
-        uses: mikefarah/yq@v4.45.1
+        uses: mikefarah/yq@8bf425b4d1344db7cd469a8d10a390876e0c77fd # v4.45.1
         with:
           cmd: yq -p yaml -o json languages.yml > languages.json
 
