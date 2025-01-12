@@ -19,12 +19,6 @@ pub struct Language {
     pub fs_name: Option<&'static str>,
     pub searchable: Option<bool>,
 }
-pub struct _1CEnterprise;
-pub struct _2DimensionalArray;
-pub struct _4D;
-pub struct ABAP;
-pub struct ABAPCDS;
-pub struct ABNF;
 pub struct AGSScript;
 pub struct AIDL;
 pub struct AL;
@@ -775,138 +769,6 @@ pub struct Templ;
 pub struct VCard;
 pub struct Wisp;
 pub struct XBase;
-impl _1CEnterprise {
-    pub fn info() -> Language {
-        Language {
-            name: "1C Enterprise",
-            r#type: "programming",
-            color: "#814CCC",
-            extensions: &[".bsl", ".os"],
-            tm_scope: "source.bsl",
-            ace_mode: "text",
-            language_id: 0u64,
-            aliases: &[],
-            codemirror_mode: None,
-            codemirror_mime_type: None,
-            wrap: None,
-            filenames: &[],
-            group: None,
-            interpreters: &[],
-            fs_name: None,
-            searchable: None,
-        }
-    }
-}
-impl _2DimensionalArray {
-    pub fn info() -> Language {
-        Language {
-            name: "2-Dimensional Array",
-            r#type: "data",
-            color: "#38761D",
-            extensions: &[".2da"],
-            tm_scope: "source.2da",
-            ace_mode: "text",
-            language_id: 387204628u64,
-            aliases: &[],
-            codemirror_mode: None,
-            codemirror_mime_type: None,
-            wrap: None,
-            filenames: &[],
-            group: None,
-            interpreters: &[],
-            fs_name: None,
-            searchable: None,
-        }
-    }
-}
-impl _4D {
-    pub fn info() -> Language {
-        Language {
-            name: "4D",
-            r#type: "programming",
-            color: "#004289",
-            extensions: &[".4dm"],
-            tm_scope: "source.4dm",
-            ace_mode: "text",
-            language_id: 577529595u64,
-            aliases: &[],
-            codemirror_mode: None,
-            codemirror_mime_type: None,
-            wrap: None,
-            filenames: &[],
-            group: None,
-            interpreters: &[],
-            fs_name: None,
-            searchable: None,
-        }
-    }
-}
-impl ABAP {
-    pub fn info() -> Language {
-        Language {
-            name: "ABAP",
-            r#type: "programming",
-            color: "#E8274B",
-            extensions: &[".abap"],
-            tm_scope: "source.abap",
-            ace_mode: "abap",
-            language_id: 1u64,
-            aliases: &[],
-            codemirror_mode: None,
-            codemirror_mime_type: None,
-            wrap: None,
-            filenames: &[],
-            group: None,
-            interpreters: &[],
-            fs_name: None,
-            searchable: None,
-        }
-    }
-}
-impl ABAPCDS {
-    pub fn info() -> Language {
-        Language {
-            name: "ABAP CDS",
-            r#type: "programming",
-            color: "#555e25",
-            extensions: &[".asddls"],
-            tm_scope: "source.abapcds",
-            ace_mode: "text",
-            language_id: 452681853u64,
-            aliases: &[],
-            codemirror_mode: None,
-            codemirror_mime_type: None,
-            wrap: None,
-            filenames: &[],
-            group: None,
-            interpreters: &[],
-            fs_name: None,
-            searchable: None,
-        }
-    }
-}
-impl ABNF {
-    pub fn info() -> Language {
-        Language {
-            name: "ABNF",
-            r#type: "data",
-            color: "",
-            extensions: &[".abnf"],
-            tm_scope: "source.abnf",
-            ace_mode: "text",
-            language_id: 429u64,
-            aliases: &[],
-            codemirror_mode: None,
-            codemirror_mime_type: None,
-            wrap: None,
-            filenames: &[],
-            group: None,
-            interpreters: &[],
-            fs_name: None,
-            searchable: None,
-        }
-    }
-}
 impl AGSScript {
     pub fn info() -> Language {
         Language {
@@ -18310,14 +18172,12 @@ pub struct Languages {
 impl Languages {
     pub fn new() -> Self {
         let languages = vec![
-            _1CEnterprise::info(), _2DimensionalArray::info(), _4D::info(), ABAP::info(),
-            ABAPCDS::info(), ABNF::info(), AGSScript::info(), AIDL::info(), AL::info(),
-            AMPL::info(), ANTLR::info(), APIBlueprint::info(), APL::info(), ASL::info(),
-            ASN1::info(), ASPNET::info(), ATS::info(), ActionScript::info(), Ada::info(),
-            AdblockFilterList::info(), AdobeFontMetrics::info(), Agda::info(),
-            Alloy::info(), AlpineAbuild::info(), AltiumDesigner::info(),
-            AngelScript::info(), AnswerSetProgramming::info(), AntBuildSystem::info(),
-            Antlers::info(), ApacheConf::info(), Apex::info(),
+            AGSScript::info(), AIDL::info(), AL::info(), AMPL::info(), ANTLR::info(),
+            APIBlueprint::info(), APL::info(), ASL::info(), ASN1::info(), ASPNET::info(),
+            ATS::info(), ActionScript::info(), Ada::info(), AdblockFilterList::info(),
+            AdobeFontMetrics::info(), Agda::info(), Alloy::info(), AlpineAbuild::info(),
+            AltiumDesigner::info(), AngelScript::info(), AnswerSetProgramming::info(),
+            AntBuildSystem::info(), Antlers::info(), ApacheConf::info(), Apex::info(),
             ApolloGuidanceComputer::info(), AppleScript::info(), Arc::info(),
             AsciiDoc::info(), AspectJ::info(), Assembly::info(), Astro::info(),
             Asymptote::info(), Augeas::info(), AutoHotkey::info(), AutoIt::info(),
