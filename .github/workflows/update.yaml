@@ -25,10 +25,13 @@ jobs:
           persist-credentials: false
 
       - name: turn yaml to json (old)
-        id: get_username
+        id: old-languages-json
         uses: mikefarah/yq@v4.45.1
         with:
-          cmd: yq -p yaml -o json languages.yml > languages-old.json
+          cmd: yq -p yaml -o json languages.yml
+
+      - name: write old languages to file
+        run: echo "${{ steps.old-languages-json.outputs.result }}" > old-languages.json
 
       - name: old github languages
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
@@ -43,9 +46,13 @@ jobs:
           curl -sSL https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml -o languages.yml
 
       - name: turn yaml to json
+        id: languages-json
         uses: mikefarah/yq@v4.45.1
         with:
-          cmd: yq -p yaml -o json languages.yml > languages.json
+          cmd: yq -p yaml -o json languages.yml
+
+      - name: write languages to file
+        run: echo "${{ steps.languages-json.outputs.result }}" > languages.json
 
       - name: build
         run: cargo build
