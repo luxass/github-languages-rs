@@ -28,12 +28,16 @@ jobs:
         id: old-languages-json
         uses: mikefarah/yq@v4.45.1
         with:
-          cmd: yq -p yaml -o json languages.yml
+          cmd: yq -p yaml -o json languages.yml > languages-old.json
 
-      - name: write old languages to file
-        env:
-          OLD_LANGUAGES: ${{ steps.old-languages-json.outputs.result }}
-        run: echo "$OLD_LANGUAGES" > languages-old.json
+      # - name: write old languages to file
+      #   env:
+      #     OLD_LANGUAGES: ${{ steps.old-languages-json.outputs.result }}
+      #   run: echo "$OLD_LANGUAGES" > languages-old.json
+
+      - name: ls
+        run: |
+          ls -la
 
       - name: old github languages
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
