@@ -1,22 +1,21 @@
 import fs from "node:fs";
 
-export async function generateOldLanguages({ github, context }) {
-
+export async function generateOldLanguages({ core }) {
   try {
     const languages = JSON.parse(fs.readFileSync("languages-old.json", "utf8"));
 
     fs.writeFileSync("languages-old.json", JSON.stringify(languages, null, 2));
   } catch (err) {
-    console.log("languages-old.json not found");
+    core.error("languages-old.json not found", err);
   }
 }
 
-export async function generateDiff({ github, context, core }) {
+export async function generateDiff({ core }) {
   const oldLanguages = JSON.parse(fs.readFileSync("languages-old.json", "utf8"));
   const newLanguages = JSON.parse(fs.readFileSync("languages.json", "utf8"));
 
-  console.log("OLD LANGUAGES LENGTH", Object.keys(oldLanguages).length);
-  console.log("NEW LANGUAGES LENGTH", Object.keys(newLanguages).length);
+  core.info("OLD LANGUAGES LENGTH", Object.keys(oldLanguages).length);
+  core.info("NEW LANGUAGES LENGTH", Object.keys(newLanguages).length);
 
   const removedLanguages = {};
   const addedLanguages = {};
@@ -60,7 +59,6 @@ export async function generateDiff({ github, context, core }) {
 
     removedLanguagesMarkdown += "<br/></details>\n";
   }
-
 
   // we can't just return the markdown, because it will be passed
   // through the String constructor, making the entire content as stringified string.
