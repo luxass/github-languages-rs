@@ -733,6 +733,7 @@ pub struct XProc;
 pub struct XQuery;
 pub struct XS;
 pub struct XSLT;
+pub struct Xmake;
 pub struct Xojo;
 pub struct Xonsh;
 pub struct Xtend;
@@ -1425,7 +1426,7 @@ impl ApacheConf {
             r#type: "data",
             color: "#d12127",
             extensions: &[".apacheconf", ".vhost"],
-            tm_scope: "source.apache-config",
+            tm_scope: "source.apacheconf",
             ace_mode: "apache_conf",
             language_id: 16u64,
             aliases: &["aconf", "apache"],
@@ -17344,6 +17345,28 @@ impl XSLT {
         }
     }
 }
+impl Xmake {
+    pub fn info() -> Language {
+        Language {
+            name: "Xmake",
+            r#type: "programming",
+            color: "#22a079",
+            extensions: &[],
+            tm_scope: "source.xmake",
+            ace_mode: "text",
+            language_id: 225223071u64,
+            aliases: &[],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &["xmake.lua"],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
 impl Xojo {
     pub fn info() -> Language {
         Language {
@@ -18493,16 +18516,16 @@ impl Languages {
             Wren::info(), XBitMap::info(), XFontDirectoryIndex::info(), XPixMap::info(),
             X10::info(), XC::info(), XCompose::info(), XML::info(),
             XMLPropertyList::info(), XPages::info(), XProc::info(), XQuery::info(),
-            XS::info(), XSLT::info(), Xojo::info(), Xonsh::info(), Xtend::info(),
-            YAML::info(), YANG::info(), YARA::info(), YASnippet::info(), Yacc::info(),
-            Yul::info(), ZAP::info(), ZIL::info(), Zeek::info(), ZenScript::info(),
-            Zephir::info(), Zig::info(), Zimpl::info(), CURLConfig::info(),
-            Crontab::info(), Desktop::info(), Dircolors::info(), EC::info(), Edn::info(),
-            Fish::info(), Hoon::info(), ICalendar::info(), Jq::info(), Kvlang::info(),
-            MIRCScript::info(), Mcfunction::info(), Mdsvex::info(), Mupad::info(),
-            Nanorc::info(), NesC::info(), Ooc::info(), Q::info(),
-            ReStructuredText::info(), Robotstxt::info(), Sed::info(), Templ::info(),
-            VCard::info(), Wisp::info(), XBase::info()
+            XS::info(), XSLT::info(), Xmake::info(), Xojo::info(), Xonsh::info(),
+            Xtend::info(), YAML::info(), YANG::info(), YARA::info(), YASnippet::info(),
+            Yacc::info(), Yul::info(), ZAP::info(), ZIL::info(), Zeek::info(),
+            ZenScript::info(), Zephir::info(), Zig::info(), Zimpl::info(),
+            CURLConfig::info(), Crontab::info(), Desktop::info(), Dircolors::info(),
+            EC::info(), Edn::info(), Fish::info(), Hoon::info(), ICalendar::info(),
+            Jq::info(), Kvlang::info(), MIRCScript::info(), Mcfunction::info(),
+            Mdsvex::info(), Mupad::info(), Nanorc::info(), NesC::info(), Ooc::info(),
+            Q::info(), ReStructuredText::info(), Robotstxt::info(), Sed::info(),
+            Templ::info(), VCard::info(), Wisp::info(), XBase::info()
         ];
         let mut by_name = HashMap::new();
         let mut by_extension = HashMap::new();
