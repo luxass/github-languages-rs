@@ -28,7 +28,7 @@ jobs:
         id: old-languages-json
         uses: mikefarah/yq@8bf425b4d1344db7cd469a8d10a390876e0c77fd # v4.45.1
         with:
-          cmd: yq -p yaml -o json languages.yml > languages-old.json
+          cmd: yq -p yaml -o json languages.yml > languages.json
 
       - name: old github languages
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
