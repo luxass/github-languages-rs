@@ -314,6 +314,7 @@ pub struct JSONWithComments;
 pub struct JSON5;
 pub struct JSONLD;
 pub struct JSONiq;
+pub struct Jai;
 pub struct Janet;
 pub struct Jasmin;
 pub struct Java;
@@ -7518,6 +7519,28 @@ impl JSONiq {
             aliases: &[],
             codemirror_mode: Some("javascript"),
             codemirror_mime_type: Some("application/json"),
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
+impl Jai {
+    pub fn info() -> Language {
+        Language {
+            name: "Jai",
+            r#type: "programming",
+            color: "#ab8b4b",
+            extensions: &[".jai"],
+            tm_scope: "source.jai",
+            ace_mode: "text",
+            language_id: 70127133u64,
+            aliases: &[],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
             wrap: None,
             filenames: &[],
             group: None,
@@ -18407,21 +18430,21 @@ impl Languages {
             Ink::info(), InnoSetup::info(), Io::info(), Ioke::info(), Isabelle::info(),
             IsabelleROOT::info(), J::info(), JARManifest::info(), JCL::info(),
             JFlex::info(), JSON::info(), JSONWithComments::info(), JSON5::info(),
-            JSONLD::info(), JSONiq::info(), Janet::info(), Jasmin::info(), Java::info(),
-            JavaProperties::info(), JavaServerPages::info(), JavaTemplateEngine::info(),
-            JavaScript::info(), JavaScriptpERB::info(), JestSnapshot::info(),
-            JetBrainsMPS::info(), Jinja::info(), Jison::info(), JisonLex::info(),
-            Jolie::info(), Jsonnet::info(), Julia::info(), JuliaREPL::info(),
-            JupyterNotebook::info(), Just::info(), KDL::info(), KRL::info(),
-            KaitaiStruct::info(), KakouneScript::info(), KerboScript::info(),
-            KiCadLayout::info(), KiCadLegacyLayout::info(), KiCadSchematic::info(),
-            Kickstart::info(), Kit::info(), Kotlin::info(), Kusto::info(), LFE::info(),
-            LLVM::info(), LOLCODE::info(), LSL::info(), LTspiceSymbol::info(),
-            LabVIEW::info(), Lark::info(), Lasso::info(), Latte::info(), Lean::info(),
-            Lean4::info(), Less::info(), Lex::info(), LigoLANG::info(), LilyPond::info(),
-            Limbo::info(), LinearProgramming::info(), LinkerScript::info(),
-            LinuxKernelModule::info(), Liquid::info(), LiterateAgda::info(),
-            LiterateCoffeeScript::info(), LiterateHaskell::info(),
+            JSONLD::info(), JSONiq::info(), Jai::info(), Janet::info(), Jasmin::info(),
+            Java::info(), JavaProperties::info(), JavaServerPages::info(),
+            JavaTemplateEngine::info(), JavaScript::info(), JavaScriptpERB::info(),
+            JestSnapshot::info(), JetBrainsMPS::info(), Jinja::info(), Jison::info(),
+            JisonLex::info(), Jolie::info(), Jsonnet::info(), Julia::info(),
+            JuliaREPL::info(), JupyterNotebook::info(), Just::info(), KDL::info(),
+            KRL::info(), KaitaiStruct::info(), KakouneScript::info(),
+            KerboScript::info(), KiCadLayout::info(), KiCadLegacyLayout::info(),
+            KiCadSchematic::info(), Kickstart::info(), Kit::info(), Kotlin::info(),
+            Kusto::info(), LFE::info(), LLVM::info(), LOLCODE::info(), LSL::info(),
+            LTspiceSymbol::info(), LabVIEW::info(), Lark::info(), Lasso::info(),
+            Latte::info(), Lean::info(), Lean4::info(), Less::info(), Lex::info(),
+            LigoLANG::info(), LilyPond::info(), Limbo::info(), LinearProgramming::info(),
+            LinkerScript::info(), LinuxKernelModule::info(), Liquid::info(),
+            LiterateAgda::info(), LiterateCoffeeScript::info(), LiterateHaskell::info(),
             LiveCodeScript::info(), LiveScript::info(), Logos::info(), Logtalk::info(),
             LookML::info(), LoomScript::info(), Lua::info(), Luau::info(), M::info(),
             M4::info(), M4Sugar::info(), MATLAB::info(), MAXScript::info(), MDX::info(),
