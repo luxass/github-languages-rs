@@ -6498,7 +6498,7 @@ impl HTMLpEEX {
             name: "HTML+EEX",
             r#type: "markup",
             color: "#6e4a7e",
-            extensions: &[".eex", ".html.heex", ".html.leex"],
+            extensions: &[".html.eex", ".heex", ".leex"],
             tm_scope: "text.html.elixir",
             ace_mode: "text",
             language_id: 149u64,
