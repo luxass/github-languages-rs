@@ -2284,7 +2284,7 @@ impl C {
             name: "C",
             r#type: "programming",
             color: "#555555",
-            extensions: &[".c", ".cats", ".h", ".idc"],
+            extensions: &[".c", ".cats", ".h", ".h.in", ".idc"],
             tm_scope: "source.c",
             ace_mode: "c_cpp",
             language_id: 41u64,
