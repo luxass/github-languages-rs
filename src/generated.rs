@@ -294,6 +294,7 @@ pub struct IDL;
 pub struct IGORPro;
 pub struct INI;
 pub struct IRCLog;
+pub struct ISPC;
 pub struct Idris;
 pub struct IgnoreList;
 pub struct ImageJMacro;
@@ -619,6 +620,7 @@ pub struct Shen;
 pub struct Sieve;
 pub struct SimpleFileVerification;
 pub struct Singularity;
+pub struct Slang;
 pub struct Slash;
 pub struct Slice;
 pub struct Slim;
@@ -1580,7 +1582,7 @@ impl Assembly {
             name: "Assembly",
             r#type: "programming",
             color: "#6E4C13",
-            extensions: &[".asm", ".a51", ".i", ".inc", ".nas", ".nasm"],
+            extensions: &[".asm", ".a51", ".i", ".inc", ".nas", ".nasm", ".s"],
             tm_scope: "source.assembly",
             ace_mode: "assembly_x86",
             language_id: 24u64,
@@ -6996,6 +6998,28 @@ impl IRCLog {
         }
     }
 }
+impl ISPC {
+    pub fn info() -> Language {
+        Language {
+            name: "ISPC",
+            r#type: "programming",
+            color: "#2D68B1",
+            extensions: &[".ispc"],
+            tm_scope: "source.ispc",
+            ace_mode: "c_cpp",
+            language_id: 327071u64,
+            aliases: &[],
+            codemirror_mode: Some("clike"),
+            codemirror_mime_type: Some("text/x-csrc"),
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
 impl Idris {
     pub fn info() -> Language {
         Language {
@@ -7433,7 +7457,7 @@ impl JSONWithComments {
                 ".sublime_metrics",
                 ".sublime_session",
             ],
-            tm_scope: "source.js",
+            tm_scope: "source.json.comments",
             ace_mode: "javascript",
             language_id: 423u64,
             aliases: &["jsonc"],
@@ -8654,10 +8678,10 @@ impl LinkerScript {
     pub fn info() -> Language {
         Language {
             name: "Linker Script",
-            r#type: "data",
+            r#type: "programming",
             color: "",
             extensions: &[".ld", ".lds", ".x"],
-            tm_scope: "none",
+            tm_scope: "source.c.linker",
             ace_mode: "text",
             language_id: 202u64,
             aliases: &[],
@@ -14621,6 +14645,28 @@ impl Singularity {
         }
     }
 }
+impl Slang {
+    pub fn info() -> Language {
+        Language {
+            name: "Slang",
+            r#type: "programming",
+            color: "#1fbec9",
+            extensions: &[".slang"],
+            tm_scope: "source.slang",
+            ace_mode: "text",
+            language_id: 239357863u64,
+            aliases: &[],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
 impl Slash {
     pub fn info() -> Language {
         Language {
@@ -18425,7 +18471,7 @@ impl Languages {
             HTTP::info(), HXML::info(), Hack::info(), Haml::info(), Handlebars::info(),
             Harbour::info(), Hare::info(), Haskell::info(), Haxe::info(), HiveQL::info(),
             HolyC::info(), HostsFile::info(), Hy::info(), HyPhy::info(), IDL::info(),
-            IGORPro::info(), INI::info(), IRCLog::info(), Idris::info(),
+            IGORPro::info(), INI::info(), IRCLog::info(), ISPC::info(), Idris::info(),
             IgnoreList::info(), ImageJMacro::info(), Imba::info(), Inform7::info(),
             Ink::info(), InnoSetup::info(), Io::info(), Ioke::info(), Isabelle::info(),
             IsabelleROOT::info(), J::info(), JARManifest::info(), JCL::info(),
@@ -18508,10 +18554,10 @@ impl Languages {
             Scaml::info(), Scenic::info(), Scheme::info(), Scilab::info(), _Self::info(),
             ShaderLab::info(), Shell::info(), ShellCheckConfig::info(),
             ShellSession::info(), Shen::info(), Sieve::info(),
-            SimpleFileVerification::info(), Singularity::info(), Slash::info(),
-            Slice::info(), Slim::info(), Slint::info(), SmPL::info(), Smali::info(),
-            Smalltalk::info(), Smarty::info(), Smithy::info(), Snakemake::info(),
-            Solidity::info(), Soong::info(), SourcePawn::info(),
+            SimpleFileVerification::info(), Singularity::info(), Slang::info(),
+            Slash::info(), Slice::info(), Slim::info(), Slint::info(), SmPL::info(),
+            Smali::info(), Smalltalk::info(), Smarty::info(), Smithy::info(),
+            Snakemake::info(), Solidity::info(), Soong::info(), SourcePawn::info(),
             SplineFontDatabase::info(), Squirrel::info(), Stan::info(),
             StandardML::info(), Starlark::info(), Stata::info(), StringTemplate::info(),
             Stylus::info(), SubRipText::info(), SugarSS::info(), SuperCollider::info(),
