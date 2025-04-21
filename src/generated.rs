@@ -72,6 +72,7 @@ pub struct Beef;
 pub struct Befunge;
 pub struct Berry;
 pub struct BibTeX;
+pub struct BibTeXStyle;
 pub struct Bicep;
 pub struct Bikeshed;
 pub struct Bison;
@@ -137,7 +138,6 @@ pub struct CommonLisp;
 pub struct CommonWorkflowLanguage;
 pub struct ComponentPascal;
 pub struct Cool;
-pub struct Coq;
 pub struct CppObjDump;
 pub struct Creole;
 pub struct Crystal;
@@ -294,6 +294,7 @@ pub struct IDL;
 pub struct IGORPro;
 pub struct INI;
 pub struct IRCLog;
+pub struct ISPC;
 pub struct Idris;
 pub struct IgnoreList;
 pub struct ImageJMacro;
@@ -344,6 +345,7 @@ pub struct KiCadLegacyLayout;
 pub struct KiCadSchematic;
 pub struct Kickstart;
 pub struct Kit;
+pub struct Koka;
 pub struct Kotlin;
 pub struct Kusto;
 pub struct LFE;
@@ -581,6 +583,7 @@ pub struct Ring;
 pub struct Riot;
 pub struct RobotFramework;
 pub struct Roc;
+pub struct RocqProver;
 pub struct Roff;
 pub struct RoffManpage;
 pub struct Rouge;
@@ -603,6 +606,7 @@ pub struct STON;
 pub struct SVG;
 pub struct SWIG;
 pub struct Sage;
+pub struct Sail;
 pub struct SaltStack;
 pub struct Sass;
 pub struct Scala;
@@ -619,6 +623,7 @@ pub struct Shen;
 pub struct Sieve;
 pub struct SimpleFileVerification;
 pub struct Singularity;
+pub struct Slang;
 pub struct Slash;
 pub struct Slice;
 pub struct Slim;
@@ -673,6 +678,7 @@ pub struct TextMateProperties;
 pub struct Textile;
 pub struct Thrift;
 pub struct Toit;
+pub struct TreeSitterQuery;
 pub struct Turing;
 pub struct Turtle;
 pub struct Twig;
@@ -1580,7 +1586,7 @@ impl Assembly {
             name: "Assembly",
             r#type: "programming",
             color: "#6E4C13",
-            extensions: &[".asm", ".a51", ".i", ".inc", ".nas", ".nasm"],
+            extensions: &[".asm", ".a51", ".i", ".inc", ".nas", ".nasm", ".s"],
             tm_scope: "source.assembly",
             ace_mode: "assembly_x86",
             language_id: 24u64,
@@ -1942,6 +1948,28 @@ impl BibTeX {
             wrap: None,
             filenames: &[],
             group: Some("TeX"),
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
+impl BibTeXStyle {
+    pub fn info() -> Language {
+        Language {
+            name: "BibTeX Style",
+            r#type: "programming",
+            color: "",
+            extensions: &[".bst"],
+            tm_scope: "source.bst",
+            ace_mode: "text",
+            language_id: 909569041u64,
+            aliases: &[],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
+            group: None,
             interpreters: &[],
             fs_name: None,
             searchable: None,
@@ -3429,28 +3457,6 @@ impl Cool {
             tm_scope: "source.cool",
             ace_mode: "text",
             language_id: 68u64,
-            aliases: &[],
-            codemirror_mode: None,
-            codemirror_mime_type: None,
-            wrap: None,
-            filenames: &[],
-            group: None,
-            interpreters: &[],
-            fs_name: None,
-            searchable: None,
-        }
-    }
-}
-impl Coq {
-    pub fn info() -> Language {
-        Language {
-            name: "Coq",
-            r#type: "programming",
-            color: "#d0b68c",
-            extensions: &[".coq", ".v"],
-            tm_scope: "source.coq",
-            ace_mode: "text",
-            language_id: 69u64,
             aliases: &[],
             codemirror_mode: None,
             codemirror_mime_type: None,
@@ -6996,6 +7002,28 @@ impl IRCLog {
         }
     }
 }
+impl ISPC {
+    pub fn info() -> Language {
+        Language {
+            name: "ISPC",
+            r#type: "programming",
+            color: "#2D68B1",
+            extensions: &[".ispc"],
+            tm_scope: "source.ispc",
+            ace_mode: "c_cpp",
+            language_id: 327071u64,
+            aliases: &[],
+            codemirror_mode: Some("clike"),
+            codemirror_mime_type: Some("text/x-csrc"),
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
 impl Idris {
     pub fn info() -> Language {
         Language {
@@ -7395,7 +7423,9 @@ impl JSON {
                 ".tern-project",
                 ".watchmanconfig",
                 "MODULE.bazel.lock",
+                "Package.resolved",
                 "Pipfile.lock",
+                "bun.lock",
                 "composer.lock",
                 "deno.lock",
                 "flake.lock",
@@ -7433,7 +7463,7 @@ impl JSONWithComments {
                 ".sublime_metrics",
                 ".sublime_session",
             ],
-            tm_scope: "source.js",
+            tm_scope: "source.json.comments",
             ace_mode: "javascript",
             language_id: 423u64,
             aliases: &["jsonc"],
@@ -8172,7 +8202,7 @@ impl KiCadSchematic {
             name: "KiCad Schematic",
             r#type: "data",
             color: "#2f4aab",
-            extensions: &[".kicad_sch", ".sch"],
+            extensions: &[".kicad_sch", ".kicad_sym", ".sch"],
             tm_scope: "source.pcb.schematic",
             ace_mode: "text",
             language_id: 622447435u64,
@@ -8227,6 +8257,28 @@ impl Kit {
             filenames: &[],
             group: None,
             interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
+impl Koka {
+    pub fn info() -> Language {
+        Language {
+            name: "Koka",
+            r#type: "programming",
+            color: "#215166",
+            extensions: &[".kk"],
+            tm_scope: "source.koka",
+            ace_mode: "text",
+            language_id: 597930447u64,
+            aliases: &[],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &["koka"],
             fs_name: None,
             searchable: None,
         }
@@ -8654,10 +8706,10 @@ impl LinkerScript {
     pub fn info() -> Language {
         Language {
             name: "Linker Script",
-            r#type: "data",
+            r#type: "programming",
             color: "",
             extensions: &[".ld", ".lds", ".x"],
-            tm_scope: "none",
+            tm_scope: "source.c.linker",
             ace_mode: "text",
             language_id: 202u64,
             aliases: &[],
@@ -13576,6 +13628,28 @@ impl Roc {
         }
     }
 }
+impl RocqProver {
+    pub fn info() -> Language {
+        Language {
+            name: "Rocq Prover",
+            r#type: "programming",
+            color: "#d0b68c",
+            extensions: &[".v", ".coq"],
+            tm_scope: "source.coq",
+            ace_mode: "text",
+            language_id: 69u64,
+            aliases: &["coq", "rocq"],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
 impl Roff {
     pub fn info() -> Language {
         Language {
@@ -14200,6 +14274,28 @@ impl Sage {
         }
     }
 }
+impl Sail {
+    pub fn info() -> Language {
+        Language {
+            name: "Sail",
+            r#type: "programming",
+            color: "#259dd5",
+            extensions: &[".sail"],
+            tm_scope: "source.sail",
+            ace_mode: "text",
+            language_id: 1029438153u64,
+            aliases: &[],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
 impl SaltStack {
     pub fn info() -> Language {
         Language {
@@ -14614,6 +14710,28 @@ impl Singularity {
             codemirror_mime_type: None,
             wrap: None,
             filenames: &["Singularity"],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
+impl Slang {
+    pub fn info() -> Language {
+        Language {
+            name: "Slang",
+            r#type: "programming",
+            color: "#1fbec9",
+            extensions: &[".slang"],
+            tm_scope: "source.slang",
+            ace_mode: "text",
+            language_id: 239357863u64,
+            aliases: &[],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
             group: None,
             interpreters: &[],
             fs_name: None,
@@ -15867,6 +15985,28 @@ impl Toit {
         }
     }
 }
+impl TreeSitterQuery {
+    pub fn info() -> Language {
+        Language {
+            name: "Tree-sitter Query",
+            r#type: "programming",
+            color: "#8ea64c",
+            extensions: &[".scm"],
+            tm_scope: "source.scm",
+            ace_mode: "text",
+            language_id: 436081647u64,
+            aliases: &["tsq"],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
 impl Turing {
     pub fn info() -> Language {
         Language {
@@ -15971,7 +16111,7 @@ impl TypeScript {
             wrap: None,
             filenames: &[],
             group: None,
-            interpreters: &["deno", "ts-node", "tsx"],
+            interpreters: &["bun", "deno", "ts-node", "tsx"],
             fs_name: None,
             searchable: None,
         }
@@ -18369,10 +18509,10 @@ impl Languages {
             Asymptote::info(), Augeas::info(), AutoHotkey::info(), AutoIt::info(),
             AvroIDL::info(), Awk::info(), B4X::info(), BASIC::info(), BQN::info(),
             Ballerina::info(), Batchfile::info(), Beef::info(), Befunge::info(),
-            Berry::info(), BibTeX::info(), Bicep::info(), Bikeshed::info(),
-            Bison::info(), BitBake::info(), Blade::info(), BlitzBasic::info(),
-            BlitzMax::info(), Bluespec::info(), BluespecBH::info(), Boo::info(),
-            Boogie::info(), Brainfuck::info(), BrighterScript::info(),
+            Berry::info(), BibTeX::info(), BibTeXStyle::info(), Bicep::info(),
+            Bikeshed::info(), Bison::info(), BitBake::info(), Blade::info(),
+            BlitzBasic::info(), BlitzMax::info(), Bluespec::info(), BluespecBH::info(),
+            Boo::info(), Boogie::info(), Brainfuck::info(), BrighterScript::info(),
             Brightscript::info(), Browserslist::info(), C::info(), Csharp::info(),
             Cpp::info(), CObjDump::info(), C2hsHaskell::info(), CAPCDS::info(),
             CIL::info(), CLIPS::info(), CMake::info(), COBOL::info(), CODEOWNERS::info(),
@@ -18386,9 +18526,9 @@ impl Languages {
             CloudFirestoreSecurityRules::info(), CoNLLU::info(), CodeQL::info(),
             CoffeeScript::info(), ColdFusion::info(), ColdFusionCFC::info(),
             CommonLisp::info(), CommonWorkflowLanguage::info(), ComponentPascal::info(),
-            Cool::info(), Coq::info(), CppObjDump::info(), Creole::info(),
-            Crystal::info(), Csound::info(), CsoundDocument::info(), CsoundScore::info(),
-            Cuda::info(), CueSheet::info(), Curry::info(), Cycript::info(), Cylc::info(),
+            Cool::info(), CppObjDump::info(), Creole::info(), Crystal::info(),
+            Csound::info(), CsoundDocument::info(), CsoundScore::info(), Cuda::info(),
+            CueSheet::info(), Curry::info(), Cycript::info(), Cylc::info(),
             Cypher::info(), Cython::info(), D::info(), DObjDump::info(), D2::info(),
             DIGITALCommandLanguage::info(), DM::info(), DNSZone::info(), DTrace::info(),
             Dafny::info(), DarcsPatch::info(), Dart::info(), DataWeave::info(),
@@ -18425,7 +18565,7 @@ impl Languages {
             HTTP::info(), HXML::info(), Hack::info(), Haml::info(), Handlebars::info(),
             Harbour::info(), Hare::info(), Haskell::info(), Haxe::info(), HiveQL::info(),
             HolyC::info(), HostsFile::info(), Hy::info(), HyPhy::info(), IDL::info(),
-            IGORPro::info(), INI::info(), IRCLog::info(), Idris::info(),
+            IGORPro::info(), INI::info(), IRCLog::info(), ISPC::info(), Idris::info(),
             IgnoreList::info(), ImageJMacro::info(), Imba::info(), Inform7::info(),
             Ink::info(), InnoSetup::info(), Io::info(), Ioke::info(), Isabelle::info(),
             IsabelleROOT::info(), J::info(), JARManifest::info(), JCL::info(),
@@ -18438,20 +18578,21 @@ impl Languages {
             JuliaREPL::info(), JupyterNotebook::info(), Just::info(), KDL::info(),
             KRL::info(), KaitaiStruct::info(), KakouneScript::info(),
             KerboScript::info(), KiCadLayout::info(), KiCadLegacyLayout::info(),
-            KiCadSchematic::info(), Kickstart::info(), Kit::info(), Kotlin::info(),
-            Kusto::info(), LFE::info(), LLVM::info(), LOLCODE::info(), LSL::info(),
-            LTspiceSymbol::info(), LabVIEW::info(), Lark::info(), Lasso::info(),
-            Latte::info(), Lean::info(), Lean4::info(), Less::info(), Lex::info(),
-            LigoLANG::info(), LilyPond::info(), Limbo::info(), LinearProgramming::info(),
-            LinkerScript::info(), LinuxKernelModule::info(), Liquid::info(),
-            LiterateAgda::info(), LiterateCoffeeScript::info(), LiterateHaskell::info(),
-            LiveCodeScript::info(), LiveScript::info(), Logos::info(), Logtalk::info(),
-            LookML::info(), LoomScript::info(), Lua::info(), Luau::info(), M::info(),
-            M4::info(), M4Sugar::info(), MATLAB::info(), MAXScript::info(), MDX::info(),
-            MLIR::info(), MQL4::info(), MQL5::info(), MTML::info(), MUF::info(),
-            Macaulay2::info(), Makefile::info(), Mako::info(), Markdown::info(),
-            Marko::info(), Mask::info(), Mathematica::info(), MavenPOM::info(),
-            Max::info(), Mercury::info(), Mermaid::info(), Meson::info(), Metal::info(),
+            KiCadSchematic::info(), Kickstart::info(), Kit::info(), Koka::info(),
+            Kotlin::info(), Kusto::info(), LFE::info(), LLVM::info(), LOLCODE::info(),
+            LSL::info(), LTspiceSymbol::info(), LabVIEW::info(), Lark::info(),
+            Lasso::info(), Latte::info(), Lean::info(), Lean4::info(), Less::info(),
+            Lex::info(), LigoLANG::info(), LilyPond::info(), Limbo::info(),
+            LinearProgramming::info(), LinkerScript::info(), LinuxKernelModule::info(),
+            Liquid::info(), LiterateAgda::info(), LiterateCoffeeScript::info(),
+            LiterateHaskell::info(), LiveCodeScript::info(), LiveScript::info(),
+            Logos::info(), Logtalk::info(), LookML::info(), LoomScript::info(),
+            Lua::info(), Luau::info(), M::info(), M4::info(), M4Sugar::info(),
+            MATLAB::info(), MAXScript::info(), MDX::info(), MLIR::info(), MQL4::info(),
+            MQL5::info(), MTML::info(), MUF::info(), Macaulay2::info(), Makefile::info(),
+            Mako::info(), Markdown::info(), Marko::info(), Mask::info(),
+            Mathematica::info(), MavenPOM::info(), Max::info(), Mercury::info(),
+            Mermaid::info(), Meson::info(), Metal::info(),
             MicrosoftDeveloperStudioProject::info(),
             MicrosoftVisualStudioSolution::info(), MiniD::info(), MiniYAML::info(),
             MiniZinc::info(), MiniZincData::info(), Mint::info(), Mirah::info(),
@@ -18499,19 +18640,20 @@ impl Languages {
             Red::info(), Redcode::info(), RedirectRules::info(),
             RegularExpression::info(), RenPy::info(), RenderScript::info(), Rez::info(),
             RichTextFormat::info(), Ring::info(), Riot::info(), RobotFramework::info(),
-            Roc::info(), Roff::info(), RoffManpage::info(), Rouge::info(),
-            RouterOSScript::info(), Ruby::info(), Rust::info(), SAS::info(),
-            SCSS::info(), SELinuxPolicy::info(), SMT::info(), SPARQL::info(),
-            SQF::info(), SQL::info(), SQLPL::info(), SRecodeTemplate::info(),
-            SSHConfig::info(), STAR::info(), STL::info(), STON::info(), SVG::info(),
-            SWIG::info(), Sage::info(), SaltStack::info(), Sass::info(), Scala::info(),
-            Scaml::info(), Scenic::info(), Scheme::info(), Scilab::info(), _Self::info(),
+            Roc::info(), RocqProver::info(), Roff::info(), RoffManpage::info(),
+            Rouge::info(), RouterOSScript::info(), Ruby::info(), Rust::info(),
+            SAS::info(), SCSS::info(), SELinuxPolicy::info(), SMT::info(),
+            SPARQL::info(), SQF::info(), SQL::info(), SQLPL::info(),
+            SRecodeTemplate::info(), SSHConfig::info(), STAR::info(), STL::info(),
+            STON::info(), SVG::info(), SWIG::info(), Sage::info(), Sail::info(),
+            SaltStack::info(), Sass::info(), Scala::info(), Scaml::info(),
+            Scenic::info(), Scheme::info(), Scilab::info(), _Self::info(),
             ShaderLab::info(), Shell::info(), ShellCheckConfig::info(),
             ShellSession::info(), Shen::info(), Sieve::info(),
-            SimpleFileVerification::info(), Singularity::info(), Slash::info(),
-            Slice::info(), Slim::info(), Slint::info(), SmPL::info(), Smali::info(),
-            Smalltalk::info(), Smarty::info(), Smithy::info(), Snakemake::info(),
-            Solidity::info(), Soong::info(), SourcePawn::info(),
+            SimpleFileVerification::info(), Singularity::info(), Slang::info(),
+            Slash::info(), Slice::info(), Slim::info(), Slint::info(), SmPL::info(),
+            Smali::info(), Smalltalk::info(), Smarty::info(), Smithy::info(),
+            Snakemake::info(), Solidity::info(), Soong::info(), SourcePawn::info(),
             SplineFontDatabase::info(), Squirrel::info(), Stan::info(),
             StandardML::info(), Starlark::info(), Stata::info(), StringTemplate::info(),
             Stylus::info(), SubRipText::info(), SugarSS::info(), SuperCollider::info(),
@@ -18522,8 +18664,8 @@ impl Languages {
             Tcsh::info(), TeX::info(), Tea::info(), Terra::info(),
             TerraformTemplate::info(), Texinfo::info(), Text::info(), TextGrid::info(),
             TextMateProperties::info(), Textile::info(), Thrift::info(), Toit::info(),
-            Turing::info(), Turtle::info(), Twig::info(), TypeLanguage::info(),
-            TypeScript::info(), TypeSpec::info(), Typst::info(),
+            TreeSitterQuery::info(), Turing::info(), Turtle::info(), Twig::info(),
+            TypeLanguage::info(), TypeScript::info(), TypeSpec::info(), Typst::info(),
             UnifiedParallelC::info(), Unity3DAsset::info(), UnixAssembly::info(),
             Uno::info(), UnrealScript::info(), UrWeb::info(), V::info(), VBA::info(),
             VBScript::info(), VCL::info(), VHDL::info(), Vala::info(),
