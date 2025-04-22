@@ -268,6 +268,7 @@ pub struct Groovy;
 pub struct GroovyServerPages;
 pub struct HAProxy;
 pub struct HCL;
+pub struct HIP;
 pub struct HLSL;
 pub struct HOCON;
 pub struct HTML;
@@ -6401,6 +6402,28 @@ impl HCL {
             aliases: &["HashiCorp Configuration Language", "terraform"],
             codemirror_mode: Some("ruby"),
             codemirror_mime_type: Some("text/x-ruby"),
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
+impl HIP {
+    pub fn info() -> Language {
+        Language {
+            name: "HIP",
+            r#type: "programming",
+            color: "#4F3A4F",
+            extensions: &[".hip"],
+            tm_scope: "source.c++",
+            ace_mode: "c_cpp",
+            language_id: 674379998u64,
+            aliases: &[],
+            codemirror_mode: Some("clike"),
+            codemirror_mime_type: Some("text/x-c++src"),
             wrap: None,
             filenames: &[],
             group: None,
@@ -12655,7 +12678,7 @@ impl Python {
             wrap: None,
             filenames: &[".gclient", "DEPS", "SConscript", "SConstruct", "wscript"],
             group: None,
-            interpreters: &["python", "python2", "python3", "py", "pypy", "pypy3"],
+            interpreters: &["python", "python2", "python3", "py", "pypy", "pypy3", "uv"],
             fs_name: None,
             searchable: None,
         }
@@ -13966,7 +13989,7 @@ impl SMT {
             name: "SMT",
             r#type: "programming",
             color: "",
-            extensions: &[".smt2", ".smt"],
+            extensions: &[".smt2", ".smt", ".z3"],
             tm_scope: "source.smt",
             ace_mode: "text",
             language_id: 330u64,
@@ -18560,7 +18583,7 @@ impl Languages {
             Gradle::info(), GradleKotlinDSL::info(), GrammaticalFramework::info(),
             GraphModelingLanguage::info(), GraphQL::info(), GraphvizDOT::info(),
             Groovy::info(), GroovyServerPages::info(), HAProxy::info(), HCL::info(),
-            HLSL::info(), HOCON::info(), HTML::info(), HTMLpECR::info(),
+            HIP::info(), HLSL::info(), HOCON::info(), HTML::info(), HTMLpECR::info(),
             HTMLpEEX::info(), HTMLpERB::info(), HTMLpPHP::info(), HTMLpRazor::info(),
             HTTP::info(), HXML::info(), Hack::info(), Haml::info(), Handlebars::info(),
             Harbour::info(), Hare::info(), Haskell::info(), Haxe::info(), HiveQL::info(),
