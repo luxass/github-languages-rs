@@ -381,6 +381,7 @@ pub struct LoomScript;
 pub struct Lua;
 pub struct Luau;
 pub struct M;
+pub struct M3U;
 pub struct M4;
 pub struct M4Sugar;
 pub struct MATLAB;
@@ -9055,6 +9056,28 @@ impl M {
             aliases: &["mumps"],
             codemirror_mode: Some("mumps"),
             codemirror_mime_type: Some("text/x-mumps"),
+            wrap: None,
+            filenames: &[],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
+impl M3U {
+    pub fn info() -> Language {
+        Language {
+            name: "M3U",
+            r#type: "data",
+            color: "#179C7D",
+            extensions: &[".m3u", ".m3u8"],
+            tm_scope: "source.m3u",
+            ace_mode: "text",
+            language_id: 89638692u64,
+            aliases: &["hls playlist", "m3u playlist"],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
             wrap: None,
             filenames: &[],
             group: None,
@@ -18610,12 +18633,12 @@ impl Languages {
             Liquid::info(), LiterateAgda::info(), LiterateCoffeeScript::info(),
             LiterateHaskell::info(), LiveCodeScript::info(), LiveScript::info(),
             Logos::info(), Logtalk::info(), LookML::info(), LoomScript::info(),
-            Lua::info(), Luau::info(), M::info(), M4::info(), M4Sugar::info(),
-            MATLAB::info(), MAXScript::info(), MDX::info(), MLIR::info(), MQL4::info(),
-            MQL5::info(), MTML::info(), MUF::info(), Macaulay2::info(), Makefile::info(),
-            Mako::info(), Markdown::info(), Marko::info(), Mask::info(),
-            Mathematica::info(), MavenPOM::info(), Max::info(), Mercury::info(),
-            Mermaid::info(), Meson::info(), Metal::info(),
+            Lua::info(), Luau::info(), M::info(), M3U::info(), M4::info(),
+            M4Sugar::info(), MATLAB::info(), MAXScript::info(), MDX::info(),
+            MLIR::info(), MQL4::info(), MQL5::info(), MTML::info(), MUF::info(),
+            Macaulay2::info(), Makefile::info(), Mako::info(), Markdown::info(),
+            Marko::info(), Mask::info(), Mathematica::info(), MavenPOM::info(),
+            Max::info(), Mercury::info(), Mermaid::info(), Meson::info(), Metal::info(),
             MicrosoftDeveloperStudioProject::info(),
             MicrosoftVisualStudioSolution::info(), MiniD::info(), MiniYAML::info(),
             MiniZinc::info(), MiniZincData::info(), Mint::info(), Mirah::info(),
