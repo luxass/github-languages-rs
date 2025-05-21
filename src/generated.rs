@@ -88,6 +88,7 @@ pub struct Brainfuck;
 pub struct BrighterScript;
 pub struct Brightscript;
 pub struct Browserslist;
+pub struct BuildStream;
 pub struct C;
 pub struct Csharp;
 pub struct Cpp;
@@ -2301,6 +2302,28 @@ impl Browserslist {
             codemirror_mime_type: None,
             wrap: None,
             filenames: &[".browserslistrc", "browserslist"],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
+impl BuildStream {
+    pub fn info() -> Language {
+        Language {
+            name: "BuildStream",
+            r#type: "data",
+            color: "#006bff",
+            extensions: &[".bst"],
+            tm_scope: "source.yaml",
+            ace_mode: "yaml",
+            language_id: 84359046u64,
+            aliases: &[],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &[],
             group: None,
             interpreters: &[],
             fs_name: None,
@@ -18559,22 +18582,22 @@ impl Languages {
             Bikeshed::info(), Bison::info(), BitBake::info(), Blade::info(),
             BlitzBasic::info(), BlitzMax::info(), Bluespec::info(), BluespecBH::info(),
             Boo::info(), Boogie::info(), Brainfuck::info(), BrighterScript::info(),
-            Brightscript::info(), Browserslist::info(), C::info(), Csharp::info(),
-            Cpp::info(), CObjDump::info(), C2hsHaskell::info(), CAPCDS::info(),
-            CIL::info(), CLIPS::info(), CMake::info(), COBOL::info(), CODEOWNERS::info(),
-            COLLADA::info(), CSON::info(), CSS::info(), CSV::info(), CUE::info(),
-            CWeb::info(), CabalConfig::info(), Caddyfile::info(), Cadence::info(),
-            Cairo::info(), CairoZero::info(), CameLIGO::info(), CapnProto::info(),
-            Carbon::info(), CartoCSS::info(), Ceylon::info(), Chapel::info(),
-            Charity::info(), Checksums::info(), ChucK::info(), Circom::info(),
-            Cirru::info(), Clarion::info(), Clarity::info(), ClassicASP::info(),
-            Clean::info(), Click::info(), Clojure::info(), ClosureTemplates::info(),
-            CloudFirestoreSecurityRules::info(), CoNLLU::info(), CodeQL::info(),
-            CoffeeScript::info(), ColdFusion::info(), ColdFusionCFC::info(),
-            CommonLisp::info(), CommonWorkflowLanguage::info(), ComponentPascal::info(),
-            Cool::info(), CppObjDump::info(), Creole::info(), Crystal::info(),
-            Csound::info(), CsoundDocument::info(), CsoundScore::info(), Cuda::info(),
-            CueSheet::info(), Curry::info(), Cycript::info(), Cylc::info(),
+            Brightscript::info(), Browserslist::info(), BuildStream::info(), C::info(),
+            Csharp::info(), Cpp::info(), CObjDump::info(), C2hsHaskell::info(),
+            CAPCDS::info(), CIL::info(), CLIPS::info(), CMake::info(), COBOL::info(),
+            CODEOWNERS::info(), COLLADA::info(), CSON::info(), CSS::info(), CSV::info(),
+            CUE::info(), CWeb::info(), CabalConfig::info(), Caddyfile::info(),
+            Cadence::info(), Cairo::info(), CairoZero::info(), CameLIGO::info(),
+            CapnProto::info(), Carbon::info(), CartoCSS::info(), Ceylon::info(),
+            Chapel::info(), Charity::info(), Checksums::info(), ChucK::info(),
+            Circom::info(), Cirru::info(), Clarion::info(), Clarity::info(),
+            ClassicASP::info(), Clean::info(), Click::info(), Clojure::info(),
+            ClosureTemplates::info(), CloudFirestoreSecurityRules::info(),
+            CoNLLU::info(), CodeQL::info(), CoffeeScript::info(), ColdFusion::info(),
+            ColdFusionCFC::info(), CommonLisp::info(), CommonWorkflowLanguage::info(),
+            ComponentPascal::info(), Cool::info(), CppObjDump::info(), Creole::info(),
+            Crystal::info(), Csound::info(), CsoundDocument::info(), CsoundScore::info(),
+            Cuda::info(), CueSheet::info(), Curry::info(), Cycript::info(), Cylc::info(),
             Cypher::info(), Cython::info(), D::info(), DObjDump::info(), D2::info(),
             DIGITALCommandLanguage::info(), DM::info(), DNSZone::info(), DTrace::info(),
             Dafny::info(), DarcsPatch::info(), Dart::info(), DataWeave::info(),
