@@ -16751,7 +16751,7 @@ impl Vyper {
         Language {
             name: "Vyper",
             r#type: "programming",
-            color: "#2980b9",
+            color: "#9F4CF2",
             extensions: &[".vy"],
             tm_scope: "source.vyper",
             ace_mode: "text",
