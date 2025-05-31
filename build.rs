@@ -2,7 +2,7 @@ use proc_macro2::{Ident, Literal, TokenStream};
 use quote::quote;
 use serde::Deserialize;
 use std::collections::HashMap;
-use std::fs;
+use std::{env, fs};
 use std::path::Path;
 
 #[derive(Debug, Deserialize)]
@@ -47,6 +47,7 @@ struct LanguageData {
 fn main() {
     println!("cargo:rerun-if-changed=languages.yml");
     println!("cargo:rerun-if-changed=build.rs");
+    let is_docs_rs = env::var("DOCS_RS").is_ok();
     let dest_path = Path::new("./src").join("generated.rs");
 
     let languages_data = fs::read_to_string("languages.yml").expect("Failed to read languages.yml");
@@ -68,8 +69,12 @@ fn main() {
         }
     };
 
-    fs::write(&dest_path, formatted.as_bytes())
-        .expect("Failed to write generated.rs");
+    if is_docs_rs {
+        println!("cargo:warning=Generated code:\n{}", generated_code);
+    } else {
+        fs::write(&dest_path, formatted.as_bytes())
+            .expect("Failed to write generated.rs");
+    }
 }
 
 fn convert_github_format(
