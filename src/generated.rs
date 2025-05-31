@@ -681,6 +681,7 @@ pub struct TextMateProperties;
 pub struct Textile;
 pub struct Thrift;
 pub struct Toit;
+pub struct TorConfig;
 pub struct TreeSitterQuery;
 pub struct Turing;
 pub struct Turtle;
@@ -6996,6 +6997,7 @@ impl INI {
                 ".cfg",
                 ".cnf",
                 ".dof",
+                ".frm",
                 ".lektorproject",
                 ".prefs",
                 ".pro",
@@ -16054,6 +16056,28 @@ impl Toit {
         }
     }
 }
+impl TorConfig {
+    pub fn info() -> Language {
+        Language {
+            name: "Tor Config",
+            r#type: "data",
+            color: "#59316b",
+            extensions: &[],
+            tm_scope: "source.torrc",
+            ace_mode: "apache_conf",
+            language_id: 1016912802u64,
+            aliases: &["torrc"],
+            codemirror_mode: None,
+            codemirror_mime_type: None,
+            wrap: None,
+            filenames: &["torrc"],
+            group: None,
+            interpreters: &[],
+            fs_name: None,
+            searchable: None,
+        }
+    }
+}
 impl TreeSitterQuery {
     pub fn info() -> Language {
         Language {
@@ -18733,13 +18757,13 @@ impl Languages {
             Tcsh::info(), TeX::info(), Tea::info(), Terra::info(),
             TerraformTemplate::info(), Texinfo::info(), Text::info(), TextGrid::info(),
             TextMateProperties::info(), Textile::info(), Thrift::info(), Toit::info(),
-            TreeSitterQuery::info(), Turing::info(), Turtle::info(), Twig::info(),
-            TypeLanguage::info(), TypeScript::info(), TypeSpec::info(), Typst::info(),
-            UnifiedParallelC::info(), Unity3DAsset::info(), UnixAssembly::info(),
-            Uno::info(), UnrealScript::info(), UrWeb::info(), V::info(), VBA::info(),
-            VBScript::info(), VCL::info(), VHDL::info(), Vala::info(),
-            ValveDataFormat::info(), VelocityTemplateLanguage::info(), Verilog::info(),
-            VimHelpFile::info(), VimScript::info(), VimSnippet::info(),
+            TorConfig::info(), TreeSitterQuery::info(), Turing::info(), Turtle::info(),
+            Twig::info(), TypeLanguage::info(), TypeScript::info(), TypeSpec::info(),
+            Typst::info(), UnifiedParallelC::info(), Unity3DAsset::info(),
+            UnixAssembly::info(), Uno::info(), UnrealScript::info(), UrWeb::info(),
+            V::info(), VBA::info(), VBScript::info(), VCL::info(), VHDL::info(),
+            Vala::info(), ValveDataFormat::info(), VelocityTemplateLanguage::info(),
+            Verilog::info(), VimHelpFile::info(), VimScript::info(), VimSnippet::info(),
             VisualBasicNET::info(), VisualBasic60::info(), Volt::info(), Vue::info(),
             Vyper::info(), WDL::info(), WGSL::info(), WavefrontMaterial::info(),
             WavefrontObject::info(), WebOntologyLanguage::info(), WebAssembly::info(),
