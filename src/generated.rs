@@ -2574,574 +2574,575 @@ define_languages! {
     "text", language_id : 421u64, filenames : [], interpreters : [], },
 }
 static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = phf_map! {
-    ".4gl" => & [Genero4gl::info], ".pddl" => & [PDDL::info], ".2" => & [Roff::info,
-    RoffManpage::info], ".texi" => & [Texinfo::info], ".tex" => & [TeX::info], ".nlogo"
-    => & [NetLogo::info], ".avsc" => & [JSON::info], ".r" => & [R::info, Rebol::info,
-    Rez::info], ".lsp" => & [CommonLisp::info, NewLisp::info], ".vho" => & [VHDL::info],
-    ".php" => & [Hack::info, PHP::info], ".religo" => & [ReasonLIGO::info], ".eps" => &
-    [PostScript::info], ".ml4" => & [OCaml::info], ".rl" => & [Ragel::info], ".gni" => &
-    [GN::info], ".sublime-macro" => & [JSONWithComments::info], ".plist" => &
-    [OpenStepPropertyList::info, XMLPropertyList::info], ".xsh" => & [Xonsh::info],
-    ".chs" => & [C2hsHaskell::info], ".sco" => & [CsoundScore::info], ".app.src" => &
-    [Erlang::info], ".cs.pp" => & [Csharp::info], ".cats" => & [C::info], ".trg" => &
-    [PLSQL::info], ".clar" => & [Clarity::info], ".csdef" => & [XML::info], ".scm" => &
-    [Scheme::info, TreeSitterQuery::info], ".properties" => & [INI::info,
-    JavaProperties::info], ".yar" => & [YARA::info], ".geo" => & [GLSL::info], ".imba" =>
-    & [Imba::info], ".mq4" => & [MQL4::info], ".xmp" => & [XML::info], ".apex" => &
-    [Apex::info], ".scpt" => & [AppleScript::info], ".agc" => &
-    [ApolloGuidanceComputer::info], ".pck" => & [PLSQL::info], ".viw" => & [SQL::info],
-    ".asset" => & [Unity3DAsset::info], ".lsl" => & [LSL::info], ".nas" => &
-    [Assembly::info, Nasal::info], ".sublime-keymap" => & [JSONWithComments::info],
-    ".aidl" => & [AIDL::info], ".cdf" => & [Mathematica::info], ".astro" => &
-    [Astro::info], ".pxi" => & [Cython::info], ".SchDoc" => & [AltiumDesigner::info],
-    ".fan" => & [Fantom::info], ".tfstate" => & [JSON::info], ".circom" => &
-    [Circom::info], ".jspre" => & [JavaScript::info], ".arc" => & [Arc::info], ".mq5" =>
-    & [MQL5::info], ".eb" => & [Easybuild::info], ".reds" => & [Red::info], ".smali" => &
-    [Smali::info], ".dotsettings" => & [XML::info], ".reek" => & [YAML::info], ".thrift"
-    => & [Thrift::info], ".hip" => & [HIP::info], ".sublime-completions" => &
-    [JSONWithComments::info], ".pkb" => & [PLSQL::info], ".tps" => & [PLSQL::info],
-    ".dfy" => & [Dafny::info], ".8" => & [Roff::info, RoffManpage::info], ".yacc" => &
-    [Yacc::info], ".hcl" => & [HCL::info], ".sublime-project" => &
-    [JSONWithComments::info], ".thor" => & [Ruby::info], ".tcl.in" => & [Tcl::info],
-    ".dart" => & [Dart::info], ".prefab" => & [Unity3DAsset::info], ".ttl" => &
-    [Turtle::info], ".geom" => & [GLSL::info], ".glf" => & [Glyph::info], ".numpy" => &
-    [NumPy::info], ".ct" => & [XML::info], ".elm" => & [Elm::info], ".xproj" => &
-    [XML::info], ".syntax" => & [YAML::info], ".gjs" => & [GlimmerJS::info], ".wdl" => &
-    [WDL::info], ".ant" => & [XML::info], ".polar" => & [Polar::info], ".qll" => &
-    [CodeQL::info], ".nqp" => & [Raku::info], ".rdf" => & [XML::info], ".no" => &
-    [Text::info], ".nearley" => & [Nearley::info], ".app" => & [Erlang::info], ".jslib"
-    => & [JavaScript::info], ".sarif" => & [JSON::info], ".esdl" => & [EdgeQL::info],
-    ".frg" => & [GLSL::info], ".3x" => & [Roff::info, RoffManpage::info], ".neon" => &
-    [NEON::info], ".rbxs" => & [Lua::info], ".plb" => & [PLSQL::info], ".toit" => &
-    [Toit::info], ".service" => & [Desktop::info], ".opa" => & [Opa::info], ".sma" => &
-    [Pawn::info], ".prc" => & [PLSQL::info, SQL::info], ".maxproj" => & [Max::info],
-    ".prolog" => & [Prolog::info], ".kv" => & [Kvlang::info], ".cjs" => &
-    [JavaScript::info], ".nproj" => & [XML::info], ".sublime_session" => &
-    [JSONWithComments::info], ".ditaval" => & [XML::info], ".sublime-commands" => &
-    [JSONWithComments::info], ".pgsql" => & [PLpgSQL::info], ".chem" => & [Pic::info],
-    ".csh" => & [Tcsh::info], ".gawk" => & [Awk::info], ".pd_lua" => & [Lua::info],
-    ".filters" => & [XML::info], ".q" => & [HiveQL::info, Q::info], ".ashx" => &
-    [ASPNET::info], ".yasnippet" => & [YASnippet::info], ".typ" => & [Typst::info,
-    XML::info], ".f08" => & [FortranFreeForm::info], ".cnf" => & [INI::info], ".gap" => &
-    [GAP::info], ".cfc" => & [ColdFusionCFC::info], ".j" => & [Jasmin::info,
-    ObjectiveJ::info], ".nims" => & [Nim::info], ".com" => &
-    [DIGITALCommandLanguage::info], ".sol" => & [GerberImage::info, Solidity::info],
-    ".xq" => & [XQuery::info], ".ics" => & [ICalendar::info], ".njs" => &
-    [JavaScript::info], ".cue" => & [CUE::info, CueSheet::info], ".xhtml" => &
-    [HTML::info], ".moon" => & [MoonScript::info], ".mysql" => & [SQL::info], ".x68" => &
-    [Motorola68KAssembly::info], ".axs.erb" => & [NetLinxpERB::info], ".uno" => &
-    [Uno::info], ".targets" => & [XML::info], ".fsti" => & [Fstar::info], ".txt" => &
-    [AdblockFilterList::info, Text::info, VimHelpFile::info], ".make" => &
-    [Makefile::info], ".hhi" => & [Hack::info], ".fst" => & [Fstar::info], ".cts" => &
-    [TypeScript::info], ".cshtml" => & [HTMLpRazor::info], ".zone" => & [DNSZone::info],
-    ".abap" => & [ABAP::info], ".adb" => & [Ada::info], ".ddl" => & [PLSQL::info,
-    SQL::info], ".phps" => & [PHP::info], ".rviz" => & [YAML::info], ".muse" => &
-    [Muse::info], ".soy" => & [ClosureTemplates::info], ".clp" => & [CLIPS::info], ".ph"
-    => & [Perl::info], ".cr" => & [Crystal::info], ".unity" => & [Unity3DAsset::info],
-    ".fxml" => & [XML::info], ".ccp" => & [COBOL::info], ".gto" => & [GerberImage::info],
-    ".emacs.desktop" => & [EmacsLisp::info], ".tf" => & [HCL::info], ".bst" => &
-    [BibTeXStyle::info, BuildStream::info], ".vcf" => & [TSV::info, VCard::info], ".mak"
-    => & [Makefile::info], ".proto" => & [ProtocolBuffer::info], ".pyt" => &
-    [Python::info], ".cy" => & [Cycript::info], ".pri" => & [QMake::info], ".vy" => &
-    [Vyper::info], ".kicad_mod" => & [KiCadLayout::info], ".gsc" => & [GSC::info], ".csl"
-    => & [Kusto::info, XML::info], ".mumps" => & [M::info], ".mojo" => & [Mojo::info,
-    XML::info], ".http" => & [HTTP::info], ".em" => & [EmberScript::info], ".ha" => &
-    [Hare::info], ".rpy" => & [Python::info, RenPy::info], ".vhf" => & [VHDL::info],
-    ".mxt" => & [Max::info], ".gaml" => & [GAML::info], ".vapi" => & [Vala::info],
-    ".plot" => & [Gnuplot::info], ".geojson" => & [JSON::info], ".ahk" => &
-    [AutoHotkey::info], ".mermaid" => & [Mermaid::info], ".n" => & [Nemerle::info,
-    Roff::info], ".webidl" => & [WebIDL::info], ".vsh" => & [GLSL::info], ".flex" => &
-    [JFlex::info], ".m3" => & [Modula3::info], ".doh" => & [Stata::info], ".sj" => &
-    [ObjectiveJ::info], ".wast" => & [WebAssembly::info], ".dita" => & [XML::info],
-    ".qhelp" => & [XML::info], ".yaml-tmlanguage" => & [YAML::info], ".apl" => &
-    [APL::info], ".xliff" => & [XML::info], ".srw" => & [PowerBuilder::info], ".rss" => &
-    [XML::info], ".ipynb" => & [JupyterNotebook::info], ".php3" => & [PHP::info],
-    ".lvlib" => & [LabVIEW::info], ".yap" => & [Prolog::info], ".admx" => & [XML::info],
-    ".ccxml" => & [XML::info], ".psgi" => & [Perl::info], ".man" => & [Roff::info,
-    RoffManpage::info], ".rst" => & [ReStructuredText::info], ".cds" => & [CAPCDS::info],
-    ".cpp" => & [Cpp::info], ".vark" => & [Gosu::info], ".ktm" => & [Kotlin::info],
-    ".env" => & [Dotenv::info], ".glslv" => & [GLSL::info], ".plx" => & [Perl::info],
-    ".isl" => & [InnoSetup::info], ".lektorproject" => & [INI::info], ".nss" => &
-    [NWScript::info], ".aux" => & [TeX::info], ".nl" => & [NL::info, NewLisp::info],
-    ".xlf" => & [XML::info], ".gpt" => & [GerberImage::info], ".marko" => &
-    [Marko::info], ".xojo_toolbar" => & [Xojo::info], ".h++" => & [Cpp::info],
-    ".caddyfile" => & [Caddyfile::info], ".dockerfile" => & [Dockerfile::info],
-    ".livecodescript" => & [LiveCodeScript::info], ".god" => & [Ruby::info], ".ui" => &
-    [XML::info], ".ebuild" => & [GentooEbuild::info], ".tact" => & [JSON::info,
-    Tact::info], ".scaml" => & [Scaml::info], ".opal" => & [Opal::info], ".ksh" => &
-    [Shell::info], ".depproj" => & [XML::info], ".3in" => & [Roff::info,
-    RoffManpage::info], ".rsh" => & [RenderScript::info], ".aw" => & [PHP::info], ".red"
-    => & [Red::info], ".ixx" => & [Cpp::info], ".har" => & [JSON::info], ".mkdn" => &
-    [Markdown::info], ".spin" => & [PropellerSpin::info], ".roff" => & [Roff::info],
-    ".gdnlib" => & [GodotResource::info], ".zsh-theme" => & [Shell::info], ".boo" => &
-    [Boo::info], ".plsql" => & [PLSQL::info], ".wgsl" => & [WGSL::info], ".rbs" => &
-    [RBS::info], ".prisma" => & [Prisma::info], ".bpl" => & [Boogie::info], ".vhi" => &
-    [VHDL::info], ".ps1xml" => & [XML::info], ".kid" => & [Genshi::info], ".wxi" => &
-    [XML::info], ".jflex" => & [JFlex::info], ".xspec" => & [XML::info], ".ampl" => &
-    [AMPL::info], ".slang" => & [Slang::info], ".lp" => & [AnswerSetProgramming::info,
-    LinearProgramming::info], ".ihlp" => & [Stata::info], ".ts" => & [TypeScript::info,
-    XML::info], ".latte" => & [Latte::info], ".pogo" => & [PogoScript::info], ".aug" => &
-    [Augeas::info], ".cmake.in" => & [CMake::info], ".ob2" => & [Oberon::info], ".pug" =>
-    & [Pug::info], ".patch" => & [Diff::info], ".r2" => & [Rebol::info], ".darcspatch" =>
-    & [DarcsPatch::info], ".grace" => & [Grace::info], ".sublime_metrics" => &
-    [JSONWithComments::info], ".pike" => & [Pike::info], ".bash" => & [Shell::info],
-    ".mcfunction" => & [Mcfunction::info], ".tsv" => & [TSV::info], ".5" => &
-    [Roff::info, RoffManpage::info], ".gn" => & [GN::info], ".al" => & [AL::info,
-    Perl::info], ".bas" => & [B4X::info, BASIC::info, FreeBASIC::info, QuickBASIC::info,
-    VBA::info, VisualBasic60::info], ".numpyw" => & [NumPy::info], ".twig" => &
-    [Twig::info], ".rebol" => & [Rebol::info], ".mathematica" => & [Mathematica::info],
-    ".mmd" => & [Mermaid::info], ".kml" => & [XML::info], ".cwl" => &
-    [CommonWorkflowLanguage::info], ".mmk" => & [ModuleManagementSystem::info], ".rg" =>
-    & [Rouge::info], ".capnp" => & [CapnProto::info], ".ice" => & [JSON::info,
-    Slice::info], ".pascal" => & [Pascal::info], ".tab" => & [SQL::info], ".workflow" =>
-    & [HCL::info, XML::info], ".gltf" => & [JSON::info], ".pbtxt" => &
-    [ProtocolBufferTextFormat::info], ".heex" => & [HTMLpEEX::info], ".PcbDoc" => &
-    [AltiumDesigner::info], ".sublime-menu" => & [JSONWithComments::info], ".e" => &
-    [E::info, Eiffel::info, Euphoria::info], ".mirah" => & [Mirah::info], ".php4" => &
-    [PHP::info], ".smithy" => & [Smithy::info], ".per" => & [GeneroPer::info], ".brd" =>
-    & [Eagle::info, KiCadLegacyLayout::info], ".tfstate.backup" => & [JSON::info],
-    ".rockspec" => & [Lua::info], ".mkd" => & [Markdown::info], ".ig" => &
-    [Modula3::info], ".axs" => & [NetLinx::info], ".oxo" => & [Ox::info], ".y" => &
-    [Yacc::info], ".jison" => & [Jison::info], ".zimpl" => & [Zimpl::info], ".tag" => &
-    [JavaServerPages::info], ".aspx" => & [ASPNET::info], ".mod" => & [AMPL::info,
-    LinuxKernelModule::info, Modula2::info, NMODL::info, XML::info], ".dpatch" => &
-    [DarcsPatch::info], ".nf" => & [Nextflow::info], ".gmx" => & [XML::info], ".Dsr" => &
-    [VisualBasic60::info], ".phtml" => & [HTMLpPHP::info], ".opencl" => & [OpenCL::info],
-    ".markdown" => & [Markdown::info], ".ux" => & [XML::info], ".maxpat" => &
-    [Max::info], ".phpt" => & [PHP::info], ".v" => & [RocqProver::info, V::info,
-    Verilog::info], ".star" => & [STAR::info, Starlark::info], ".nanorc" => &
-    [Nanorc::info], ".cl" => & [CommonLisp::info, Cool::info, OpenCL::info], ".rest" => &
-    [ReStructuredText::info], ".a51" => & [Assembly::info], ".diff" => & [Diff::info],
-    ".kicad_wks" => & [KiCadLayout::info], ".sld" => & [Scheme::info], ".jscad" => &
-    [JavaScript::info], ".ps1" => & [PowerShell::info], ".rbbas" => & [REALbasic::info],
-    ".antlers.html" => & [Antlers::info], ".mligo" => & [CameLIGO::info], ".stan" => &
-    [Stan::info], ".tfvars" => & [HCL::info], ".jinja2" => & [Jinja::info], ".nim.cfg" =>
-    & [Nim::info], ".sdc" => & [Tcl::info], ".tac" => & [Python::info], ".mkiv" => &
-    [TeX::info], ".gcode" => & [GCode::info], ".qml" => & [QML::info], ".rex" => &
-    [REXX::info], ".gi" => & [GAP::info], ".curry" => & [Curry::info], ".vs" => &
-    [GLSL::info], ".reb" => & [Rebol::info], ".yaml.sed" => & [YAML::info], ".lbx" => &
-    [TeX::info], ".xqm" => & [XQuery::info], ".jbuilder" => & [Ruby::info], ".mrc" => &
-    [MIRCScript::info], ".ctl" => & [VisualBasic60::info], ".perl" => & [Perl::info],
-    ".plt" => & [Gnuplot::info, Prolog::info], ".ini" => & [INI::info], ".bison" => &
-    [Bison::info], ".iol" => & [Jolie::info], ".url" => & [INI::info], ".lslp" => &
-    [LSL::info], ".auk" => & [Awk::info], ".parrot" => & [Parrot::info], ".ccproj" => &
-    [XML::info], ".pan" => & [Pan::info], ".blade" => & [Blade::info], ".p6l" => &
-    [Raku::info], ".res" => & [ReScript::info, XML::info], ".fy" => & [Fancy::info],
-    ".hsc" => & [Haskell::info], ".aj" => & [AspectJ::info], ".p" => & [Gnuplot::info,
-    OpenEdgeABL::info], ".pac" => & [JavaScript::info], ".yy" => & [JSON::info,
-    Yacc::info], ".edn" => & [Edn::info], ".fir" => & [FIRRTL::info], ".hb" => &
-    [Harbour::info], ".eam.fs" => & [Formatted::info], ".irclog" => & [IRCLog::info],
-    ".code-workspace" => & [JSONWithComments::info], ".rnw" => & [Sweave::info],
-    ".plantuml" => & [PlantUML::info], ".zsh" => & [Shell::info], ".vcxproj" => &
-    [XML::info], ".c++objdump" => & [CppObjDump::info], ".wlua" => & [Lua::info], ".njk"
-    => & [Nunjucks::info], ".self" => & [_Self::info], ".puml" => & [PlantUML::info],
-    ".mu" => & [Mupad::info], ".ect" => & [EJS::info], ".coffee" => &
-    [CoffeeScript::info], ".lex" => & [Lex::info], ".urs" => & [UrWeb::info], ".prg" => &
-    [XBase::info], ".erb.deface" => & [HTMLpERB::info], ".duby" => & [Mirah::info],
-    ".bibtex" => & [BibTeX::info], ".cljs" => & [Clojure::info], ".ny" => &
-    [CommonLisp::info], ".bi" => & [FreeBASIC::info], ".jsx" => & [JavaScript::info],
-    ".xzap" => & [ZAP::info], ".gbl" => & [GerberImage::info], ".dcl" => & [Clean::info],
-    ".regex" => & [RegularExpression::info], ".livemd" => & [Markdown::info], ".styl" =>
-    & [Stylus::info], ".osm" => & [XML::info], ".bqn" => & [BQN::info], ".gleam" => &
-    [Gleam::info], ".pro" => & [IDL::info, INI::info, Proguard::info, Prolog::info,
-    QMake::info], ".graphqls" => & [GraphQL::info], ".coq" => & [RocqProver::info],
-    ".sfv" => & [SimpleFileVerification::info], ".slint" => & [Slint::info], ".las" => &
-    [Lasso::info], ".edc" => & [EdjeDataCollection::info], ".scxml" => & [XML::info],
-    ".bdf" => & [GlyphBitmapDistributionFormat::info], ".txx" => & [Cpp::info], ".conll"
-    => & [CoNLLU::info], ".frt" => & [Forth::info], ".sha384" => & [Checksums::info],
-    ".afm" => & [AdobeFontMetrics::info], ".ecr" => & [HTMLpECR::info], ".snakefile" => &
-    [Snakemake::info], ".toml" => & [TOML::info], ".iml" => & [XML::info], ".clj" => &
-    [Clojure::info], ".fsh" => & [GLSL::info], ".sjs" => & [JavaScript::info],
-    ".sublime-mousemap" => & [JSONWithComments::info], ".roc" => & [Roc::info], ".vht" =>
-    & [VHDL::info], ".axi.erb" => & [NetLinxpERB::info], ".proj" => & [XML::info],
-    ".agda" => & [Agda::info], ".ls" => & [LiveScript::info, LoomScript::info], ".ml" =>
-    & [OCaml::info, StandardML::info], ".vala" => & [Vala::info], ".bro" => &
-    [Zeek::info], ".pyw" => & [Python::info], ".sha256" => & [Checksums::info], ".swift"
-    => & [Swift::info], ".cppobjdump" => & [CppObjDump::info], ".mustache" => &
-    [Mustache::info], ".mkvi" => & [TeX::info], ".nc" => & [NesC::info], ".icl" => &
-    [Clean::info], ".f77" => & [Fortran::info], ".lua" => & [Lua::info], ".rpgle" => &
-    [RPGLE::info], ".pp" => & [Pascal::info, Puppet::info], ".vbproj" => & [XML::info],
-    ".xs" => & [XS::info], ".xtend" => & [Xtend::info], ".tesc" => & [GLSL::info], ".bmx"
-    => & [BlitzMax::info], ".md5" => & [Checksums::info], ".rno" => & [RUNOFF::info,
-    Roff::info], ".odd" => & [XML::info], ".tmSnippet" => & [XMLPropertyList::info],
-    ".p6m" => & [Raku::info], ".gms" => & [GAMS::info], ".axd" => & [ASPNET::info],
-    ".sha2" => & [Checksums::info], ".adml" => & [XML::info], ".9" => & [Roff::info,
-    RoffManpage::info], ".p8" => & [Lua::info], ".moo" => & [Mercury::info,
-    Moocode::info], ".sha1" => & [Checksums::info], ".8xp.txt" => & [TIProgram::info],
-    ".eq" => & [EQ::info], ".story" => & [Gherkin::info], ".ino" => & [Cpp::info], ".md2"
-    => & [Checksums::info], ".spec" => & [Python::info, RPMSpec::info, Ruby::info],
-    ".sqlrpgle" => & [RPGLE::info], ".talon" => & [Talon::info], ".fnc" => &
-    [PLSQL::info], ".antlers.php" => & [Antlers::info], ".js.erb" => &
-    [JavaScriptpERB::info], ".edgeql" => & [EdgeQL::info], ".textile" => &
-    [Textile::info], ".ditamap" => & [XML::info], ".nimble" => & [Nim::info], ".gtpl" =>
-    & [Groovy::info], ".fsproj" => & [XML::info], ".apacheconf" => & [ApacheConf::info],
-    ".nix" => & [Nix::info], ".as" => & [ActionScript::info, AngelScript::info], ".idr"
-    => & [Idris::info], ".exs" => & [Elixir::info], ".jai" => & [Jai::info], ".glsl" => &
-    [GLSL::info], ".mkfile" => & [Makefile::info], ".cw" => & [Redcode::info], ".glyphs"
-    => & [OpenStepPropertyList::info], ".pegjs" => & [PEGjs::info], ".rabl" => &
-    [Ruby::info], ".fun" => & [StandardML::info], ".mdown" => & [Markdown::info], ".mkii"
-    => & [TeX::info], ".mjml" => & [XML::info], ".xql" => & [XQuery::info], ".sha3" => &
-    [Checksums::info], ".f" => & [FilebenchWML::info, Forth::info, Fortran::info], ".gql"
-    => & [GraphQL::info], ".2da" => & [_2DimensionalArray::info], ".sh.in" => &
-    [Shell::info], ".xib" => & [XML::info], ".sublime-syntax" => & [YAML::info], ".ctp"
-    => & [PHP::info], ".smt2" => & [SMT::info], ".1m" => & [Roff::info,
-    RoffManpage::info], ".3qt" => & [Roff::info, RoffManpage::info], ".razor" => &
-    [HTMLpRazor::info], ".rnh" => & [RUNOFF::info], ".cmd" => & [Batchfile::info], ".ec"
-    => & [EC::info], ".fth" => & [Forth::info], ".texinfo" => & [Texinfo::info],
-    ".tmCommand" => & [XMLPropertyList::info], ".mkdown" => & [Markdown::info], ".chpl"
-    => & [Chapel::info], ".odin" => & [ObjectDataInstanceNotation::info, Odin::info],
-    ".zmpl" => & [Zimpl::info], ".ks" => & [KerboScript::info, Kickstart::info], ".eye"
-    => & [Ruby::info], ".b" => & [Brainfuck::info, Limbo::info], ".cps" => &
-    [ComponentPascal::info], ".monkey2" => & [Monkey::info], ".nsh" => & [NSIS::info],
-    ".anim" => & [Unity3DAsset::info], ".matlab" => & [MATLAB::info], ".rest.txt" => &
-    [ReStructuredText::info], ".ston" => & [STON::info], ".hlsli" => & [HLSL::info],
-    ".befunge" => & [Befunge::info], ".sru" => & [PowerBuilder::info], ".md" => &
-    [GCCMachineDescription::info, Markdown::info], ".d-objdump" => & [DObjDump::info],
-    ".svh" => & [SystemVerilog::info], ".ol" => & [Jolie::info], ".pyp" => &
-    [Python::info], ".ipp" => & [Cpp::info], ".rbtbar" => & [REALbasic::info], ".smt" =>
-    & [SMT::info], ".jsm" => & [JavaScript::info], ".vh" => & [SystemVerilog::info],
-    ".htm" => & [HTML::info], ".pks" => & [PLSQL::info], ".fpp" => & [Fortran::info],
-    ".ebnf" => & [EBNF::info], ".abnf" => & [ABNF::info], ".ni" => & [Inform7::info],
-    ".lmi" => & [Python::info], ".pml" => & [Promela::info], ".vw" => & [PLSQL::info],
-    ".kojo" => & [Scala::info], ".graphql" => & [GraphQL::info], ".m2" => &
-    [Macaulay2::info], ".asn" => & [ASN1::info], ".hats" => & [ATS::info], ".intr" => &
-    [Dylan::info], ".xsjslib" => & [JavaScript::info], ".uc" => & [UnrealScript::info],
-    ".csc" => & [GSC::info], ".metal" => & [Metal::info], ".gst" => & [Gosu::info,
-    XML::info], ".rbres" => & [REALbasic::info], ".xml" => & [XML::info], ".gemspec" => &
-    [Ruby::info], ".p6" => & [Raku::info], ".hack" => & [Hack::info], ".fut" => &
-    [Futhark::info], ".cbx" => & [TeX::info], ".cobol" => & [COBOL::info], ".ascx" => &
-    [ASPNET::info], ".vrx" => & [GLSL::info], ".nimrod" => & [Nim::info], ".org" => &
-    [Org::info], ".dsp" => & [Faust::info, MicrosoftDeveloperStudioProject::info],
-    ".xojo_report" => & [Xojo::info], ".oz" => & [Oz::info], ".less" => & [Less::info],
-    ".srt" => & [SRecodeTemplate::info, SubRipText::info], ".gmi" => & [Gemini::info],
-    ".os" => & [_1CEnterprise::info], ".cljs.hl" => & [Clojure::info], ".cp" => &
-    [Cpp::info, ComponentPascal::info], ".dm" => & [DM::info], ".hs" => &
-    [Haskell::info], ".pkl" => & [Pickle::info, Pkl::info], ".xc" => & [XC::info],
-    ".linq" => & [Csharp::info], ".lfe" => & [LFE::info], ".psd1" => &
-    [PowerShell::info], ".zeek" => & [Zeek::info], ".pony" => & [Pony::info], ".h" => &
-    [C::info, Cpp::info, ObjectiveC::info], ".ncl" => & [GerberImage::info, NCL::info,
-    Text::info, XML::info], ".re" => & [Cpp::info, Reason::info], "._coffee" => &
-    [CoffeeScript::info], ".sfd" => & [SplineFontDatabase::info], ".fr" => &
-    [Forth::info, Frege::info, Text::info], ".vba" => & [VBA::info, VimScript::info],
-    ".ada" => & [Ada::info], ".sparql" => & [SPARQL::info], ".sty" => & [TeX::info],
-    ".meta" => & [Unity3DAsset::info], ".scrbl" => & [Racket::info], ".robot" => &
-    [RobotFramework::info], ".mcmeta" => & [JSON::info], ".eclxml" => & [ECL::info],
-    ".nginx" => & [Nginx::info], ".asp" => & [ClassicASP::info], ".jl" => &
-    [Julia::info], ".mtl" => & [WavefrontMaterial::info], ".sublime-theme" => &
-    [JSONWithComments::info], ".lhs" => & [LiterateHaskell::info], ".s" => &
-    [Assembly::info, Motorola68KAssembly::info, UnixAssembly::info], ".psc" => &
-    [Papyrus::info], ".tpl" => & [Smarty::info], ".rsc" => & [Rascal::info,
-    RouterOSScript::info], ".jisonlex" => & [JisonLex::info], ".mat" => &
-    [Unity3DAsset::info], ".mao" => & [Mako::info], ".ox" => & [Ox::info], ".i7x" => &
-    [Inform7::info], ".mps" => & [JetBrainsMPS::info], ".rchit" => & [GLSL::info],
-    ".lasso" => & [Lasso::info], ".1" => & [Roff::info, RoffManpage::info], ".wit" => &
-    [WebAssemblyInterfaceType::info], ".pas" => & [Pascal::info], ".ads" => &
-    [Ada::info], ".pod" => & [Pod::info, Pod6::info], ".ex" => & [Elixir::info,
-    Euphoria::info], ".builds" => & [XML::info], ".nbp" => & [Mathematica::info], ".xpl"
-    => & [XProc::info], ".kicad_sym" => & [KiCadSchematic::info], ".sw" => & [Sway::info,
-    XML::info], ".hrl" => & [Erlang::info], ".xm" => & [Logos::info], ".jq" => &
-    [JSONiq::info, Jq::info], ".awk" => & [Awk::info], ".gpx" => & [XML::info], ".w" => &
-    [CWeb::info, OpenEdgeABL::info], ".desktop.in" => & [Desktop::info],
-    ".sublime-color-scheme" => & [JSONWithComments::info], ".ejs.t" => & [EJS::info],
-    ".pat" => & [Max::info], ".nut" => & [Squirrel::info], ".nuspec" => & [XML::info],
-    ".xojo_window" => & [Xojo::info], ".golo" => & [Golo::info], ".pbt" => &
-    [PowerBuilder::info, ProtocolBufferTextFormat::info], ".cxx-objdump" => &
-    [CppObjDump::info], ".fancypack" => & [Fancy::info], ".pov" => & [POVRaySDL::info],
-    ".bbclass" => & [BitBake::info], ".conllu" => & [CoNLLU::info], ".te" => &
-    [SELinuxPolicy::info], ".pyi" => & [Python::info], ".flux" => & [FLUX::info], ".rmd"
-    => & [RMarkdown::info], ".gf" => & [GrammaticalFramework::info], ".als" => &
-    [Alloy::info], ".mc" => & [M4::info, MonkeyC::info, Win32MessageFile::info], ".rdoc"
-    => & [RDoc::info], ".axaml" => & [XML::info], ".csproj" => & [XML::info],
-    ".xsp.metadata" => & [XPages::info], ".yul" => & [Yul::info], ".just" => &
-    [Just::info], ".au3" => & [AutoIt::info], ".code-snippets" => &
-    [JSONWithComments::info], ".emberscript" => & [EmberScript::info], ".d2" => &
-    [D2::info], ".escript" => & [Erlang::info], ".tres" => & [GodotResource::info],
-    ".lark" => & [Lark::info], ".sublime-build" => & [JSONWithComments::info], ".gtp" =>
-    & [GerberImage::info], ".dzn" => & [MiniZincData::info], ".qmd" => &
-    [RMarkdown::info], ".ur" => & [UrWeb::info], ".xojo_menu" => & [Xojo::info], ".6" =>
-    & [Roff::info, RoffManpage::info], ".jsonl" => & [JSON::info], ".sbt" => &
-    [Scala::info], ".wiki" => & [Wikitext::info], ".gs" => & [GLSL::info, Genie::info,
-    Gosu::info, JavaScript::info], ".c-objdump" => & [CObjDump::info], ".sc" => &
-    [Scala::info, SuperCollider::info], ".ftl" => & [Fluent::info, FreeMarker::info],
-    ".orc" => & [Csound::info], ".gdb" => & [GDB::info], ".fshader" => & [GLSL::info],
-    ".factor" => & [Factor::info], ".asciidoc" => & [AsciiDoc::info], ".mdwn" => &
-    [Markdown::info], ".mspec" => & [Ruby::info], ".hocon" => & [HOCON::info], ".pprx" =>
-    & [REXX::info], ".1in" => & [Roff::info, RoffManpage::info], ".tu" => &
-    [Turing::info], ".vim" => & [VimScript::info], ".dlm" => & [IDL::info], ".yml.mysql"
-    => & [YAML::info], ".hs-boot" => & [Haskell::info], ".riot" => & [Riot::info],
-    ".glslf" => & [GLSL::info], ".wlt" => & [Mathematica::info], ".gitconfig" => &
-    [GitConfig::info], ".bsv" => & [Bluespec::info], ".pl6" => & [Raku::info], ".gyp" =>
-    & [Python::info], ".el" => & [EmacsLisp::info], ".pls" => & [PLSQL::info], ".rbw" =>
-    & [Ruby::info], ".3m" => & [Roff::info, RoffManpage::info], ".xsp-config" => &
-    [XPages::info], ".gp" => & [Gnuplot::info], ".i" => & [Assembly::info,
-    Motorola68KAssembly::info, SWIG::info], ".inc" => & [Assembly::info, BitBake::info,
-    Cpp::info, HTML::info, Motorola68KAssembly::info, NASL::info, PHP::info,
-    POVRaySDL::info, Pascal::info, Pawn::info, SQL::info, SourcePawn::info], ".wisp" => &
-    [Wisp::info], ".cxx" => & [Cpp::info], ".psc1" => & [XML::info], ".webapp" => &
-    [JSON::info], ".sps" => & [Scheme::info], ".topojson" => & [JSON::info], ".1x" => &
-    [Roff::info, RoffManpage::info], ".decls" => & [BlitzBasic::info], ".veo" => &
-    [Verilog::info], ".blade.php" => & [Blade::info], ".zap" => & [ZAP::info], ".mako" =>
-    & [Mako::info], ".ma" => & [Mathematica::info], ".ck" => & [ChucK::info], ".rsx" => &
-    [R::info], ".sass" => & [Sass::info], ".t" => & [Perl::info, Raku::info, Terra::info,
-    Turing::info], ".sml" => & [StandardML::info], ".pub" => & [PublicKey::info],
-    ".dll.config" => & [XML::info], ".tpp" => & [Cpp::info], ".i3" => & [Modula3::info],
-    ".tmac" => & [Roff::info], ".hbs" => & [Handlebars::info], ".sra" => &
-    [PowerBuilder::info], ".ws" => & [WitcherScript::info], ".zpl" => & [Zimpl::info],
-    ".cs" => & [Csharp::info, Smalltalk::info], ".xsjs" => & [JavaScript::info],
-    ".scenic" => & [Scenic::info], ".md4" => & [Checksums::info], ".dsc" => &
-    [DebianPackageControlFile::info, DenizenScript::info], ".hxml" => & [HXML::info],
-    ".p4" => & [P4::info], ".csv" => & [CSV::info], ".nit" => & [Nit::info], ".mts" => &
-    [TypeScript::info], ".volt" => & [Volt::info], ".cake" => & [Csharp::info,
-    CoffeeScript::info], ".csd" => & [CsoundDocument::info], ".leex" => &
-    [HTMLpEEX::info], ".lidr" => & [Idris::info], ".sh-session" => &
-    [ShellSession::info], ".sfproj" => & [XML::info], ".reg" => &
-    [WindowsRegistryEntries::info], ".qbs" => & [QML::info], ".mlir" => & [MLIR::info],
-    ".sail" => & [Sail::info], ".rktd" => & [Racket::info], ".fsi" => & [Fsharp::info],
-    ".cls" => & [Apex::info, ObjectScript::info, OpenEdgeABL::info, TeX::info, VBA::info,
-    VisualBasic60::info], ".move" => & [MoveLang::info], ".mbt" => & [MoonBit::info],
-    ".hh" => & [Cpp::info, Hack::info], ".ms" => & [MAXScript::info, Roff::info,
-    UnixAssembly::info], ".psm1" => & [PowerShell::info], ".f03" => &
-    [FortranFreeForm::info], ".fsx" => & [Fsharp::info], ".groovy" => & [Groovy::info],
-    ".mli" => & [OCaml::info], ".xul" => & [XML::info], ".es6" => & [JavaScript::info],
-    ".xi" => & [Logos::info], ".bzl" => & [Starlark::info], ".cu" => & [Cuda::info],
-    ".bs" => & [Bikeshed::info, BluespecBH::info, BrighterScript::info], ".jsb" => &
-    [JavaScript::info], ".jade" => & [Pug::info], ".mxml" => & [XML::info], ".wl" => &
-    [Mathematica::info], ".tool" => & [Shell::info], ".fish" => & [Fish::info], ".rs.in"
-    => & [Rust::info], ".fxh" => & [HLSL::info], ".hy" => & [Hy::info], ".scala" => &
-    [Scala::info], ".cdc" => & [Cadence::info], ".gd" => & [GAP::info, GDScript::info],
-    ".luau" => & [Luau::info], ".vimrc" => & [VimScript::info], ".grxml" => &
-    [XML::info], ".dylan" => & [Dylan::info], ".apib" => & [APIBlueprint::info],
-    ".watchr" => & [Ruby::info], ".cljx" => & [Clojure::info], ".pfa" => &
-    [PostScript::info], ".pod6" => & [Pod6::info], ".mzn" => & [MiniZinc::info],
-    ".haml.deface" => & [Haml::info], ".lasso8" => & [Lasso::info], ".sce" => &
-    [Scilab::info], ".nu" => & [Nu::info, Nushell::info], ".ltx" => & [TeX::info],
-    ".lean" => & [Lean::info, Lean4::info], ".mk" => & [Makefile::info], ".es" => &
-    [Erlang::info, JavaScript::info], ".yaml" => & [MiniYAML::info, OASv2Yaml::info,
-    OASv3Yaml::info, YAML::info], ".hzp" => & [XML::info], ".ne" => & [Nearley::info],
-    ".bicep" => & [Bicep::info], ".me" => & [Roff::info], ".ooc" => & [Ooc::info], ".hx"
-    => & [Haxe::info], ".druby" => & [Mirah::info], ".xml.dist" => & [XML::info],
-    ".oxygene" => & [Oxygene::info], ".bat" => & [Batchfile::info], ".tsx" => &
-    [TSX::info, XML::info], ".jss" => & [JavaScript::info], ".fnl" => & [Fennel::info],
-    ".jst" => & [EJS::info], ".obj" => & [WavefrontObject::info], ".kak" => &
-    [KakouneScript::info], ".jsp" => & [JavaServerPages::info], ".oxh" => & [Ox::info],
-    ".cylc" => & [Cylc::info], ".eliom" => & [OCaml::info], ".ical" => &
-    [ICalendar::info], ".gdbinit" => & [GDB::info], ".kdl" => & [KDL::info], ".css" => &
-    [CSS::info], ".hlean" => & [Lean::info], ".qs" => & [Qsharp::info, QtScript::info],
-    ".dyalog" => & [APL::info], ".gdns" => & [GodotResource::info], ".srdf" => &
-    [XML::info], ".udo" => & [Csound::info], ".lagda" => & [LiterateAgda::info], ".crc32"
-    => & [Checksums::info], ".vssettings" => & [XML::info], ".rmiss" => & [GLSL::info],
-    ".tcsh" => & [Tcsh::info], ".nsi" => & [NSIS::info], ".vtt" => & [WebVTT::info],
-    ".tmux" => & [Shell::info], ".6pm" => & [Raku::info], ".gbo" => &
-    [GerberImage::info], ".sha512" => & [Checksums::info], ".cpy" => & [COBOL::info],
-    ".fcgi" => & [Lua::info, PHP::info, Perl::info, Python::info, Ruby::info,
-    Shell::info], ".cfm" => & [ColdFusion::info], ".ily" => & [LilyPond::info], ".podsl"
-    => & [CommonLisp::info], ".m3u" => & [M3U::info], ".ss" => & [Scheme::info], ".bb" =>
-    & [BitBake::info, BlitzBasic::info, Clojure::info], ".cc" => & [Cpp::info],
-    ".wixproj" => & [XML::info], ".xmi" => & [XML::info], ".minid" => & [MiniD::info],
-    ".gtl" => & [GerberImage::info], ".ligo" => & [LigoLANG::info], ".cairo" => &
-    [Cairo::info, CairoZero::info], ".xht" => & [HTML::info], ".workbook" => &
-    [Markdown::info], ".d" => & [D::info, DTrace::info, Makefile::info], ".kk" => &
-    [Koka::info], ".toc" => & [TeX::info, WorldOfWarcraftAddonData::info], ".cypher" => &
-    [Cypher::info], ".edge" => & [Edge::info], ".cscfg" => & [XML::info], ".bdy" => &
-    [PLSQL::info], ".spc" => & [PLSQL::info], ".sls" => & [SaltStack::info,
-    Scheme::info], ".asc" => & [AGSScript::info, AsciiDoc::info, PublicKey::info],
-    ".ispc" => & [ISPC::info], ".gbp" => & [GerberImage::info], ".dyl" => &
-    [Dylan::info], ".command" => & [Shell::info], ".cocci" => & [SmPL::info], ".pytb" =>
-    & [PythonTraceback::info], ".inl" => & [Cpp::info], ".vhd" => & [VHDL::info], ".xbm"
-    => & [XBitMap::info], ".zcml" => & [XML::info], ".boot" => & [Clojure::info],
-    ".creole" => & [Creole::info], ".coffee.md" => & [LiterateCoffeeScript::info],
-    ".bicepparam" => & [Bicep::info], ".lisp" => & [CommonLisp::info, NewLisp::info],
-    ".cabal" => & [CabalConfig::info], ".do" => & [Stata::info], ".gnu" => &
-    [Gnuplot::info], ".monkey" => & [Monkey::info], ".vhost" => & [ApacheConf::info,
-    Nginx::info], ".io" => & [Io::info], ".antlers.xml" => & [Antlers::info], ".lvclass"
-    => & [LabVIEW::info], ".rake" => & [Ruby::info], ".snip" => & [VimSnippet::info],
-    ".dircolors" => & [Dircolors::info], ".wsf" => & [XML::info], ".overpassql" => &
-    [OverpassQL::info], ".mpl" => & [JetBrainsMPS::info], ".ruby" => & [Ruby::info],
-    ".db2" => & [SQLPL::info], ".cob" => & [COBOL::info], ".cl2" => & [Clojure::info],
-    ".hic" => & [Clojure::info], ".f90" => & [FortranFreeForm::info], ".shader" => &
-    [GLSL::info, ShaderLab::info], ".gml" => & [GameMakerLanguage::info,
-    GerberImage::info, GraphModelingLanguage::info, XML::info], ".rbuild" => &
-    [Ruby::info], ".xacro" => & [XML::info], ".csx" => & [Csharp::info], ".gbs" => &
-    [GerberImage::info], ".mms" => & [ModuleManagementSystem::info], ".xsd" => &
-    [XML::info], ".xslt" => & [XSLT::info], ".xpy" => & [Python::info], ".mjs" => &
-    [JavaScript::info], ".vbs" => & [VBScript::info], ".bsl" => & [_1CEnterprise::info],
-    ".asm" => & [Assembly::info, Motorola68KAssembly::info], ".gsx" => & [Gosu::info],
-    ".jcl" => & [JCL::info], ".gnuplot" => & [Gnuplot::info], ".pig" => &
-    [PigLatin::info], ".l" => & [CommonLisp::info, Lex::info, PicoLisp::info,
-    Roff::info], ".asddls" => & [ABAPCDS::info], ".json5" => & [JSON5::info], ".nb" => &
-    [Mathematica::info, Text::info], ".elv" => & [Elvish::info], ".pde" => &
-    [Processing::info], ".makefile" => & [Makefile::info], ".snap" => &
-    [JestSnapshot::info], ".webmanifest" => & [JSON::info], ".dsl" => & [ASL::info],
-    ".mata" => & [Stata::info], ".wsdl" => & [XML::info], ".hxsl" => & [Haxe::info],
-    ".sublime-settings" => & [JSONWithComments::info], ".kt" => & [Kotlin::info], ".asax"
-    => & [ASPNET::info], ".vhdl" => & [VHDL::info], ".msd" => & [JetBrainsMPS::info],
-    ".vtl" => & [VelocityTemplateLanguage::info], ".java" => & [Java::info], ".pir" => &
-    [ParrotInternalRepresentation::info], ".nr" => & [Noir::info, Roff::info], ".sieve"
-    => & [Sieve::info], ".vxml" => & [XML::info], ".cljc" => & [Clojure::info], ".jte" =>
-    & [JavaTemplateEngine::info], ".erl" => & [Erlang::info], ".kts" => & [Kotlin::info],
-    ".objdump" => & [ObjDump::info], ".cjsx" => & [CoffeeScript::info], ".js" => &
-    [JavaScript::info], ".rbi" => & [Ruby::info], ".m4" => & [M4::info, M4Sugar::info],
-    ".pasm" => & [ParrotAssembly::info], ".shen" => & [Shen::info], ".matah" => &
-    [Stata::info], ".sv" => & [SystemVerilog::info], ".ll" => & [LLVM::info], ".logtalk"
-    => & [Logtalk::info], ".editorconfig" => & [EditorConfig::info], ".muf" => &
-    [MUF::info], ".g" => & [GCode::info, GAP::info], ".svg" => & [SVG::info], ".sage" =>
-    & [Sage::info], ".jelly" => & [XML::info], ".tla" => & [TLA::info], ".resx" => &
-    [XML::info], ".tmPreferences" => & [XMLPropertyList::info], ".jav" => & [Java::info],
-    ".mt" => & [Mathematica::info], ".dats" => & [ATS::info], ".haml" => & [Haml::info],
-    ".ssjs" => & [JavaScript::info], ".fp" => & [GLSL::info], ".ld" => &
-    [LinkerScript::info], ".tpb" => & [PLSQL::info], ".mdoc" => & [Roff::info,
-    RoffManpage::info], ".tl" => & [TypeLanguage::info], ".mo" => & [Modelica::info,
-    Motoko::info], ".nasl" => & [NASL::info], ".rq" => & [SPARQL::info], ".cbl" => &
-    [COBOL::info], ".vcl" => & [VCL::info], ".scad" => & [OpenSCAD::info], ".gsh" => &
-    [GSC::info], ".containerfile" => & [Dockerfile::info], ".kql" => & [Kusto::info],
-    ".epsi" => & [PostScript::info], ".OutJob" => & [AltiumDesigner::info], ".pm6" => &
-    [Raku::info], ".rs" => & [RenderScript::info, Rust::info, XML::info], ".bats" => &
-    [Shell::info], ".JSON-tmLanguage" => & [JSON::info], ".asl" => & [ASL::info], ".asmx"
-    => & [ASPNET::info], ".sexp" => & [CommonLisp::info], ".cproject" => & [XML::info],
-    ".zs" => & [ZenScript::info], ".jsonc" => & [JSONWithComments::info], ".mawk" => &
-    [Awk::info], ".m" => & [Limbo::info, M::info, MATLAB::info, MUF::info,
-    Mathematica::info, Mercury::info, ObjectiveC::info], ".mask" => & [Mask::info,
-    Unity3DAsset::info], ".yang" => & [YANG::info], ".gradle.kts" => &
-    [GradleKotlinDSL::info], ".html.hl" => & [HTML::info], ".shproj" => & [XML::info],
-    ".PrjPCB" => & [AltiumDesigner::info], ".ged" => & [GEDCOM::info], ".tm" => &
-    [Tcl::info], ".gsp" => & [GroovyServerPages::info], ".r3" => & [Rebol::info], ".cfml"
-    => & [ColdFusion::info], ".raku" => & [Raku::info], ".tscn" => &
-    [GodotResource::info], ".cmake" => & [CMake::info], ".rhtml" => & [HTMLpERB::info],
-    ".weechatlog" => & [IRCLog::info], ".pwn" => & [Pawn::info], ".ru" => & [Ruby::info],
-    ".frm" => & [INI::info, VBA::info, VisualBasic60::info], ".sas" => & [SAS::info],
-    ".sci" => & [Scilab::info], ".dhall" => & [Dhall::info], ".cljscm" => &
-    [Clojure::info], ".po" => & [GettextCatalog::info], ".lasso9" => & [Lasso::info],
-    ".iuml" => & [PlantUML::info], ".m3u8" => & [M3U::info], ".svelte" => &
-    [Svelte::info], ".xdc" => & [Tcl::info], ".TextGrid" => & [TextGrid::info], ".rego"
-    => & [OpenPolicyAgent::info], ".x10" => & [X10::info], ".cpp-objdump" => &
-    [CppObjDump::info], ".erb" => & [HTMLpERB::info], ".natvis" => & [XML::info], ".pyde"
-    => & [Python::info], ".hlsl" => & [HLSL::info], ".ksy" => & [KaitaiStruct::info],
-    ".tcl" => & [Tcl::info], ".tmLanguage" => & [XMLPropertyList::info], ".cgi" => &
-    [Perl::info, Python::info, Shell::info], ".wat" => & [WebAssembly::info], ".g4" => &
-    [ANTLR::info], ".rakumod" => & [Raku::info], ".rb" => & [Ruby::info], ".adp" => &
-    [Tcl::info], ".liquid" => & [Liquid::info], ".glade" => & [XML::info], ".desktop" =>
-    & [Desktop::info], ".cppm" => & [Cpp::info], ".mly" => & [OCaml::info], ".st" => &
-    [Smalltalk::info, StringTemplate::info], ".xproc" => & [XProc::info], ".ring" => &
-    [Ring::info], ".pic" => & [Pic::info], ".sl" => & [Slash::info], ".nginxconf" => &
-    [Nginx::info], ".mm" => & [ObjectiveCpp::info, XML::info], ".yyp" => & [JSON::info],
-    ".props" => & [XML::info], ".djs" => & [Dogescript::info], ".x" => &
-    [DirectX3DFile::info, LinkerScript::info, Logos::info, RPC::info], ".postcss" => &
-    [PostCSS::info], ".asn1" => & [ASN1::info], ".epj" => & [EcereProjects::info],
-    ".feature" => & [Gherkin::info], ".ipf" => & [IGORPro::info], ".8xp" => &
-    [TIProgram::info], ".storyboard" => & [XML::info], ".sch" => & [Eagle::info,
-    KiCadSchematic::info, Scheme::info, XML::info], ".gts" => & [GerberImage::info,
-    GlimmerTS::info], ".ned" => & [OMNeTppNED::info], ".cfg" => & [HAProxy::info,
-    INI::info], ".xrl" => & [Erlang::info], ".lvproj" => & [LabVIEW::info], ".4" => &
-    [Roff::info, RoffManpage::info], ".lds" => & [LinkerScript::info], ".sig" => &
-    [StandardML::info], ".kicad_pcb" => & [KiCadLayout::info], ".ahkl" => &
-    [AutoHotkey::info], ".mss" => & [CartoCSS::info], ".gco" => & [GCode::info], ".rexx"
-    => & [REXX::info], ".ins" => & [TeX::info], ".json.example" => & [JSON::info], ".dpr"
-    => & [Pascal::info], ".sh" => & [Shell::info], ".pt" => & [XML::info], ".txl" => &
-    [TXL::info], ".stTheme" => & [XMLPropertyList::info], ".tst" => & [GAP::info,
-    Scilab::info], ".sss" => & [SugarSS::info], ".asy" => & [Asymptote::info,
-    LTspiceSymbol::info], ".7" => & [Roff::info, RoffManpage::info], ".x3d" => &
-    [XML::info], ".for" => & [Formatted::info, Forth::info, Fortran::info], ".be" => &
-    [Berry::info], ".j2" => & [Jinja::info], ".pb" => & [PureBasic::info], ".click" => &
-    [Click::info], ".rkt" => & [Racket::info], ".raw" => & [RawTokenData::info], ".vmb"
-    => & [VimScript::info], ".xqy" => & [XQuery::info], ".dae" => & [COLLADA::info],
-    ".go" => & [Go::info], ".vert" => & [GLSL::info], ".eclass" => &
-    [GentooEclass::info], ".kicad_sch" => & [KiCadSchematic::info], ".ron" => &
-    [RON::info], ".vbhtml" => & [VisualBasicNET::info], ".litcoffee" => &
-    [LiterateCoffeeScript::info], ".wren" => & [Wren::info], ".ash" => &
-    [AGSScript::info], ".pep" => & [Pep8::info], ".iss" => & [InnoSetup::info], ".mtml"
-    => & [MTML::info], ".mint" => & [Mint::info], ".smk" => & [Snakemake::info], ".avdl"
-    => & [AvroIDL::info], ".snippets" => & [VimSnippet::info], ".gypi" => &
-    [Python::info], ".tlv" => & [TLVerilog::info], ".mir" => & [YAML::info], ".wlk" => &
-    [Wollok::info], ".sqf" => & [SQF::info], ".vsixmanifest" => & [XML::info],
-    ".xojo_script" => & [Xojo::info], ".lkml" => & [LookML::info], ".lpr" => &
-    [Pascal::info], ".pbi" => & [PureBasic::info], ".ch" => & [Charity::info,
-    XBase::info], ".vshader" => & [GLSL::info], ".pot" => & [GettextCatalog::info],
-    ".dof" => & [INI::info], ".rktl" => & [Racket::info], ".3pm" => & [Roff::info,
-    RoffManpage::info], ".rst.txt" => & [ReStructuredText::info], ".hpp" => &
-    [Cpp::info], ".pd" => & [PureData::info], ".yara" => & [YARA::info], ".cyp" => &
-    [Cypher::info], ".hxx" => & [Cpp::info], ".zil" => & [ZIL::info], ".ijs" => &
-    [J::info], ".iced" => & [CoffeeScript::info], ".sql" => & [PLSQL::info,
-    PLpgSQL::info, SQL::info, SQLPL::info, TSQL::info], ".py" => & [Python::info], ".cil"
-    => & [CIL::info], ".dwl" => & [DataWeave::info], ".ronn" => & [Markdown::info],
-    ".myt" => & [Myghty::info], ".builder" => & [Ruby::info], ".slim" => & [Slim::info],
-    ".hta" => & [HTML::info], ".owl" => & [WebOntologyLanguage::info], ".ceylon" => &
-    [Ceylon::info], ".sha256sum" => & [Checksums::info], ".scd" => & [Markdown::info,
-    SuperCollider::info], ".c" => & [C::info], ".axi" => & [NetLinx::info], ".ejs" => &
-    [EJS::info], ".html.eex" => & [HTMLpEEX::info], ".mcr" => & [MAXScript::info], ".mdx"
-    => & [MDX::info], ".raml" => & [RAML::info], ".lgt" => & [Logtalk::info], ".dtx" => &
-    [TeX::info], ".eml" => & [EMail::info], ".sublime-workspace" => &
-    [JSONWithComments::info], ".prw" => & [XBase::info], ".gshader" => & [GLSL::info],
-    ".dot" => & [GraphvizDOT::info], ".6pl" => & [Raku::info], ".snippet" => &
-    [VimSnippet::info], ".tml" => & [XML::info], ".ecl" => & [ECL::info, ECLiPSe::info],
-    ".ik" => & [Ioke::info], ".fea" => & [OpenTypeFeatureFile::info], ".pluginspec" => &
-    [Ruby::info, XML::info], ".vhs" => & [VHDL::info], ".por" => & [Portugol::info],
-    ".prefs" => & [INI::info], ".praat" => & [Praat::info], ".tea" => & [Tea::info],
-    ".yml" => & [MiniYAML::info, OASv2Yaml::info, OASv3Yaml::info, YAML::info], ".cnc" =>
-    & [GCode::info], ".javascript" => & [JavaScript::info], ".nomad" => & [HCL::info],
-    ".hc" => & [HolyC::info], ".flf" => & [FIGletFont::info], ".nim" => & [Nim::info],
-    ".nse" => & [Lua::info], ".py3" => & [Python::info], ".zig" => & [Zig::info],
-    ".janet" => & [Janet::info], ".sln" => & [MicrosoftVisualStudioSolution::info],
-    ".txi" => & [Texinfo::info], ".thy" => & [Isabelle::info], ".hql" => &
-    [HiveQL::info], ".pmod" => & [Pike::info], ".xaml" => & [XML::info], ".gradle" => &
-    [Gradle::info], ".ps" => & [PostScript::info], ".vhw" => & [VHDL::info], "._ls" => &
-    [LiveScript::info], ".xsl" => & [XSLT::info], ".4dm" => & [_4D::info], ".fs" => &
-    [Fsharp::info, Filterscript::info, Forth::info, GLSL::info], ".sublime-snippet" => &
-    [XML::info], ".mg" => & [Modula3::info], ".podspec" => & [Ruby::info], ".whiley" => &
-    [Whiley::info], ".ly" => & [LilyPond::info], ".wikitext" => & [Wikitext::info], ".di"
-    => & [D::info], ".pcss" => & [PostCSS::info], ".libsonnet" => & [Jsonnet::info],
-    ".lol" => & [LOLCODE::info], ".launch" => & [XML::info], ".urdf" => & [XML::info],
-    ".xpm" => & [XPixMap::info], ".pl" => & [Perl::info, Prolog::info, Raku::info],
-    ".handlebars" => & [Handlebars::info], ".gpb" => & [GerberImage::info], ".rtf" => &
-    [RichTextFormat::info], ".wsgi" => & [Python::info], ".sagews" => & [Sage::info],
-    ".dfm" => & [Pascal::info], ".rbuistate" => & [REALbasic::info], ".rbmnu" => &
-    [REALbasic::info], ".4th" => & [Forth::info], ".prawn" => & [Ruby::info], ".pxd" => &
-    [Cython::info], ".ijm" => & [ImageJMacro::info], ".bbx" => & [TeX::info], ".eh" => &
-    [EC::info], ".nasm" => & [Assembly::info], ".gko" => & [GerberImage::info], ".templ"
-    => & [Templ::info], ".jsproj" => & [XML::info], ".h.in" => & [C::info], ".lookml" =>
-    & [LookML::info], ".arpa" => & [DNSZone::info], ".mll" => & [OCaml::info], ".jsonnet"
-    => & [Jsonnet::info], ".resource" => & [RobotFramework::info], ".cson" => &
-    [CSON::info], ".mdpolicy" => & [XML::info], ".idc" => & [C::info], ".upc" => &
-    [UnifiedParallelC::info], ".numsc" => & [NumPy::info], ".pm" => & [Perl::info,
-    Raku::info, XPixMap::info], ".gvy" => & [Groovy::info], ".asd" => &
-    [CommonLisp::info], ".bf" => & [Beef::info, Befunge::info, Brainfuck::info,
-    HyPhy::info], ".gv" => & [GraphvizDOT::info], ".cginc" => & [HLSL::info], ".ink" => &
-    [Ink::info], ".pact" => & [Pact::info], ".jsh" => & [Java::info], ".ql" => &
-    [CodeQL::info], ".f95" => & [FortranFreeForm::info], ".omgrofl" => & [Omgrofl::info],
-    ".arr" => & [Pyret::info], ".rbfrm" => & [REALbasic::info], ".sp" => &
-    [SourcePawn::info], ".ado" => & [Stata::info], ".json" => & [JSON::info,
-    OASv2Json::info, OASv3Json::info], ".c++" => & [Cpp::info], ".4DProject" => &
-    [JSON::info], ".clw" => & [Clarion::info], ".cirru" => & [Cirru::info], ".ivy" => &
-    [XML::info], ".emacs" => & [EmacsLisp::info], ".lid" => & [Dylan::info], ".jsonld" =>
-    & [JSONLD::info], ".msg" => & [OMNeTppMSG::info], ".sed" => & [Sed::info], ".html" =>
-    & [Ecmarkup::info, HTML::info], ".ninja" => & [Ninja::info], ".axml" => &
-    [XML::info], ".jake" => & [JavaScript::info], ".zig.zon" => & [Zig::info], ".3" => &
-    [Roff::info, RoffManpage::info], ".c++-objdump" => & [CppObjDump::info], ".rei" => &
-    [Reason::info], ".angelscript" => & [AngelScript::info], ".brs" => &
-    [Brightscript::info], ".cuh" => & [Cuda::info], ".mbox" => & [EMail::info], ".vue" =>
-    & [Vue::info], ".4DForm" => & [JSON::info], ".wxs" => & [XML::info], ".pyx" => &
-    [Cython::info], ".forth" => & [Forth::info], ".pkgproj" => & [XML::info], ".fx" => &
-    [FLUX::info, HLSL::info], ".jinja" => & [Jinja::info], ".applescript" => &
-    [AppleScript::info], ".hqf" => & [SQF::info], ".stl" => & [STL::info], ".ndproj" => &
-    [XML::info], ".hoon" => & [Hoon::info], ".cql" => & [SQL::info], ".vstemplate" => &
-    [XML::info], ".sthlp" => & [Stata::info], ".zep" => & [Zephir::info], ".peggy" => &
-    [PEGjs::info], ".sats" => & [ATS::info], ".sha224" => & [Checksums::info], ".jsfl" =>
-    & [JavaScript::info], ".regexp" => & [RegularExpression::info], ".xojo_code" => &
-    [Xojo::info], ".kit" => & [Kit::info], ".scss" => & [SCSS::info], ".maxhelp" => &
-    [Max::info], ".eliomi" => & [OCaml::info], ".z3" => & [SMT::info], ".clixml" => &
-    [XML::info], ".trigger" => & [Apex::info, Shell::info], ".bal" => &
-    [Ballerina::info], ".tcc" => & [Cpp::info], ".adoc" => & [AsciiDoc::info],
-    ".bbappend" => & [BitBake::info], ".gbr" => & [GerberImage::info], ".bib" => &
-    [BibTeX::info], ".nawk" => & [Awk::info], "._js" => & [JavaScript::info], ".mqh" => &
-    [MQL4::info, MQL5::info], ".purs" => & [PureScript::info], ".rbx" => & [Ruby::info],
-    ".udf" => & [SQL::info], ".tese" => & [GLSL::info], ".svx" => & [SurvexData::info,
-    Mdsvex::info], ".tftpl" => & [TerraformTemplate::info], ".vdf" => &
-    [ValveDataFormat::info], ".textproto" => & [ProtocolBufferTextFormat::info], ".cmp"
-    => & [GerberImage::info], ".wxl" => & [XML::info], ".grt" => & [Groovy::info], ".rd"
-    => & [R::info], ".mediawiki" => & [Wikitext::info], ".tmTheme" => &
-    [XMLPropertyList::info], ".3p" => & [Roff::info, RoffManpage::info], ".yrl" => &
-    [Erlang::info], ".xquery" => & [XQuery::info], ".mud" => & [ZIL::info], ".bones" => &
-    [JavaScript::info], ".krl" => & [KRL::info], ".carbon" => & [Carbon::info], ".vb" =>
-    & [VisualBasicNET::info], ".gitignore" => & [IgnoreList::info], ".qasm" => &
-    [OpenQASM::info], ".php5" => & [PHP::info], ".tsp" => & [TSPLIBData::info,
-    TypeSpec::info], ".frag" => & [GLSL::info, JavaScript::info]
+    ".ny" => & [CommonLisp::info], ".rbfrm" => & [REALbasic::info], ".asddls" => &
+    [ABAPCDS::info], ".grxml" => & [XML::info], ".launch" => & [XML::info], ".awk" => &
+    [Awk::info], ".opencl" => & [OpenCL::info], ".mkiv" => & [TeX::info], ".nl" => &
+    [NL::info, NewLisp::info], ".props" => & [XML::info], ".agc" => &
+    [ApolloGuidanceComputer::info], ".x" => & [DirectX3DFile::info, LinkerScript::info,
+    Logos::info, RPC::info], ".c++" => & [Cpp::info], ".avdl" => & [AvroIDL::info],
+    ".inl" => & [Cpp::info], ".ccp" => & [COBOL::info], ".click" => & [Click::info],
+    ".epj" => & [EcereProjects::info], ".graphql" => & [GraphQL::info], ".latte" => &
+    [Latte::info], ".hlean" => & [Lean::info], ".http" => & [HTTP::info], ".fs" => &
+    [Fsharp::info, Filterscript::info, Forth::info, GLSL::info], ".gni" => & [GN::info],
+    ".raml" => & [RAML::info], ".ktm" => & [Kotlin::info], ".vhw" => & [VHDL::info],
+    ".os" => & [_1CEnterprise::info], ".curry" => & [Curry::info], ".p" => &
+    [Gnuplot::info, OpenEdgeABL::info], ".xojo_report" => & [Xojo::info], ".inc" => &
+    [Assembly::info, BitBake::info, Cpp::info, HTML::info, Motorola68KAssembly::info,
+    NASL::info, PHP::info, POVRaySDL::info, Pascal::info, Pawn::info, SQL::info,
+    SourcePawn::info], ".io" => & [Io::info], ".cljs.hl" => & [Clojure::info], ".jake" =>
+    & [JavaScript::info], ".toit" => & [Toit::info], ".wit" => &
+    [WebAssemblyInterfaceType::info], ".anim" => & [Unity3DAsset::info], ".rst" => &
+    [ReStructuredText::info], ".circom" => & [Circom::info], ".ni" => & [Inform7::info],
+    ".blade" => & [Blade::info], ".cfml" => & [ColdFusion::info], ".pl" => & [Perl::info,
+    Prolog::info, Raku::info], ".dhall" => & [Dhall::info], ".fnc" => & [PLSQL::info],
+    ".tesc" => & [GLSL::info], ".bsl" => & [_1CEnterprise::info], ".tac" => &
+    [Python::info], ".ig" => & [Modula3::info], ".cppobjdump" => & [CppObjDump::info],
+    ".scm" => & [Scheme::info, TreeSitterQuery::info], ".ccproj" => & [XML::info], ".las"
+    => & [Lasso::info], ".yml.mysql" => & [YAML::info], ".mkdown" => & [Markdown::info],
+    ".tres" => & [GodotResource::info], ".lsl" => & [LSL::info], ".fnl" => &
+    [Fennel::info], ".edn" => & [Edn::info], ".ssjs" => & [JavaScript::info], ".lpr" => &
+    [Pascal::info], ".pod6" => & [Pod6::info], ".rbres" => & [REALbasic::info], ".spin"
+    => & [PropellerSpin::info], ".unity" => & [Unity3DAsset::info], ".xib" => &
+    [XML::info], ".pwn" => & [Pawn::info], ".twig" => & [Twig::info], ".eliomi" => &
+    [OCaml::info], ".sparql" => & [SPARQL::info], ".vhdl" => & [VHDL::info], ".bdf" => &
+    [GlyphBitmapDistributionFormat::info], ".pir" => &
+    [ParrotInternalRepresentation::info], ".ahkl" => & [AutoHotkey::info], ".afm" => &
+    [AdobeFontMetrics::info], ".sage" => & [Sage::info], ".do" => & [Stata::info], ".xml"
+    => & [XML::info], ".frg" => & [GLSL::info], ".spec" => & [Python::info,
+    RPMSpec::info, Ruby::info], ".svh" => & [SystemVerilog::info], ".es" => &
+    [Erlang::info, JavaScript::info], ".jcl" => & [JCL::info], ".prisma" => &
+    [Prisma::info], ".rbs" => & [RBS::info], ".pkb" => & [PLSQL::info], ".sed" => &
+    [Sed::info], ".makefile" => & [Makefile::info], ".3qt" => & [Roff::info,
+    RoffManpage::info], ".wgsl" => & [WGSL::info], ".rbbas" => & [REALbasic::info],
+    ".scala" => & [Scala::info], ".moo" => & [Mercury::info, Moocode::info], ".blade.php"
+    => & [Blade::info], ".mg" => & [Modula3::info], ".rdf" => & [XML::info], ".cppm" => &
+    [Cpp::info], ".opa" => & [Opa::info], ".mojo" => & [Mojo::info, XML::info],
+    ".mediawiki" => & [Wikitext::info], ".xs" => & [XS::info], ".zeek" => & [Zeek::info],
+    ".cxx" => & [Cpp::info], ".gltf" => & [JSON::info], ".xsjs" => & [JavaScript::info],
+    ".sha512" => & [Checksums::info], ".i3" => & [Modula3::info], ".hxx" => &
+    [Cpp::info], ".ne" => & [Nearley::info], ".fy" => & [Fancy::info], ".pks" => &
+    [PLSQL::info], ".cbx" => & [TeX::info], ".js" => & [JavaScript::info], ".ini" => &
+    [INI::info], ".xrl" => & [Erlang::info], ".tmTheme" => & [XMLPropertyList::info],
+    ".pep" => & [Pep8::info], ".gsp" => & [GroovyServerPages::info], ".rockspec" => &
+    [Lua::info], ".tpb" => & [PLSQL::info], ".env" => & [Dotenv::info], ".edc" => &
+    [EdjeDataCollection::info], ".gyp" => & [Python::info], ".cql" => & [SQL::info],
+    ".als" => & [Alloy::info], ".ct" => & [XML::info], ".jav" => & [Java::info], ".oxo"
+    => & [Ox::info], ".pml" => & [Promela::info], ".1" => & [Roff::info,
+    RoffManpage::info], ".lbx" => & [TeX::info], ".smt2" => & [SMT::info], ".mtl" => &
+    [WavefrontMaterial::info], ".x3d" => & [XML::info], ".tact" => & [JSON::info,
+    Tact::info], ".xsd" => & [XML::info], ".dsc" => & [DebianPackageControlFile::info,
+    DenizenScript::info], ".b" => & [Brainfuck::info, Limbo::info], ".cfg" => &
+    [HAProxy::info, INI::info], ".rviz" => & [YAML::info], ".prg" => & [XBase::info],
+    ".cp" => & [Cpp::info, ComponentPascal::info], ".sublime_session" => &
+    [JSONWithComments::info], ".cs.pp" => & [Csharp::info], ".coq" => &
+    [RocqProver::info], ".ps1" => & [PowerShell::info], ".gdnlib" => &
+    [GodotResource::info], ".4DForm" => & [JSON::info], ".vala" => & [Vala::info], ".app"
+    => & [Erlang::info], ".gql" => & [GraphQL::info], ".fxh" => & [HLSL::info], ".hy" =>
+    & [Hy::info], ".liquid" => & [Liquid::info], ".jslib" => & [JavaScript::info],
+    ".wsgi" => & [Python::info], ".vstemplate" => & [XML::info], ".xql" => &
+    [XQuery::info], ".gitignore" => & [IgnoreList::info], ".vxml" => & [XML::info],
+    ".adoc" => & [AsciiDoc::info], ".bib" => & [BibTeX::info], ".jai" => & [Jai::info],
+    ".mligo" => & [CameLIGO::info], ".nf" => & [Nextflow::info], ".befunge" => &
+    [Befunge::info], ".lsp" => & [CommonLisp::info, NewLisp::info], ".dpatch" => &
+    [DarcsPatch::info], ".djs" => & [Dogescript::info], ".rtf" => &
+    [RichTextFormat::info], ".dfy" => & [Dafny::info], ".cl2" => & [Clojure::info],
+    ".nit" => & [Nit::info], ".plsql" => & [PLSQL::info], ".pig" => & [PigLatin::info],
+    ".plantuml" => & [PlantUML::info], ".cproject" => & [XML::info], ".tmSnippet" => &
+    [XMLPropertyList::info], ".mu" => & [Mupad::info], ".iuml" => & [PlantUML::info],
+    ".ml4" => & [OCaml::info], ".gbp" => & [GerberImage::info], ".bbx" => & [TeX::info],
+    ".jisonlex" => & [JisonLex::info], ".asd" => & [CommonLisp::info], ".java" => &
+    [Java::info], ".less" => & [Less::info], ".csc" => & [GSC::info], ".jsfl" => &
+    [JavaScript::info], ".lslp" => & [LSL::info], ".antlers.html" => & [Antlers::info],
+    ".litcoffee" => & [LiterateCoffeeScript::info], ".resource" => &
+    [RobotFramework::info], ".javascript" => & [JavaScript::info], ".rbw" => &
+    [Ruby::info], ".org" => & [Org::info], ".xhtml" => & [HTML::info], ".vhd" => &
+    [VHDL::info], ".hh" => & [Cpp::info, Hack::info], ".xqy" => & [XQuery::info], ".xslt"
+    => & [XSLT::info], ".mako" => & [Mako::info], ".srt" => & [SRecodeTemplate::info,
+    SubRipText::info], ".edgeql" => & [EdgeQL::info], ".sublime-mousemap" => &
+    [JSONWithComments::info], ".pascal" => & [Pascal::info], ".odd" => & [XML::info],
+    ".erb.deface" => & [HTMLpERB::info], ".snippet" => & [VimSnippet::info], ".tst" => &
+    [GAP::info, Scilab::info], ".sw" => & [Sway::info, XML::info], ".wast" => &
+    [WebAssembly::info], ".vsixmanifest" => & [XML::info], ".vw" => & [PLSQL::info],
+    ".numpyw" => & [NumPy::info], ".dart" => & [Dart::info], ".prefs" => & [INI::info],
+    ".sqlrpgle" => & [RPGLE::info], ".svelte" => & [Svelte::info], ".cjsx" => &
+    [CoffeeScript::info], ".toc" => & [TeX::info, WorldOfWarcraftAddonData::info],
+    ".tool" => & [Shell::info], ".tmPreferences" => & [XMLPropertyList::info], ".zs" => &
+    [ZenScript::info], ".6" => & [Roff::info, RoffManpage::info], ".rsx" => & [R::info],
+    ".hqf" => & [SQF::info], ".icl" => & [Clean::info], ".clw" => & [Clarion::info],
+    ".dlm" => & [IDL::info], ".xht" => & [HTML::info], ".kql" => & [Kusto::info],
+    ".cocci" => & [SmPL::info], ".erb" => & [HTMLpERB::info], ".vimrc" => &
+    [VimScript::info], ".gbl" => & [GerberImage::info], ".i" => & [Assembly::info,
+    Motorola68KAssembly::info, SWIG::info], ".rl" => & [Ragel::info], ".re" => &
+    [Cpp::info, Reason::info], ".wikitext" => & [Wikitext::info], ".csl" => &
+    [Kusto::info, XML::info], ".nse" => & [Lua::info], ".vcxproj" => & [XML::info],
+    ".avsc" => & [JSON::info], ".geojson" => & [JSON::info], ".cpp-objdump" => &
+    [CppObjDump::info], ".smali" => & [Smali::info], ".zone" => & [DNSZone::info],
+    ".ebuild" => & [GentooEbuild::info], ".syntax" => & [YAML::info], ".admx" => &
+    [XML::info], ".z3" => & [SMT::info], ".kk" => & [Koka::info], ".axi" => &
+    [NetLinx::info], ".applescript" => & [AppleScript::info], ".msg" => &
+    [OMNeTppMSG::info], ".gdns" => & [GodotResource::info], ".meta" => &
+    [Unity3DAsset::info], ".targets" => & [XML::info], ".vssettings" => & [XML::info],
+    ".vh" => & [SystemVerilog::info], ".tps" => & [PLSQL::info], ".srw" => &
+    [PowerBuilder::info], ".sss" => & [SugarSS::info], ".lookml" => & [LookML::info],
+    ".vht" => & [VHDL::info], ".dircolors" => & [Dircolors::info], ".g4" => &
+    [ANTLR::info], ".puml" => & [PlantUML::info], ".j" => & [Jasmin::info,
+    ObjectiveJ::info], ".mdoc" => & [Roff::info, RoffManpage::info], ".tftpl" => &
+    [TerraformTemplate::info], ".vbproj" => & [XML::info], ".lp" => &
+    [AnswerSetProgramming::info, LinearProgramming::info], ".hcl" => & [HCL::info],
+    ".pkgproj" => & [XML::info], ".resx" => & [XML::info], ".gpx" => & [XML::info],
+    ".vhost" => & [ApacheConf::info, Nginx::info], ".haml" => & [Haml::info], ".xmp" => &
+    [XML::info], ".mod" => & [AMPL::info, LinuxKernelModule::info, Modula2::info,
+    NMODL::info, XML::info], ".c++objdump" => & [CppObjDump::info], ".cy" => &
+    [Cycript::info], ".ltx" => & [TeX::info], ".iss" => & [InnoSetup::info], ".praat" =>
+    & [Praat::info], ".lol" => & [LOLCODE::info], ".hb" => & [Harbour::info], ".fr" => &
+    [Forth::info, Frege::info, Text::info], ".pck" => & [PLSQL::info], ".xsp-config" => &
+    [XPages::info], ".jsonl" => & [JSON::info], ".emacs" => & [EmacsLisp::info], ".fsx"
+    => & [Fsharp::info], ".cfm" => & [ColdFusion::info], ".parrot" => & [Parrot::info],
+    ".clp" => & [CLIPS::info], ".toml" => & [TOML::info], ".ditaval" => & [XML::info],
+    ".pxi" => & [Cython::info], ".ixx" => & [Cpp::info], ".rbx" => & [Ruby::info],
+    ".eam.fs" => & [Formatted::info], ".orc" => & [Csound::info], ".gdb" => &
+    [GDB::info], ".lid" => & [Dylan::info], ".jsh" => & [Java::info], ".m3u" => &
+    [M3U::info], ".i7x" => & [Inform7::info], ".pan" => & [Pan::info], ".gv" => &
+    [GraphvizDOT::info], ".gp" => & [Gnuplot::info], ".php" => & [Hack::info, PHP::info],
+    ".pov" => & [POVRaySDL::info], ".ttl" => & [Turtle::info], ".adb" => & [Ada::info],
+    ".hxsl" => & [Haxe::info], ".glade" => & [XML::info], ".pddl" => & [PDDL::info],
+    ".lidr" => & [Idris::info], ".mly" => & [OCaml::info], ".xacro" => & [XML::info],
+    ".pyi" => & [Python::info], ".stl" => & [STL::info], ".sce" => & [Scilab::info],
+    ".json5" => & [JSON5::info], ".upc" => & [UnifiedParallelC::info], ".sfd" => &
+    [SplineFontDatabase::info], ".mdpolicy" => & [XML::info], ".tmCommand" => &
+    [XMLPropertyList::info], ".dae" => & [COLLADA::info], ".maxhelp" => & [Max::info],
+    ".boot" => & [Clojure::info], ".gbs" => & [GerberImage::info], ".jflex" => &
+    [JFlex::info], ".sass" => & [Sass::info], ".apex" => & [Apex::info], ".be" => &
+    [Berry::info], ".cts" => & [TypeScript::info], ".vim" => & [VimScript::info], ".pl6"
+    => & [Raku::info], ".pmod" => & [Pike::info], ".wat" => & [WebAssembly::info],
+    ".aspx" => & [ASPNET::info], ".mc" => & [M4::info, MonkeyC::info,
+    Win32MessageFile::info], ".mqh" => & [MQL4::info, MQL5::info], ".muf" => &
+    [MUF::info], ".html" => & [Ecmarkup::info, HTML::info], ".gleam" => & [Gleam::info],
+    ".nomad" => & [HCL::info], ".tab" => & [SQL::info], ".xul" => & [XML::info], ".sdc"
+    => & [Tcl::info], ".gbr" => & [GerberImage::info], ".pfa" => & [PostScript::info],
+    ".druby" => & [Mirah::info], ".ads" => & [Ada::info], ".gawk" => & [Awk::info], ".me"
+    => & [Roff::info], ".zmpl" => & [Zimpl::info], ".eb" => & [Easybuild::info], ".ls" =>
+    & [LiveScript::info, LoomScript::info], ".sublime-commands" => &
+    [JSONWithComments::info], ".mxt" => & [Max::info], ".conll" => & [CoNLLU::info],
+    ".bpl" => & [Boogie::info], ".csdef" => & [XML::info], ".arpa" => & [DNSZone::info],
+    ".vert" => & [GLSL::info], ".gf" => & [GrammaticalFramework::info], ".gd" => &
+    [GAP::info, GDScript::info], ".pd_lua" => & [Lua::info], ".cr" => & [Crystal::info],
+    ".graphqls" => & [GraphQL::info], ".res" => & [ReScript::info, XML::info], ".webapp"
+    => & [JSON::info], ".rego" => & [OpenPolicyAgent::info], ".zil" => & [ZIL::info],
+    ".xsl" => & [XSLT::info], ".fst" => & [Fstar::info], ".tag" => &
+    [JavaServerPages::info], ".mspec" => & [Ruby::info], ".txi" => & [Texinfo::info],
+    ".cob" => & [COBOL::info], ".m" => & [Limbo::info, M::info, MATLAB::info, MUF::info,
+    Mathematica::info, Mercury::info, ObjectiveC::info], ".workbook" => &
+    [Markdown::info], ".Dsr" => & [VisualBasic60::info], ".razor" => &
+    [HTMLpRazor::info], ".factor" => & [Factor::info], ".ux" => & [XML::info], ".xliff"
+    => & [XML::info], ".jade" => & [Pug::info], ".xtend" => & [Xtend::info], ".flux" => &
+    [FLUX::info], ".fun" => & [StandardML::info], ".rnh" => & [RUNOFF::info], ".mq5" => &
+    [MQL5::info], ".objdump" => & [ObjDump::info], ".bb" => & [BitBake::info,
+    BlitzBasic::info, Clojure::info], ".fxml" => & [XML::info], ".fx" => & [FLUX::info,
+    HLSL::info], ".ly" => & [LilyPond::info], ".bones" => & [JavaScript::info], ".cginc"
+    => & [HLSL::info], ".jsm" => & [JavaScript::info], ".ash" => & [AGSScript::info],
+    ".polar" => & [Polar::info], ".regex" => & [RegularExpression::info], ".tmac" => &
+    [Roff::info], ".rg" => & [Rouge::info], ".hzp" => & [XML::info], ".xlf" => &
+    [XML::info], ".rs" => & [RenderScript::info, Rust::info, XML::info], ".dtx" => &
+    [TeX::info], ".asciidoc" => & [AsciiDoc::info], ".crc32" => & [Checksums::info],
+    ".sbt" => & [Scala::info], ".sco" => & [CsoundScore::info], ".pri" => &
+    [QMake::info], ".cylc" => & [Cylc::info], ".fsti" => & [Fstar::info], ".SchDoc" => &
+    [AltiumDesigner::info], ".ink" => & [Ink::info], ".sublime-build" => &
+    [JSONWithComments::info], ".8" => & [Roff::info, RoffManpage::info], ".4" => &
+    [Roff::info, RoffManpage::info], ".ice" => & [JSON::info, Slice::info], ".move" => &
+    [MoveLang::info], ".uno" => & [Uno::info], ".vtl" => &
+    [VelocityTemplateLanguage::info], ".f77" => & [Fortran::info], ".gml" => &
+    [GameMakerLanguage::info, GerberImage::info, GraphModelingLanguage::info, XML::info],
+    ".darcspatch" => & [DarcsPatch::info], ".thrift" => & [Thrift::info], ".glf" => &
+    [Glyph::info], ".asax" => & [ASPNET::info], ".pt" => & [XML::info], ".jscad" => &
+    [JavaScript::info], ".kicad_pcb" => & [KiCadLayout::info], ".make" => &
+    [Makefile::info], ".mkii" => & [TeX::info], ".ebnf" => & [EBNF::info], ".vsh" => &
+    [GLSL::info], ".vhi" => & [VHDL::info], ".wlk" => & [Wollok::info], ".sh" => &
+    [Shell::info], ".har" => & [JSON::info], ".properties" => & [INI::info,
+    JavaProperties::info], ".asn1" => & [ASN1::info], ".cdf" => & [Mathematica::info],
+    ".muse" => & [Muse::info], ".4gl" => & [Genero4gl::info], ".bicepparam" => &
+    [Bicep::info], ".fth" => & [Forth::info], ".php5" => & [PHP::info], ".gsc" => &
+    [GSC::info], ".iced" => & [CoffeeScript::info], ".rexx" => & [REXX::info], ".mud" =>
+    & [ZIL::info], ".ecl" => & [ECL::info, ECLiPSe::info], ".tfvars" => & [HCL::info],
+    ".cil" => & [CIL::info], ".cobol" => & [COBOL::info], ".csv" => & [CSV::info], ".go"
+    => & [Go::info], ".depproj" => & [XML::info], ".cypher" => & [Cypher::info], ".bzl"
+    => & [Starlark::info], ".robot" => & [RobotFramework::info], ".tcc" => & [Cpp::info],
+    ".d" => & [D::info, DTrace::info, Makefile::info], ".f95" => &
+    [FortranFreeForm::info], ".nim" => & [Nim::info], ".pyt" => & [Python::info],
+    ".scrbl" => & [Racket::info], ".sch" => & [Eagle::info, KiCadSchematic::info,
+    Scheme::info, XML::info], ".pyx" => & [Cython::info], ".md" => &
+    [GCCMachineDescription::info, Markdown::info], ".jsonnet" => & [Jsonnet::info],
+    ".mao" => & [Mako::info], ".duby" => & [Mirah::info], ".mkd" => & [Markdown::info],
+    ".mms" => & [ModuleManagementSystem::info], ".fir" => & [FIRRTL::info], ".nginxconf"
+    => & [Nginx::info], ".txl" => & [TXL::info], ".vho" => & [VHDL::info], ".aw" => &
+    [PHP::info], ".ged" => & [GEDCOM::info], ".fsproj" => & [XML::info],
+    ".sublime-snippet" => & [XML::info], ".wixproj" => & [XML::info], ".as" => &
+    [ActionScript::info, AngelScript::info], ".json" => & [JSON::info, OASv2Json::info,
+    OASv3Json::info], ".glyphs" => & [OpenStepPropertyList::info], ".ru" => &
+    [Ruby::info], ".emberscript" => & [EmberScript::info], ".hs-boot" => &
+    [Haskell::info], ".jl" => & [Julia::info], ".psgi" => & [Perl::info], ".sci" => &
+    [Scilab::info], ".ma" => & [Mathematica::info], ".frt" => & [Forth::info], ".vmb" =>
+    & [VimScript::info], ".yasnippet" => & [YASnippet::info], ".scenic" => &
+    [Scenic::info], ".mustache" => & [Mustache::info], ".containerfile" => &
+    [Dockerfile::info], ".qbs" => & [QML::info], ".command" => & [Shell::info], ".hxml"
+    => & [HXML::info], ".metal" => & [Metal::info], ".erl" => & [Erlang::info], ".dwl" =>
+    & [DataWeave::info], ".phtml" => & [HTMLpPHP::info], ".scpt" => &
+    [AppleScript::info], ".6pm" => & [Raku::info], ".kdl" => & [KDL::info], ".3m" => &
+    [Roff::info, RoffManpage::info], ".xdc" => & [Tcl::info], ".xojo_code" => &
+    [Xojo::info], ".weechatlog" => & [IRCLog::info], ".reb" => & [Rebol::info],
+    ".4DProject" => & [JSON::info], ".diff" => & [Diff::info], ".red" => & [Red::info],
+    ".sra" => & [PowerBuilder::info], ".sha256sum" => & [Checksums::info], ".gypi" => &
+    [Python::info], ".1x" => & [Roff::info, RoffManpage::info], ".glslf" => &
+    [GLSL::info], ".xpm" => & [XPixMap::info], ".rabl" => & [Ruby::info], ".editorconfig"
+    => & [EditorConfig::info], ".ox" => & [Ox::info], ".soy" => &
+    [ClosureTemplates::info], ".mcr" => & [MAXScript::info], ".dats" => & [ATS::info],
+    ".star" => & [STAR::info, Starlark::info], ".gvy" => & [Groovy::info], ".glslv" => &
+    [GLSL::info], ".sql" => & [PLSQL::info, PLpgSQL::info, SQL::info, SQLPL::info,
+    TSQL::info], ".flf" => & [FIGletFont::info], ".nix" => & [Nix::info], ".ejs" => &
+    [EJS::info], ".maxproj" => & [Max::info], ".tfstate.backup" => & [JSON::info], ".pxd"
+    => & [Cython::info], ".tese" => & [GLSL::info], ".gto" => & [GerberImage::info],
+    ".handlebars" => & [Handlebars::info], ".purs" => & [PureScript::info], ".tmux" => &
+    [Shell::info], ".vshader" => & [GLSL::info], ".tsx" => & [TSX::info, XML::info],
+    ".mumps" => & [M::info], ".cnc" => & [GCode::info], ".kml" => & [XML::info], ".cs" =>
+    & [Csharp::info, Smalltalk::info], ".iml" => & [XML::info], ".rpgle" => &
+    [RPGLE::info], ".sh-session" => & [ShellSession::info], ".mk" => & [Makefile::info],
+    ".plb" => & [PLSQL::info], ".stTheme" => & [XMLPropertyList::info], ".dsl" => &
+    [ASL::info], ".pot" => & [GettextCatalog::info], ".snap" => & [JestSnapshot::info],
+    ".rex" => & [REXX::info], ".god" => & [Ruby::info], ".ll" => & [LLVM::info], ".jsp"
+    => & [JavaServerPages::info], ".ily" => & [LilyPond::info], ".fut" => &
+    [Futhark::info], ".8xp.txt" => & [TIProgram::info], ".nimrod" => & [Nim::info],
+    ".csproj" => & [XML::info], ".3in" => & [Roff::info, RoffManpage::info], ".wiki" => &
+    [Wikitext::info], ".kicad_sch" => & [KiCadSchematic::info], ".eh" => & [EC::info],
+    ".rbxs" => & [Lua::info], ".mll" => & [OCaml::info], ".ditamap" => & [XML::info],
+    ".hocon" => & [HOCON::info], ".caddyfile" => & [Caddyfile::info], ".ctp" => &
+    [PHP::info], ".pprx" => & [REXX::info], ".tpl" => & [Smarty::info], ".rb" => &
+    [Ruby::info], ".pm6" => & [Raku::info], ".el" => & [EmacsLisp::info], ".bst" => &
+    [BibTeXStyle::info, BuildStream::info], ".builder" => & [Ruby::info], ".adml" => &
+    [XML::info], ".sha256" => & [Checksums::info], ".lex" => & [Lex::info], ".irclog" =>
+    & [IRCLog::info], ".wxi" => & [XML::info], ".sha2" => & [Checksums::info], ".mlir" =>
+    & [MLIR::info], ".man" => & [Roff::info, RoffManpage::info], ".eye" => &
+    [Ruby::info], ".spc" => & [PLSQL::info], ".tm" => & [Tcl::info], ".reek" => &
+    [YAML::info], ".bbclass" => & [BitBake::info], ".nim.cfg" => & [Nim::info],
+    ".filters" => & [XML::info], ".ftl" => & [Fluent::info, FreeMarker::info], ".raw" =>
+    & [RawTokenData::info], ".4th" => & [Forth::info], ".glsl" => & [GLSL::info],
+    ".bbappend" => & [BitBake::info], ".clj" => & [Clojure::info], ".eclxml" => &
+    [ECL::info], ".janet" => & [Janet::info], ".ahk" => & [AutoHotkey::info], ".dsp" => &
+    [Faust::info, MicrosoftDeveloperStudioProject::info], ".lua" => & [Lua::info], ".yyp"
+    => & [JSON::info], ".pls" => & [PLSQL::info], ".xbm" => & [XBitMap::info], ".thy" =>
+    & [Isabelle::info], ".sty" => & [TeX::info], ".linq" => & [Csharp::info], ".nuspec"
+    => & [XML::info], ".wxs" => & [XML::info], ".txt" => & [AdblockFilterList::info,
+    Text::info, VimHelpFile::info], ".ijs" => & [J::info], ".zep" => & [Zephir::info],
+    ".edge" => & [Edge::info], ".nearley" => & [Nearley::info], ".xproj" => &
+    [XML::info], ".gaml" => & [GAML::info], ".rq" => & [SPARQL::info], ".dockerfile" => &
+    [Dockerfile::info], ".rmd" => & [RMarkdown::info], ".xi" => & [Logos::info],
+    ".PrjPCB" => & [AltiumDesigner::info], ".cxx-objdump" => & [CppObjDump::info],
+    ".feature" => & [Gherkin::info], ".mathematica" => & [Mathematica::info], ".pogo" =>
+    & [PogoScript::info], ".gemspec" => & [Ruby::info], ".pas" => & [Pascal::info],
+    ".gcode" => & [GCode::info], ".rbtbar" => & [REALbasic::info], ".sl" => &
+    [Slash::info], ".asn" => & [ASN1::info], ".com" => & [DIGITALCommandLanguage::info],
+    ".rbuild" => & [Ruby::info], ".sieve" => & [Sieve::info], ".cabal" => &
+    [CabalConfig::info], ".mmk" => & [ModuleManagementSystem::info], ".ruby" => &
+    [Ruby::info], ".doh" => & [Stata::info], ".webidl" => & [WebIDL::info], ".bicep" => &
+    [Bicep::info], ".plx" => & [Perl::info], ".brs" => & [Brightscript::info],
+    ".dll.config" => & [XML::info], ".axml" => & [XML::info], ".ql" => & [CodeQL::info],
+    ".wren" => & [Wren::info], ".ccxml" => & [XML::info], ".sublime-menu" => &
+    [JSONWithComments::info], ".cuh" => & [Cuda::info], ".csx" => & [Csharp::info],
+    ".sol" => & [GerberImage::info, Solidity::info], ".lds" => & [LinkerScript::info],
+    ".sig" => & [StandardML::info], ".mjs" => & [JavaScript::info], ".rno" => &
+    [RUNOFF::info, Roff::info], ".hoon" => & [Hoon::info], ".mdwn" => & [Markdown::info],
+    ".tea" => & [Tea::info], ".dotsettings" => & [XML::info], ".nproj" => & [XML::info],
+    ".nawk" => & [Awk::info], ".zsh" => & [Shell::info], ".ps1xml" => & [XML::info],
+    ".perl" => & [Perl::info], ".cpy" => & [COBOL::info], ".axs" => & [NetLinx::info],
+    ".gradle.kts" => & [GradleKotlinDSL::info], ".h++" => & [Cpp::info], ".r3" => &
+    [Rebol::info], ".ex" => & [Elixir::info, Euphoria::info], ".mmd" => &
+    [Mermaid::info], ".pod" => & [Pod::info, Pod6::info], ".7" => & [Roff::info,
+    RoffManpage::info], ".mask" => & [Mask::info, Unity3DAsset::info], ".cls" => &
+    [Apex::info, ObjectScript::info, OpenEdgeABL::info, TeX::info, VBA::info,
+    VisualBasic60::info], ".mdx" => & [MDX::info], ".kicad_mod" => & [KiCadLayout::info],
+    ".sublime_metrics" => & [JSONWithComments::info], ".cmd" => & [Batchfile::info],
+    ".cyp" => & [Cypher::info], ".ddl" => & [PLSQL::info, SQL::info], ".vhf" => &
+    [VHDL::info], ".gco" => & [GCode::info], ".geo" => & [GLSL::info], ".ivy" => &
+    [XML::info], ".frag" => & [GLSL::info, JavaScript::info], ".hlsl" => & [HLSL::info],
+    ".sexp" => & [CommonLisp::info], ".epsi" => & [PostScript::info], ".ant" => &
+    [XML::info], ".PcbDoc" => & [AltiumDesigner::info], ".postcss" => & [PostCSS::info],
+    ".kid" => & [Genshi::info], ".rbi" => & [Ruby::info], ".fancypack" => &
+    [Fancy::info], ".aj" => & [AspectJ::info], ".gbo" => & [GerberImage::info], ".jsb" =>
+    & [JavaScript::info], ".kak" => & [KakouneScript::info], ".haml.deface" => &
+    [Haml::info], ".bi" => & [FreeBASIC::info], ".axs.erb" => & [NetLinxpERB::info],
+    ".lgt" => & [Logtalk::info], ".dzn" => & [MiniZincData::info], ".cljscm" => &
+    [Clojure::info], ".dfm" => & [Pascal::info], ".matah" => & [Stata::info],
+    ".tmLanguage" => & [XMLPropertyList::info], ".mzn" => & [MiniZinc::info], ".rchit" =>
+    & [GLSL::info], ".sublime-completions" => & [JSONWithComments::info], ".fsh" => &
+    [GLSL::info], ".sha224" => & [Checksums::info], ".snip" => & [VimSnippet::info],
+    ".mdown" => & [Markdown::info], ".scss" => & [SCSS::info], ".trigger" => &
+    [Apex::info, Shell::info], ".dot" => & [GraphvizDOT::info], ".religo" => &
+    [ReasonLIGO::info], ".c-objdump" => & [CObjDump::info], ".rmiss" => & [GLSL::info],
+    ".ec" => & [EC::info], ".ado" => & [Stata::info], ".wlua" => & [Lua::info],
+    ".tfstate" => & [JSON::info], ".kts" => & [Kotlin::info], ".cgi" => & [Perl::info,
+    Python::info, Shell::info], ".chs" => & [C2hsHaskell::info], ".eml" => &
+    [EMail::info], ".rsh" => & [RenderScript::info], ".ecr" => & [HTMLpECR::info],
+    ".maxpat" => & [Max::info], ".x68" => & [Motorola68KAssembly::info], ".nasl" => &
+    [NASL::info], ".gi" => & [GAP::info], ".creole" => & [Creole::info], ".elm" => &
+    [Elm::info], ".JSON-tmLanguage" => & [JSON::info], ".md5" => & [Checksums::info],
+    ".p6m" => & [Raku::info], ".rsc" => & [Rascal::info, RouterOSScript::info], ".scaml"
+    => & [Scaml::info], ".sld" => & [Scheme::info], ".snakefile" => & [Snakemake::info],
+    ".axd" => & [ASPNET::info], ".vb" => & [VisualBasicNET::info], ".veo" => &
+    [Verilog::info], ".story" => & [Gherkin::info], ".mo" => & [Modelica::info,
+    Motoko::info], ".ws" => & [WitcherScript::info], ".tscn" => & [GodotResource::info],
+    ".xqm" => & [XQuery::info], ".bison" => & [Bison::info], ".hrl" => & [Erlang::info],
+    ".trg" => & [PLSQL::info], ".sha3" => & [Checksums::info], ".cljs" => &
+    [Clojure::info], ".py" => & [Python::info], ".db2" => & [SQLPL::info], ".tcsh" => &
+    [Tcsh::info], ".texinfo" => & [Texinfo::info], ".rest" => & [ReStructuredText::info],
+    ".forth" => & [Forth::info], ".qmd" => & [RMarkdown::info], ".vcf" => & [TSV::info,
+    VCard::info], ".mat" => & [Unity3DAsset::info], ".xsh" => & [Xonsh::info], ".cats" =>
+    & [C::info], ".hsc" => & [Haskell::info], ".m2" => & [Macaulay2::info],
+    ".xojo_script" => & [Xojo::info], ".apacheconf" => & [ApacheConf::info], ".sats" => &
+    [ATS::info], ".h" => & [C::info, Cpp::info, ObjectiveC::info], ".sublime-project" =>
+    & [JSONWithComments::info], ".tsp" => & [TSPLIBData::info, TypeSpec::info], ".p8" =>
+    & [Lua::info], ".sublime-keymap" => & [JSONWithComments::info], ".sfproj" => &
+    [XML::info], ".cl" => & [CommonLisp::info, Cool::info, OpenCL::info], ".pytb" => &
+    [PythonTraceback::info], ".udf" => & [SQL::info], ".sj" => & [ObjectiveJ::info],
+    ".thor" => & [Ruby::info], ".cfc" => & [ColdFusionCFC::info], ".stan" => &
+    [Stan::info], ".reds" => & [Red::info], ".mata" => & [Stata::info], ".vark" => &
+    [Gosu::info], ".csd" => & [CsoundDocument::info], ".m4" => & [M4::info,
+    M4Sugar::info], ".clar" => & [Clarity::info], ".nasm" => & [Assembly::info], ".flex"
+    => & [JFlex::info], ".sarif" => & [JSON::info], ".luau" => & [Luau::info], ".sail" =>
+    & [Sail::info], ".bats" => & [Shell::info], ".em" => & [EmberScript::info], ".lasso8"
+    => & [Lasso::info], ".livecodescript" => & [LiveCodeScript::info], ".prefab" => &
+    [Unity3DAsset::info], ".pluginspec" => & [Ruby::info, XML::info], ".topojson" => &
+    [JSON::info], ".md4" => & [Checksums::info], ".nginx" => & [Nginx::info], ".nimble"
+    => & [Nim::info], ".ashx" => & [ASPNET::info], ".hs" => & [Haskell::info], ".imba" =>
+    & [Imba::info], ".logtalk" => & [Logtalk::info], ".no" => & [Text::info], ".1in" => &
+    [Roff::info, RoffManpage::info], ".bat" => & [Batchfile::info], ".rhtml" => &
+    [HTMLpERB::info], ".sfv" => & [SimpleFileVerification::info], ".ampl" => &
+    [AMPL::info], ".arr" => & [Pyret::info], ".xq" => & [XQuery::info], ".rpy" => &
+    [Python::info, RenPy::info], ".nc" => & [NesC::info], ".ejs.t" => & [EJS::info],
+    ".x10" => & [X10::info], ".n" => & [Nemerle::info, Roff::info], ".styl" => &
+    [Stylus::info], ".cps" => & [ComponentPascal::info], ".gnuplot" => & [Gnuplot::info],
+    ".xquery" => & [XQuery::info], ".hx" => & [Haxe::info], ".xmi" => & [XML::info],
+    ".sru" => & [PowerBuilder::info], ".rbuistate" => & [REALbasic::info], ".ndproj" => &
+    [XML::info], ".abap" => & [ABAP::info], ".sha1" => & [Checksums::info], ".cds" => &
+    [CAPCDS::info], ".ha" => & [Hare::info], ".m3" => & [Modula3::info], ".ph" => &
+    [Perl::info], ".sas" => & [SAS::info], ".ncl" => & [GerberImage::info, NCL::info,
+    Text::info, XML::info], ".sqf" => & [SQF::info], ".nb" => & [Mathematica::info,
+    Text::info], ".gpt" => & [GerberImage::info], ".matlab" => & [MATLAB::info],
+    ".dyalog" => & [APL::info], ".asp" => & [ClassicASP::info], ".sln" => &
+    [MicrosoftVisualStudioSolution::info], ".q" => & [HiveQL::info, Q::info], ".monkey2"
+    => & [Monkey::info], ".eps" => & [PostScript::info], ".vcl" => & [VCL::info], ".mps"
+    => & [JetBrainsMPS::info], ".omgrofl" => & [Omgrofl::info], ".vbhtml" => &
+    [VisualBasicNET::info], ".js.erb" => & [JavaScriptpERB::info], ".roff" => &
+    [Roff::info], ".qs" => & [Qsharp::info, QtScript::info], ".odin" => &
+    [ObjectDataInstanceNotation::info, Odin::info], ".kicad_wks" => &
+    [KiCadLayout::info], ".cwl" => & [CommonWorkflowLanguage::info], ".kit" => &
+    [Kit::info], ".zap" => & [ZAP::info], ".cscfg" => & [XML::info], ".sha384" => &
+    [Checksums::info], ".kicad_sym" => & [KiCadSchematic::info], ".pic" => & [Pic::info],
+    ".pbi" => & [PureBasic::info], ".xsp.metadata" => & [XPages::info], ".nas" => &
+    [Assembly::info, Nasal::info], ".tcl" => & [Tcl::info], ".gdbinit" => & [GDB::info],
+    ".ical" => & [ICalendar::info], ".vdf" => & [ValveDataFormat::info], ".lvproj" => &
+    [LabVIEW::info], ".yar" => & [YARA::info], ".angelscript" => & [AngelScript::info],
+    ".yaml" => & [MiniYAML::info, OASv2Yaml::info, OASv3Yaml::info, YAML::info], ".ins"
+    => & [TeX::info], ".agda" => & [Agda::info], ".mss" => & [CartoCSS::info], ".mbt" =>
+    & [MoonBit::info], ".rakumod" => & [Raku::info], ".gpb" => & [GerberImage::info],
+    ".hc" => & [HolyC::info], ".gs" => & [GLSL::info, Genie::info, Gosu::info,
+    JavaScript::info], ".grace" => & [Grace::info], ".hbs" => & [Handlebars::info],
+    ".pkl" => & [Pickle::info, Pkl::info], ".slint" => & [Slint::info], ".bibtex" => &
+    [BibTeX::info], ".gtp" => & [GerberImage::info], ".heex" => & [HTMLpEEX::info],
+    ".ipf" => & [IGORPro::info], ".zig.zon" => & [Zig::info], ".hack" => & [Hack::info],
+    ".ui" => & [XML::info], ".ur" => & [UrWeb::info], ".raku" => & [Raku::info], ".di" =>
+    & [D::info], ".brd" => & [Eagle::info, KiCadLegacyLayout::info], ".kt" => &
+    [Kotlin::info], ".cw" => & [Redcode::info], ".textile" => & [Textile::info],
+    ".sublime-settings" => & [JSONWithComments::info], ".ada" => & [Ada::info], ".shen"
+    => & [Shen::info], ".1m" => & [Roff::info, RoffManpage::info], ".l" => &
+    [CommonLisp::info, Lex::info, PicoLisp::info, Roff::info], ".krl" => & [KRL::info],
+    ".ipp" => & [Cpp::info], ".mpl" => & [JetBrainsMPS::info], ".jsx" => &
+    [JavaScript::info], ".ld" => & [LinkerScript::info], ".sublime-workspace" => &
+    [JSONWithComments::info], ".ctl" => & [VisualBasic60::info], ".vs" => & [GLSL::info],
+    ".ck" => & [ChucK::info], ".mcmeta" => & [JSON::info], ".slim" => & [Slim::info],
+    ".coffee" => & [CoffeeScript::info], ".app.src" => & [Erlang::info], ".mkfile" => &
+    [Makefile::info], ".pac" => & [JavaScript::info], ".rss" => & [XML::info], ".cnf" =>
+    & [INI::info], ".builds" => & [XML::info], ".bsv" => & [Bluespec::info], ".hats" => &
+    [ATS::info], ".gradle" => & [Gradle::info], ".6pl" => & [Raku::info], ".tl" => &
+    [TypeLanguage::info], ".uc" => & [UnrealScript::info], ".escript" => &
+    [Erlang::info], ".rest.txt" => & [ReStructuredText::info], ".asmx" => &
+    [ASPNET::info], ".psc" => & [Papyrus::info], ".tsv" => & [TSV::info], ".jsproj" => &
+    [XML::info], ".fish" => & [Fish::info], ".ino" => & [Cpp::info], ".just" => &
+    [Just::info], ".f08" => & [FortranFreeForm::info], ".ceylon" => & [Ceylon::info],
+    ".gmi" => & [Gemini::info], ".pat" => & [Max::info], ".yml" => & [MiniYAML::info,
+    OASv2Yaml::info, OASv3Yaml::info, YAML::info], ".emacs.desktop" => &
+    [EmacsLisp::info], ".pact" => & [Pact::info], ".pony" => & [Pony::info], ".per" => &
+    [GeneroPer::info], ".bqn" => & [BQN::info], ".ksh" => & [Shell::info], ".ms" => &
+    [MAXScript::info, Roff::info, UnixAssembly::info], ".livemd" => & [Markdown::info],
+    ".gtl" => & [GerberImage::info], ".lektorproject" => & [INI::info], ".nims" => &
+    [Nim::info], ".aidl" => & [AIDL::info], ".svx" => & [SurvexData::info, Mdsvex::info],
+    ".fpp" => & [Fortran::info], ".bash" => & [Shell::info], ".owl" => &
+    [WebOntologyLanguage::info], ".cson" => & [CSON::info], ".bf" => & [Beef::info,
+    Befunge::info, Brainfuck::info, HyPhy::info], ".geom" => & [GLSL::info], ".shproj" =>
+    & [XML::info], ".regexp" => & [RegularExpression::info], ".dm" => & [DM::info], ".pm"
+    => & [Perl::info, Raku::info, XPixMap::info], ".st" => & [Smalltalk::info,
+    StringTemplate::info], ".ks" => & [KerboScript::info, Kickstart::info], ".sma" => &
+    [Pawn::info], ".for" => & [Formatted::info, Forth::info, Fortran::info], ".rbmnu" =>
+    & [REALbasic::info], ".yaml.sed" => & [YAML::info], ".3" => & [Roff::info,
+    RoffManpage::info], ".nr" => & [Noir::info, Roff::info], ".ijm" => &
+    [ImageJMacro::info], ".njs" => & [JavaScript::info], ".apl" => & [APL::info],
+    ".rs.in" => & [Rust::info], ".mts" => & [TypeScript::info], ".watchr" => &
+    [Ruby::info], ".bdy" => & [PLSQL::info], ".astro" => & [Astro::info], ".mkdn" => &
+    [Markdown::info], ".qasm" => & [OpenQASM::info], ".swift" => & [Swift::info], ".phps"
+    => & [PHP::info], ".srdf" => & [XML::info], ".sthlp" => & [Stata::info], ".xm" => &
+    [Logos::info], ".prolog" => & [Prolog::info], ".plist" => &
+    [OpenStepPropertyList::info, XMLPropertyList::info], ".iol" => & [Jolie::info],
+    ".gnu" => & [Gnuplot::info], ".vhs" => & [VHDL::info], ".arc" => & [Arc::info],
+    ".asm" => & [Assembly::info, Motorola68KAssembly::info], "._ls" => &
+    [LiveScript::info], ".rktd" => & [Racket::info], ".cairo" => & [Cairo::info,
+    CairoZero::info], ".jq" => & [JSONiq::info, Jq::info], ".marko" => & [Marko::info],
+    ".plot" => & [Gnuplot::info], ".mt" => & [Mathematica::info], ".php3" => &
+    [PHP::info], ".ml" => & [OCaml::info, StandardML::info], ".9" => & [Roff::info,
+    RoffManpage::info], ".minid" => & [MiniD::info], ".jbuilder" => & [Ruby::info],
+    ".golo" => & [Golo::info], ".isl" => & [InnoSetup::info], ".typ" => & [Typst::info,
+    XML::info], ".scxml" => & [XML::info], ".tcl.in" => & [Tcl::info], ".cmake" => &
+    [CMake::info], ".3pm" => & [Roff::info, RoffManpage::info], ".moon" => &
+    [MoonScript::info], ".yrl" => & [Erlang::info], ".oz" => & [Oz::info], ".auk" => &
+    [Awk::info], ".fp" => & [GLSL::info], ".urdf" => & [XML::info], ".nut" => &
+    [Squirrel::info], ".yara" => & [YARA::info], ".gts" => & [GerberImage::info,
+    GlimmerTS::info], ".d-objdump" => & [DObjDump::info], ".rktl" => & [Racket::info],
+    ".ss" => & [Scheme::info], ".dpr" => & [Pascal::info], ".y" => & [Yacc::info],
+    ".webmanifest" => & [JSON::info], ".jinja" => & [Jinja::info], ".ston" => &
+    [STON::info], ".capnp" => & [CapnProto::info], ".vba" => & [VBA::info,
+    VimScript::info], ".boo" => & [Boo::info], ".lfe" => & [LFE::info], ".xml.dist" => &
+    [XML::info], ".f" => & [FilebenchWML::info, Forth::info, Fortran::info], ".pp" => &
+    [Pascal::info, Puppet::info], ".v" => & [RocqProver::info, V::info, Verilog::info],
+    ".g" => & [GCode::info, GAP::info], ".qml" => & [QML::info], ".es6" => &
+    [JavaScript::info], ".oxh" => & [Ox::info], ".al" => & [AL::info, Perl::info],
+    ".rebol" => & [Rebol::info], ".pyde" => & [Python::info], ".lean" => & [Lean::info,
+    Lean4::info], ".2" => & [Roff::info, RoffManpage::info], ".reg" => &
+    [WindowsRegistryEntries::info], ".vy" => & [Vyper::info], ".proj" => & [XML::info],
+    ".gap" => & [GAP::info], ".xproc" => & [XProc::info], ".overpassql" => &
+    [OverpassQL::info], ".desktop" => & [Desktop::info], ".aug" => & [Augeas::info],
+    ".textproto" => & [ProtocolBufferTextFormat::info], ".ik" => & [Ioke::info], ".jte"
+    => & [JavaTemplateEngine::info], ".psd1" => & [PowerShell::info], ".asl" => &
+    [ASL::info], ".psm1" => & [PowerShell::info], ".prawn" => & [Ruby::info], ".sps" => &
+    [Scheme::info], ".self" => & [_Self::info], ".volt" => & [Volt::info], ".decls" => &
+    [BlitzBasic::info], ".podsl" => & [CommonLisp::info], ".gst" => & [Gosu::info,
+    XML::info], ".jison" => & [Jison::info], ".f03" => & [FortranFreeForm::info], ".scd"
+    => & [Markdown::info, SuperCollider::info], ".mcfunction" => & [Mcfunction::info],
+    ".idc" => & [C::info], ".ps" => & [PostScript::info], ".xaml" => & [XML::info],
+    ".ihlp" => & [Stata::info], ".lisp" => & [CommonLisp::info, NewLisp::info], ".phpt"
+    => & [PHP::info], ".mxml" => & [XML::info], ".c" => & [C::info], ".sml" => &
+    [StandardML::info], ".storyboard" => & [XML::info], ".udo" => & [Csound::info],
+    ".patch" => & [Diff::info], ".mbox" => & [EMail::info], ".jinja2" => & [Jinja::info],
+    ".lagda" => & [LiterateAgda::info], ".cshtml" => & [HTMLpRazor::info], ".vrx" => &
+    [GLSL::info], ".sublime-theme" => & [JSONWithComments::info], ".yul" => &
+    [Yul::info], ".podspec" => & [Ruby::info], ".prc" => & [PLSQL::info, SQL::info],
+    ".eclass" => & [GentooEclass::info], ".leex" => & [HTMLpEEX::info], ".cu" => &
+    [Cuda::info], ".a51" => & [Assembly::info], ".elv" => & [Elvish::info], ".nsi" => &
+    [NSIS::info], ".nbp" => & [Mathematica::info], ".kv" => & [Kvlang::info], ".rake" =>
+    & [Ruby::info], ".slang" => & [Slang::info], ".cljc" => & [Clojure::info], ".hta" =>
+    & [HTML::info], ".m3u8" => & [M3U::info], ".prw" => & [XBase::info], ".osm" => &
+    [XML::info], ".cake" => & [Csharp::info, CoffeeScript::info], ".t" => & [Perl::info,
+    Raku::info, Terra::info, Turing::info], ".markdown" => & [Markdown::info], ".sc" => &
+    [Scala::info, SuperCollider::info], ".frm" => & [INI::info, VBA::info,
+    VisualBasic60::info], ".ligo" => & [LigoLANG::info], ".code-workspace" => &
+    [JSONWithComments::info], ".lark" => & [Lark::info], ".url" => & [INI::info], ".py3"
+    => & [Python::info], ".ksy" => & [KaitaiStruct::info], ".monkey" => & [Monkey::info],
+    ".sagews" => & [Sage::info], ".conllu" => & [CoNLLU::info], ".wlt" => &
+    [Mathematica::info], ".gmx" => & [XML::info], ".chem" => & [Pic::info], ".pb" => &
+    [PureBasic::info], ".ob2" => & [Oberon::info], ".OutJob" => & [AltiumDesigner::info],
+    ".bs" => & [Bikeshed::info, BluespecBH::info, BrighterScript::info], ".mawk" => &
+    [Awk::info], ".fsi" => & [Fsharp::info], ".msd" => & [JetBrainsMPS::info], ".css" =>
+    & [CSS::info], ".lvclass" => & [LabVIEW::info], ".zimpl" => & [Zimpl::info], ".3x" =>
+    & [Roff::info, RoffManpage::info], ".proto" => & [ProtocolBuffer::info], ".clixml" =>
+    & [XML::info], ".p6" => & [Raku::info], ".coffee.md" => &
+    [LiterateCoffeeScript::info], ".tml" => & [XML::info], ".jsonc" => &
+    [JSONWithComments::info], ".wsf" => & [XML::info], ".wxl" => & [XML::info], ".hhi" =>
+    & [Hack::info], ".smk" => & [Snakemake::info], ".jsonld" => & [JSONLD::info],
+    ".lasso9" => & [Lasso::info], ".carbon" => & [Carbon::info], ".tu" => &
+    [Turing::info], ".adp" => & [Tcl::info], ".p4" => & [P4::info], ".bro" => &
+    [Zeek::info], ".numsc" => & [NumPy::info], ".jss" => & [JavaScript::info], ".mm" => &
+    [ObjectiveCpp::info, XML::info], ".jst" => & [EJS::info], ".cdc" => &
+    [Cadence::info], ".workflow" => & [HCL::info, XML::info], ".ned" => &
+    [OMNeTppNED::info], ".por" => & [Portugol::info], ".nqp" => & [Raku::info], ".dita"
+    => & [XML::info], ".mir" => & [YAML::info], ".fshader" => & [GLSL::info], ".wdl" => &
+    [WDL::info], ".mint" => & [Mint::info], ".cue" => & [CUE::info, CueSheet::info],
+    ".dyl" => & [Dylan::info], ".pegjs" => & [PEGjs::info], ".groovy" => &
+    [Groovy::info], ".idr" => & [Idris::info], ".p6l" => & [Raku::info], ".j2" => &
+    [Jinja::info], ".roc" => & [Roc::info], ".obj" => & [WavefrontObject::info], ".yy" =>
+    & [JSON::info, Yacc::info], ".csh" => & [Tcsh::info], ".wisp" => & [Wisp::info],
+    "._js" => & [JavaScript::info], ".2da" => & [_2DimensionalArray::info], ".ronn" => &
+    [Markdown::info], ".nsh" => & [NSIS::info], ".mermaid" => & [Mermaid::info], ".grt"
+    => & [Groovy::info], ".urs" => & [UrWeb::info], ".natvis" => & [XML::info], ".pug" =>
+    & [Pug::info], ".po" => & [GettextCatalog::info], ".sublime-color-scheme" => &
+    [JSONWithComments::info], ".cjs" => & [JavaScript::info], ".te" => &
+    [SELinuxPolicy::info], ".hlsli" => & [HLSL::info], ".smithy" => & [Smithy::info],
+    ".wl" => & [Mathematica::info], ".ispc" => & [ISPC::info], ".tex" => & [TeX::info],
+    ".eliom" => & [OCaml::info], ".gsh" => & [GSC::info], ".xojo_window" => &
+    [Xojo::info], ".gms" => & [GAMS::info], ".mq4" => & [MQL4::info], ".pyp" => &
+    [Python::info], ".5" => & [Roff::info, RoffManpage::info], ".bal" => &
+    [Ballerina::info], ".myt" => & [Myghty::info], ".cpp" => & [Cpp::info], ".pbtxt" => &
+    [ProtocolBufferTextFormat::info], ".wsdl" => & [XML::info], ".ooc" => & [Ooc::info],
+    ".tf" => & [HCL::info], ".3p" => & [Roff::info, RoffManpage::info], ".sls" => &
+    [SaltStack::info, Scheme::info], ".php4" => & [PHP::info], ".cmake.in" => &
+    [CMake::info], ".cirru" => & [Cirru::info], ".htm" => & [HTML::info], ".sh.in" => &
+    [Shell::info], ".asset" => & [Unity3DAsset::info], ".code-snippets" => &
+    [JSONWithComments::info], ".neon" => & [NEON::info], ".ron" => & [RON::info],
+    ".c++-objdump" => & [CppObjDump::info], ".hip" => & [HIP::info], ".lhs" => &
+    [LiterateHaskell::info], ".md2" => & [Checksums::info], ".pike" => & [Pike::info],
+    ".pro" => & [IDL::info, INI::info, Proguard::info, Prolog::info, QMake::info], ".sp"
+    => & [SourcePawn::info], ".plt" => & [Gnuplot::info, Prolog::info], ".ninja" => &
+    [Ninja::info], ".hpp" => & [Cpp::info], ".mli" => & [OCaml::info], ".hql" => &
+    [HiveQL::info], ".sjs" => & [JavaScript::info], ".lasso" => & [Lasso::info], ".sv" =>
+    & [SystemVerilog::info], ".TextGrid" => & [TextGrid::info], ".fan" => &
+    [Fantom::info], ".qll" => & [CodeQL::info], ".numpy" => & [NumPy::info], ".xpl" => &
+    [XProc::info], ".xojo_menu" => & [Xojo::info], ".yang" => & [YANG::info], ".mrc" => &
+    [MIRCScript::info], ".8xp" => & [TIProgram::info], ".nss" => & [NWScript::info],
+    ".ring" => & [Ring::info], ".yacc" => & [Yacc::info], ".tpp" => & [Cpp::info], ".zpl"
+    => & [Zimpl::info], ".mysql" => & [SQL::info], ".asc" => & [AGSScript::info,
+    AsciiDoc::info, PublicKey::info], ".ch" => & [Charity::info, XBase::info], ".e" => &
+    [E::info, Eiffel::info, Euphoria::info], ".gshader" => & [GLSL::info], ".eq" => &
+    [EQ::info], ".chpl" => & [Chapel::info], ".gko" => & [GerberImage::info], ".jspre" =>
+    & [JavaScript::info], ".xsjslib" => & [JavaScript::info], ".pbt" => &
+    [PowerBuilder::info, ProtocolBufferTextFormat::info], ".rei" => & [Reason::info],
+    ".desktop.in" => & [Desktop::info], ".gn" => & [GN::info], ".xc" => & [XC::info],
+    ".antlers.php" => & [Antlers::info], ".pyw" => & [Python::info], ".aux" => &
+    [TeX::info], ".bas" => & [B4X::info, BASIC::info, FreeBASIC::info, QuickBASIC::info,
+    VBA::info, VisualBasic60::info], ".mirah" => & [Mirah::info], ".yap" => &
+    [Prolog::info], ".lkml" => & [LookML::info], ".psc1" => & [XML::info], ".f90" => &
+    [FortranFreeForm::info], ".cbl" => & [COBOL::info], ".gsx" => & [Gosu::info], ".pub"
+    => & [PublicKey::info], ".xspec" => & [XML::info], ".xzap" => & [ZAP::info], ".ascx"
+    => & [ASPNET::info], ".nanorc" => & [Nanorc::info], ".json.example" => &
+    [JSON::info], ".xpy" => & [Python::info], ".ipynb" => & [JupyterNotebook::info],
+    ".scad" => & [OpenSCAD::info], ".rdoc" => & [RDoc::info], ".smt" => & [SMT::info],
+    ".asy" => & [Asymptote::info, LTspiceSymbol::info], "._coffee" => &
+    [CoffeeScript::info], ".pasm" => & [ParrotAssembly::info], ".rnw" => &
+    [Sweave::info], ".bmx" => & [BlitzMax::info], ".gitconfig" => & [GitConfig::info],
+    ".lvlib" => & [LabVIEW::info], ".libsonnet" => & [Jsonnet::info], ".yaml-tmlanguage"
+    => & [YAML::info], ".ts" => & [TypeScript::info, XML::info], ".opal" => &
+    [Opal::info], ".whiley" => & [Whiley::info], ".service" => & [Desktop::info],
+    ".html.hl" => & [HTML::info], ".pgsql" => & [PLpgSQL::info], ".r" => & [R::info,
+    Rebol::info, Rez::info], ".antlers.xml" => & [Antlers::info], ".templ" => &
+    [Templ::info], ".ics" => & [ICalendar::info], ".texi" => & [Texinfo::info],
+    ".rst.txt" => & [ReStructuredText::info], ".r2" => & [Rebol::info], ".mak" => &
+    [Makefile::info], ".sublime-macro" => & [JSONWithComments::info], ".rd" => &
+    [R::info], ".dof" => & [INI::info], ".axi.erb" => & [NetLinxpERB::info], ".cmp" => &
+    [GerberImage::info], ".oxygene" => & [Oxygene::info], ".pde" => & [Processing::info],
+    ".kojo" => & [Scala::info], ".tlv" => & [TLVerilog::info], ".h.in" => & [C::info],
+    ".zcml" => & [XML::info], ".abnf" => & [ABNF::info], ".pcss" => & [PostCSS::info],
+    ".riot" => & [Riot::info], ".zsh-theme" => & [Shell::info], ".d2" => & [D2::info],
+    ".talon" => & [Talon::info], ".mjml" => & [XML::info], ".shader" => & [GLSL::info,
+    ShaderLab::info], ".nu" => & [Nu::info, Nushell::info], ".vapi" => & [Vala::info],
+    ".ol" => & [Jolie::info], ".gjs" => & [GlimmerJS::info], ".njk" => &
+    [Nunjucks::info], ".pd" => & [PureData::info], ".mtml" => & [MTML::info], ".s" => &
+    [Assembly::info, Motorola68KAssembly::info, UnixAssembly::info], ".apib" => &
+    [APIBlueprint::info], ".cljx" => & [Clojure::info], ".dylan" => & [Dylan::info], ".w"
+    => & [CWeb::info, OpenEdgeABL::info], ".intr" => & [Dylan::info], ".exs" => &
+    [Elixir::info], ".html.eex" => & [HTMLpEEX::info], ".rkt" => & [Racket::info], ".vbs"
+    => & [VBScript::info], ".qhelp" => & [XML::info], ".lmi" => & [Python::info], ".fea"
+    => & [OpenTypeFeatureFile::info], ".mkvi" => & [TeX::info], ".hic" => &
+    [Clojure::info], ".jelly" => & [XML::info], ".axaml" => & [XML::info], ".dcl" => &
+    [Clean::info], ".snippets" => & [VimSnippet::info], ".gtpl" => & [Groovy::info],
+    ".4dm" => & [_4D::info], ".xojo_toolbar" => & [Xojo::info], ".peggy" => &
+    [PEGjs::info], ".zig" => & [Zig::info], ".au3" => & [AutoIt::info], ".esdl" => &
+    [EdgeQL::info], ".cc" => & [Cpp::info], ".txx" => & [Cpp::info], ".nlogo" => &
+    [NetLogo::info], ".vtt" => & [WebVTT::info], ".fcgi" => & [Lua::info, PHP::info,
+    Perl::info, Python::info, Ruby::info, Shell::info], ".vue" => & [Vue::info], ".ect"
+    => & [EJS::info], ".tla" => & [TLA::info], ".viw" => & [SQL::info], ".sublime-syntax"
+    => & [YAML::info], ".svg" => & [SVG::info]
 };
