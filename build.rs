@@ -238,7 +238,10 @@ fn generate_extension_map(languages: &[LanguageData]) -> TokenStream {
         }
     }
 
-    let by_extension_entries = extension_map.iter().map(|(ext, structs)| {
+    let mut by_extension_entries: Vec<_> = extension_map.iter().collect();
+    by_extension_entries.sort_by_key(|(ext, _)| *ext);
+
+    let by_extension_entries = by_extension_entries.iter().map(|(ext, structs)| {
         let struct_fns = structs.iter().map(|s| quote! { #s::info });
         quote! { #ext => &[ #( #struct_fns ),* ] }
     });
