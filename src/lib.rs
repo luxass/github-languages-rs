@@ -16,11 +16,9 @@
 #[rustfmt::skip]
 mod generated;
 
-pub use generated::{get_languages, Language, Languages, LANGUAGES};
+mod macros;
 
-pub mod languages {
-    pub use super::generated::*;
-}
+pub use generated::{get_languages, Languages, LANGUAGES};
 
 #[cfg(test)]
 pub mod tests {
@@ -138,23 +136,25 @@ pub mod tests {
 
     #[test]
     fn language_info_structs() {
-        let javascript = languages::JavaScript::info();
+        use generated::*;
+
+        let javascript = JavaScript::info();
         assert_eq!(javascript.name, "JavaScript");
         assert_eq!(javascript.r#type, "programming");
 
-        let typescript = languages::TypeScript::info();
+        let typescript = TypeScript::info();
         assert_eq!(typescript.name, "TypeScript");
         assert_eq!(typescript.r#type, "programming");
 
-        let rust = languages::Rust::info();
+        let rust = Rust::info();
         assert_eq!(rust.name, "Rust");
         assert_eq!(rust.r#type, "programming");
 
-        let java = languages::Java::info();
+        let java = Java::info();
         assert_eq!(java.name, "Java");
         assert_eq!(java.r#type, "programming");
 
-        let python = languages::Python::info();
+        let python = Python::info();
         assert_eq!(python.name, "Python");
         assert_eq!(python.r#type, "programming");
     }
