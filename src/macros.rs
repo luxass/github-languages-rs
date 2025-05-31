@@ -43,7 +43,7 @@ macro_rules! define_languages {
         ),*
         $( , )?
     ) => {
-        use crate::macros::LanguageInfo;
+        use $crate::macros::LanguageInfo;
         use once_cell::sync::Lazy;
 
         // Generate simple language structs (no modules!)

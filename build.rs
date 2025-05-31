@@ -61,7 +61,7 @@ fn main() {
 
     // try to format with prettyplease, but fallback to direct formatting if it fails
     let formatted = match syn::parse2(generated_code.clone()) {
-        Ok(syntax_tree) => prettyplease::unparse(&syntax_tree),
+        Ok(syntax_tree) => format!("#![allow(clippy::all)]\n{}", prettyplease::unparse(&syntax_tree)),
         Err(_) => {
             // Fallback: just use the direct token stream with some basic formatting
             eprintln!(
@@ -72,7 +72,7 @@ fn main() {
     };
 
     if is_docs_rs {
-        println!("cargo:warning=Generated code:\n{}", generated_code);
+        println!("cargo:warning=Generated code:\n{}", formatted);
     } else {
         fs::write(&dest_path, formatted.as_bytes()).expect("Failed to write generated.rs");
     }
