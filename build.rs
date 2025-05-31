@@ -230,7 +230,7 @@ fn generate_extension_map(languages: &[LanguageData]) -> TokenStream {
         for ext in &lang.extensions {
             extension_map
                 .entry(ext.clone())
-                .or_insert_with(Vec::new)
+                .or_default()
                 .push(struct_name.clone());
         }
     }
