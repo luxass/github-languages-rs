@@ -2,8 +2,8 @@ use proc_macro2::{Ident, Literal, TokenStream};
 use quote::quote;
 use serde::Deserialize;
 use std::collections::HashMap;
-use std::{env, fs};
 use std::path::Path;
+use std::{env, fs};
 
 #[derive(Debug, Deserialize)]
 struct GitHubLanguageData {
@@ -64,7 +64,9 @@ fn main() {
         Ok(syntax_tree) => prettyplease::unparse(&syntax_tree),
         Err(_) => {
             // Fallback: just use the direct token stream with some basic formatting
-            eprintln!("Warning: Could not parse generated code for formatting, using basic formatting");
+            eprintln!(
+                "Warning: Could not parse generated code for formatting, using basic formatting"
+            );
             format!("{}", generated_code)
         }
     };
@@ -72,8 +74,7 @@ fn main() {
     if is_docs_rs {
         println!("cargo:warning=Generated code:\n{}", generated_code);
     } else {
-        fs::write(&dest_path, formatted.as_bytes())
-            .expect("Failed to write generated.rs");
+        fs::write(&dest_path, formatted.as_bytes()).expect("Failed to write generated.rs");
     }
 }
 

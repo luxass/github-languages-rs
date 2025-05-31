@@ -134,4 +134,3 @@ macro_rules! define_languages {
         pub static LANGUAGES: Lazy<Languages> = Lazy::new(|| Languages);
     };
 }
-
