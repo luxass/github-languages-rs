@@ -680,7 +680,10 @@ define_languages! {
     "source.gdb", ace_mode : "text", language_id : 122u64, filenames : [], interpreters :
     [], }, GDScript => { name : "GDScript", r#type : "programming", color : "#355570",
     extensions : [".gd"], aliases : [], tm_scope : "source.gdscript", ace_mode : "text",
-    language_id : 123u64, filenames : [], interpreters : [], }, GEDCOM => { name :
+    language_id : 123u64, filenames : [], interpreters : [], }, GDShader => { name :
+    "GDShader", r#type : "programming", color : "#478CBF", extensions : [".gdshader",
+    ".gdshaderinc"], aliases : [], tm_scope : "source.gdshader", ace_mode : "glsl",
+    language_id : 694638086u64, filenames : [], interpreters : [], }, GEDCOM => { name :
     "GEDCOM", r#type : "data", color : "#003058", extensions : [".ged"], aliases : [],
     tm_scope : "source.gedcom", ace_mode : "text", language_id : 459577965u64, filenames
     : [], interpreters : [], }, GLSL => { name : "GLSL", r#type : "programming", color :
@@ -2765,11 +2768,12 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     [GerberImage::info], ".gbs" => & [GerberImage::info], ".gco" => & [GCode::info],
     ".gcode" => & [GCode::info], ".gd" => & [GAP::info, GDScript::info], ".gdb" => &
     [GDB::info], ".gdbinit" => & [GDB::info], ".gdnlib" => & [GodotResource::info],
-    ".gdns" => & [GodotResource::info], ".ged" => & [GEDCOM::info], ".gemspec" => &
-    [Ruby::info], ".geo" => & [GLSL::info], ".geojson" => & [JSON::info], ".geom" => &
-    [GLSL::info], ".gf" => & [GrammaticalFramework::info], ".gi" => & [GAP::info],
-    ".gitconfig" => & [GitConfig::info], ".gitignore" => & [IgnoreList::info], ".gjs" =>
-    & [GlimmerJS::info], ".gko" => & [GerberImage::info], ".glade" => & [XML::info],
+    ".gdns" => & [GodotResource::info], ".gdshader" => & [GDShader::info], ".gdshaderinc"
+    => & [GDShader::info], ".ged" => & [GEDCOM::info], ".gemspec" => & [Ruby::info],
+    ".geo" => & [GLSL::info], ".geojson" => & [JSON::info], ".geom" => & [GLSL::info],
+    ".gf" => & [GrammaticalFramework::info], ".gi" => & [GAP::info], ".gitconfig" => &
+    [GitConfig::info], ".gitignore" => & [IgnoreList::info], ".gjs" => &
+    [GlimmerJS::info], ".gko" => & [GerberImage::info], ".glade" => & [XML::info],
     ".gleam" => & [Gleam::info], ".glf" => & [Glyph::info], ".glsl" => & [GLSL::info],
     ".glslf" => & [GLSL::info], ".glslv" => & [GLSL::info], ".gltf" => & [JSON::info],
     ".glyphs" => & [OpenStepPropertyList::info], ".gmi" => & [Gemini::info], ".gml" => &
