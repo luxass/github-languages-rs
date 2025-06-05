@@ -2307,25 +2307,28 @@ define_languages! {
     color : "#507cff", extensions : [".vtl"], aliases : ["vtl", "velocity"], tm_scope :
     "source.velocity", ace_mode : "velocity", language_id : 292377326u64, codemirror_mode
     : "velocity", codemirror_mime_type : "text/velocity", filenames : [], interpreters :
-    [], }, Verilog => { name : "Verilog", r#type : "programming", color : "#b2b7f8",
-    extensions : [".v", ".veo"], aliases : [], tm_scope : "source.verilog", ace_mode :
-    "verilog", language_id : 387u64, codemirror_mode : "verilog", codemirror_mime_type :
-    "text/x-verilog", filenames : [], interpreters : [], }, VimHelpFile => { name :
-    "Vim Help File", r#type : "prose", color : "#199f4b", extensions : [".txt"], aliases
-    : ["help", "vimhelp"], tm_scope : "text.vim-help", ace_mode : "text", language_id :
-    508563686u64, filenames : [], interpreters : [], }, VimScript => { name :
-    "Vim Script", r#type : "programming", color : "#199f4b", extensions : [".vim",
-    ".vba", ".vimrc", ".vmb"], aliases : ["vim", "viml", "nvim", "vimscript"], tm_scope :
-    "source.viml", ace_mode : "text", language_id : 388u64, filenames : [".exrc",
-    ".gvimrc", ".nvimrc", ".vimrc", "_vimrc", "gvimrc", "nvimrc", "vimrc"], interpreters
-    : [], }, VimSnippet => { name : "Vim Snippet", r#type : "markup", color : "#199f4b",
-    extensions : [".snip", ".snippet", ".snippets"], aliases : ["SnipMate", "UltiSnip",
-    "UltiSnips", "NeoSnippet"], tm_scope : "source.vim-snippet", ace_mode : "text",
-    language_id : 81265970u64, filenames : [], interpreters : [], }, VisualBasicNET => {
-    name : "Visual Basic .NET", r#type : "programming", color : "#945db7", extensions :
-    [".vb", ".vbhtml"], aliases : ["visual basic", "vbnet", "vb .net", "vb.net"],
-    tm_scope : "source.vbnet", ace_mode : "text", language_id : 389u64, codemirror_mode :
-    "vb", codemirror_mime_type : "text/x-vb", filenames : [], interpreters : [], },
+    [], }, Vento => { name : "Vento", r#type : "markup", color : "#ff0080", extensions :
+    [".vto"], aliases : [], tm_scope : "source.vento", ace_mode : "text", language_id :
+    757053899u64, filenames : [], interpreters : [], }, Verilog => { name : "Verilog",
+    r#type : "programming", color : "#b2b7f8", extensions : [".v", ".veo"], aliases : [],
+    tm_scope : "source.verilog", ace_mode : "verilog", language_id : 387u64,
+    codemirror_mode : "verilog", codemirror_mime_type : "text/x-verilog", filenames : [],
+    interpreters : [], }, VimHelpFile => { name : "Vim Help File", r#type : "prose",
+    color : "#199f4b", extensions : [".txt"], aliases : ["help", "vimhelp"], tm_scope :
+    "text.vim-help", ace_mode : "text", language_id : 508563686u64, filenames : [],
+    interpreters : [], }, VimScript => { name : "Vim Script", r#type : "programming",
+    color : "#199f4b", extensions : [".vim", ".vba", ".vimrc", ".vmb"], aliases : ["vim",
+    "viml", "nvim", "vimscript"], tm_scope : "source.viml", ace_mode : "text",
+    language_id : 388u64, filenames : [".exrc", ".gvimrc", ".nvimrc", ".vimrc", "_vimrc",
+    "gvimrc", "nvimrc", "vimrc"], interpreters : [], }, VimSnippet => { name :
+    "Vim Snippet", r#type : "markup", color : "#199f4b", extensions : [".snip",
+    ".snippet", ".snippets"], aliases : ["SnipMate", "UltiSnip", "UltiSnips",
+    "NeoSnippet"], tm_scope : "source.vim-snippet", ace_mode : "text", language_id :
+    81265970u64, filenames : [], interpreters : [], }, VisualBasicNET => { name :
+    "Visual Basic .NET", r#type : "programming", color : "#945db7", extensions : [".vb",
+    ".vbhtml"], aliases : ["visual basic", "vbnet", "vb .net", "vb.net"], tm_scope :
+    "source.vbnet", ace_mode : "text", language_id : 389u64, codemirror_mode : "vb",
+    codemirror_mime_type : "text/x-vb", filenames : [], interpreters : [], },
     VisualBasic60 => { name : "Visual Basic 6.0", r#type : "programming", color :
     "#2c6353", extensions : [".bas", ".cls", ".ctl", ".Dsr", ".frm"], aliases : ["vb6",
     "vb 6", "visual basic 6", "visual basic classic", "classic visual basic"], tm_scope :
@@ -3122,34 +3125,34 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     => & [SQL::info], ".vmb" => & [VimScript::info], ".volt" => & [Volt::info], ".vrx" =>
     & [GLSL::info], ".vs" => & [GLSL::info], ".vsh" => & [GLSL::info], ".vshader" => &
     [GLSL::info], ".vsixmanifest" => & [XML::info], ".vssettings" => & [XML::info],
-    ".vstemplate" => & [XML::info], ".vtl" => & [VelocityTemplateLanguage::info], ".vtt"
-    => & [WebVTT::info], ".vue" => & [Vue::info], ".vw" => & [PLSQL::info], ".vxml" => &
-    [XML::info], ".vy" => & [Vyper::info], ".w" => & [CWeb::info, OpenEdgeABL::info],
-    ".wast" => & [WebAssembly::info], ".wat" => & [WebAssembly::info], ".watchr" => &
-    [Ruby::info], ".wdl" => & [WDL::info], ".webapp" => & [JSON::info], ".webidl" => &
-    [WebIDL::info], ".webmanifest" => & [JSON::info], ".weechatlog" => & [IRCLog::info],
-    ".wgsl" => & [WGSL::info], ".whiley" => & [Whiley::info], ".wiki" => &
-    [Wikitext::info], ".wikitext" => & [Wikitext::info], ".wisp" => & [Wisp::info],
-    ".wit" => & [WebAssemblyInterfaceType::info], ".wixproj" => & [XML::info], ".wl" => &
-    [Mathematica::info], ".wlk" => & [Wollok::info], ".wlt" => & [Mathematica::info],
-    ".wlua" => & [Lua::info], ".workbook" => & [Markdown::info], ".workflow" => &
-    [HCL::info, XML::info], ".wren" => & [Wren::info], ".ws" => & [WitcherScript::info],
-    ".wsdl" => & [XML::info], ".wsf" => & [XML::info], ".wsgi" => & [Python::info],
-    ".wxi" => & [XML::info], ".wxl" => & [XML::info], ".wxs" => & [XML::info], ".x" => &
-    [DirectX3DFile::info, LinkerScript::info, Logos::info, RPC::info], ".x10" => &
-    [X10::info], ".x3d" => & [XML::info], ".x68" => & [Motorola68KAssembly::info],
-    ".xacro" => & [XML::info], ".xaml" => & [XML::info], ".xbm" => & [XBitMap::info],
-    ".xc" => & [XC::info], ".xdc" => & [Tcl::info], ".xht" => & [HTML::info], ".xhtml" =>
-    & [HTML::info], ".xi" => & [Logos::info], ".xib" => & [XML::info], ".xlf" => &
-    [XML::info], ".xliff" => & [XML::info], ".xm" => & [Logos::info], ".xmi" => &
-    [XML::info], ".xml" => & [XML::info], ".xml.dist" => & [XML::info], ".xmp" => &
-    [XML::info], ".xojo_code" => & [Xojo::info], ".xojo_menu" => & [Xojo::info],
-    ".xojo_report" => & [Xojo::info], ".xojo_script" => & [Xojo::info], ".xojo_toolbar"
-    => & [Xojo::info], ".xojo_window" => & [Xojo::info], ".xpl" => & [XProc::info],
-    ".xpm" => & [XPixMap::info], ".xproc" => & [XProc::info], ".xproj" => & [XML::info],
-    ".xpy" => & [Python::info], ".xq" => & [XQuery::info], ".xql" => & [XQuery::info],
-    ".xqm" => & [XQuery::info], ".xquery" => & [XQuery::info], ".xqy" => &
-    [XQuery::info], ".xrl" => & [Erlang::info], ".xs" => & [XS::info], ".xsd" => &
+    ".vstemplate" => & [XML::info], ".vtl" => & [VelocityTemplateLanguage::info], ".vto"
+    => & [Vento::info], ".vtt" => & [WebVTT::info], ".vue" => & [Vue::info], ".vw" => &
+    [PLSQL::info], ".vxml" => & [XML::info], ".vy" => & [Vyper::info], ".w" => &
+    [CWeb::info, OpenEdgeABL::info], ".wast" => & [WebAssembly::info], ".wat" => &
+    [WebAssembly::info], ".watchr" => & [Ruby::info], ".wdl" => & [WDL::info], ".webapp"
+    => & [JSON::info], ".webidl" => & [WebIDL::info], ".webmanifest" => & [JSON::info],
+    ".weechatlog" => & [IRCLog::info], ".wgsl" => & [WGSL::info], ".whiley" => &
+    [Whiley::info], ".wiki" => & [Wikitext::info], ".wikitext" => & [Wikitext::info],
+    ".wisp" => & [Wisp::info], ".wit" => & [WebAssemblyInterfaceType::info], ".wixproj"
+    => & [XML::info], ".wl" => & [Mathematica::info], ".wlk" => & [Wollok::info], ".wlt"
+    => & [Mathematica::info], ".wlua" => & [Lua::info], ".workbook" => &
+    [Markdown::info], ".workflow" => & [HCL::info, XML::info], ".wren" => & [Wren::info],
+    ".ws" => & [WitcherScript::info], ".wsdl" => & [XML::info], ".wsf" => & [XML::info],
+    ".wsgi" => & [Python::info], ".wxi" => & [XML::info], ".wxl" => & [XML::info], ".wxs"
+    => & [XML::info], ".x" => & [DirectX3DFile::info, LinkerScript::info, Logos::info,
+    RPC::info], ".x10" => & [X10::info], ".x3d" => & [XML::info], ".x68" => &
+    [Motorola68KAssembly::info], ".xacro" => & [XML::info], ".xaml" => & [XML::info],
+    ".xbm" => & [XBitMap::info], ".xc" => & [XC::info], ".xdc" => & [Tcl::info], ".xht"
+    => & [HTML::info], ".xhtml" => & [HTML::info], ".xi" => & [Logos::info], ".xib" => &
+    [XML::info], ".xlf" => & [XML::info], ".xliff" => & [XML::info], ".xm" => &
+    [Logos::info], ".xmi" => & [XML::info], ".xml" => & [XML::info], ".xml.dist" => &
+    [XML::info], ".xmp" => & [XML::info], ".xojo_code" => & [Xojo::info], ".xojo_menu" =>
+    & [Xojo::info], ".xojo_report" => & [Xojo::info], ".xojo_script" => & [Xojo::info],
+    ".xojo_toolbar" => & [Xojo::info], ".xojo_window" => & [Xojo::info], ".xpl" => &
+    [XProc::info], ".xpm" => & [XPixMap::info], ".xproc" => & [XProc::info], ".xproj" =>
+    & [XML::info], ".xpy" => & [Python::info], ".xq" => & [XQuery::info], ".xql" => &
+    [XQuery::info], ".xqm" => & [XQuery::info], ".xquery" => & [XQuery::info], ".xqy" =>
+    & [XQuery::info], ".xrl" => & [Erlang::info], ".xs" => & [XS::info], ".xsd" => &
     [XML::info], ".xsh" => & [Xonsh::info], ".xsjs" => & [JavaScript::info], ".xsjslib"
     => & [JavaScript::info], ".xsl" => & [XSLT::info], ".xslt" => & [XSLT::info],
     ".xsp-config" => & [XPages::info], ".xsp.metadata" => & [XPages::info], ".xspec" => &
