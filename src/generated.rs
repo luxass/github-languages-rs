@@ -1157,7 +1157,7 @@ define_languages! {
     => { name : "Lean 4", r#type : "programming", color : "#000000", extensions :
     [".lean"], aliases : [], tm_scope : "source.lean4", ace_mode : "text", language_id :
     455147478u64, filenames : [], group : "Lean", interpreters : [], }, Leo => { name :
-    "Leo", r#type : "programming", color : "#6814EC", extensions : [".leo"], aliases :
+    "Leo", r#type : "programming", color : "#C4FFC2", extensions : [".leo"], aliases :
     [], tm_scope : "source.leo", ace_mode : "text", language_id : 916034822u64, wrap :
     true, filenames : [], interpreters : [], }, Less => { name : "Less", r#type :
     "markup", color : "#1d365d", extensions : [".less"], aliases : ["less-css"], tm_scope
