@@ -1438,82 +1438,84 @@ define_languages! {
     ".vhost"], aliases : ["nginx configuration file"], tm_scope : "source.nginx",
     ace_mode : "text", language_id : 248u64, codemirror_mode : "nginx",
     codemirror_mime_type : "text/x-nginx-conf", filenames : ["nginx.conf"], interpreters
-    : [], }, Nim => { name : "Nim", r#type : "programming", color : "#ffc200", extensions
-    : [".nim", ".nim.cfg", ".nimble", ".nimrod", ".nims"], aliases : [], tm_scope :
-    "source.nim", ace_mode : "text", language_id : 249u64, filenames : ["nim.cfg"],
-    interpreters : [], }, Ninja => { name : "Ninja", r#type : "data", color : "#000000",
-    extensions : [".ninja"], aliases : [], tm_scope : "source.ninja", ace_mode : "text",
-    language_id : 250u64, filenames : [], interpreters : [], }, Nit => { name : "Nit",
-    r#type : "programming", color : "#009917", extensions : [".nit"], aliases : [],
-    tm_scope : "source.nit", ace_mode : "text", language_id : 251u64, filenames : [],
-    interpreters : [], }, Nix => { name : "Nix", r#type : "programming", color :
-    "#7e7eff", extensions : [".nix"], aliases : ["nixos"], tm_scope : "source.nix",
-    ace_mode : "nix", language_id : 252u64, filenames : [], interpreters : [], }, Noir =>
-    { name : "Noir", r#type : "programming", color : "#2f1f49", extensions : [".nr"],
-    aliases : ["nargo"], tm_scope : "source.nr", ace_mode : "rust", language_id :
-    813068465u64, codemirror_mode : "rust", codemirror_mime_type : "text/x-rustsrc",
-    filenames : [], interpreters : [], }, Nu => { name : "Nu", r#type : "programming",
-    color : "#c9df40", extensions : [".nu"], aliases : ["nush"], tm_scope : "source.nu",
-    ace_mode : "scheme", language_id : 253u64, codemirror_mode : "scheme",
-    codemirror_mime_type : "text/x-scheme", filenames : ["Nukefile"], interpreters :
-    ["nush"], }, NumPy => { name : "NumPy", r#type : "programming", color : "#9C8AF9",
-    extensions : [".numpy", ".numpyw", ".numsc"], aliases : [], tm_scope : "none",
-    ace_mode : "text", language_id : 254u64, codemirror_mode : "python",
-    codemirror_mime_type : "text/x-python", filenames : [], group : "Python",
-    interpreters : [], }, Nunjucks => { name : "Nunjucks", r#type : "markup", color :
-    "#3d8137", extensions : [".njk"], aliases : ["njk"], tm_scope : "text.html.nunjucks",
-    ace_mode : "nunjucks", language_id : 461856962u64, filenames : [], interpreters : [],
-    }, Nushell => { name : "Nushell", r#type : "programming", color : "#4E9906",
-    extensions : [".nu"], aliases : ["nu-script", "nushell-script"], tm_scope :
-    "source.nushell", ace_mode : "sh", language_id : 446573572u64, codemirror_mode :
-    "shell", codemirror_mime_type : "text/x-sh", filenames : [], interpreters : ["nu"],
-    }, OASv2Json => { name : "OASv2-json", r#type : "data", color : "#85ea2d", extensions
-    : [".json"], aliases : [], tm_scope : "source.json", ace_mode : "json", language_id :
-    834374816u64, codemirror_mode : "javascript", codemirror_mime_type :
-    "application/json", filenames : [], group : "OpenAPI Specification v2", interpreters
-    : [], }, OASv2Yaml => { name : "OASv2-yaml", r#type : "data", color : "#85ea2d",
-    extensions : [".yaml", ".yml"], aliases : [], tm_scope : "source.yaml", ace_mode :
-    "yaml", language_id : 105187618u64, codemirror_mode : "yaml", codemirror_mime_type :
-    "text/x-yaml", filenames : [], group : "OpenAPI Specification v2", interpreters : [],
-    }, OASv3Json => { name : "OASv3-json", r#type : "data", color : "#85ea2d", extensions
-    : [".json"], aliases : [], tm_scope : "source.json", ace_mode : "json", language_id :
-    980062566u64, codemirror_mode : "javascript", codemirror_mime_type :
-    "application/json", filenames : [], group : "OpenAPI Specification v3", interpreters
-    : [], }, OASv3Yaml => { name : "OASv3-yaml", r#type : "data", color : "#85ea2d",
-    extensions : [".yaml", ".yml"], aliases : [], tm_scope : "source.yaml", ace_mode :
-    "yaml", language_id : 51239111u64, codemirror_mode : "yaml", codemirror_mime_type :
-    "text/x-yaml", filenames : [], group : "OpenAPI Specification v3", interpreters : [],
-    }, OCaml => { name : "OCaml", r#type : "programming", color : "#ef7a08", extensions :
-    [".ml", ".eliom", ".eliomi", ".ml4", ".mli", ".mll", ".mly"], aliases : [], tm_scope
-    : "source.ocaml", ace_mode : "ocaml", language_id : 255u64, codemirror_mode :
-    "mllike", codemirror_mime_type : "text/x-ocaml", filenames : [], interpreters :
-    ["ocaml", "ocamlrun", "ocamlscript"], }, OMNeTppMSG => { name : "OMNeT++ MSG", r#type
-    : "programming", color : "#a0e0a0", extensions : [".msg"], aliases : ["omnetpp-msg"],
-    tm_scope : "source.msg", ace_mode : "text", language_id : 664100008u64, filenames :
-    [], interpreters : [], }, OMNeTppNED => { name : "OMNeT++ NED", r#type :
-    "programming", color : "#08607c", extensions : [".ned"], aliases : ["omnetpp-ned"],
-    tm_scope : "source.ned", ace_mode : "text", language_id : 924868392u64, filenames :
-    [], interpreters : [], }, Oberon => { name : "Oberon", r#type : "programming", color
-    : "#000000", extensions : [".ob2"], aliases : [], tm_scope : "source.modula2",
-    ace_mode : "text", language_id : 677210597u64, filenames : [], interpreters : [], },
-    ObjDump => { name : "ObjDump", r#type : "data", color : "#000000", extensions :
-    [".objdump"], aliases : [], tm_scope : "objdump.x86asm", ace_mode : "assembly_x86",
-    language_id : 256u64, filenames : [], interpreters : [], },
-    ObjectDataInstanceNotation => { name : "Object Data Instance Notation", r#type :
-    "data", color : "#000000", extensions : [".odin"], aliases : [], tm_scope :
-    "source.odin-ehr", ace_mode : "text", language_id : 985227236u64, filenames : [],
-    interpreters : [], }, ObjectScript => { name : "ObjectScript", r#type :
-    "programming", color : "#424893", extensions : [".cls"], aliases : [], tm_scope :
-    "source.objectscript", ace_mode : "text", language_id : 202735509u64, filenames : [],
-    interpreters : [], }, ObjectiveC => { name : "Objective-C", r#type : "programming",
-    color : "#438eff", extensions : [".m", ".h"], aliases : ["obj-c", "objc",
-    "objectivec"], tm_scope : "source.objc", ace_mode : "objectivec", language_id :
-    257u64, codemirror_mode : "clike", codemirror_mime_type : "text/x-objectivec",
-    filenames : [], interpreters : [], }, ObjectiveCpp => { name : "Objective-C++",
-    r#type : "programming", color : "#6866fb", extensions : [".mm"], aliases :
-    ["obj-c++", "objc++", "objectivec++"], tm_scope : "source.objc++", ace_mode :
-    "objectivec", language_id : 258u64, codemirror_mode : "clike", codemirror_mime_type :
-    "text/x-objectivec", filenames : [], interpreters : [], }, ObjectiveJ => { name :
+    : [], }, Nickel => { name : "Nickel", r#type : "programming", color : "#E0C3FC",
+    extensions : [".ncl"], aliases : [], tm_scope : "source.nickel", ace_mode : "text",
+    language_id : 1067292664u64, filenames : [], interpreters : [], }, Nim => { name :
+    "Nim", r#type : "programming", color : "#ffc200", extensions : [".nim", ".nim.cfg",
+    ".nimble", ".nimrod", ".nims"], aliases : [], tm_scope : "source.nim", ace_mode :
+    "text", language_id : 249u64, filenames : ["nim.cfg"], interpreters : [], }, Ninja =>
+    { name : "Ninja", r#type : "data", color : "#000000", extensions : [".ninja"],
+    aliases : [], tm_scope : "source.ninja", ace_mode : "text", language_id : 250u64,
+    filenames : [], interpreters : [], }, Nit => { name : "Nit", r#type : "programming",
+    color : "#009917", extensions : [".nit"], aliases : [], tm_scope : "source.nit",
+    ace_mode : "text", language_id : 251u64, filenames : [], interpreters : [], }, Nix =>
+    { name : "Nix", r#type : "programming", color : "#7e7eff", extensions : [".nix"],
+    aliases : ["nixos"], tm_scope : "source.nix", ace_mode : "nix", language_id : 252u64,
+    filenames : [], interpreters : [], }, Noir => { name : "Noir", r#type :
+    "programming", color : "#2f1f49", extensions : [".nr"], aliases : ["nargo"], tm_scope
+    : "source.nr", ace_mode : "rust", language_id : 813068465u64, codemirror_mode :
+    "rust", codemirror_mime_type : "text/x-rustsrc", filenames : [], interpreters : [],
+    }, Nu => { name : "Nu", r#type : "programming", color : "#c9df40", extensions :
+    [".nu"], aliases : ["nush"], tm_scope : "source.nu", ace_mode : "scheme", language_id
+    : 253u64, codemirror_mode : "scheme", codemirror_mime_type : "text/x-scheme",
+    filenames : ["Nukefile"], interpreters : ["nush"], }, NumPy => { name : "NumPy",
+    r#type : "programming", color : "#9C8AF9", extensions : [".numpy", ".numpyw",
+    ".numsc"], aliases : [], tm_scope : "none", ace_mode : "text", language_id : 254u64,
+    codemirror_mode : "python", codemirror_mime_type : "text/x-python", filenames : [],
+    group : "Python", interpreters : [], }, Nunjucks => { name : "Nunjucks", r#type :
+    "markup", color : "#3d8137", extensions : [".njk"], aliases : ["njk"], tm_scope :
+    "text.html.nunjucks", ace_mode : "nunjucks", language_id : 461856962u64, filenames :
+    [], interpreters : [], }, Nushell => { name : "Nushell", r#type : "programming",
+    color : "#4E9906", extensions : [".nu"], aliases : ["nu-script", "nushell-script"],
+    tm_scope : "source.nushell", ace_mode : "sh", language_id : 446573572u64,
+    codemirror_mode : "shell", codemirror_mime_type : "text/x-sh", filenames : [],
+    interpreters : ["nu"], }, OASv2Json => { name : "OASv2-json", r#type : "data", color
+    : "#85ea2d", extensions : [".json"], aliases : [], tm_scope : "source.json", ace_mode
+    : "json", language_id : 834374816u64, codemirror_mode : "javascript",
+    codemirror_mime_type : "application/json", filenames : [], group :
+    "OpenAPI Specification v2", interpreters : [], }, OASv2Yaml => { name : "OASv2-yaml",
+    r#type : "data", color : "#85ea2d", extensions : [".yaml", ".yml"], aliases : [],
+    tm_scope : "source.yaml", ace_mode : "yaml", language_id : 105187618u64,
+    codemirror_mode : "yaml", codemirror_mime_type : "text/x-yaml", filenames : [], group
+    : "OpenAPI Specification v2", interpreters : [], }, OASv3Json => { name :
+    "OASv3-json", r#type : "data", color : "#85ea2d", extensions : [".json"], aliases :
+    [], tm_scope : "source.json", ace_mode : "json", language_id : 980062566u64,
+    codemirror_mode : "javascript", codemirror_mime_type : "application/json", filenames
+    : [], group : "OpenAPI Specification v3", interpreters : [], }, OASv3Yaml => { name :
+    "OASv3-yaml", r#type : "data", color : "#85ea2d", extensions : [".yaml", ".yml"],
+    aliases : [], tm_scope : "source.yaml", ace_mode : "yaml", language_id : 51239111u64,
+    codemirror_mode : "yaml", codemirror_mime_type : "text/x-yaml", filenames : [], group
+    : "OpenAPI Specification v3", interpreters : [], }, OCaml => { name : "OCaml", r#type
+    : "programming", color : "#ef7a08", extensions : [".ml", ".eliom", ".eliomi", ".ml4",
+    ".mli", ".mll", ".mly"], aliases : [], tm_scope : "source.ocaml", ace_mode : "ocaml",
+    language_id : 255u64, codemirror_mode : "mllike", codemirror_mime_type :
+    "text/x-ocaml", filenames : [], interpreters : ["ocaml", "ocamlrun", "ocamlscript"],
+    }, OMNeTppMSG => { name : "OMNeT++ MSG", r#type : "programming", color : "#a0e0a0",
+    extensions : [".msg"], aliases : ["omnetpp-msg"], tm_scope : "source.msg", ace_mode :
+    "text", language_id : 664100008u64, filenames : [], interpreters : [], }, OMNeTppNED
+    => { name : "OMNeT++ NED", r#type : "programming", color : "#08607c", extensions :
+    [".ned"], aliases : ["omnetpp-ned"], tm_scope : "source.ned", ace_mode : "text",
+    language_id : 924868392u64, filenames : [], interpreters : [], }, Oberon => { name :
+    "Oberon", r#type : "programming", color : "#000000", extensions : [".ob2"], aliases :
+    [], tm_scope : "source.modula2", ace_mode : "text", language_id : 677210597u64,
+    filenames : [], interpreters : [], }, ObjDump => { name : "ObjDump", r#type : "data",
+    color : "#000000", extensions : [".objdump"], aliases : [], tm_scope :
+    "objdump.x86asm", ace_mode : "assembly_x86", language_id : 256u64, filenames : [],
+    interpreters : [], }, ObjectDataInstanceNotation => { name :
+    "Object Data Instance Notation", r#type : "data", color : "#000000", extensions :
+    [".odin"], aliases : [], tm_scope : "source.odin-ehr", ace_mode : "text", language_id
+    : 985227236u64, filenames : [], interpreters : [], }, ObjectScript => { name :
+    "ObjectScript", r#type : "programming", color : "#424893", extensions : [".cls"],
+    aliases : [], tm_scope : "source.objectscript", ace_mode : "text", language_id :
+    202735509u64, filenames : [], interpreters : [], }, ObjectiveC => { name :
+    "Objective-C", r#type : "programming", color : "#438eff", extensions : [".m", ".h"],
+    aliases : ["obj-c", "objc", "objectivec"], tm_scope : "source.objc", ace_mode :
+    "objectivec", language_id : 257u64, codemirror_mode : "clike", codemirror_mime_type :
+    "text/x-objectivec", filenames : [], interpreters : [], }, ObjectiveCpp => { name :
+    "Objective-C++", r#type : "programming", color : "#6866fb", extensions : [".mm"],
+    aliases : ["obj-c++", "objc++", "objectivec++"], tm_scope : "source.objc++", ace_mode
+    : "objectivec", language_id : 258u64, codemirror_mode : "clike", codemirror_mime_type
+    : "text/x-objectivec", filenames : [], interpreters : [], }, ObjectiveJ => { name :
     "Objective-J", r#type : "programming", color : "#ff0c5a", extensions : [".j", ".sj"],
     aliases : ["obj-j", "objectivej", "objj"], tm_scope : "source.js.objj", ace_mode :
     "text", language_id : 259u64, filenames : [], interpreters : [], }, Odin => { name :
@@ -2920,8 +2922,8 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     [Nanorc::info], ".nas" => & [Assembly::info, Nasal::info], ".nasl" => & [NASL::info],
     ".nasm" => & [Assembly::info], ".natvis" => & [XML::info], ".nawk" => & [Awk::info],
     ".nb" => & [Mathematica::info, Text::info], ".nbp" => & [Mathematica::info], ".nc" =>
-    & [NesC::info], ".ncl" => & [GerberImage::info, NCL::info, Text::info, XML::info],
-    ".ndproj" => & [XML::info], ".ne" => & [Nearley::info], ".nearley" => &
+    & [NesC::info], ".ncl" => & [GerberImage::info, NCL::info, Nickel::info, Text::info,
+    XML::info], ".ndproj" => & [XML::info], ".ne" => & [Nearley::info], ".nearley" => &
     [Nearley::info], ".ned" => & [OMNeTppNED::info], ".neon" => & [NEON::info], ".nf" =>
     & [Nextflow::info], ".nginx" => & [Nginx::info], ".nginxconf" => & [Nginx::info],
     ".ni" => & [Inform7::info], ".nim" => & [Nim::info], ".nim.cfg" => & [Nim::info],
