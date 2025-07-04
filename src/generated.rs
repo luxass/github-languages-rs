@@ -1973,8 +1973,8 @@ define_languages! {
     r#type : "data", color : "#ff9900", extensions : [".svg"], aliases : [], tm_scope :
     "text.xml.svg", ace_mode : "xml", language_id : 337u64, codemirror_mode : "xml",
     codemirror_mime_type : "text/xml", filenames : [], interpreters : [], }, SWIG => {
-    name : "SWIG", r#type : "programming", color : "#000000", extensions : [".i"],
-    aliases : [], tm_scope : "source.c++", ace_mode : "c_cpp", language_id :
+    name : "SWIG", r#type : "programming", color : "#000000", extensions : [".i", ".swg",
+    ".swig"], aliases : [], tm_scope : "source.c++", ace_mode : "c_cpp", language_id :
     1066250075u64, codemirror_mode : "clike", codemirror_mime_type : "text/x-c++src",
     filenames : [], interpreters : [], }, Sage => { name : "Sage", r#type :
     "programming", color : "#000000", extensions : [".sage", ".sagews"], aliases : [],
@@ -3080,14 +3080,15 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     ".sublime_session" => & [JSONWithComments::info], ".sv" => & [SystemVerilog::info],
     ".svelte" => & [Svelte::info], ".svg" => & [SVG::info], ".svh" => &
     [SystemVerilog::info], ".svx" => & [SurvexData::info, Mdsvex::info], ".sw" => &
-    [Sway::info, XML::info], ".swift" => & [Swift::info], ".syntax" => & [YAML::info],
-    ".t" => & [Perl::info, Raku::info, Terra::info, Turing::info], ".tab" => &
-    [SQL::info], ".tac" => & [Python::info], ".tact" => & [JSON::info, Tact::info],
-    ".tag" => & [JavaServerPages::info], ".talon" => & [Talon::info], ".targets" => &
-    [XML::info], ".tcc" => & [Cpp::info], ".tcl" => & [Tcl::info], ".tcl.in" => &
-    [Tcl::info], ".tcsh" => & [Tcsh::info], ".te" => & [SELinuxPolicy::info], ".tea" => &
-    [Tea::info], ".templ" => & [Templ::info], ".tesc" => & [GLSL::info], ".tese" => &
-    [GLSL::info], ".tex" => & [TeX::info], ".texi" => & [Texinfo::info], ".texinfo" => &
+    [Sway::info, XML::info], ".swg" => & [SWIG::info], ".swift" => & [Swift::info],
+    ".swig" => & [SWIG::info], ".syntax" => & [YAML::info], ".t" => & [Perl::info,
+    Raku::info, Terra::info, Turing::info], ".tab" => & [SQL::info], ".tac" => &
+    [Python::info], ".tact" => & [JSON::info, Tact::info], ".tag" => &
+    [JavaServerPages::info], ".talon" => & [Talon::info], ".targets" => & [XML::info],
+    ".tcc" => & [Cpp::info], ".tcl" => & [Tcl::info], ".tcl.in" => & [Tcl::info], ".tcsh"
+    => & [Tcsh::info], ".te" => & [SELinuxPolicy::info], ".tea" => & [Tea::info],
+    ".templ" => & [Templ::info], ".tesc" => & [GLSL::info], ".tese" => & [GLSL::info],
+    ".tex" => & [TeX::info], ".texi" => & [Texinfo::info], ".texinfo" => &
     [Texinfo::info], ".textile" => & [Textile::info], ".textproto" => &
     [ProtocolBufferTextFormat::info], ".tf" => & [HCL::info], ".tfstate" => &
     [JSON::info], ".tfstate.backup" => & [JSON::info], ".tftpl" => &
