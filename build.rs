@@ -70,12 +70,12 @@ fn main() {
             eprintln!(
                 "Warning: Could not parse generated code for formatting, using basic formatting"
             );
-            format!("{}", generated_code)
+            format!("{generated_code}")
         }
     };
 
     if is_docs_rs {
-        println!("cargo:warning=Generated code:\n{}", formatted);
+        println!("cargo:warning=Generated code:\n{formatted}");
     } else {
         fs::write(&dest_path, formatted.as_bytes()).expect("Failed to write generated.rs");
     }
@@ -89,10 +89,7 @@ fn convert_github_format(
     for (name, github_data) in github_languages {
         // skip if essential fields are missing
         if github_data.language_id.is_none() {
-            eprintln!(
-                "Warning: Skipping language '{}' - missing language_id",
-                name
-            );
+            eprintln!("Warning: Skipping language '{name}' - missing language_id");
             continue;
         }
 
@@ -291,7 +288,7 @@ fn sanitize_identifier(name: &str) -> String {
         .join("");
 
     if struct_name.starts_with(char::is_numeric) {
-        struct_name = format!("_{}", struct_name);
+        struct_name = format!("_{struct_name}");
     }
 
     // handle Rust keywords and common conflicts
