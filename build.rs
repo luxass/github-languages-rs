@@ -89,9 +89,7 @@ fn convert_github_format(
     for (name, github_data) in github_languages {
         // skip if essential fields are missing
         if github_data.language_id.is_none() {
-            eprintln!(
-                "Warning: Skipping language '{name}' - missing language_id"
-            );
+            eprintln!("Warning: Skipping language '{name}' - missing language_id");
             continue;
         }
 
