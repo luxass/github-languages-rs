@@ -2299,18 +2299,18 @@ define_languages! {
     [".vbs"], aliases : [], tm_scope : "source.vbnet", ace_mode : "vbscript", language_id
     : 408016005u64, codemirror_mode : "vbscript", codemirror_mime_type : "text/vbscript",
     filenames : [], interpreters : [], }, VCL => { name : "VCL", r#type : "programming",
-    color : "#148AA8", extensions : [".vcl"], aliases : [], tm_scope :
-    "source.varnish.vcl", ace_mode : "text", language_id : 384u64, filenames : [],
-    interpreters : [], }, VHDL => { name : "VHDL", r#type : "programming", color :
-    "#adb2cb", extensions : [".vhdl", ".vhd", ".vhf", ".vhi", ".vho", ".vhs", ".vht",
-    ".vhw"], aliases : [], tm_scope : "source.vhdl", ace_mode : "vhdl", language_id :
-    385u64, codemirror_mode : "vhdl", codemirror_mime_type : "text/x-vhdl", filenames :
-    [], interpreters : [], }, Vala => { name : "Vala", r#type : "programming", color :
-    "#a56de2", extensions : [".vala", ".vapi"], aliases : [], tm_scope : "source.vala",
-    ace_mode : "vala", language_id : 386u64, filenames : [], interpreters : [], },
-    ValveDataFormat => { name : "Valve Data Format", r#type : "data", color : "#f26025",
-    extensions : [".vdf"], aliases : ["keyvalues", "vdf"], tm_scope : "source.keyvalues",
-    ace_mode : "text", language_id : 544060961u64, filenames : [], interpreters : [], },
+    color : "#148AA8", extensions : [".vcl"], aliases : [], tm_scope : "source.vcl",
+    ace_mode : "text", language_id : 384u64, filenames : [], interpreters : [], }, VHDL
+    => { name : "VHDL", r#type : "programming", color : "#adb2cb", extensions : [".vhdl",
+    ".vhd", ".vhf", ".vhi", ".vho", ".vhs", ".vht", ".vhw"], aliases : [], tm_scope :
+    "source.vhdl", ace_mode : "vhdl", language_id : 385u64, codemirror_mode : "vhdl",
+    codemirror_mime_type : "text/x-vhdl", filenames : [], interpreters : [], }, Vala => {
+    name : "Vala", r#type : "programming", color : "#a56de2", extensions : [".vala",
+    ".vapi"], aliases : [], tm_scope : "source.vala", ace_mode : "vala", language_id :
+    386u64, filenames : [], interpreters : [], }, ValveDataFormat => { name :
+    "Valve Data Format", r#type : "data", color : "#f26025", extensions : [".vdf"],
+    aliases : ["keyvalues", "vdf"], tm_scope : "source.keyvalues", ace_mode : "text",
+    language_id : 544060961u64, filenames : [], interpreters : [], },
     VelocityTemplateLanguage => { name : "Velocity Template Language", r#type : "markup",
     color : "#507cff", extensions : [".vtl"], aliases : ["vtl", "velocity"], tm_scope :
     "source.velocity", ace_mode : "velocity", language_id : 292377326u64, codemirror_mode
