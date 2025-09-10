@@ -662,11 +662,11 @@ define_languages! {
     "source.vbnet", ace_mode : "text", language_id : 472896659u64, codemirror_mode :
     "vb", codemirror_mime_type : "text/x-vb", filenames : [], interpreters : [], },
     FreeMarker => { name : "FreeMarker", r#type : "programming", color : "#0050b2",
-    extensions : [".ftl"], aliases : ["ftl"], tm_scope : "text.html.ftl", ace_mode :
-    "ftl", language_id : 115u64, filenames : [], interpreters : [], }, Frege => { name :
-    "Frege", r#type : "programming", color : "#00cafe", extensions : [".fr"], aliases :
-    [], tm_scope : "source.haskell", ace_mode : "haskell", language_id : 116u64,
-    filenames : [], interpreters : [], }, Futhark => { name : "Futhark", r#type :
+    extensions : [".ftl", ".ftlh"], aliases : ["ftl"], tm_scope : "text.html.ftl",
+    ace_mode : "ftl", language_id : 115u64, filenames : [], interpreters : [], }, Frege
+    => { name : "Frege", r#type : "programming", color : "#00cafe", extensions : [".fr"],
+    aliases : [], tm_scope : "source.haskell", ace_mode : "haskell", language_id :
+    116u64, filenames : [], interpreters : [], }, Futhark => { name : "Futhark", r#type :
     "programming", color : "#5f021f", extensions : [".fut"], aliases : [], tm_scope :
     "source.futhark", ace_mode : "text", language_id : 97358117u64, filenames : [],
     interpreters : [], }, GCode => { name : "G-code", r#type : "programming", color :
@@ -2786,12 +2786,12 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     GLSL::info], ".fsh" => & [GLSL::info], ".fshader" => & [GLSL::info], ".fsi" => &
     [Fsharp::info], ".fsproj" => & [XML::info], ".fst" => & [Fstar::info], ".fsti" => &
     [Fstar::info], ".fsx" => & [Fsharp::info], ".fth" => & [Forth::info], ".ftl" => &
-    [Fluent::info, FreeMarker::info], ".fun" => & [StandardML::info], ".fut" => &
-    [Futhark::info], ".fx" => & [FLUX::info, HLSL::info], ".fxh" => & [HLSL::info],
-    ".fxml" => & [XML::info], ".fy" => & [Fancy::info], ".g" => & [GCode::info,
-    GAP::info], ".g4" => & [ANTLR::info], ".gaml" => & [GAML::info], ".gap" => &
-    [GAP::info], ".gawk" => & [Awk::info], ".gbl" => & [GerberImage::info], ".gbo" => &
-    [GerberImage::info], ".gbp" => & [GerberImage::info], ".gbr" => &
+    [Fluent::info, FreeMarker::info], ".ftlh" => & [FreeMarker::info], ".fun" => &
+    [StandardML::info], ".fut" => & [Futhark::info], ".fx" => & [FLUX::info, HLSL::info],
+    ".fxh" => & [HLSL::info], ".fxml" => & [XML::info], ".fy" => & [Fancy::info], ".g" =>
+    & [GCode::info, GAP::info], ".g4" => & [ANTLR::info], ".gaml" => & [GAML::info],
+    ".gap" => & [GAP::info], ".gawk" => & [Awk::info], ".gbl" => & [GerberImage::info],
+    ".gbo" => & [GerberImage::info], ".gbp" => & [GerberImage::info], ".gbr" => &
     [GerberImage::info], ".gbs" => & [GerberImage::info], ".gco" => & [GCode::info],
     ".gcode" => & [GCode::info], ".gd" => & [GAP::info, GDScript::info], ".gdb" => &
     [GDB::info], ".gdbinit" => & [GDB::info], ".gdnlib" => & [GodotResource::info],
