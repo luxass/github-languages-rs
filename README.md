@@ -7,8 +7,8 @@
 <br />
 
 <div align="center">
-  <a href="https://img.shields.io/github/actions/workflow/status/luxass/github-languages-rs/ci.yaml?query=branch%3Amain">
-    <img src="https://img.shields.io/github/actions/workflow/status/luxass/github-languages-rs/ci.yaml?branch=main&style=flat-square" alt="actions status" /></a>
+  <a href="https://img.shields.io/github/actions/workflow/status/luxass/github-languages-rs/ci.yml?query=branch%3Amain">
+    <img src="https://img.shields.io/github/actions/workflow/status/luxass/github-languages-rs/ci.yml?branch=main&style=flat-square" alt="actions status" /></a>
   <a href="https://crates.io/crates/github-languages">
     <img src="https://img.shields.io/crates/v/github-languages.svg?style=flat-square"
     alt="Crates.io version" /></a>
