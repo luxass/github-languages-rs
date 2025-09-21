@@ -1173,11 +1173,11 @@ define_languages! {
     "#000000", extensions : [".lean", ".hlean"], aliases : [], tm_scope : "source.lean",
     ace_mode : "text", language_id : 197u64, filenames : [], interpreters : [], }, Lean4
     => { name : "Lean 4", r#type : "programming", color : "#000000", extensions :
-    [".lean"], aliases : [], tm_scope : "source.lean4", ace_mode : "text", language_id :
-    455147478u64, filenames : [], group : "Lean", interpreters : [], }, Leo => { name :
-    "Leo", r#type : "programming", color : "#C4FFC2", extensions : [".leo"], aliases :
-    [], tm_scope : "source.leo", ace_mode : "text", language_id : 916034822u64, wrap :
-    true, filenames : [], interpreters : [], }, Less => { name : "Less", r#type :
+    [".lean"], aliases : ["lean4"], tm_scope : "source.lean4", ace_mode : "text",
+    language_id : 455147478u64, filenames : [], group : "Lean", interpreters : [], }, Leo
+    => { name : "Leo", r#type : "programming", color : "#C4FFC2", extensions : [".leo"],
+    aliases : [], tm_scope : "source.leo", ace_mode : "text", language_id : 916034822u64,
+    wrap : true, filenames : [], interpreters : [], }, Less => { name : "Less", r#type :
     "markup", color : "#1d365d", extensions : [".less"], aliases : ["less-css"], tm_scope
     : "source.css.less", ace_mode : "less", language_id : 198u64, codemirror_mode :
     "css", codemirror_mime_type : "text/x-less", filenames : [], interpreters : [], },
