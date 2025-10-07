@@ -112,87 +112,91 @@ define_languages! {
     "source.applescript", ace_mode : "applescript", language_id : 19u64, filenames : [],
     interpreters : ["osascript"], }, Arc => { name : "Arc", r#type : "programming", color
     : "#aa2afe", extensions : [".arc"], aliases : [], tm_scope : "none", ace_mode :
-    "text", language_id : 20u64, filenames : [], interpreters : [], }, AsciiDoc => { name
-    : "AsciiDoc", r#type : "prose", color : "#73a0c5", extensions : [".asciidoc",
-    ".adoc", ".asc"], aliases : [], tm_scope : "text.html.asciidoc", ace_mode :
-    "asciidoc", language_id : 22u64, wrap : true, filenames : [], interpreters : [], },
-    AspectJ => { name : "AspectJ", r#type : "programming", color : "#a957b0", extensions
-    : [".aj"], aliases : [], tm_scope : "source.aspectj", ace_mode : "text", language_id
-    : 23u64, filenames : [], interpreters : [], }, Assembly => { name : "Assembly",
-    r#type : "programming", color : "#6E4C13", extensions : [".asm", ".a51", ".i",
-    ".inc", ".nas", ".nasm", ".s"], aliases : ["asm", "nasm"], tm_scope :
-    "source.assembly", ace_mode : "assembly_x86", language_id : 24u64, filenames : [],
-    interpreters : [], }, Astro => { name : "Astro", r#type : "markup", color :
-    "#ff5a03", extensions : [".astro"], aliases : [], tm_scope : "source.astro", ace_mode
-    : "astro", language_id : 578209015u64, codemirror_mode : "jsx", codemirror_mime_type
-    : "text/jsx", filenames : [], interpreters : [], }, Asymptote => { name :
-    "Asymptote", r#type : "programming", color : "#ff0000", extensions : [".asy"],
-    aliases : [], tm_scope : "source.c++", ace_mode : "c_cpp", language_id :
-    591605007u64, codemirror_mode : "clike", codemirror_mime_type : "text/x-kotlin",
-    filenames : [], interpreters : ["asy"], }, Augeas => { name : "Augeas", r#type :
-    "programming", color : "#9CC134", extensions : [".aug"], aliases : [], tm_scope :
-    "none", ace_mode : "text", language_id : 25u64, filenames : [], interpreters : [], },
-    AutoHotkey => { name : "AutoHotkey", r#type : "programming", color : "#6594b9",
-    extensions : [".ahk", ".ahkl"], aliases : ["ahk"], tm_scope : "source.ahk", ace_mode
-    : "autohotkey", language_id : 26u64, filenames : [], interpreters : [], }, AutoIt =>
-    { name : "AutoIt", r#type : "programming", color : "#1C3552", extensions : [".au3"],
-    aliases : ["au3", "AutoIt3", "AutoItScript"], tm_scope : "source.autoit", ace_mode :
-    "autohotkey", language_id : 27u64, filenames : [], interpreters : [], }, AvroIDL => {
-    name : "Avro IDL", r#type : "data", color : "#0040FF", extensions : [".avdl"],
-    aliases : [], tm_scope : "source.avro", ace_mode : "text", language_id :
-    785497837u64, filenames : [], interpreters : [], }, Awk => { name : "Awk", r#type :
-    "programming", color : "#c30e9b", extensions : [".awk", ".auk", ".gawk", ".mawk",
-    ".nawk"], aliases : [], tm_scope : "source.awk", ace_mode : "text", language_id :
-    28u64, filenames : [], interpreters : ["awk", "gawk", "mawk", "nawk"], }, B4X => {
-    name : "B4X", r#type : "programming", color : "#00e4ff", extensions : [".bas"],
-    aliases : ["basic for android"], tm_scope : "source.vba", ace_mode : "text",
-    language_id : 96642275u64, codemirror_mode : "vb", codemirror_mime_type :
-    "text/x-vb", filenames : [], interpreters : [], }, BASIC => { name : "BASIC", r#type
-    : "programming", color : "#ff0000", extensions : [".bas"], aliases : [], tm_scope :
-    "source.basic", ace_mode : "basic", language_id : 28923963u64, filenames : [],
-    interpreters : [], }, BQN => { name : "BQN", r#type : "programming", color :
-    "#2b7067", extensions : [".bqn"], aliases : [], tm_scope : "source.bqn", ace_mode :
-    "text", language_id : 330386870u64, filenames : [], interpreters : [], }, Ballerina
-    => { name : "Ballerina", r#type : "programming", color : "#FF5000", extensions :
-    [".bal"], aliases : [], tm_scope : "source.ballerina", ace_mode : "text", language_id
-    : 720859680u64, filenames : [], interpreters : [], }, Batchfile => { name :
-    "Batchfile", r#type : "programming", color : "#C1F12E", extensions : [".bat",
-    ".cmd"], aliases : ["bat", "batch", "dosbatch", "winbatch"], tm_scope :
-    "source.batchfile", ace_mode : "batchfile", language_id : 29u64, filenames : [],
-    interpreters : [], }, Beef => { name : "Beef", r#type : "programming", color :
-    "#a52f4e", extensions : [".bf"], aliases : [], tm_scope : "source.cs", ace_mode :
-    "csharp", language_id : 545626333u64, codemirror_mode : "clike", codemirror_mime_type
-    : "text/x-csharp", filenames : [], interpreters : [], }, Befunge => { name :
-    "Befunge", r#type : "programming", color : "#000000", extensions : [".befunge",
-    ".bf"], aliases : [], tm_scope : "source.befunge", ace_mode : "text", language_id :
-    30u64, filenames : [], interpreters : [], }, Berry => { name : "Berry", r#type :
-    "programming", color : "#15A13C", extensions : [".be"], aliases : ["be"], tm_scope :
-    "source.berry", ace_mode : "text", language_id : 121855308u64, filenames : [],
-    interpreters : [], }, BibTeX => { name : "BibTeX", r#type : "markup", color :
-    "#778899", extensions : [".bib", ".bibtex"], aliases : [], tm_scope : "text.bibtex",
-    ace_mode : "bibtex", language_id : 982188347u64, codemirror_mode : "stex",
-    codemirror_mime_type : "text/x-stex", filenames : [], group : "TeX", interpreters :
-    [], }, BibTeXStyle => { name : "BibTeX Style", r#type : "programming", color :
-    "#000000", extensions : [".bst"], aliases : [], tm_scope : "source.bst", ace_mode :
-    "text", language_id : 909569041u64, filenames : [], interpreters : [], }, Bicep => {
-    name : "Bicep", r#type : "programming", color : "#519aba", extensions : [".bicep",
-    ".bicepparam"], aliases : [], tm_scope : "source.bicep", ace_mode : "text",
-    language_id : 321200902u64, filenames : [], interpreters : [], }, Bikeshed => { name
-    : "Bikeshed", r#type : "markup", color : "#5562ac", extensions : [".bs"], aliases :
-    [], tm_scope : "source.csswg", ace_mode : "html", language_id : 1055528081u64,
-    codemirror_mode : "htmlmixed", codemirror_mime_type : "text/html", filenames : [],
-    interpreters : [], }, Bison => { name : "Bison", r#type : "programming", color :
-    "#6A463F", extensions : [".bison"], aliases : [], tm_scope : "source.yacc", ace_mode
-    : "text", language_id : 31u64, filenames : [], group : "Yacc", interpreters : [], },
-    BitBake => { name : "BitBake", r#type : "programming", color : "#00bce4", extensions
-    : [".bb", ".bbappend", ".bbclass", ".inc"], aliases : [], tm_scope : "source.bb",
-    ace_mode : "text", language_id : 32u64, filenames : [], interpreters : [], }, Blade
-    => { name : "Blade", r#type : "markup", color : "#f7523f", extensions : [".blade",
-    ".blade.php"], aliases : [], tm_scope : "text.html.php.blade", ace_mode :
-    "php_laravel_blade", language_id : 33u64, filenames : [], interpreters : [], },
-    BlitzBasic => { name : "BlitzBasic", r#type : "programming", color : "#00FFAE",
-    extensions : [".bb", ".decls"], aliases : ["b3d", "blitz3d", "blitzplus", "bplus"],
-    tm_scope : "source.blitzmax", ace_mode : "text", language_id : 34u64, filenames : [],
+    "text", language_id : 20u64, filenames : [], interpreters : [], }, ArkTS => { name :
+    "ArkTS", r#type : "programming", color : "#0080ff", extensions : [".ets"], aliases :
+    [], tm_scope : "source.ets", ace_mode : "typescript", language_id : 56341321u64,
+    codemirror_mode : "javascript", codemirror_mime_type : "application/typescript",
+    filenames : [], interpreters : [], }, AsciiDoc => { name : "AsciiDoc", r#type :
+    "prose", color : "#73a0c5", extensions : [".asciidoc", ".adoc", ".asc"], aliases :
+    [], tm_scope : "text.html.asciidoc", ace_mode : "asciidoc", language_id : 22u64, wrap
+    : true, filenames : [], interpreters : [], }, AspectJ => { name : "AspectJ", r#type :
+    "programming", color : "#a957b0", extensions : [".aj"], aliases : [], tm_scope :
+    "source.aspectj", ace_mode : "text", language_id : 23u64, filenames : [],
+    interpreters : [], }, Assembly => { name : "Assembly", r#type : "programming", color
+    : "#6E4C13", extensions : [".asm", ".a51", ".i", ".inc", ".nas", ".nasm", ".s"],
+    aliases : ["asm", "nasm"], tm_scope : "source.assembly", ace_mode : "assembly_x86",
+    language_id : 24u64, filenames : [], interpreters : [], }, Astro => { name : "Astro",
+    r#type : "markup", color : "#ff5a03", extensions : [".astro"], aliases : [], tm_scope
+    : "source.astro", ace_mode : "astro", language_id : 578209015u64, codemirror_mode :
+    "jsx", codemirror_mime_type : "text/jsx", filenames : [], interpreters : [], },
+    Asymptote => { name : "Asymptote", r#type : "programming", color : "#ff0000",
+    extensions : [".asy"], aliases : [], tm_scope : "source.c++", ace_mode : "c_cpp",
+    language_id : 591605007u64, codemirror_mode : "clike", codemirror_mime_type :
+    "text/x-kotlin", filenames : [], interpreters : ["asy"], }, Augeas => { name :
+    "Augeas", r#type : "programming", color : "#9CC134", extensions : [".aug"], aliases :
+    [], tm_scope : "none", ace_mode : "text", language_id : 25u64, filenames : [],
+    interpreters : [], }, AutoHotkey => { name : "AutoHotkey", r#type : "programming",
+    color : "#6594b9", extensions : [".ahk", ".ahkl"], aliases : ["ahk"], tm_scope :
+    "source.ahk", ace_mode : "autohotkey", language_id : 26u64, filenames : [],
+    interpreters : [], }, AutoIt => { name : "AutoIt", r#type : "programming", color :
+    "#1C3552", extensions : [".au3"], aliases : ["au3", "AutoIt3", "AutoItScript"],
+    tm_scope : "source.autoit", ace_mode : "autohotkey", language_id : 27u64, filenames :
+    [], interpreters : [], }, AvroIDL => { name : "Avro IDL", r#type : "data", color :
+    "#0040FF", extensions : [".avdl"], aliases : [], tm_scope : "source.avro", ace_mode :
+    "text", language_id : 785497837u64, filenames : [], interpreters : [], }, Awk => {
+    name : "Awk", r#type : "programming", color : "#c30e9b", extensions : [".awk",
+    ".auk", ".gawk", ".mawk", ".nawk"], aliases : [], tm_scope : "source.awk", ace_mode :
+    "text", language_id : 28u64, filenames : [], interpreters : ["awk", "gawk", "mawk",
+    "nawk"], }, B4X => { name : "B4X", r#type : "programming", color : "#00e4ff",
+    extensions : [".bas"], aliases : ["basic for android"], tm_scope : "source.vba",
+    ace_mode : "text", language_id : 96642275u64, codemirror_mode : "vb",
+    codemirror_mime_type : "text/x-vb", filenames : [], interpreters : [], }, BASIC => {
+    name : "BASIC", r#type : "programming", color : "#ff0000", extensions : [".bas"],
+    aliases : [], tm_scope : "source.basic", ace_mode : "basic", language_id :
+    28923963u64, filenames : [], interpreters : [], }, BQN => { name : "BQN", r#type :
+    "programming", color : "#2b7067", extensions : [".bqn"], aliases : [], tm_scope :
+    "source.bqn", ace_mode : "text", language_id : 330386870u64, filenames : [],
+    interpreters : [], }, Ballerina => { name : "Ballerina", r#type : "programming",
+    color : "#FF5000", extensions : [".bal"], aliases : [], tm_scope :
+    "source.ballerina", ace_mode : "text", language_id : 720859680u64, filenames : [],
+    interpreters : [], }, Batchfile => { name : "Batchfile", r#type : "programming",
+    color : "#C1F12E", extensions : [".bat", ".cmd"], aliases : ["bat", "batch",
+    "dosbatch", "winbatch"], tm_scope : "source.batchfile", ace_mode : "batchfile",
+    language_id : 29u64, filenames : [], interpreters : [], }, Beef => { name : "Beef",
+    r#type : "programming", color : "#a52f4e", extensions : [".bf"], aliases : [],
+    tm_scope : "source.cs", ace_mode : "csharp", language_id : 545626333u64,
+    codemirror_mode : "clike", codemirror_mime_type : "text/x-csharp", filenames : [],
+    interpreters : [], }, Befunge => { name : "Befunge", r#type : "programming", color :
+    "#000000", extensions : [".befunge", ".bf"], aliases : [], tm_scope :
+    "source.befunge", ace_mode : "text", language_id : 30u64, filenames : [],
+    interpreters : [], }, Berry => { name : "Berry", r#type : "programming", color :
+    "#15A13C", extensions : [".be"], aliases : ["be"], tm_scope : "source.berry",
+    ace_mode : "text", language_id : 121855308u64, filenames : [], interpreters : [], },
+    BibTeX => { name : "BibTeX", r#type : "markup", color : "#778899", extensions :
+    [".bib", ".bibtex"], aliases : [], tm_scope : "text.bibtex", ace_mode : "bibtex",
+    language_id : 982188347u64, codemirror_mode : "stex", codemirror_mime_type :
+    "text/x-stex", filenames : [], group : "TeX", interpreters : [], }, BibTeXStyle => {
+    name : "BibTeX Style", r#type : "programming", color : "#000000", extensions :
+    [".bst"], aliases : [], tm_scope : "source.bst", ace_mode : "text", language_id :
+    909569041u64, filenames : [], interpreters : [], }, Bicep => { name : "Bicep", r#type
+    : "programming", color : "#519aba", extensions : [".bicep", ".bicepparam"], aliases :
+    [], tm_scope : "source.bicep", ace_mode : "text", language_id : 321200902u64,
+    filenames : [], interpreters : [], }, Bikeshed => { name : "Bikeshed", r#type :
+    "markup", color : "#5562ac", extensions : [".bs"], aliases : [], tm_scope :
+    "source.csswg", ace_mode : "html", language_id : 1055528081u64, codemirror_mode :
+    "htmlmixed", codemirror_mime_type : "text/html", filenames : [], interpreters : [],
+    }, Bison => { name : "Bison", r#type : "programming", color : "#6A463F", extensions :
+    [".bison"], aliases : [], tm_scope : "source.yacc", ace_mode : "text", language_id :
+    31u64, filenames : [], group : "Yacc", interpreters : [], }, BitBake => { name :
+    "BitBake", r#type : "programming", color : "#00bce4", extensions : [".bb",
+    ".bbappend", ".bbclass", ".inc"], aliases : [], tm_scope : "source.bb", ace_mode :
+    "text", language_id : 32u64, filenames : [], interpreters : [], }, Blade => { name :
+    "Blade", r#type : "markup", color : "#f7523f", extensions : [".blade", ".blade.php"],
+    aliases : [], tm_scope : "text.html.php.blade", ace_mode : "php_laravel_blade",
+    language_id : 33u64, filenames : [], interpreters : [], }, BlitzBasic => { name :
+    "BlitzBasic", r#type : "programming", color : "#00FFAE", extensions : [".bb",
+    ".decls"], aliases : ["b3d", "blitz3d", "blitzplus", "bplus"], tm_scope :
+    "source.blitzmax", ace_mode : "text", language_id : 34u64, filenames : [],
     interpreters : [], }, BlitzMax => { name : "BlitzMax", r#type : "programming", color
     : "#cd6400", extensions : [".bmx"], aliases : ["bmax"], tm_scope : "source.blitzmax",
     ace_mode : "text", language_id : 35u64, filenames : [], interpreters : [], },
@@ -757,10 +761,13 @@ define_languages! {
     r#type : "data", color : "#F44D27", extensions : [], aliases : ["gitattributes"],
     tm_scope : "source.gitattributes", ace_mode : "gitignore", language_id :
     956324166u64, codemirror_mode : "shell", codemirror_mime_type : "text/x-sh",
-    filenames : [".gitattributes"], interpreters : [], }, GitConfig => { name :
-    "Git Config", r#type : "data", color : "#F44D27", extensions : [".gitconfig"],
-    aliases : ["gitconfig", "gitmodules"], tm_scope : "source.gitconfig", ace_mode :
-    "ini", language_id : 807968997u64, codemirror_mode : "properties",
+    filenames : [".gitattributes"], interpreters : [], }, GitCommit => { name :
+    "Git Commit", r#type : "data", color : "#F44D27", extensions : [], aliases :
+    ["commit"], tm_scope : "text.git-commit", ace_mode : "text", language_id :
+    131750475u64, wrap : true, filenames : ["COMMIT_EDITMSG"], interpreters : [], },
+    GitConfig => { name : "Git Config", r#type : "data", color : "#F44D27", extensions :
+    [".gitconfig"], aliases : ["gitconfig", "gitmodules"], tm_scope : "source.gitconfig",
+    ace_mode : "ini", language_id : 807968997u64, codemirror_mode : "properties",
     codemirror_mime_type : "text/x-properties", filenames : [".gitconfig",
     ".gitmodules"], group : "INI", interpreters : [], }, GitRevisionList => { name :
     "Git Revision List", r#type : "data", color : "#F44D27", extensions : [], aliases :
@@ -1127,8 +1134,8 @@ define_languages! {
     filenames : [], interpreters : [], }, Kit => { name : "Kit", r#type : "markup", color
     : "#000000", extensions : [".kit"], aliases : [], tm_scope : "text.html.basic",
     ace_mode : "html", language_id : 188u64, codemirror_mode : "htmlmixed",
-    codemirror_mime_type : "text/html", filenames : [], interpreters : [], }, KoLMafiaASH
-    => { name : "KoLMafia ASH", r#type : "programming", color : "#B9D9B9", extensions :
+    codemirror_mime_type : "text/html", filenames : [], interpreters : [], }, KoLmafiaASH
+    => { name : "KoLmafia ASH", r#type : "programming", color : "#B9D9B9", extensions :
     [".ash"], aliases : [], tm_scope : "source.ash", ace_mode : "text", language_id :
     852099832u64, filenames : [], interpreters : [], }, Koka => { name : "Koka", r#type :
     "programming", color : "#215166", extensions : [".kk"], aliases : [], tm_scope :
@@ -2666,7 +2673,7 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     [ActionScript::info, AngelScript::info], ".asax" => & [ASPNET::info], ".asc" => &
     [AGSScript::info, AsciiDoc::info, PublicKey::info], ".asciidoc" => &
     [AsciiDoc::info], ".ascx" => & [ASPNET::info], ".asd" => & [CommonLisp::info],
-    ".asddls" => & [ABAPCDS::info], ".ash" => & [AGSScript::info, KoLMafiaASH::info],
+    ".asddls" => & [ABAPCDS::info], ".ash" => & [AGSScript::info, KoLmafiaASH::info],
     ".ashx" => & [ASPNET::info], ".asl" => & [ASL::info], ".asm" => & [Assembly::info,
     Motorola68KAssembly::info], ".asmx" => & [ASPNET::info], ".asn" => & [ASN1::info],
     ".asn1" => & [ASN1::info], ".asp" => & [ClassicASP::info], ".aspx" => &
@@ -2775,9 +2782,9 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     ".epsi" => & [PostScript::info], ".eq" => & [EQ::info], ".erb" => & [HTMLpERB::info],
     ".erb.deface" => & [HTMLpERB::info], ".erl" => & [Erlang::info], ".es" => &
     [Erlang::info, JavaScript::info], ".es6" => & [JavaScript::info], ".escript" => &
-    [Erlang::info], ".esdl" => & [EdgeQL::info], ".ex" => & [Elixir::info,
-    Euphoria::info], ".exs" => & [Elixir::info], ".eye" => & [Ruby::info], ".f" => &
-    [FilebenchWML::info, Forth::info, Fortran::info], ".f03" => &
+    [Erlang::info], ".esdl" => & [EdgeQL::info], ".ets" => & [ArkTS::info], ".ex" => &
+    [Elixir::info, Euphoria::info], ".exs" => & [Elixir::info], ".eye" => & [Ruby::info],
+    ".f" => & [FilebenchWML::info, Forth::info, Fortran::info], ".f03" => &
     [FortranFreeForm::info], ".f08" => & [FortranFreeForm::info], ".f77" => &
     [Fortran::info], ".f90" => & [FortranFreeForm::info], ".f95" => &
     [FortranFreeForm::info], ".factor" => & [Factor::info], ".fan" => & [Fantom::info],
