@@ -2057,17 +2057,17 @@ define_languages! {
     "sh", language_id : 346u64, codemirror_mode : "shell", codemirror_mime_type :
     "text/x-sh", filenames : [".bash_aliases", ".bash_functions", ".bash_history",
     ".bash_logout", ".bash_profile", ".bashrc", ".cshrc", ".envrc", ".flaskenv",
-    ".kshrc", ".login", ".profile", ".tmux.conf", ".zlogin", ".zlogout", ".zprofile",
-    ".zshenv", ".zshrc", "9fs", "PKGBUILD", "bash_aliases", "bash_logout",
-    "bash_profile", "bashrc", "cshrc", "gradlew", "kshrc", "login", "man", "mvnw",
-    "profile", "tmux.conf", "zlogin", "zlogout", "zprofile", "zshenv", "zshrc"],
-    interpreters : ["ash", "bash", "dash", "ksh", "mksh", "pdksh", "rc", "sh", "zsh"], },
-    ShellCheckConfig => { name : "ShellCheck Config", r#type : "data", color : "#cecfcb",
-    extensions : [], aliases : ["shellcheckrc"], tm_scope : "source.shellcheckrc",
-    ace_mode : "ini", language_id : 687511714u64, codemirror_mode : "properties",
-    codemirror_mime_type : "text/x-properties", filenames : [".shellcheckrc"],
-    interpreters : [], }, ShellSession => { name : "ShellSession", r#type :
-    "programming", color : "#000000", extensions : [".sh-session"], aliases :
+    ".kshrc", ".login", ".profile", ".tmux.conf", ".xinitrc", ".xsession", ".zlogin",
+    ".zlogout", ".zprofile", ".zshenv", ".zshrc", "9fs", "PKGBUILD", "bash_aliases",
+    "bash_logout", "bash_profile", "bashrc", "cshrc", "gradlew", "kshrc", "login", "man",
+    "mvnw", "profile", "tmux.conf", "xinitrc", "xsession", "zlogin", "zlogout",
+    "zprofile", "zshenv", "zshrc"], interpreters : ["ash", "bash", "dash", "ksh", "mksh",
+    "pdksh", "rc", "sh", "zsh"], }, ShellCheckConfig => { name : "ShellCheck Config",
+    r#type : "data", color : "#cecfcb", extensions : [], aliases : ["shellcheckrc"],
+    tm_scope : "source.shellcheckrc", ace_mode : "ini", language_id : 687511714u64,
+    codemirror_mode : "properties", codemirror_mime_type : "text/x-properties", filenames
+    : [".shellcheckrc"], interpreters : [], }, ShellSession => { name : "ShellSession",
+    r#type : "programming", color : "#000000", extensions : [".sh-session"], aliases :
     ["bash session", "console"], tm_scope : "text.shell-session", ace_mode : "sh",
     language_id : 347u64, codemirror_mode : "shell", codemirror_mime_type : "text/x-sh",
     filenames : [], interpreters : [], }, Shen => { name : "Shen", r#type :
