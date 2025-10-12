@@ -926,27 +926,29 @@ define_languages! {
     : "text/x-csrc", filenames : [], interpreters : [], }, HostsFile => { name :
     "Hosts File", r#type : "data", color : "#308888", extensions : [], aliases :
     ["hosts"], tm_scope : "source.hosts", ace_mode : "text", language_id : 231021894u64,
-    filenames : ["HOSTS", "hosts", "hosts.txt"], interpreters : [], }, Hy => { name :
-    "Hy", r#type : "programming", color : "#7790B2", extensions : [".hy"], aliases :
-    ["hylang"], tm_scope : "source.hy", ace_mode : "text", language_id : 159u64,
-    filenames : [], interpreters : ["hy"], }, HyPhy => { name : "HyPhy", r#type :
-    "programming", color : "#000000", extensions : [".bf"], aliases : [], tm_scope :
-    "none", ace_mode : "text", language_id : 160u64, filenames : [], interpreters : [],
-    }, IDL => { name : "IDL", r#type : "programming", color : "#a3522f", extensions :
-    [".pro", ".dlm"], aliases : [], tm_scope : "source.idl", ace_mode : "text",
-    language_id : 161u64, codemirror_mode : "idl", codemirror_mime_type : "text/x-idl",
-    filenames : [], interpreters : [], }, IGORPro => { name : "IGOR Pro", r#type :
-    "programming", color : "#0000cc", extensions : [".ipf"], aliases : ["igor",
-    "igorpro"], tm_scope : "source.igor", ace_mode : "text", language_id : 162u64,
-    filenames : [], interpreters : [], }, INI => { name : "INI", r#type : "data", color :
-    "#d1dbe0", extensions : [".ini", ".cfg", ".cnf", ".dof", ".frm", ".lektorproject",
-    ".prefs", ".pro", ".properties", ".url"], aliases : ["dosini"], tm_scope :
-    "source.ini", ace_mode : "ini", language_id : 163u64, codemirror_mode : "properties",
-    codemirror_mime_type : "text/x-properties", filenames : [".buckconfig",
-    ".coveragerc", ".flake8", ".pylintrc", "HOSTS", "buildozer.spec", "hosts",
-    "pylintrc", "vlcrc"], interpreters : [], }, IRCLog => { name : "IRC log", r#type :
-    "data", color : "#000000", extensions : [".irclog", ".weechatlog"], aliases : ["irc",
-    "irc logs"], tm_scope : "none", ace_mode : "text", language_id : 164u64,
+    filenames : ["HOSTS", "hosts", "hosts.txt"], interpreters : [], }, Hurl => { name :
+    "Hurl", r#type : "programming", color : "#FF0288", extensions : [".hurl"], aliases :
+    [], tm_scope : "source.hurl", ace_mode : "text", language_id : 959040217u64,
+    filenames : [], interpreters : [], }, Hy => { name : "Hy", r#type : "programming",
+    color : "#7790B2", extensions : [".hy"], aliases : ["hylang"], tm_scope :
+    "source.hy", ace_mode : "text", language_id : 159u64, filenames : [], interpreters :
+    ["hy"], }, HyPhy => { name : "HyPhy", r#type : "programming", color : "#000000",
+    extensions : [".bf"], aliases : [], tm_scope : "none", ace_mode : "text", language_id
+    : 160u64, filenames : [], interpreters : [], }, IDL => { name : "IDL", r#type :
+    "programming", color : "#a3522f", extensions : [".pro", ".dlm"], aliases : [],
+    tm_scope : "source.idl", ace_mode : "text", language_id : 161u64, codemirror_mode :
+    "idl", codemirror_mime_type : "text/x-idl", filenames : [], interpreters : [], },
+    IGORPro => { name : "IGOR Pro", r#type : "programming", color : "#0000cc", extensions
+    : [".ipf"], aliases : ["igor", "igorpro"], tm_scope : "source.igor", ace_mode :
+    "text", language_id : 162u64, filenames : [], interpreters : [], }, INI => { name :
+    "INI", r#type : "data", color : "#d1dbe0", extensions : [".ini", ".cfg", ".cnf",
+    ".dof", ".frm", ".lektorproject", ".prefs", ".pro", ".properties", ".url"], aliases :
+    ["dosini"], tm_scope : "source.ini", ace_mode : "ini", language_id : 163u64,
+    codemirror_mode : "properties", codemirror_mime_type : "text/x-properties", filenames
+    : [".buckconfig", ".coveragerc", ".flake8", ".pylintrc", "HOSTS", "buildozer.spec",
+    "hosts", "pylintrc", "vlcrc"], interpreters : [], }, IRCLog => { name : "IRC log",
+    r#type : "data", color : "#000000", extensions : [".irclog", ".weechatlog"], aliases
+    : ["irc", "irc logs"], tm_scope : "none", ace_mode : "text", language_id : 164u64,
     codemirror_mode : "mirc", codemirror_mime_type : "text/mirc", filenames : [],
     interpreters : [], }, ISPC => { name : "ISPC", r#type : "programming", color :
     "#2D68B1", extensions : [".ispc"], aliases : [], tm_scope : "source.ispc", ace_mode :
@@ -2055,17 +2057,17 @@ define_languages! {
     "sh", language_id : 346u64, codemirror_mode : "shell", codemirror_mime_type :
     "text/x-sh", filenames : [".bash_aliases", ".bash_functions", ".bash_history",
     ".bash_logout", ".bash_profile", ".bashrc", ".cshrc", ".envrc", ".flaskenv",
-    ".kshrc", ".login", ".profile", ".tmux.conf", ".zlogin", ".zlogout", ".zprofile",
-    ".zshenv", ".zshrc", "9fs", "PKGBUILD", "bash_aliases", "bash_logout",
-    "bash_profile", "bashrc", "cshrc", "gradlew", "kshrc", "login", "man", "mvnw",
-    "profile", "tmux.conf", "zlogin", "zlogout", "zprofile", "zshenv", "zshrc"],
-    interpreters : ["ash", "bash", "dash", "ksh", "mksh", "pdksh", "rc", "sh", "zsh"], },
-    ShellCheckConfig => { name : "ShellCheck Config", r#type : "data", color : "#cecfcb",
-    extensions : [], aliases : ["shellcheckrc"], tm_scope : "source.shellcheckrc",
-    ace_mode : "ini", language_id : 687511714u64, codemirror_mode : "properties",
-    codemirror_mime_type : "text/x-properties", filenames : [".shellcheckrc"],
-    interpreters : [], }, ShellSession => { name : "ShellSession", r#type :
-    "programming", color : "#000000", extensions : [".sh-session"], aliases :
+    ".kshrc", ".login", ".profile", ".tmux.conf", ".xinitrc", ".xsession", ".zlogin",
+    ".zlogout", ".zprofile", ".zshenv", ".zshrc", "9fs", "PKGBUILD", "bash_aliases",
+    "bash_logout", "bash_profile", "bashrc", "cshrc", "gradlew", "kshrc", "login", "man",
+    "mvnw", "profile", "tmux.conf", "xinitrc", "xsession", "zlogin", "zlogout",
+    "zprofile", "zshenv", "zshrc"], interpreters : ["ash", "bash", "dash", "ksh", "mksh",
+    "pdksh", "rc", "sh", "zsh"], }, ShellCheckConfig => { name : "ShellCheck Config",
+    r#type : "data", color : "#cecfcb", extensions : [], aliases : ["shellcheckrc"],
+    tm_scope : "source.shellcheckrc", ace_mode : "ini", language_id : 687511714u64,
+    codemirror_mode : "properties", codemirror_mime_type : "text/x-properties", filenames
+    : [".shellcheckrc"], interpreters : [], }, ShellSession => { name : "ShellSession",
+    r#type : "programming", color : "#000000", extensions : [".sh-session"], aliases :
     ["bash session", "console"], tm_scope : "text.shell-session", ace_mode : "sh",
     language_id : 347u64, codemirror_mode : "shell", codemirror_mime_type : "text/x-sh",
     filenames : [], interpreters : [], }, Shen => { name : "Shen", r#type :
@@ -2855,11 +2857,11 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     => & [Erlang::info], ".hs" => & [Haskell::info], ".hs-boot" => & [Haskell::info],
     ".hsc" => & [Haskell::info], ".hta" => & [HTML::info], ".htm" => & [HTML::info],
     ".html" => & [Ecmarkup::info, HTML::info], ".html.eex" => & [HTMLpEEX::info],
-    ".html.hl" => & [HTML::info], ".http" => & [HTTP::info], ".hx" => & [Haxe::info],
-    ".hxml" => & [HXML::info], ".hxsl" => & [Haxe::info], ".hxx" => & [Cpp::info], ".hy"
-    => & [Hy::info], ".hzp" => & [XML::info], ".i" => & [Assembly::info,
-    Motorola68KAssembly::info, SWIG::info], ".i3" => & [Modula3::info], ".i7x" => &
-    [Inform7::info], ".ical" => & [ICalendar::info], ".ice" => & [JSON::info,
+    ".html.hl" => & [HTML::info], ".http" => & [HTTP::info], ".hurl" => & [Hurl::info],
+    ".hx" => & [Haxe::info], ".hxml" => & [HXML::info], ".hxsl" => & [Haxe::info], ".hxx"
+    => & [Cpp::info], ".hy" => & [Hy::info], ".hzp" => & [XML::info], ".i" => &
+    [Assembly::info, Motorola68KAssembly::info, SWIG::info], ".i3" => & [Modula3::info],
+    ".i7x" => & [Inform7::info], ".ical" => & [ICalendar::info], ".ice" => & [JSON::info,
     Slice::info], ".iced" => & [CoffeeScript::info], ".icl" => & [Clean::info], ".ics" =>
     & [ICalendar::info], ".idc" => & [C::info], ".idr" => & [Idris::info], ".ig" => &
     [Modula3::info], ".ihlp" => & [Stata::info], ".ijm" => & [ImageJMacro::info], ".ijs"
