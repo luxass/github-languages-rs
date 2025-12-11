@@ -804,11 +804,15 @@ define_languages! {
     filenames : ["go.sum", "go.work.sum"], interpreters : [], }, GoModule => { name :
     "Go Module", r#type : "data", color : "#00ADD8", extensions : [], aliases :
     ["go.mod", "go mod"], tm_scope : "go.mod", ace_mode : "text", language_id :
-    947461016u64, filenames : ["go.mod"], interpreters : [], }, GoWorkspace => { name :
-    "Go Workspace", r#type : "data", color : "#00ADD8", extensions : [], aliases :
-    ["go.work", "go work"], tm_scope : "go.mod", ace_mode : "text", language_id :
-    934546256u64, filenames : ["go.work"], interpreters : [], }, GodotResource => { name
-    : "Godot Resource", r#type : "data", color : "#355570", extensions : [".gdnlib",
+    947461016u64, filenames : ["go.mod"], interpreters : [], }, GoTemplate => { name :
+    "Go Template", r#type : "markup", color : "#00ADD8", extensions : [".gohtml",
+    ".gotmpl", ".html.tmpl", ".tmpl", ".tpl"], aliases : ["gotmpl"], tm_scope :
+    "source.go-template", ace_mode : "text", language_id : 247918769u64, filenames :
+    ["_helpers.tpl"], interpreters : [], }, GoWorkspace => { name : "Go Workspace",
+    r#type : "data", color : "#00ADD8", extensions : [], aliases : ["go.work",
+    "go work"], tm_scope : "go.mod", ace_mode : "text", language_id : 934546256u64,
+    filenames : ["go.work"], interpreters : [], }, GodotResource => { name :
+    "Godot Resource", r#type : "data", color : "#355570", extensions : [".gdnlib",
     ".gdns", ".tres", ".tscn"], aliases : [], tm_scope : "source.gdresource", ace_mode :
     "text", language_id : 738107771u64, filenames : ["project.godot"], interpreters : [],
     }, Golo => { name : "Golo", r#type : "programming", color : "#88562A", extensions :
@@ -2833,9 +2837,10 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     GraphModelingLanguage::info, XML::info], ".gms" => & [GAMS::info], ".gmx" => &
     [XML::info], ".gn" => & [GN::info], ".gni" => & [GN::info], ".gnu" => &
     [Gnuplot::info], ".gnuplot" => & [Gnuplot::info], ".go" => & [Go::info], ".god" => &
-    [Ruby::info], ".golo" => & [Golo::info], ".gp" => & [Gnuplot::info], ".gpb" => &
-    [GerberImage::info], ".gpt" => & [GerberImage::info], ".gpx" => & [XML::info], ".gql"
-    => & [GraphQL::info], ".grace" => & [Grace::info], ".gradle" => & [Gradle::info],
+    [Ruby::info], ".gohtml" => & [GoTemplate::info], ".golo" => & [Golo::info], ".gotmpl"
+    => & [GoTemplate::info], ".gp" => & [Gnuplot::info], ".gpb" => & [GerberImage::info],
+    ".gpt" => & [GerberImage::info], ".gpx" => & [XML::info], ".gql" => &
+    [GraphQL::info], ".grace" => & [Grace::info], ".gradle" => & [Gradle::info],
     ".gradle.kts" => & [GradleKotlinDSL::info], ".graphql" => & [GraphQL::info],
     ".graphqls" => & [GraphQL::info], ".groovy" => & [Groovy::info], ".grt" => &
     [Groovy::info], ".grxml" => & [XML::info], ".gs" => & [GLSL::info, Genie::info,
@@ -2858,11 +2863,12 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     => & [Erlang::info], ".hs" => & [Haskell::info], ".hs-boot" => & [Haskell::info],
     ".hsc" => & [Haskell::info], ".hta" => & [HTML::info], ".htm" => & [HTML::info],
     ".html" => & [Ecmarkup::info, HTML::info], ".html.eex" => & [HTMLpEEX::info],
-    ".html.hl" => & [HTML::info], ".http" => & [HTTP::info], ".hurl" => & [Hurl::info],
-    ".hx" => & [Haxe::info], ".hxml" => & [HXML::info], ".hxsl" => & [Haxe::info], ".hxx"
-    => & [Cpp::info], ".hy" => & [Hy::info], ".hzp" => & [XML::info], ".i" => &
-    [Assembly::info, Motorola68KAssembly::info, SWIG::info], ".i3" => & [Modula3::info],
-    ".i7x" => & [Inform7::info], ".ical" => & [ICalendar::info], ".ice" => & [JSON::info,
+    ".html.hl" => & [HTML::info], ".html.tmpl" => & [GoTemplate::info], ".http" => &
+    [HTTP::info], ".hurl" => & [Hurl::info], ".hx" => & [Haxe::info], ".hxml" => &
+    [HXML::info], ".hxsl" => & [Haxe::info], ".hxx" => & [Cpp::info], ".hy" => &
+    [Hy::info], ".hzp" => & [XML::info], ".i" => & [Assembly::info,
+    Motorola68KAssembly::info, SWIG::info], ".i3" => & [Modula3::info], ".i7x" => &
+    [Inform7::info], ".ical" => & [ICalendar::info], ".ice" => & [JSON::info,
     Slice::info], ".iced" => & [CoffeeScript::info], ".icl" => & [Clean::info], ".ics" =>
     & [ICalendar::info], ".idc" => & [C::info], ".idr" => & [Idris::info], ".ig" => &
     [Modula3::info], ".ihlp" => & [Stata::info], ".ijm" => & [ImageJMacro::info], ".ijs"
@@ -3147,32 +3153,32 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     & [Tcl::info], ".tmCommand" => & [XMLPropertyList::info], ".tmLanguage" => &
     [XMLPropertyList::info], ".tmPreferences" => & [XMLPropertyList::info], ".tmSnippet"
     => & [XMLPropertyList::info], ".tmTheme" => & [XMLPropertyList::info], ".tmac" => &
-    [Roff::info], ".tml" => & [XML::info], ".tmux" => & [Shell::info], ".toc" => &
-    [TeX::info, WorldOfWarcraftAddonData::info], ".toit" => & [Toit::info], ".toml" => &
-    [TOML::info], ".toml.example" => & [TOML::info], ".tool" => & [Shell::info],
-    ".topojson" => & [JSON::info], ".tpb" => & [PLSQL::info], ".tpl" => & [Smarty::info],
-    ".tpp" => & [Cpp::info], ".tps" => & [PLSQL::info], ".tres" => &
-    [GodotResource::info], ".trg" => & [PLSQL::info], ".trigger" => & [Apex::info,
-    Shell::info], ".ts" => & [TypeScript::info, XML::info], ".tscn" => &
-    [GodotResource::info], ".tsp" => & [TSPLIBData::info, TypeSpec::info], ".tst" => &
-    [GAP::info, Scilab::info], ".tsv" => & [TSV::info], ".tsx" => & [TSX::info,
-    XML::info], ".ttl" => & [Turtle::info], ".tu" => & [Turing::info], ".twig" => &
-    [Twig::info], ".txi" => & [Texinfo::info], ".txl" => & [TXL::info], ".txt" => &
-    [AdblockFilterList::info, Text::info, VimHelpFile::info], ".txx" => & [Cpp::info],
-    ".typ" => & [Typst::info, XML::info], ".uc" => & [UnrealScript::info], ".udf" => &
-    [SQL::info], ".udo" => & [Csound::info], ".ui" => & [XML::info], ".unity" => &
-    [Unity3DAsset::info], ".uno" => & [Uno::info], ".upc" => & [UnifiedParallelC::info],
-    ".uplc" => & [UntypedPlutusCore::info], ".ur" => & [UrWeb::info], ".urdf" => &
-    [XML::info], ".url" => & [INI::info], ".urs" => & [UrWeb::info], ".ux" => &
-    [XML::info], ".v" => & [RocqProver::info, V::info, Verilog::info], ".vala" => &
-    [Vala::info], ".vapi" => & [Vala::info], ".vark" => & [Gosu::info], ".vb" => &
-    [VisualBasicNET::info], ".vba" => & [VBA::info, VimScript::info], ".vbhtml" => &
-    [VisualBasicNET::info], ".vbproj" => & [XML::info], ".vbs" => & [VBScript::info],
-    ".vcf" => & [TSV::info, VCard::info], ".vcl" => & [VCL::info], ".vcxproj" => &
-    [XML::info], ".vdf" => & [ValveDataFormat::info], ".veo" => & [Verilog::info],
-    ".vert" => & [GLSL::info], ".vh" => & [SystemVerilog::info], ".vhd" => &
-    [VHDL::info], ".vhdl" => & [VHDL::info], ".vhf" => & [VHDL::info], ".vhi" => &
-    [VHDL::info], ".vho" => & [VHDL::info], ".vhost" => & [ApacheConf::info,
+    [Roff::info], ".tml" => & [XML::info], ".tmpl" => & [GoTemplate::info], ".tmux" => &
+    [Shell::info], ".toc" => & [TeX::info, WorldOfWarcraftAddonData::info], ".toit" => &
+    [Toit::info], ".toml" => & [TOML::info], ".toml.example" => & [TOML::info], ".tool"
+    => & [Shell::info], ".topojson" => & [JSON::info], ".tpb" => & [PLSQL::info], ".tpl"
+    => & [GoTemplate::info, Smarty::info], ".tpp" => & [Cpp::info], ".tps" => &
+    [PLSQL::info], ".tres" => & [GodotResource::info], ".trg" => & [PLSQL::info],
+    ".trigger" => & [Apex::info, Shell::info], ".ts" => & [TypeScript::info, XML::info],
+    ".tscn" => & [GodotResource::info], ".tsp" => & [TSPLIBData::info, TypeSpec::info],
+    ".tst" => & [GAP::info, Scilab::info], ".tsv" => & [TSV::info], ".tsx" => &
+    [TSX::info, XML::info], ".ttl" => & [Turtle::info], ".tu" => & [Turing::info],
+    ".twig" => & [Twig::info], ".txi" => & [Texinfo::info], ".txl" => & [TXL::info],
+    ".txt" => & [AdblockFilterList::info, Text::info, VimHelpFile::info], ".txx" => &
+    [Cpp::info], ".typ" => & [Typst::info, XML::info], ".uc" => & [UnrealScript::info],
+    ".udf" => & [SQL::info], ".udo" => & [Csound::info], ".ui" => & [XML::info], ".unity"
+    => & [Unity3DAsset::info], ".uno" => & [Uno::info], ".upc" => &
+    [UnifiedParallelC::info], ".uplc" => & [UntypedPlutusCore::info], ".ur" => &
+    [UrWeb::info], ".urdf" => & [XML::info], ".url" => & [INI::info], ".urs" => &
+    [UrWeb::info], ".ux" => & [XML::info], ".v" => & [RocqProver::info, V::info,
+    Verilog::info], ".vala" => & [Vala::info], ".vapi" => & [Vala::info], ".vark" => &
+    [Gosu::info], ".vb" => & [VisualBasicNET::info], ".vba" => & [VBA::info,
+    VimScript::info], ".vbhtml" => & [VisualBasicNET::info], ".vbproj" => & [XML::info],
+    ".vbs" => & [VBScript::info], ".vcf" => & [TSV::info, VCard::info], ".vcl" => &
+    [VCL::info], ".vcxproj" => & [XML::info], ".vdf" => & [ValveDataFormat::info], ".veo"
+    => & [Verilog::info], ".vert" => & [GLSL::info], ".vh" => & [SystemVerilog::info],
+    ".vhd" => & [VHDL::info], ".vhdl" => & [VHDL::info], ".vhf" => & [VHDL::info], ".vhi"
+    => & [VHDL::info], ".vho" => & [VHDL::info], ".vhost" => & [ApacheConf::info,
     Nginx::info], ".vhs" => & [VHDL::info], ".vht" => & [VHDL::info], ".vhw" => &
     [VHDL::info], ".vim" => & [VimScript::info], ".vimrc" => & [VimScript::info], ".viw"
     => & [SQL::info], ".vmb" => & [VimScript::info], ".volt" => & [Volt::info], ".vrx" =>
