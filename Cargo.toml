@@ -1,6 +1,6 @@
 [package]
 name = "github-languages"
-version = "1.0.16"
+version = "1.0.17"
 edition = "2021"
 authors = ["Lucas Nørgård <lucasnrgaard@gmail.com>"]
 readme = "README.md"
