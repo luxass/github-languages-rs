@@ -655,12 +655,15 @@ define_languages! {
     }, Filterscript => { name : "Filterscript", r#type : "programming", color :
     "#000000", extensions : [".fs"], aliases : [], tm_scope : "none", ace_mode : "text",
     language_id : 112u64, filenames : [], group : "RenderScript", interpreters : [], },
-    Flix => { name : "Flix", r#type : "programming", color : "#d44a45", extensions :
-    [".flix"], aliases : [], tm_scope : "source.flix", ace_mode : "flix", language_id :
-    800935960u64, filenames : [], interpreters : [], }, Fluent => { name : "Fluent",
-    r#type : "programming", color : "#ffcc33", extensions : [".ftl"], aliases : [],
-    tm_scope : "source.ftl", ace_mode : "text", language_id : 206353404u64, filenames :
-    [], interpreters : [], }, Formatted => { name : "Formatted", r#type : "data", color :
+    FlatBuffers => { name : "FlatBuffers", r#type : "data", color : "#ed284a", extensions
+    : [".fbs"], aliases : [], tm_scope : "source.flatbuffers", ace_mode : "text",
+    language_id : 577640576u64, filenames : [], interpreters : [], }, Flix => { name :
+    "Flix", r#type : "programming", color : "#d44a45", extensions : [".flix"], aliases :
+    [], tm_scope : "source.flix", ace_mode : "flix", language_id : 800935960u64,
+    filenames : [], interpreters : [], }, Fluent => { name : "Fluent", r#type :
+    "programming", color : "#ffcc33", extensions : [".ftl"], aliases : [], tm_scope :
+    "source.ftl", ace_mode : "text", language_id : 206353404u64, filenames : [],
+    interpreters : [], }, Formatted => { name : "Formatted", r#type : "data", color :
     "#000000", extensions : [".for", ".eam.fs"], aliases : [], tm_scope : "none",
     ace_mode : "text", language_id : 113u64, filenames : [], interpreters : [], }, Forth
     => { name : "Forth", r#type : "programming", color : "#341708", extensions : [".fth",
@@ -1241,17 +1244,20 @@ define_languages! {
     language_id : 203u64, filenames : [], interpreters : [], }, Liquid => { name :
     "Liquid", r#type : "markup", color : "#67b8de", extensions : [".liquid"], aliases :
     [], tm_scope : "text.html.liquid", ace_mode : "liquid", language_id : 204u64,
-    filenames : [], interpreters : [], }, LiterateAgda => { name : "Literate Agda",
-    r#type : "programming", color : "#315665", extensions : [".lagda"], aliases : [],
-    tm_scope : "none", ace_mode : "text", language_id : 205u64, filenames : [], group :
-    "Agda", interpreters : [], }, LiterateCoffeeScript => { name :
-    "Literate CoffeeScript", r#type : "programming", color : "#244776", extensions :
-    [".litcoffee", ".coffee.md"], aliases : ["litcoffee"], tm_scope : "source.litcoffee",
-    ace_mode : "text", language_id : 206u64, wrap : true, filenames : [], group :
-    "CoffeeScript", interpreters : [], }, LiterateHaskell => { name : "Literate Haskell",
-    r#type : "programming", color : "#5e5086", extensions : [".lhs"], aliases :
-    ["lhaskell", "lhs"], tm_scope : "text.tex.latex.haskell", ace_mode : "text",
-    language_id : 207u64, codemirror_mode : "haskell-literate", codemirror_mime_type :
+    filenames : [], interpreters : [], }, Liquidsoap => { name : "Liquidsoap", r#type :
+    "programming", color : "#990066", extensions : [".liq"], aliases : [], tm_scope :
+    "source.liquidsoap", ace_mode : "text", language_id : 614641732u64, filenames : [],
+    interpreters : [], }, LiterateAgda => { name : "Literate Agda", r#type :
+    "programming", color : "#315665", extensions : [".lagda"], aliases : [], tm_scope :
+    "none", ace_mode : "text", language_id : 205u64, filenames : [], group : "Agda",
+    interpreters : [], }, LiterateCoffeeScript => { name : "Literate CoffeeScript",
+    r#type : "programming", color : "#244776", extensions : [".litcoffee", ".coffee.md"],
+    aliases : ["litcoffee"], tm_scope : "source.litcoffee", ace_mode : "text",
+    language_id : 206u64, wrap : true, filenames : [], group : "CoffeeScript",
+    interpreters : [], }, LiterateHaskell => { name : "Literate Haskell", r#type :
+    "programming", color : "#5e5086", extensions : [".lhs"], aliases : ["lhaskell",
+    "lhs"], tm_scope : "text.tex.latex.haskell", ace_mode : "text", language_id : 207u64,
+    codemirror_mode : "haskell-literate", codemirror_mime_type :
     "text/x-literate-haskell", filenames : [], group : "Haskell", interpreters : [], },
     LiveCodeScript => { name : "LiveCode Script", r#type : "programming", color :
     "#0c5ba5", extensions : [".livecodescript"], aliases : [], tm_scope :
@@ -2838,71 +2844,71 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     [FortranFreeForm::info], ".f08" => & [FortranFreeForm::info], ".f77" => &
     [Fortran::info], ".f90" => & [FortranFreeForm::info], ".f95" => &
     [FortranFreeForm::info], ".factor" => & [Factor::info], ".fan" => & [Fantom::info],
-    ".fancypack" => & [Fancy::info], ".fcgi" => & [Lua::info, PHP::info, Perl::info,
-    Python::info, Ruby::info, Shell::info], ".fea" => & [OpenTypeFeatureFile::info],
-    ".feature" => & [Gherkin::info], ".filters" => & [XML::info], ".fir" => &
-    [FIRRTL::info], ".fish" => & [Fish::info], ".flex" => & [JFlex::info], ".flf" => &
-    [FIGletFont::info], ".flix" => & [Flix::info], ".flux" => & [FLUX::info], ".fnc" => &
-    [PLSQL::info], ".fnl" => & [Fennel::info], ".for" => & [Formatted::info, Forth::info,
-    Fortran::info], ".forth" => & [Forth::info], ".fp" => & [GLSL::info], ".fpp" => &
-    [Fortran::info], ".fr" => & [Forth::info, Frege::info, Text::info], ".frag" => &
-    [GLSL::info, JavaScript::info], ".frg" => & [GLSL::info], ".frm" => & [INI::info,
-    VBA::info, VisualBasic60::info], ".frt" => & [Forth::info], ".fs" => & [Fsharp::info,
-    Filterscript::info, Forth::info, GLSL::info], ".fsh" => & [GLSL::info], ".fshader" =>
-    & [GLSL::info], ".fsi" => & [Fsharp::info], ".fsproj" => & [XML::info], ".fst" => &
-    [Fstar::info], ".fsti" => & [Fstar::info], ".fsx" => & [Fsharp::info], ".fth" => &
-    [Forth::info], ".ftl" => & [Fluent::info, FreeMarker::info], ".ftlh" => &
-    [FreeMarker::info], ".fun" => & [StandardML::info], ".fut" => & [Futhark::info],
-    ".fx" => & [FLUX::info, HLSL::info], ".fxh" => & [HLSL::info], ".fxml" => &
-    [XML::info], ".fy" => & [Fancy::info], ".g" => & [GCode::info, GAP::info], ".g4" => &
-    [ANTLR::info], ".gaml" => & [GAML::info], ".gap" => & [GAP::info], ".gawk" => &
-    [Awk::info], ".gbl" => & [GerberImage::info], ".gbo" => & [GerberImage::info], ".gbp"
-    => & [GerberImage::info], ".gbr" => & [GerberImage::info], ".gbs" => &
-    [GerberImage::info], ".gco" => & [GCode::info], ".gcode" => & [GCode::info], ".gd" =>
-    & [GAP::info, GDScript::info], ".gdb" => & [GDB::info], ".gdbinit" => & [GDB::info],
-    ".gdnlib" => & [GodotResource::info], ".gdns" => & [GodotResource::info], ".gdshader"
-    => & [GDShader::info], ".gdshaderinc" => & [GDShader::info], ".ged" => &
-    [GEDCOM::info], ".gemspec" => & [Ruby::info], ".geo" => & [GLSL::info], ".geojson" =>
-    & [JSON::info], ".geom" => & [GLSL::info], ".gf" => & [GrammaticalFramework::info],
-    ".gi" => & [GAP::info], ".gitconfig" => & [GitConfig::info], ".gitignore" => &
-    [IgnoreList::info], ".gjs" => & [GlimmerJS::info], ".gko" => & [GerberImage::info],
-    ".glade" => & [XML::info], ".gleam" => & [Gleam::info], ".glf" => & [Glyph::info],
-    ".glsl" => & [GLSL::info], ".glslf" => & [GLSL::info], ".glslv" => & [GLSL::info],
-    ".gltf" => & [JSON::info], ".glyphs" => & [OpenStepPropertyList::info], ".gmi" => &
-    [Gemini::info], ".gml" => & [GameMakerLanguage::info, GerberImage::info,
-    GraphModelingLanguage::info, XML::info], ".gms" => & [GAMS::info], ".gmx" => &
-    [XML::info], ".gn" => & [GN::info], ".gni" => & [GN::info], ".gnu" => &
-    [Gnuplot::info], ".gnuplot" => & [Gnuplot::info], ".go" => & [Go::info], ".god" => &
-    [Ruby::info], ".gohtml" => & [GoTemplate::info], ".golo" => & [Golo::info], ".gotmpl"
-    => & [GoTemplate::info], ".gp" => & [Gnuplot::info], ".gpb" => & [GerberImage::info],
-    ".gpt" => & [GerberImage::info], ".gpx" => & [XML::info], ".gql" => &
-    [GraphQL::info], ".grace" => & [Grace::info], ".gradle" => & [Gradle::info],
-    ".gradle.kts" => & [GradleKotlinDSL::info], ".graphql" => & [GraphQL::info],
-    ".graphqls" => & [GraphQL::info], ".groovy" => & [Groovy::info], ".grt" => &
-    [Groovy::info], ".grxml" => & [XML::info], ".gs" => & [GLSL::info, Genie::info,
-    Gosu::info, JavaScript::info], ".gsc" => & [GSC::info], ".gsh" => & [GSC::info],
-    ".gshader" => & [GLSL::info], ".gsp" => & [GroovyServerPages::info], ".gst" => &
-    [Gosu::info, XML::info], ".gsx" => & [Gosu::info], ".gtl" => & [GerberImage::info],
-    ".gto" => & [GerberImage::info], ".gtp" => & [GerberImage::info], ".gtpl" => &
-    [Groovy::info], ".gts" => & [GerberImage::info, GlimmerTS::info], ".gv" => &
-    [GraphvizDOT::info], ".gvy" => & [Groovy::info], ".gyp" => & [Python::info], ".gypi"
-    => & [Python::info], ".h" => & [C::info, Cpp::info, ObjectiveC::info], ".h++" => &
-    [Cpp::info], ".h.in" => & [C::info], ".ha" => & [Hare::info], ".hack" => &
-    [Hack::info], ".haml" => & [Haml::info], ".haml.deface" => & [Haml::info],
-    ".handlebars" => & [Handlebars::info], ".har" => & [JSON::info], ".hats" => &
-    [ATS::info], ".hb" => & [Harbour::info], ".hbs" => & [Handlebars::info], ".hc" => &
-    [HolyC::info], ".hcl" => & [HCL::info], ".heex" => & [HTMLpEEX::info], ".hh" => &
-    [Cpp::info, Hack::info], ".hhi" => & [Hack::info], ".hic" => & [Clojure::info],
-    ".hip" => & [HIP::info], ".hlean" => & [Lean::info], ".hlsl" => & [HLSL::info],
-    ".hlsli" => & [HLSL::info], ".hocon" => & [HOCON::info], ".hoon" => & [Hoon::info],
-    ".hpp" => & [Cpp::info], ".hqf" => & [SQF::info], ".hql" => & [HiveQL::info], ".hrl"
-    => & [Erlang::info], ".hs" => & [Haskell::info], ".hs-boot" => & [Haskell::info],
-    ".hsc" => & [Haskell::info], ".hta" => & [HTML::info], ".htm" => & [HTML::info],
-    ".html" => & [Ecmarkup::info, HTML::info], ".html.eex" => & [HTMLpEEX::info],
-    ".html.hl" => & [HTML::info], ".html.tmpl" => & [GoTemplate::info], ".http" => &
-    [HTTP::info], ".hurl" => & [Hurl::info], ".hx" => & [Haxe::info], ".hxml" => &
-    [HXML::info], ".hxsl" => & [Haxe::info], ".hxx" => & [Cpp::info], ".hy" => &
-    [Hy::info], ".hzp" => & [XML::info], ".i" => & [Assembly::info,
+    ".fancypack" => & [Fancy::info], ".fbs" => & [FlatBuffers::info], ".fcgi" => &
+    [Lua::info, PHP::info, Perl::info, Python::info, Ruby::info, Shell::info], ".fea" =>
+    & [OpenTypeFeatureFile::info], ".feature" => & [Gherkin::info], ".filters" => &
+    [XML::info], ".fir" => & [FIRRTL::info], ".fish" => & [Fish::info], ".flex" => &
+    [JFlex::info], ".flf" => & [FIGletFont::info], ".flix" => & [Flix::info], ".flux" =>
+    & [FLUX::info], ".fnc" => & [PLSQL::info], ".fnl" => & [Fennel::info], ".for" => &
+    [Formatted::info, Forth::info, Fortran::info], ".forth" => & [Forth::info], ".fp" =>
+    & [GLSL::info], ".fpp" => & [Fortran::info], ".fr" => & [Forth::info, Frege::info,
+    Text::info], ".frag" => & [GLSL::info, JavaScript::info], ".frg" => & [GLSL::info],
+    ".frm" => & [INI::info, VBA::info, VisualBasic60::info], ".frt" => & [Forth::info],
+    ".fs" => & [Fsharp::info, Filterscript::info, Forth::info, GLSL::info], ".fsh" => &
+    [GLSL::info], ".fshader" => & [GLSL::info], ".fsi" => & [Fsharp::info], ".fsproj" =>
+    & [XML::info], ".fst" => & [Fstar::info], ".fsti" => & [Fstar::info], ".fsx" => &
+    [Fsharp::info], ".fth" => & [Forth::info], ".ftl" => & [Fluent::info,
+    FreeMarker::info], ".ftlh" => & [FreeMarker::info], ".fun" => & [StandardML::info],
+    ".fut" => & [Futhark::info], ".fx" => & [FLUX::info, HLSL::info], ".fxh" => &
+    [HLSL::info], ".fxml" => & [XML::info], ".fy" => & [Fancy::info], ".g" => &
+    [GCode::info, GAP::info], ".g4" => & [ANTLR::info], ".gaml" => & [GAML::info], ".gap"
+    => & [GAP::info], ".gawk" => & [Awk::info], ".gbl" => & [GerberImage::info], ".gbo"
+    => & [GerberImage::info], ".gbp" => & [GerberImage::info], ".gbr" => &
+    [GerberImage::info], ".gbs" => & [GerberImage::info], ".gco" => & [GCode::info],
+    ".gcode" => & [GCode::info], ".gd" => & [GAP::info, GDScript::info], ".gdb" => &
+    [GDB::info], ".gdbinit" => & [GDB::info], ".gdnlib" => & [GodotResource::info],
+    ".gdns" => & [GodotResource::info], ".gdshader" => & [GDShader::info], ".gdshaderinc"
+    => & [GDShader::info], ".ged" => & [GEDCOM::info], ".gemspec" => & [Ruby::info],
+    ".geo" => & [GLSL::info], ".geojson" => & [JSON::info], ".geom" => & [GLSL::info],
+    ".gf" => & [GrammaticalFramework::info], ".gi" => & [GAP::info], ".gitconfig" => &
+    [GitConfig::info], ".gitignore" => & [IgnoreList::info], ".gjs" => &
+    [GlimmerJS::info], ".gko" => & [GerberImage::info], ".glade" => & [XML::info],
+    ".gleam" => & [Gleam::info], ".glf" => & [Glyph::info], ".glsl" => & [GLSL::info],
+    ".glslf" => & [GLSL::info], ".glslv" => & [GLSL::info], ".gltf" => & [JSON::info],
+    ".glyphs" => & [OpenStepPropertyList::info], ".gmi" => & [Gemini::info], ".gml" => &
+    [GameMakerLanguage::info, GerberImage::info, GraphModelingLanguage::info, XML::info],
+    ".gms" => & [GAMS::info], ".gmx" => & [XML::info], ".gn" => & [GN::info], ".gni" => &
+    [GN::info], ".gnu" => & [Gnuplot::info], ".gnuplot" => & [Gnuplot::info], ".go" => &
+    [Go::info], ".god" => & [Ruby::info], ".gohtml" => & [GoTemplate::info], ".golo" => &
+    [Golo::info], ".gotmpl" => & [GoTemplate::info], ".gp" => & [Gnuplot::info], ".gpb"
+    => & [GerberImage::info], ".gpt" => & [GerberImage::info], ".gpx" => & [XML::info],
+    ".gql" => & [GraphQL::info], ".grace" => & [Grace::info], ".gradle" => &
+    [Gradle::info], ".gradle.kts" => & [GradleKotlinDSL::info], ".graphql" => &
+    [GraphQL::info], ".graphqls" => & [GraphQL::info], ".groovy" => & [Groovy::info],
+    ".grt" => & [Groovy::info], ".grxml" => & [XML::info], ".gs" => & [GLSL::info,
+    Genie::info, Gosu::info, JavaScript::info], ".gsc" => & [GSC::info], ".gsh" => &
+    [GSC::info], ".gshader" => & [GLSL::info], ".gsp" => & [GroovyServerPages::info],
+    ".gst" => & [Gosu::info, XML::info], ".gsx" => & [Gosu::info], ".gtl" => &
+    [GerberImage::info], ".gto" => & [GerberImage::info], ".gtp" => &
+    [GerberImage::info], ".gtpl" => & [Groovy::info], ".gts" => & [GerberImage::info,
+    GlimmerTS::info], ".gv" => & [GraphvizDOT::info], ".gvy" => & [Groovy::info], ".gyp"
+    => & [Python::info], ".gypi" => & [Python::info], ".h" => & [C::info, Cpp::info,
+    ObjectiveC::info], ".h++" => & [Cpp::info], ".h.in" => & [C::info], ".ha" => &
+    [Hare::info], ".hack" => & [Hack::info], ".haml" => & [Haml::info], ".haml.deface" =>
+    & [Haml::info], ".handlebars" => & [Handlebars::info], ".har" => & [JSON::info],
+    ".hats" => & [ATS::info], ".hb" => & [Harbour::info], ".hbs" => & [Handlebars::info],
+    ".hc" => & [HolyC::info], ".hcl" => & [HCL::info], ".heex" => & [HTMLpEEX::info],
+    ".hh" => & [Cpp::info, Hack::info], ".hhi" => & [Hack::info], ".hic" => &
+    [Clojure::info], ".hip" => & [HIP::info], ".hlean" => & [Lean::info], ".hlsl" => &
+    [HLSL::info], ".hlsli" => & [HLSL::info], ".hocon" => & [HOCON::info], ".hoon" => &
+    [Hoon::info], ".hpp" => & [Cpp::info], ".hqf" => & [SQF::info], ".hql" => &
+    [HiveQL::info], ".hrl" => & [Erlang::info], ".hs" => & [Haskell::info], ".hs-boot" =>
+    & [Haskell::info], ".hsc" => & [Haskell::info], ".hta" => & [HTML::info], ".htm" => &
+    [HTML::info], ".html" => & [Ecmarkup::info, HTML::info], ".html.eex" => &
+    [HTMLpEEX::info], ".html.hl" => & [HTML::info], ".html.tmpl" => & [GoTemplate::info],
+    ".http" => & [HTTP::info], ".hurl" => & [Hurl::info], ".hx" => & [Haxe::info],
+    ".hxml" => & [HXML::info], ".hxsl" => & [Haxe::info], ".hxx" => & [Cpp::info], ".hy"
+    => & [Hy::info], ".hzp" => & [XML::info], ".i" => & [Assembly::info,
     Motorola68KAssembly::info, SWIG::info], ".i3" => & [Modula3::info], ".i7x" => &
     [Inform7::info], ".ical" => & [ICalendar::info], ".ice" => & [JSON::info,
     Slice::info], ".iced" => & [CoffeeScript::info], ".icl" => & [Clean::info], ".ics" =>
@@ -2954,13 +2960,13 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     ".leo" => & [Leo::info], ".less" => & [Less::info], ".lex" => & [Lex::info], ".lfe"
     => & [LFE::info], ".lgt" => & [Logtalk::info], ".lhs" => & [LiterateHaskell::info],
     ".libsonnet" => & [Jsonnet::info], ".lid" => & [Dylan::info], ".lidr" => &
-    [Idris::info], ".ligo" => & [LigoLANG::info], ".linq" => & [Csharp::info], ".liquid"
-    => & [Liquid::info], ".lisp" => & [CommonLisp::info, NewLisp::info], ".litcoffee" =>
-    & [LiterateCoffeeScript::info], ".livecodescript" => & [LiveCodeScript::info],
-    ".livemd" => & [Markdown::info], ".lkml" => & [LookML::info], ".ll" => &
-    [LLVM::info], ".lmi" => & [Python::info], ".logtalk" => & [Logtalk::info], ".lol" =>
-    & [LOLCODE::info], ".lookml" => & [LookML::info], ".lp" => &
-    [AnswerSetProgramming::info, Lambdapi::info, LinearProgramming::info], ".lpr" => &
+    [Idris::info], ".ligo" => & [LigoLANG::info], ".linq" => & [Csharp::info], ".liq" =>
+    & [Liquidsoap::info], ".liquid" => & [Liquid::info], ".lisp" => & [CommonLisp::info,
+    NewLisp::info], ".litcoffee" => & [LiterateCoffeeScript::info], ".livecodescript" =>
+    & [LiveCodeScript::info], ".livemd" => & [Markdown::info], ".lkml" => &
+    [LookML::info], ".ll" => & [LLVM::info], ".lmi" => & [Python::info], ".logtalk" => &
+    [Logtalk::info], ".lol" => & [LOLCODE::info], ".lookml" => & [LookML::info], ".lp" =>
+    & [AnswerSetProgramming::info, Lambdapi::info, LinearProgramming::info], ".lpr" => &
     [Pascal::info], ".ls" => & [LiveScript::info, LoomScript::info], ".lsl" => &
     [LSL::info], ".lslp" => & [LSL::info], ".lsp" => & [CommonLisp::info, NewLisp::info],
     ".ltx" => & [TeX::info], ".lua" => & [Lua::info], ".luau" => & [Luau::info],
