@@ -18,15 +18,26 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    if: github.repository_owner == 'luxass'
+      models: read
+    environment:
+      name: huginn
+      deployment: false
+    if: github.repository == 'luxass/github-languages-rs'
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - name: generate token
+        uses: actions/create-github-app-token@f8d387b68d61c58ab83c6c016672934102569859 # v3.0.0
+        id: app-token
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
 
       - name: turn yaml to json (old)
         id: old-languages-json
-        uses: mikefarah/yq@6251e95af8df3505def48c71f3119836701495d6 # v4.47.2
+        uses: mikefarah/yq@0f4fb8d35ec1a939d78dd6862f494d19ec589f19 # v4.52.5
         with:
           cmd: yq -p yaml -o json languages.yml > languages.json
 
@@ -44,7 +55,7 @@ jobs:
 
       - name: turn yaml to json
         id: languages-json
-        uses: mikefarah/yq@6251e95af8df3505def48c71f3119836701495d6 # v4.47.2
+        uses: mikefarah/yq@0f4fb8d35ec1a939d78dd6862f494d19ec589f19 # v4.52.5
         with:
           cmd: yq -p yaml -o json languages.yml > languages.json
 
@@ -59,27 +70,110 @@ jobs:
             const { generateDiff } = await import('${{ github.workspace }}/.github/scripts/update-languages.mjs')
             await generateDiff({ github, context, core })
 
+      - name: generate pr metadata (ai)
+        id: pr-metadata
+        if: ${{ steps.generate-diff.outputs.DIFF != '' && github.event.inputs.dry-run != 'true' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SYSTEM_PROMPT: |
+            You generate conventional commit titles for automated pull requests that sync changes from GitHub's Linguist repository.
+
+            Linguist is GitHub's library for detecting programming languages, syntax highlighting, and language statistics. It maintains a registry of language definitions in languages.yml, where each entry describes a language's file extensions, color, TextMate scope, Ace/CodeMirror modes, and other metadata.
+
+            You will receive a plain-text summary of what changed — which languages were added, removed, or had properties modified. Your task is to return a JSON object with these fields:
+
+            - type: The conventional commit type. Use "feat" when languages are added, "chore" when languages are removed or properties are updated, "fix" when an incorrect value is corrected.
+            - message: A concise imperative-mood description of the change, under 72 characters.
+
+            Rules:
+            - Message must be specific: mention which language(s) were added/removed/updated and how many if more than one.
+            - Do not include filler like "update", "sync", or "bump" unless nothing more specific applies.
+          REQUEST_TEMPLATE: |
+            {
+              "messages": [
+                { "role": "system", "content": "" },
+                { "role": "user", "content": "" }
+              ],
+              "model": "xai/grok-3-mini",
+              "reasoning_effort": "high",
+              "response_format": {
+                "type": "json_schema",
+                "json_schema": {
+                  "name": "pr-title",
+                  "strict": true,
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "type": { "type": "string", "enum": ["feat", "fix", "chore"] },
+                      "message": { "type": "string", "maxLength": 72 }
+                    },
+                    "additionalProperties": false,
+                    "required": ["type", "message"]
+                  }
+                }
+              }
+            }
+
+        run: |
+          set -euo pipefail
+
+          DIFF_CONTENT=$(cat languages.diff)
+
+          # Build the request JSON using jq to safely insert the prompt and diff into the REQUEST_TEMPLATE.
+          REQUEST_JSON=$(jq --arg system "$SYSTEM_PROMPT" --arg diff "$DIFF_CONTENT" '.messages[0].content=$system | .messages[1].content=("Generate a PR title for the following Linguist language changes:\n\n" + $diff)' <<< "$REQUEST_TEMPLATE")
+
+          # Call the GitHub Models API via curl (pipe JSON via stdin to avoid shell quoting issues)
+          RESPONSE=$(printf '%s' "$REQUEST_JSON" | curl -s -X POST "https://models.github.ai/inference/chat/completions" \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            --data-binary @-)
+
+          echo "API response: $RESPONSE"
+
+          # Extract the generated JSON content and build the title
+          CONTENT=$(echo "$RESPONSE" | jq -r '.choices[0].message.content')
+
+          TYPE=$(echo "$CONTENT" | jq -r '.type')
+          MESSAGE=$(echo "$CONTENT" | jq -r '.message')
+          TITLE="$TYPE: $MESSAGE"
+
+          echo "✅ Generated PR title: $TITLE"
+          {
+            echo "title<<GITHUB_EOF"
+            printf '%s' "$TITLE"
+            echo
+            echo "GITHUB_EOF"
+          } >> "$GITHUB_OUTPUT"
+
       - name: create pull request
-        uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
+        uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
         if: ${{ github.event.inputs.dry-run != 'true' }}
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          COMMIT_MESSAGE: "${{ steps.pr-metadata.outputs.title || 'feat: updated github languages' }}"
+          NEW_LANGUAGES: ${{ steps.generate-diff.outputs.result-new-languages }}
+          REMOVED_LANGUAGES: ${{ steps.generate-diff.outputs.result-removed-languages }}
+          MODIFIED_LANGUAGES: ${{ steps.generate-diff.outputs.result-modified-languages }}
         with:
-          commit-message: "feat: updated github languages"
-          title: "feat: updated github languages"
+          token: ${{ steps.app-token.outputs.token }}
+          commit-message: ${{ env.COMMIT_MESSAGE }}
+          title: ${{ env.COMMIT_MESSAGE }}
           body: |
             I found some new changes in GitHub's Linguist Repository.
 
             I don't know what they changed, but I'm sure it's important.
             If you want you can go take a look yourself.
 
-            ${{ steps.generate-diff.outputs.result-new-languages }}
-            ${{ steps.generate-diff.outputs.result-removed-languages }}
+            ${{ env.NEW_LANGUAGES }}
+            ${{ env.REMOVED_LANGUAGES }}
+            ${{ env.MODIFIED_LANGUAGES }}
 
             I will be waiting for your approval 👋.
 
             This is an automated PR to update GitHub Languages.
+          committer: huginn-watch[bot] <273299945+huginn-watch[bot]@users.noreply.github.com>
+          author: huginn-watch[bot] <273299945+huginn-watch[bot]@users.noreply.github.com>
           branch: update-github-languages
           add-paths: languages.yml,src/generated.rs
           base: main
-          committer: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
-          author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
           reviewers: luxass

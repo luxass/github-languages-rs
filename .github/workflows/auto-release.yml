@@ -13,26 +13,35 @@ jobs:
     timeout-minutes: 10
     permissions:
       contents: write
-    if: github.event.pull_request.merged == true && github.event.pull_request.head.ref == 'update-github-languages' && github.repository == 'luxass/github-languages-rs'
+    environment:
+      name: huginn
+      deployment: false
+    if: >-
+      github.event.pull_request.merged == true &&
+        github.event.pull_request.head.ref == 'update-github-languages' &&
+        github.repository == 'luxass/github-languages-rs' &&
+        (github.event.pull_request.user.login == 'luxass' || github.event.pull_request.user.login == 'huginn-watch[bot]')
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - name: generate token
+        uses: actions/create-github-app-token@f8d387b68d61c58ab83c6c016672934102569859 # v3.0.0
+        id: app-token
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0
-          token: ${{ secrets.AUTO_RELEASE_TOKEN }}
+          token: ${{ steps.app-token.outputs.token }}
           persist-credentials: true
 
       - run: rustup default stable
 
-      - uses: taiki-e/install-action@67cc679904bee382389bf22082124fa963c6f6bd # v2.61.3
+      - uses: taiki-e/install-action@d858f8113943481093e02986a7586a4819a3bfd6 # v2.71.2
         with:
           tool: just,cargo-edit
 
-      - name: configure git user
-        run: |
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-
-      - name: auto release
+      - name: create tag and release
         run: |
           CURRENT_VERSION=$(awk -F ' = ' '/^version = / {gsub(/"/, "", $2); print $2; exit}' Cargo.toml)
           PATCH_VERSION=$(echo $CURRENT_VERSION | awk -F. '{printf "%d.%d.%d", $1, $2, $3+1}')
@@ -40,5 +49,10 @@ jobs:
           echo "detected version: $CURRENT_VERSION"
           echo "patched to: $PATCH_VERSION"
 
+          git config user.email "273299945+huginn-watch[bot]@users.noreply.github.com"
+          git config user.name "huginn-watch[bot]"
+
           just release "$PATCH_VERSION"
           git push && git push --tags
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
