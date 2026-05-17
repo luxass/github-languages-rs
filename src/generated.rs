@@ -2161,14 +2161,17 @@ define_languages! {
     filenames : ["Android.bp"], interpreters : [], }, SourcePawn => { name :
     "SourcePawn", r#type : "programming", color : "#f69e1d", extensions : [".sp",
     ".inc"], aliases : ["sourcemod"], tm_scope : "source.sourcepawn", ace_mode : "text",
-    language_id : 354u64, filenames : [], interpreters : [], }, SplineFontDatabase => {
-    name : "Spline Font Database", r#type : "data", color : "#000000", extensions :
-    [".sfd"], aliases : [], tm_scope : "text.sfd", ace_mode : "yaml", language_id :
-    767169629u64, filenames : [], interpreters : [], }, Squirrel => { name : "Squirrel",
-    r#type : "programming", color : "#800000", extensions : [".nut"], aliases : [],
-    tm_scope : "source.nut", ace_mode : "c_cpp", language_id : 355u64, codemirror_mode :
-    "clike", codemirror_mime_type : "text/x-squirrel", filenames : [], interpreters : [],
-    }, Stan => { name : "Stan", r#type : "programming", color : "#b2011d", extensions :
+    language_id : 354u64, filenames : [], interpreters : [], }, SpiceDBSchema => { name :
+    "SpiceDB Schema", r#type : "data", color : "#a5318a", extensions : [".zed"], aliases
+    : [], tm_scope : "source.spicedb", ace_mode : "text", language_id : 864005057u64,
+    filenames : [], interpreters : [], }, SplineFontDatabase => { name :
+    "Spline Font Database", r#type : "data", color : "#000000", extensions : [".sfd"],
+    aliases : [], tm_scope : "text.sfd", ace_mode : "yaml", language_id : 767169629u64,
+    filenames : [], interpreters : [], }, Squirrel => { name : "Squirrel", r#type :
+    "programming", color : "#800000", extensions : [".nut"], aliases : [], tm_scope :
+    "source.nut", ace_mode : "c_cpp", language_id : 355u64, codemirror_mode : "clike",
+    codemirror_mime_type : "text/x-squirrel", filenames : [], interpreters : [], }, Stan
+    => { name : "Stan", r#type : "programming", color : "#b2011d", extensions :
     [".stan"], aliases : [], tm_scope : "source.stan", ace_mode : "text", language_id :
     356u64, filenames : [], interpreters : [], }, StandardML => { name : "Standard ML",
     r#type : "programming", color : "#dc566d", extensions : [".ml", ".fun", ".sig",
@@ -2236,46 +2239,47 @@ define_languages! {
     name : "TOML", r#type : "data", color : "#9c4221", extensions : [".toml",
     ".toml.example"], aliases : [], tm_scope : "source.toml", ace_mode : "toml",
     language_id : 365u64, codemirror_mode : "toml", codemirror_mime_type : "text/x-toml",
-    filenames : ["Cargo.lock", "Cargo.toml.orig", "Gopkg.lock", "Pipfile", "pdm.lock",
-    "poetry.lock", "uv.lock"], interpreters : [], }, TSPLIBData => { name :
-    "TSPLIB data", r#type : "data", color : "#000000", extensions : [".tsp"], aliases :
-    ["travelling salesman problem", "traveling salesman problem"], tm_scope : "none",
-    ace_mode : "text", language_id : 89289301u64, filenames : [], interpreters : [], },
-    TSQL => { name : "TSQL", r#type : "programming", color : "#e38c00", extensions :
-    [".sql"], aliases : [], tm_scope : "source.tsql", ace_mode : "sql", language_id :
-    918334941u64, filenames : [], interpreters : [], }, TSV => { name : "TSV", r#type :
-    "data", color : "#237346", extensions : [".tsv", ".vcf"], aliases :
-    ["tab-seperated values"], tm_scope : "source.tsv", ace_mode : "tsv", language_id :
-    1035892117u64, filenames : [], interpreters : [], }, TSX => { name : "TSX", r#type :
-    "programming", color : "#3178c6", extensions : [".tsx"], aliases :
-    ["typescriptreact"], tm_scope : "source.tsx", ace_mode : "tsx", language_id :
-    94901924u64, codemirror_mode : "jsx", codemirror_mime_type : "text/typescript-jsx",
-    filenames : [], group : "TypeScript", interpreters : [], }, TXL => { name : "TXL",
-    r#type : "programming", color : "#0178b8", extensions : [".txl"], aliases : [],
-    tm_scope : "source.txl", ace_mode : "text", language_id : 366u64, filenames : [],
-    interpreters : [], }, Tact => { name : "Tact", r#type : "programming", color :
-    "#48b5ff", extensions : [".tact"], aliases : [], tm_scope : "source.tact", ace_mode :
-    "text", language_id : 606708469u64, filenames : [], interpreters : [], }, Talon => {
-    name : "Talon", r#type : "programming", color : "#333333", extensions : [".talon"],
-    aliases : [], tm_scope : "source.talon", ace_mode : "text", language_id :
-    959889508u64, filenames : [], interpreters : [], }, Tcl => { name : "Tcl", r#type :
-    "programming", color : "#e4cc98", extensions : [".tcl", ".adp", ".sdc", ".tcl.in",
-    ".tm", ".xdc"], aliases : ["sdc", "xdc"], tm_scope : "source.tcl", ace_mode : "tcl",
-    language_id : 367u64, codemirror_mode : "tcl", codemirror_mime_type : "text/x-tcl",
-    filenames : ["owh", "starfield"], interpreters : ["tclsh", "wish"], }, Tcsh => { name
-    : "Tcsh", r#type : "programming", color : "#000000", extensions : [".tcsh", ".csh"],
-    aliases : [], tm_scope : "source.shell", ace_mode : "sh", language_id : 368u64,
-    codemirror_mode : "shell", codemirror_mime_type : "text/x-sh", filenames : [], group
-    : "Shell", interpreters : ["tcsh", "csh"], }, TeX => { name : "TeX", r#type :
-    "markup", color : "#3D6117", extensions : [".tex", ".aux", ".bbx", ".cbx", ".cls",
-    ".dtx", ".ins", ".lbx", ".ltx", ".mkii", ".mkiv", ".mkvi", ".sty", ".toc"], aliases :
-    ["latex"], tm_scope : "text.tex.latex", ace_mode : "tex", language_id : 369u64,
-    codemirror_mode : "stex", codemirror_mime_type : "text/x-stex", wrap : true,
-    filenames : [], interpreters : [], }, Tea => { name : "Tea", r#type : "markup", color
-    : "#000000", extensions : [".tea"], aliases : [], tm_scope : "source.tea", ace_mode :
-    "text", language_id : 370u64, filenames : [], interpreters : [], }, Teal => { name :
-    "Teal", r#type : "programming", color : "#00B1BC", extensions : [".tl"], aliases :
-    [], tm_scope : "source.teal", ace_mode : "lua", language_id : 719038619u64,
+    filenames : ["Cargo.lock", "Cargo.toml.orig", "Gopkg.lock", "Pipfile",
+    "mise.local.lock", "mise.lock", "pdm.lock", "poetry.lock", "uv.lock"], interpreters :
+    [], }, TSPLIBData => { name : "TSPLIB data", r#type : "data", color : "#000000",
+    extensions : [".tsp"], aliases : ["travelling salesman problem",
+    "traveling salesman problem"], tm_scope : "none", ace_mode : "text", language_id :
+    89289301u64, filenames : [], interpreters : [], }, TSQL => { name : "TSQL", r#type :
+    "programming", color : "#e38c00", extensions : [".sql"], aliases : [], tm_scope :
+    "source.tsql", ace_mode : "sql", language_id : 918334941u64, filenames : [],
+    interpreters : [], }, TSV => { name : "TSV", r#type : "data", color : "#237346",
+    extensions : [".tsv", ".vcf"], aliases : ["tab-seperated values"], tm_scope :
+    "source.tsv", ace_mode : "tsv", language_id : 1035892117u64, filenames : [],
+    interpreters : [], }, TSX => { name : "TSX", r#type : "programming", color :
+    "#3178c6", extensions : [".tsx"], aliases : ["typescriptreact"], tm_scope :
+    "source.tsx", ace_mode : "tsx", language_id : 94901924u64, codemirror_mode : "jsx",
+    codemirror_mime_type : "text/typescript-jsx", filenames : [], group : "TypeScript",
+    interpreters : [], }, TXL => { name : "TXL", r#type : "programming", color :
+    "#0178b8", extensions : [".txl"], aliases : [], tm_scope : "source.txl", ace_mode :
+    "text", language_id : 366u64, filenames : [], interpreters : [], }, Tact => { name :
+    "Tact", r#type : "programming", color : "#48b5ff", extensions : [".tact"], aliases :
+    [], tm_scope : "source.tact", ace_mode : "text", language_id : 606708469u64,
+    filenames : [], interpreters : [], }, Talon => { name : "Talon", r#type :
+    "programming", color : "#333333", extensions : [".talon"], aliases : [], tm_scope :
+    "source.talon", ace_mode : "text", language_id : 959889508u64, filenames : [],
+    interpreters : [], }, Tcl => { name : "Tcl", r#type : "programming", color :
+    "#e4cc98", extensions : [".tcl", ".adp", ".sdc", ".tcl.in", ".tm", ".xdc"], aliases :
+    ["sdc", "xdc"], tm_scope : "source.tcl", ace_mode : "tcl", language_id : 367u64,
+    codemirror_mode : "tcl", codemirror_mime_type : "text/x-tcl", filenames : ["owh",
+    "starfield"], interpreters : ["tclsh", "wish"], }, Tcsh => { name : "Tcsh", r#type :
+    "programming", color : "#000000", extensions : [".tcsh", ".csh"], aliases : [],
+    tm_scope : "source.shell", ace_mode : "sh", language_id : 368u64, codemirror_mode :
+    "shell", codemirror_mime_type : "text/x-sh", filenames : [], group : "Shell",
+    interpreters : ["tcsh", "csh"], }, TeX => { name : "TeX", r#type : "markup", color :
+    "#3D6117", extensions : [".tex", ".aux", ".bbx", ".cbx", ".cls", ".dtx", ".ins",
+    ".lbx", ".ltx", ".mkii", ".mkiv", ".mkvi", ".sty", ".toc"], aliases : ["latex"],
+    tm_scope : "text.tex.latex", ace_mode : "tex", language_id : 369u64, codemirror_mode
+    : "stex", codemirror_mime_type : "text/x-stex", wrap : true, filenames : [],
+    interpreters : [], }, Tea => { name : "Tea", r#type : "markup", color : "#000000",
+    extensions : [".tea"], aliases : [], tm_scope : "source.tea", ace_mode : "text",
+    language_id : 370u64, filenames : [], interpreters : [], }, Teal => { name : "Teal",
+    r#type : "programming", color : "#00B1BC", extensions : [".tl"], aliases : [],
+    tm_scope : "source.teal", ace_mode : "lua", language_id : 719038619u64,
     codemirror_mode : "lua", codemirror_mime_type : "text/x-lua", filenames : [],
     interpreters : ["tl"], }, Terra => { name : "Terra", r#type : "programming", color :
     "#00004c", extensions : [".t"], aliases : [], tm_scope : "source.terra", ace_mode :
@@ -3274,10 +3278,10 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     & [YASnippet::info], ".yml" => & [MiniYAML::info, OASv2Yaml::info, OASv3Yaml::info,
     YAML::info], ".yml.mysql" => & [YAML::info], ".yrl" => & [Erlang::info], ".yul" => &
     [Yul::info], ".yy" => & [JSON::info, Yacc::info], ".yyp" => & [JSON::info], ".z3" =>
-    & [SMT::info], ".zap" => & [ZAP::info], ".zcml" => & [XML::info], ".zeek" => &
-    [Zeek::info], ".zep" => & [Zephir::info], ".zig" => & [Zig::info], ".zig.zon" => &
-    [Zig::info], ".zil" => & [ZIL::info], ".zimpl" => & [Zimpl::info], ".zmodel" => &
-    [Zmodel::info], ".zmpl" => & [Zimpl::info], ".zone" => & [DNSZone::info], ".zpl" => &
-    [Zimpl::info], ".zs" => & [ZenScript::info], ".zsh" => & [Shell::info], ".zsh-theme"
-    => & [Shell::info]
+    & [SMT::info], ".zap" => & [ZAP::info], ".zcml" => & [XML::info], ".zed" => &
+    [SpiceDBSchema::info], ".zeek" => & [Zeek::info], ".zep" => & [Zephir::info], ".zig"
+    => & [Zig::info], ".zig.zon" => & [Zig::info], ".zil" => & [ZIL::info], ".zimpl" => &
+    [Zimpl::info], ".zmodel" => & [Zmodel::info], ".zmpl" => & [Zimpl::info], ".zone" =>
+    & [DNSZone::info], ".zpl" => & [Zimpl::info], ".zs" => & [ZenScript::info], ".zsh" =>
+    & [Shell::info], ".zsh-theme" => & [Shell::info]
 };
