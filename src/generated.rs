@@ -954,7 +954,10 @@ define_languages! {
     "idl", codemirror_mime_type : "text/x-idl", filenames : [], interpreters : [], },
     IGORPro => { name : "IGOR Pro", r#type : "programming", color : "#0000cc", extensions
     : [".ipf"], aliases : ["igor", "igorpro"], tm_scope : "source.igor", ace_mode :
-    "text", language_id : 162u64, filenames : [], interpreters : [], }, INI => { name :
+    "text", language_id : 162u64, filenames : [], interpreters : [], }, ILAssembly => {
+    name : "IL Assembly", r#type : "programming", color : "#512BD4", extensions :
+    [".il"], aliases : ["ilasm", "msil"], tm_scope : "source.il", ace_mode : "text",
+    language_id : 592065806u64, filenames : [], interpreters : [], }, INI => { name :
     "INI", r#type : "data", color : "#d1dbe0", extensions : [".ini", ".cfg", ".cnf",
     ".dof", ".frm", ".lektorproject", ".prefs", ".pro", ".properties", ".url"], aliases :
     ["dosini"], tm_scope : "source.ini", ace_mode : "ini", language_id : 163u64,
@@ -1842,10 +1845,13 @@ define_languages! {
     "programming", color : "#008080", extensions : [".bas", ".bi"], aliases : ["qb",
     "qbasic", "qb64", "classic qbasic", "classic quickbasic"], tm_scope : "source.QB64",
     ace_mode : "text", language_id : 593107205u64, codemirror_mode : "vb",
-    codemirror_mime_type : "text/x-vb", filenames : [], interpreters : [], }, R => { name
-    : "R", r#type : "programming", color : "#198CE7", extensions : [".r", ".rd", ".rsx"],
-    aliases : ["Rscript", "splus"], tm_scope : "source.r", ace_mode : "r", language_id :
-    307u64, codemirror_mode : "r", codemirror_mime_type : "text/x-rsrc", filenames :
+    codemirror_mime_type : "text/x-vb", filenames : [], interpreters : [], }, Quint => {
+    name : "Quint", r#type : "programming", color : "#9d6ce5", extensions : [".qnt"],
+    aliases : [], tm_scope : "source.quint", ace_mode : "text", language_id :
+    562056483u64, filenames : [], interpreters : [], }, R => { name : "R", r#type :
+    "programming", color : "#198CE7", extensions : [".r", ".rd", ".rsx"], aliases :
+    ["Rscript", "splus"], tm_scope : "source.r", ace_mode : "r", language_id : 307u64,
+    codemirror_mode : "r", codemirror_mime_type : "text/x-rsrc", filenames :
     [".Rprofile", "expr-dist"], interpreters : ["Rscript"], }, RAML => { name : "RAML",
     r#type : "markup", color : "#77d9fb", extensions : [".raml"], aliases : [], tm_scope
     : "source.yaml", ace_mode : "yaml", language_id : 308u64, codemirror_mode : "yaml",
@@ -2919,25 +2925,25 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     Slice::info], ".iced" => & [CoffeeScript::info], ".icl" => & [Clean::info], ".icls"
     => & [XML::info], ".ics" => & [ICalendar::info], ".idc" => & [C::info], ".idr" => &
     [Idris::info], ".ig" => & [Modula3::info], ".ihlp" => & [Stata::info], ".ijm" => &
-    [ImageJMacro::info], ".ijs" => & [J::info], ".ik" => & [Ioke::info], ".ily" => &
-    [LilyPond::info], ".imba" => & [Imba::info], ".iml" => & [XML::info], ".inc" => &
-    [Assembly::info, BitBake::info, Cpp::info, HTML::info, Motorola68KAssembly::info,
-    NASL::info, PHP::info, POVRaySDL::info, Pascal::info, Pawn::info, SQL::info,
-    SourcePawn::info], ".ini" => & [INI::info], ".ink" => & [Ink::info], ".inl" => &
-    [Cpp::info], ".ino" => & [Cpp::info], ".ins" => & [TeX::info], ".intr" => &
-    [Dylan::info], ".io" => & [Io::info], ".iol" => & [Jolie::info], ".ipf" => &
-    [IGORPro::info], ".ipp" => & [Cpp::info], ".ipynb" => & [JupyterNotebook::info],
-    ".irclog" => & [IRCLog::info], ".isl" => & [InnoSetup::info], ".ispc" => &
-    [ISPC::info], ".iss" => & [InnoSetup::info], ".iuml" => & [PlantUML::info], ".ivy" =>
-    & [XML::info], ".ixx" => & [Cpp::info], ".j" => & [Jasmin::info, ObjectiveJ::info],
-    ".j2" => & [Jinja::info], ".jac" => & [Jac::info], ".jade" => & [Pug::info], ".jai"
-    => & [Jai::info], ".jake" => & [JavaScript::info], ".janet" => & [Janet::info],
-    ".jav" => & [Java::info], ".java" => & [Java::info], ".javascript" => &
-    [JavaScript::info], ".jbuilder" => & [Ruby::info], ".jcl" => & [JCL::info], ".jelly"
-    => & [XML::info], ".jflex" => & [JFlex::info], ".jinja" => & [Jinja::info], ".jinja2"
-    => & [Jinja::info], ".jison" => & [Jison::info], ".jisonlex" => & [JisonLex::info],
-    ".jl" => & [Julia::info], ".jq" => & [JSONiq::info, Jq::info], ".js" => &
-    [JavaScript::info], ".js.erb" => & [JavaScriptpERB::info], ".jsb" => &
+    [ImageJMacro::info], ".ijs" => & [J::info], ".ik" => & [Ioke::info], ".il" => &
+    [ILAssembly::info], ".ily" => & [LilyPond::info], ".imba" => & [Imba::info], ".iml"
+    => & [XML::info], ".inc" => & [Assembly::info, BitBake::info, Cpp::info, HTML::info,
+    Motorola68KAssembly::info, NASL::info, PHP::info, POVRaySDL::info, Pascal::info,
+    Pawn::info, SQL::info, SourcePawn::info], ".ini" => & [INI::info], ".ink" => &
+    [Ink::info], ".inl" => & [Cpp::info], ".ino" => & [Cpp::info], ".ins" => &
+    [TeX::info], ".intr" => & [Dylan::info], ".io" => & [Io::info], ".iol" => &
+    [Jolie::info], ".ipf" => & [IGORPro::info], ".ipp" => & [Cpp::info], ".ipynb" => &
+    [JupyterNotebook::info], ".irclog" => & [IRCLog::info], ".isl" => &
+    [InnoSetup::info], ".ispc" => & [ISPC::info], ".iss" => & [InnoSetup::info], ".iuml"
+    => & [PlantUML::info], ".ivy" => & [XML::info], ".ixx" => & [Cpp::info], ".j" => &
+    [Jasmin::info, ObjectiveJ::info], ".j2" => & [Jinja::info], ".jac" => & [Jac::info],
+    ".jade" => & [Pug::info], ".jai" => & [Jai::info], ".jake" => & [JavaScript::info],
+    ".janet" => & [Janet::info], ".jav" => & [Java::info], ".java" => & [Java::info],
+    ".javascript" => & [JavaScript::info], ".jbuilder" => & [Ruby::info], ".jcl" => &
+    [JCL::info], ".jelly" => & [XML::info], ".jflex" => & [JFlex::info], ".jinja" => &
+    [Jinja::info], ".jinja2" => & [Jinja::info], ".jison" => & [Jison::info], ".jisonlex"
+    => & [JisonLex::info], ".jl" => & [Julia::info], ".jq" => & [JSONiq::info, Jq::info],
+    ".js" => & [JavaScript::info], ".js.erb" => & [JavaScriptpERB::info], ".jsb" => &
     [JavaScript::info], ".jscad" => & [JavaScript::info], ".jsfl" => &
     [JavaScript::info], ".jsh" => & [Java::info], ".jslib" => & [JavaScript::info],
     ".jsm" => & [JavaScript::info], ".json" => & [JSON::info, OASv2Json::info,
@@ -3098,34 +3104,35 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     ".pyw" => & [Python::info], ".pyx" => & [Cython::info], ".q" => & [HiveQL::info,
     Q::info], ".qasm" => & [OpenQASM::info], ".qbs" => & [QML::info], ".qc" => &
     [QuakeC::info], ".qhelp" => & [XML::info], ".ql" => & [CodeQL::info], ".qll" => &
-    [CodeQL::info], ".qmd" => & [RMarkdown::info], ".qml" => & [QML::info], ".qs" => &
-    [Qsharp::info, QtScript::info], ".r" => & [R::info, Rebol::info, Rez::info], ".r2" =>
-    & [Rebol::info], ".r3" => & [Rebol::info], ".rabl" => & [Ruby::info], ".rake" => &
-    [Ruby::info], ".raku" => & [Raku::info], ".rakumod" => & [Raku::info], ".raml" => &
-    [RAML::info], ".rascript" => & [RAScript::info], ".raw" => & [RawTokenData::info],
-    ".razor" => & [HTMLpRazor::info], ".rb" => & [Ruby::info], ".rbbas" => &
-    [REALbasic::info], ".rbfrm" => & [REALbasic::info], ".rbi" => & [Ruby::info],
-    ".rbmnu" => & [REALbasic::info], ".rbres" => & [REALbasic::info], ".rbs" => &
-    [RBS::info], ".rbtbar" => & [REALbasic::info], ".rbuild" => & [Ruby::info],
-    ".rbuistate" => & [REALbasic::info], ".rbw" => & [Ruby::info], ".rbx" => &
-    [Ruby::info], ".rbxs" => & [Lua::info], ".rchit" => & [GLSL::info], ".rd" => &
-    [R::info], ".rdf" => & [XML::info], ".rdoc" => & [RDoc::info], ".re" => & [Cpp::info,
-    Reason::info], ".reb" => & [Rebol::info], ".rebol" => & [Rebol::info], ".red" => &
-    [Red::info], ".reds" => & [Red::info], ".reek" => & [YAML::info], ".reg" => &
-    [WindowsRegistryEntries::info], ".regex" => & [RegularExpression::info], ".regexp" =>
-    & [RegularExpression::info], ".rego" => & [OpenPolicyAgent::info], ".rei" => &
-    [Reason::info], ".religo" => & [ReasonLIGO::info], ".res" => & [ReScript::info,
-    XML::info], ".resi" => & [ReScript::info], ".resource" => & [RobotFramework::info],
-    ".rest" => & [ReStructuredText::info], ".rest.txt" => & [ReStructuredText::info],
-    ".resx" => & [XML::info], ".rex" => & [REXX::info], ".rexx" => & [REXX::info], ".rg"
-    => & [Rouge::info], ".rhtml" => & [HTMLpERB::info], ".ring" => & [Ring::info],
-    ".riot" => & [Riot::info], ".rkt" => & [Racket::info], ".rktd" => & [Racket::info],
-    ".rktl" => & [Racket::info], ".rl" => & [Ragel::info], ".rmd" => & [RMarkdown::info],
-    ".rmiss" => & [GLSL::info], ".rnh" => & [RUNOFF::info], ".rno" => & [RUNOFF::info,
-    Roff::info], ".rnw" => & [Sweave::info], ".robot" => & [RobotFramework::info], ".roc"
-    => & [Roc::info], ".rockspec" => & [Lua::info], ".roff" => & [Roff::info], ".ron" =>
-    & [RON::info], ".ronn" => & [Markdown::info], ".rpgle" => & [RPGLE::info], ".rpy" =>
-    & [Python::info, RenPy::info], ".rq" => & [SPARQL::info], ".rs" => &
+    [CodeQL::info], ".qmd" => & [RMarkdown::info], ".qml" => & [QML::info], ".qnt" => &
+    [Quint::info], ".qs" => & [Qsharp::info, QtScript::info], ".r" => & [R::info,
+    Rebol::info, Rez::info], ".r2" => & [Rebol::info], ".r3" => & [Rebol::info], ".rabl"
+    => & [Ruby::info], ".rake" => & [Ruby::info], ".raku" => & [Raku::info], ".rakumod"
+    => & [Raku::info], ".raml" => & [RAML::info], ".rascript" => & [RAScript::info],
+    ".raw" => & [RawTokenData::info], ".razor" => & [HTMLpRazor::info], ".rb" => &
+    [Ruby::info], ".rbbas" => & [REALbasic::info], ".rbfrm" => & [REALbasic::info],
+    ".rbi" => & [Ruby::info], ".rbmnu" => & [REALbasic::info], ".rbres" => &
+    [REALbasic::info], ".rbs" => & [RBS::info], ".rbtbar" => & [REALbasic::info],
+    ".rbuild" => & [Ruby::info], ".rbuistate" => & [REALbasic::info], ".rbw" => &
+    [Ruby::info], ".rbx" => & [Ruby::info], ".rbxs" => & [Lua::info], ".rchit" => &
+    [GLSL::info], ".rd" => & [R::info], ".rdf" => & [XML::info], ".rdoc" => &
+    [RDoc::info], ".re" => & [Cpp::info, Reason::info], ".reb" => & [Rebol::info],
+    ".rebol" => & [Rebol::info], ".red" => & [Red::info], ".reds" => & [Red::info],
+    ".reek" => & [YAML::info], ".reg" => & [WindowsRegistryEntries::info], ".regex" => &
+    [RegularExpression::info], ".regexp" => & [RegularExpression::info], ".rego" => &
+    [OpenPolicyAgent::info], ".rei" => & [Reason::info], ".religo" => &
+    [ReasonLIGO::info], ".res" => & [ReScript::info, XML::info], ".resi" => &
+    [ReScript::info], ".resource" => & [RobotFramework::info], ".rest" => &
+    [ReStructuredText::info], ".rest.txt" => & [ReStructuredText::info], ".resx" => &
+    [XML::info], ".rex" => & [REXX::info], ".rexx" => & [REXX::info], ".rg" => &
+    [Rouge::info], ".rhtml" => & [HTMLpERB::info], ".ring" => & [Ring::info], ".riot" =>
+    & [Riot::info], ".rkt" => & [Racket::info], ".rktd" => & [Racket::info], ".rktl" => &
+    [Racket::info], ".rl" => & [Ragel::info], ".rmd" => & [RMarkdown::info], ".rmiss" =>
+    & [GLSL::info], ".rnh" => & [RUNOFF::info], ".rno" => & [RUNOFF::info, Roff::info],
+    ".rnw" => & [Sweave::info], ".robot" => & [RobotFramework::info], ".roc" => &
+    [Roc::info], ".rockspec" => & [Lua::info], ".roff" => & [Roff::info], ".ron" => &
+    [RON::info], ".ronn" => & [Markdown::info], ".rpgle" => & [RPGLE::info], ".rpy" => &
+    [Python::info, RenPy::info], ".rq" => & [SPARQL::info], ".rs" => &
     [RenderScript::info, Rust::info, XML::info], ".rs.in" => & [Rust::info], ".rsc" => &
     [Rascal::info, RouterOSScript::info], ".rsh" => & [RenderScript::info], ".rss" => &
     [XML::info], ".rst" => & [ReStructuredText::info], ".rst.txt" => &
