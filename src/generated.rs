@@ -784,48 +784,48 @@ define_languages! {
     GitConfig => { name : "Git Config", r#type : "data", color : "#F44D27", extensions :
     [".gitconfig"], aliases : ["gitconfig", "gitmodules"], tm_scope : "source.gitconfig",
     ace_mode : "ini", language_id : 807968997u64, codemirror_mode : "properties",
-    codemirror_mime_type : "text/x-properties", filenames : [".gitconfig",
-    ".gitmodules"], group : "INI", interpreters : [], }, GitRevisionList => { name :
-    "Git Revision List", r#type : "data", color : "#F44D27", extensions : [], aliases :
-    ["Git Blame Ignore Revs"], tm_scope : "source.git-revlist", ace_mode : "text",
-    language_id : 461881235u64, filenames : [".git-blame-ignore-revs"], interpreters :
-    [], }, Gleam => { name : "Gleam", r#type : "programming", color : "#ffaff3",
-    extensions : [".gleam"], aliases : [], tm_scope : "source.gleam", ace_mode : "text",
-    language_id : 1054258749u64, filenames : [], interpreters : [], }, GlimmerJS => {
-    name : "Glimmer JS", r#type : "programming", color : "#F5835F", extensions :
-    [".gjs"], aliases : ["gjs"], tm_scope : "source.gjs", ace_mode : "javascript",
-    language_id : 5523150u64, filenames : [], group : "JavaScript", interpreters : [], },
-    GlimmerTS => { name : "Glimmer TS", r#type : "programming", color : "#3178c6",
-    extensions : [".gts"], aliases : ["gts"], tm_scope : "source.gts", ace_mode :
-    "typescript", language_id : 95110458u64, filenames : [], group : "TypeScript",
-    interpreters : [], }, Glyph => { name : "Glyph", r#type : "programming", color :
-    "#c1ac7f", extensions : [".glf"], aliases : [], tm_scope : "source.tcl", ace_mode :
-    "tcl", language_id : 130u64, codemirror_mode : "tcl", codemirror_mime_type :
-    "text/x-tcl", filenames : [], interpreters : [], }, GlyphBitmapDistributionFormat =>
-    { name : "Glyph Bitmap Distribution Format", r#type : "data", color : "#000000",
-    extensions : [".bdf"], aliases : [], tm_scope : "source.bdf", ace_mode : "text",
-    language_id : 997665271u64, filenames : [], interpreters : [], }, Gnuplot => { name :
-    "Gnuplot", r#type : "programming", color : "#f0a9f0", extensions : [".gp", ".gnu",
-    ".gnuplot", ".p", ".plot", ".plt"], aliases : [], tm_scope : "source.gnuplot",
-    ace_mode : "text", language_id : 131u64, filenames : [], interpreters : ["gnuplot"],
-    }, Go => { name : "Go", r#type : "programming", color : "#00ADD8", extensions :
-    [".go"], aliases : ["golang"], tm_scope : "source.go", ace_mode : "golang",
-    language_id : 132u64, codemirror_mode : "go", codemirror_mime_type : "text/x-go",
-    filenames : [], interpreters : [], }, GoChecksums => { name : "Go Checksums", r#type
-    : "data", color : "#00ADD8", extensions : [], aliases : ["go.sum", "go sum",
-    "go.work.sum", "go work sum"], tm_scope : "go.sum", ace_mode : "text", language_id :
-    1054391671u64, filenames : ["go.sum", "go.work.sum"], interpreters : [], }, GoModule
-    => { name : "Go Module", r#type : "data", color : "#00ADD8", extensions : [], aliases
-    : ["go.mod", "go mod"], tm_scope : "go.mod", ace_mode : "text", language_id :
-    947461016u64, filenames : ["go.mod"], interpreters : [], }, GoTemplate => { name :
-    "Go Template", r#type : "markup", color : "#00ADD8", extensions : [".gohtml",
-    ".gotmpl", ".html.tmpl", ".tmpl", ".tpl"], aliases : ["gotmpl"], tm_scope :
-    "source.go-template", ace_mode : "text", language_id : 247918769u64, filenames :
-    ["_helpers.tpl"], interpreters : [], }, GoWorkspace => { name : "Go Workspace",
-    r#type : "data", color : "#00ADD8", extensions : [], aliases : ["go.work",
-    "go work"], tm_scope : "go.mod", ace_mode : "text", language_id : 934546256u64,
-    filenames : ["go.work"], interpreters : [], }, GodotResource => { name :
-    "Godot Resource", r#type : "data", color : "#355570", extensions : [".gdnlib",
+    codemirror_mime_type : "text/x-properties", filenames : [".gitconfig", ".gitmodules",
+    ".tgitconfig", "config.worktree"], group : "INI", interpreters : [], },
+    GitRevisionList => { name : "Git Revision List", r#type : "data", color : "#F44D27",
+    extensions : [], aliases : ["Git Blame Ignore Revs"], tm_scope :
+    "source.git-revlist", ace_mode : "text", language_id : 461881235u64, filenames :
+    [".git-blame-ignore-revs"], interpreters : [], }, Gleam => { name : "Gleam", r#type :
+    "programming", color : "#ffaff3", extensions : [".gleam"], aliases : [], tm_scope :
+    "source.gleam", ace_mode : "text", language_id : 1054258749u64, filenames : [],
+    interpreters : [], }, GlimmerJS => { name : "Glimmer JS", r#type : "programming",
+    color : "#F5835F", extensions : [".gjs"], aliases : ["gjs"], tm_scope : "source.gjs",
+    ace_mode : "javascript", language_id : 5523150u64, filenames : [], group :
+    "JavaScript", interpreters : [], }, GlimmerTS => { name : "Glimmer TS", r#type :
+    "programming", color : "#3178c6", extensions : [".gts"], aliases : ["gts"], tm_scope
+    : "source.gts", ace_mode : "typescript", language_id : 95110458u64, filenames : [],
+    group : "TypeScript", interpreters : [], }, Glyph => { name : "Glyph", r#type :
+    "programming", color : "#c1ac7f", extensions : [".glf"], aliases : [], tm_scope :
+    "source.tcl", ace_mode : "tcl", language_id : 130u64, codemirror_mode : "tcl",
+    codemirror_mime_type : "text/x-tcl", filenames : [], interpreters : [], },
+    GlyphBitmapDistributionFormat => { name : "Glyph Bitmap Distribution Format", r#type
+    : "data", color : "#000000", extensions : [".bdf"], aliases : [], tm_scope :
+    "source.bdf", ace_mode : "text", language_id : 997665271u64, filenames : [],
+    interpreters : [], }, Gnuplot => { name : "Gnuplot", r#type : "programming", color :
+    "#f0a9f0", extensions : [".gp", ".gnu", ".gnuplot", ".p", ".plot", ".plt"], aliases :
+    [], tm_scope : "source.gnuplot", ace_mode : "text", language_id : 131u64, filenames :
+    [], interpreters : ["gnuplot"], }, Go => { name : "Go", r#type : "programming", color
+    : "#00ADD8", extensions : [".go"], aliases : ["golang"], tm_scope : "source.go",
+    ace_mode : "golang", language_id : 132u64, codemirror_mode : "go",
+    codemirror_mime_type : "text/x-go", filenames : [], interpreters : [], }, GoChecksums
+    => { name : "Go Checksums", r#type : "data", color : "#00ADD8", extensions : [],
+    aliases : ["go.sum", "go sum", "go.work.sum", "go work sum"], tm_scope : "go.sum",
+    ace_mode : "text", language_id : 1054391671u64, filenames : ["go.sum",
+    "go.work.sum"], interpreters : [], }, GoModule => { name : "Go Module", r#type :
+    "data", color : "#00ADD8", extensions : [], aliases : ["go.mod", "go mod"], tm_scope
+    : "go.mod", ace_mode : "text", language_id : 947461016u64, filenames : ["go.mod"],
+    interpreters : [], }, GoTemplate => { name : "Go Template", r#type : "markup", color
+    : "#00ADD8", extensions : [".gohtml", ".gotmpl", ".html.tmpl", ".tmpl", ".tpl"],
+    aliases : ["gotmpl"], tm_scope : "source.go-template", ace_mode : "text", language_id
+    : 247918769u64, filenames : ["_helpers.tpl"], interpreters : [], }, GoWorkspace => {
+    name : "Go Workspace", r#type : "data", color : "#00ADD8", extensions : [], aliases :
+    ["go.work", "go work"], tm_scope : "go.mod", ace_mode : "text", language_id :
+    934546256u64, filenames : ["go.work"], interpreters : [], }, GodotResource => { name
+    : "Godot Resource", r#type : "data", color : "#355570", extensions : [".gdnlib",
     ".gdns", ".tres", ".tscn"], aliases : [], tm_scope : "source.gdresource", ace_mode :
     "text", language_id : 738107771u64, filenames : ["project.godot"], interpreters : [],
     }, Golo => { name : "Golo", r#type : "programming", color : "#88562A", extensions :
@@ -986,53 +986,53 @@ define_languages! {
     color : "#000000", extensions : [".gitignore"], aliases : ["ignore", "gitignore",
     "git-ignore"], tm_scope : "source.gitignore", ace_mode : "gitignore", language_id :
     74444240u64, codemirror_mode : "shell", codemirror_mime_type : "text/x-sh", filenames
-    : [".atomignore", ".babelignore", ".bzrignore", ".coffeelintignore", ".cvsignore",
-    ".dockerignore", ".easignore", ".eleventyignore", ".eslint-ignore", ".eslintignore",
-    ".gitignore", ".ignore", ".markdownlintignore", ".nodemonignore", ".npmignore",
-    ".prettierignore", ".stylelintignore", ".vercelignore", ".vscodeignore",
-    "gitignore-global", "gitignore_global"], interpreters : [], }, ImageJMacro => { name
-    : "ImageJ Macro", r#type : "programming", color : "#99AAFF", extensions : [".ijm"],
-    aliases : ["ijm"], tm_scope : "none", ace_mode : "text", language_id : 575143428u64,
-    filenames : [], interpreters : [], }, Imba => { name : "Imba", r#type :
-    "programming", color : "#16cec6", extensions : [".imba"], aliases : [], tm_scope :
-    "source.imba", ace_mode : "text", language_id : 1057618448u64, filenames : [],
-    interpreters : [], }, Inform7 => { name : "Inform 7", r#type : "programming", color :
-    "#000000", extensions : [".ni", ".i7x"], aliases : ["i7", "inform7"], tm_scope :
-    "source.inform7", ace_mode : "text", language_id : 166u64, wrap : true, filenames :
-    [], interpreters : [], }, Ink => { name : "Ink", r#type : "programming", color :
-    "#000000", extensions : [".ink"], aliases : [], tm_scope : "source.ink", ace_mode :
-    "text", language_id : 838252715u64, wrap : true, filenames : [], interpreters : [],
-    }, InnoSetup => { name : "Inno Setup", r#type : "programming", color : "#264b99",
-    extensions : [".iss", ".isl"], aliases : [], tm_scope : "source.inno", ace_mode :
-    "text", language_id : 167u64, filenames : [], interpreters : [], }, Io => { name :
-    "Io", r#type : "programming", color : "#a9188d", extensions : [".io"], aliases : [],
-    tm_scope : "source.io", ace_mode : "io", language_id : 168u64, filenames : [],
-    interpreters : ["io"], }, Ioke => { name : "Ioke", r#type : "programming", color :
-    "#078193", extensions : [".ik"], aliases : [], tm_scope : "source.ioke", ace_mode :
-    "text", language_id : 169u64, filenames : [], interpreters : ["ioke"], }, Isabelle =>
-    { name : "Isabelle", r#type : "programming", color : "#FEFE00", extensions :
-    [".thy"], aliases : [], tm_scope : "source.isabelle.theory", ace_mode : "text",
-    language_id : 170u64, filenames : [], interpreters : [], }, IsabelleROOT => { name :
-    "Isabelle ROOT", r#type : "programming", color : "#FEFE00", extensions : [], aliases
-    : [], tm_scope : "source.isabelle.root", ace_mode : "text", language_id : 171u64,
-    filenames : ["ROOT"], group : "Isabelle", interpreters : [], }, J => { name : "J",
-    r#type : "programming", color : "#9EEDFF", extensions : [".ijs"], aliases : [],
-    tm_scope : "source.j", ace_mode : "text", language_id : 172u64, filenames : [],
-    interpreters : ["jconsole"], }, JARManifest => { name : "JAR Manifest", r#type :
-    "data", color : "#b07219", extensions : [], aliases : [], tm_scope : "source.yaml",
-    ace_mode : "text", language_id : 447261135u64, filenames : ["MANIFEST.MF"],
-    interpreters : [], }, JCL => { name : "JCL", r#type : "programming", color :
-    "#d90e09", extensions : [".jcl"], aliases : [], tm_scope : "source.jcl", ace_mode :
-    "text", language_id : 316620079u64, filenames : [], interpreters : [], }, JFlex => {
-    name : "JFlex", r#type : "programming", color : "#DBCA00", extensions : [".flex",
-    ".jflex"], aliases : [], tm_scope : "source.jflex", ace_mode : "text", language_id :
-    173u64, filenames : [], group : "Lex", interpreters : [], }, JSON => { name : "JSON",
-    r#type : "data", color : "#292929", extensions : [".json", ".4DForm", ".4DProject",
-    ".avsc", ".geojson", ".gltf", ".har", ".ice", ".JSON-tmLanguage", ".json.example",
-    ".jsonl", ".mcmeta", ".sarif", ".slnlaunch", ".tact", ".tfstate", ".tfstate.backup",
-    ".topojson", ".webapp", ".webmanifest", ".yy", ".yyp"], aliases : ["geojson",
-    "jsonl", "sarif", "topojson"], tm_scope : "source.json", ace_mode : "json",
-    language_id : 174u64, codemirror_mode : "javascript", codemirror_mime_type :
+    : [".atomignore", ".babelignore", ".bzrignore", ".ckignore", ".coffeelintignore",
+    ".cvsignore", ".dockerignore", ".easignore", ".eleventyignore", ".eslint-ignore",
+    ".eslintignore", ".gitignore", ".ignore", ".markdownlintignore", ".nodemonignore",
+    ".npmignore", ".prettierignore", ".rgignore", ".stylelintignore", ".vercelignore",
+    ".vscodeignore", "gitignore-global", "gitignore_global"], interpreters : [], },
+    ImageJMacro => { name : "ImageJ Macro", r#type : "programming", color : "#99AAFF",
+    extensions : [".ijm"], aliases : ["ijm"], tm_scope : "none", ace_mode : "text",
+    language_id : 575143428u64, filenames : [], interpreters : [], }, Imba => { name :
+    "Imba", r#type : "programming", color : "#16cec6", extensions : [".imba"], aliases :
+    [], tm_scope : "source.imba", ace_mode : "text", language_id : 1057618448u64,
+    filenames : [], interpreters : [], }, Inform7 => { name : "Inform 7", r#type :
+    "programming", color : "#000000", extensions : [".ni", ".i7x"], aliases : ["i7",
+    "inform7"], tm_scope : "source.inform7", ace_mode : "text", language_id : 166u64,
+    wrap : true, filenames : [], interpreters : [], }, Ink => { name : "Ink", r#type :
+    "programming", color : "#000000", extensions : [".ink"], aliases : [], tm_scope :
+    "source.ink", ace_mode : "text", language_id : 838252715u64, wrap : true, filenames :
+    [], interpreters : [], }, InnoSetup => { name : "Inno Setup", r#type : "programming",
+    color : "#264b99", extensions : [".iss", ".isl"], aliases : [], tm_scope :
+    "source.inno", ace_mode : "text", language_id : 167u64, filenames : [], interpreters
+    : [], }, Io => { name : "Io", r#type : "programming", color : "#a9188d", extensions :
+    [".io"], aliases : [], tm_scope : "source.io", ace_mode : "io", language_id : 168u64,
+    filenames : [], interpreters : ["io"], }, Ioke => { name : "Ioke", r#type :
+    "programming", color : "#078193", extensions : [".ik"], aliases : [], tm_scope :
+    "source.ioke", ace_mode : "text", language_id : 169u64, filenames : [], interpreters
+    : ["ioke"], }, Isabelle => { name : "Isabelle", r#type : "programming", color :
+    "#FEFE00", extensions : [".thy"], aliases : [], tm_scope : "source.isabelle.theory",
+    ace_mode : "text", language_id : 170u64, filenames : [], interpreters : [], },
+    IsabelleROOT => { name : "Isabelle ROOT", r#type : "programming", color : "#FEFE00",
+    extensions : [], aliases : [], tm_scope : "source.isabelle.root", ace_mode : "text",
+    language_id : 171u64, filenames : ["ROOT"], group : "Isabelle", interpreters : [], },
+    J => { name : "J", r#type : "programming", color : "#9EEDFF", extensions : [".ijs"],
+    aliases : [], tm_scope : "source.j", ace_mode : "text", language_id : 172u64,
+    filenames : [], interpreters : ["jconsole"], }, JARManifest => { name :
+    "JAR Manifest", r#type : "data", color : "#b07219", extensions : [], aliases : [],
+    tm_scope : "source.yaml", ace_mode : "text", language_id : 447261135u64, filenames :
+    ["MANIFEST.MF"], interpreters : [], }, JCL => { name : "JCL", r#type : "programming",
+    color : "#d90e09", extensions : [".jcl"], aliases : [], tm_scope : "source.jcl",
+    ace_mode : "text", language_id : 316620079u64, filenames : [], interpreters : [], },
+    JFlex => { name : "JFlex", r#type : "programming", color : "#DBCA00", extensions :
+    [".flex", ".jflex"], aliases : [], tm_scope : "source.jflex", ace_mode : "text",
+    language_id : 173u64, filenames : [], group : "Lex", interpreters : [], }, JSON => {
+    name : "JSON", r#type : "data", color : "#292929", extensions : [".json", ".4DForm",
+    ".4DProject", ".avsc", ".geojson", ".gltf", ".har", ".ice", ".JSON-tmLanguage",
+    ".json.example", ".jsonl", ".mcmeta", ".sarif", ".slnlaunch", ".tact", ".tfstate",
+    ".tfstate.backup", ".topojson", ".webapp", ".webmanifest", ".yy", ".yyp"], aliases :
+    ["geojson", "jsonl", "sarif", "topojson"], tm_scope : "source.json", ace_mode :
+    "json", language_id : 174u64, codemirror_mode : "javascript", codemirror_mime_type :
     "application/json", filenames : [".all-contributorsrc", ".arcconfig",
     ".auto-changelog", ".c8rc", ".htmlhintrc", ".imgbotconfig", ".nycrc", ".tern-config",
     ".tern-project", ".watchmanconfig", "MODULE.bazel.lock", "Package.resolved",
