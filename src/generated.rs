@@ -207,24 +207,27 @@ define_languages! {
     interpreters : [], }, BlitzMax => { name : "BlitzMax", r#type : "programming", color
     : "#cd6400", extensions : [".bmx"], aliases : ["bmax"], tm_scope : "source.blitzmax",
     ace_mode : "text", language_id : 35u64, filenames : [], interpreters : [], },
-    Bluespec => { name : "Bluespec", r#type : "programming", color : "#12223c",
-    extensions : [".bsv"], aliases : ["bluespec bsv", "bsv"], tm_scope : "source.bsv",
-    ace_mode : "verilog", language_id : 36u64, codemirror_mode : "verilog",
-    codemirror_mime_type : "text/x-systemverilog", filenames : [], interpreters : [], },
-    BluespecBH => { name : "Bluespec BH", r#type : "programming", color : "#12223c",
-    extensions : [".bs"], aliases : ["bh", "bluespec classic"], tm_scope : "source.bh",
-    ace_mode : "haskell", language_id : 641580358u64, codemirror_mode : "haskell",
-    codemirror_mime_type : "text/x-haskell", filenames : [], group : "Bluespec",
-    interpreters : [], }, Boo => { name : "Boo", r#type : "programming", color :
-    "#d4bec1", extensions : [".boo"], aliases : [], tm_scope : "source.boo", ace_mode :
-    "text", language_id : 37u64, filenames : [], interpreters : [], }, Boogie => { name :
-    "Boogie", r#type : "programming", color : "#c80fa0", extensions : [".bpl"], aliases :
-    [], tm_scope : "source.boogie", ace_mode : "text", language_id : 955017407u64,
-    filenames : [], interpreters : ["boogie"], }, Brainfuck => { name : "Brainfuck",
-    r#type : "programming", color : "#2F2530", extensions : [".b", ".bf"], aliases : [],
-    tm_scope : "source.bf", ace_mode : "text", language_id : 38u64, codemirror_mode :
-    "brainfuck", codemirror_mime_type : "text/x-brainfuck", filenames : [], interpreters
-    : [], }, BrighterScript => { name : "BrighterScript", r#type : "programming", color :
+    Blueprint => { name : "Blueprint", r#type : "markup", color : "#3584E4", extensions :
+    [".blp"], aliases : ["blp"], tm_scope : "source.blueprint", ace_mode : "text",
+    language_id : 765545512u64, filenames : [], interpreters : [], }, Bluespec => { name
+    : "Bluespec", r#type : "programming", color : "#12223c", extensions : [".bsv"],
+    aliases : ["bluespec bsv", "bsv"], tm_scope : "source.bsv", ace_mode : "verilog",
+    language_id : 36u64, codemirror_mode : "verilog", codemirror_mime_type :
+    "text/x-systemverilog", filenames : [], interpreters : [], }, BluespecBH => { name :
+    "Bluespec BH", r#type : "programming", color : "#12223c", extensions : [".bs"],
+    aliases : ["bh", "bluespec classic"], tm_scope : "source.bh", ace_mode : "haskell",
+    language_id : 641580358u64, codemirror_mode : "haskell", codemirror_mime_type :
+    "text/x-haskell", filenames : [], group : "Bluespec", interpreters : [], }, Boo => {
+    name : "Boo", r#type : "programming", color : "#d4bec1", extensions : [".boo"],
+    aliases : [], tm_scope : "source.boo", ace_mode : "text", language_id : 37u64,
+    filenames : [], interpreters : [], }, Boogie => { name : "Boogie", r#type :
+    "programming", color : "#c80fa0", extensions : [".bpl"], aliases : [], tm_scope :
+    "source.boogie", ace_mode : "text", language_id : 955017407u64, filenames : [],
+    interpreters : ["boogie"], }, Brainfuck => { name : "Brainfuck", r#type :
+    "programming", color : "#2F2530", extensions : [".b", ".bf"], aliases : [], tm_scope
+    : "source.bf", ace_mode : "text", language_id : 38u64, codemirror_mode : "brainfuck",
+    codemirror_mime_type : "text/x-brainfuck", filenames : [], interpreters : [], },
+    BrighterScript => { name : "BrighterScript", r#type : "programming", color :
     "#66AABB", extensions : [".bs"], aliases : [], tm_scope : "source.brs", ace_mode :
     "text", language_id : 943571030u64, filenames : [], interpreters : [], },
     Brightscript => { name : "Brightscript", r#type : "programming", color : "#662D91",
@@ -2791,14 +2794,15 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     Befunge::info, Brainfuck::info, HyPhy::info], ".bi" => & [FreeBASIC::info,
     QuickBASIC::info], ".bib" => & [BibTeX::info], ".bibtex" => & [BibTeX::info],
     ".bicep" => & [Bicep::info], ".bicepparam" => & [Bicep::info], ".bison" => &
-    [Bison::info], ".blade" => & [Blade::info], ".blade.php" => & [Blade::info], ".bmx"
-    => & [BlitzMax::info], ".bones" => & [JavaScript::info], ".boo" => & [Boo::info],
-    ".boot" => & [Clojure::info], ".bpl" => & [Boogie::info], ".bqn" => & [BQN::info],
-    ".brd" => & [Eagle::info, KiCadLegacyLayout::info], ".bro" => & [Zeek::info], ".brs"
-    => & [Brightscript::info], ".bru" => & [Bru::info], ".bs" => & [Bikeshed::info,
-    BluespecBH::info, BrighterScript::info], ".bsl" => & [_1CEnterprise::info], ".bst" =>
-    & [BibTeXStyle::info, BuildStream::info], ".bsv" => & [Bluespec::info], ".builder" =>
-    & [Ruby::info], ".builds" => & [XML::info], ".bzl" => & [Starlark::info], ".c" => &
+    [Bison::info], ".blade" => & [Blade::info], ".blade.php" => & [Blade::info], ".blp"
+    => & [Blueprint::info], ".bmx" => & [BlitzMax::info], ".bones" => &
+    [JavaScript::info], ".boo" => & [Boo::info], ".boot" => & [Clojure::info], ".bpl" =>
+    & [Boogie::info], ".bqn" => & [BQN::info], ".brd" => & [Eagle::info,
+    KiCadLegacyLayout::info], ".bro" => & [Zeek::info], ".brs" => & [Brightscript::info],
+    ".bru" => & [Bru::info], ".bs" => & [Bikeshed::info, BluespecBH::info,
+    BrighterScript::info], ".bsl" => & [_1CEnterprise::info], ".bst" => &
+    [BibTeXStyle::info, BuildStream::info], ".bsv" => & [Bluespec::info], ".builder" => &
+    [Ruby::info], ".builds" => & [XML::info], ".bzl" => & [Starlark::info], ".c" => &
     [C::info], ".c++" => & [Cpp::info], ".c++-objdump" => & [CppObjDump::info],
     ".c++objdump" => & [CppObjDump::info], ".c-objdump" => & [CObjDump::info], ".c3" => &
     [C3::info], ".cabal" => & [CabalConfig::info], ".caddyfile" => & [Caddyfile::info],
