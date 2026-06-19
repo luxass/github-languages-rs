@@ -245,7 +245,7 @@ define_languages! {
     ".cats", ".h", ".h.in", ".idc"], aliases : [], tm_scope : "source.c", ace_mode :
     "c_cpp", language_id : 41u64, codemirror_mode : "clike", codemirror_mime_type :
     "text/x-csrc", filenames : [], interpreters : ["tcc"], }, Csharp => { name : "C#",
-    r#type : "programming", color : "#178600", extensions : [".cs", ".cake", ".cs.pp",
+    r#type : "programming", color : "#7355dd", extensions : [".cs", ".cake", ".cs.pp",
     ".csx", ".linq"], aliases : ["csharp", "cake", "cakescript"], tm_scope : "source.cs",
     ace_mode : "csharp", language_id : 42u64, codemirror_mode : "clike",
     codemirror_mime_type : "text/x-csharp", filenames : [], interpreters : [], }, Cpp =>
