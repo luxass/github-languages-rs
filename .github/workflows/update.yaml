@@ -34,13 +34,13 @@ jobs:
           permission-contents: write
           permission-pull-requests: write
 
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
         with:
           persist-credentials: false
 
       - name: turn yaml to json (old)
         id: old-languages-json
-        uses: mikefarah/yq@0f4fb8d35ec1a939d78dd6862f494d19ec589f19 # v4.52.5
+        uses: mikefarah/yq@1b9b4ac5187171d2e5e3129be0cfa827c7f9d53d # v4.53.3
         with:
           cmd: yq -p yaml -o json languages.yml > languages.json
 
@@ -58,7 +58,7 @@ jobs:
 
       - name: turn yaml to json
         id: languages-json
-        uses: mikefarah/yq@0f4fb8d35ec1a939d78dd6862f494d19ec589f19 # v4.52.5
+        uses: mikefarah/yq@1b9b4ac5187171d2e5e3129be0cfa827c7f9d53d # v4.53.3
         with:
           cmd: yq -p yaml -o json languages.yml > languages.json
 
