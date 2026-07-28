@@ -329,19 +329,18 @@ define_languages! {
     color : "#c42727", extensions : [".capnp"], aliases : [], tm_scope : "source.capnp",
     ace_mode : "text", language_id : 52u64, filenames : [], interpreters : [], }, Carbon
     => { name : "Carbon", r#type : "programming", color : "#222222", extensions :
-    [".carbon"], aliases : [], tm_scope : "source.v", ace_mode : "golang", language_id :
-    55627273u64, codemirror_mode : "go", codemirror_mime_type : "text/x-go", filenames :
-    [], interpreters : [], }, CartoCSS => { name : "CartoCSS", r#type : "programming",
-    color : "#000000", extensions : [".mss"], aliases : ["Carto"], tm_scope :
-    "source.css.mss", ace_mode : "text", language_id : 53u64, filenames : [],
-    interpreters : [], }, Ceylon => { name : "Ceylon", r#type : "programming", color :
-    "#dfa535", extensions : [".ceylon"], aliases : [], tm_scope : "source.ceylon",
-    ace_mode : "text", language_id : 54u64, filenames : [], interpreters : [], }, Chapel
-    => { name : "Chapel", r#type : "programming", color : "#8dc63f", extensions :
-    [".chpl"], aliases : ["chpl"], tm_scope : "source.chapel", ace_mode : "text",
-    language_id : 55u64, filenames : [], interpreters : [], }, Charity => { name :
-    "Charity", r#type : "programming", color : "#000000", extensions : [".ch"], aliases :
-    [], tm_scope : "none", ace_mode : "text", language_id : 56u64, filenames : [],
+    [".carbon"], aliases : [], tm_scope : "source.carbon", ace_mode : "text", language_id
+    : 55627273u64, filenames : [], interpreters : [], }, CartoCSS => { name : "CartoCSS",
+    r#type : "programming", color : "#000000", extensions : [".mss"], aliases :
+    ["Carto"], tm_scope : "source.css.mss", ace_mode : "text", language_id : 53u64,
+    filenames : [], interpreters : [], }, Ceylon => { name : "Ceylon", r#type :
+    "programming", color : "#dfa535", extensions : [".ceylon"], aliases : [], tm_scope :
+    "source.ceylon", ace_mode : "text", language_id : 54u64, filenames : [], interpreters
+    : [], }, Chapel => { name : "Chapel", r#type : "programming", color : "#8dc63f",
+    extensions : [".chpl"], aliases : ["chpl"], tm_scope : "source.chapel", ace_mode :
+    "text", language_id : 55u64, filenames : [], interpreters : [], }, Charity => { name
+    : "Charity", r#type : "programming", color : "#000000", extensions : [".ch"], aliases
+    : [], tm_scope : "none", ace_mode : "text", language_id : 56u64, filenames : [],
     interpreters : [], }, Checksums => { name : "Checksums", r#type : "data", color :
     "#000000", extensions : [".crc32", ".md2", ".md4", ".md5", ".sha1", ".sha2",
     ".sha224", ".sha256", ".sha256sum", ".sha3", ".sha384", ".sha512"], aliases :
@@ -808,11 +807,15 @@ define_languages! {
     GlyphBitmapDistributionFormat => { name : "Glyph Bitmap Distribution Format", r#type
     : "data", color : "#000000", extensions : [".bdf"], aliases : [], tm_scope :
     "source.bdf", ace_mode : "text", language_id : 997665271u64, filenames : [],
-    interpreters : [], }, Gnuplot => { name : "Gnuplot", r#type : "programming", color :
-    "#f0a9f0", extensions : [".gp", ".gnu", ".gnuplot", ".p", ".plot", ".plt"], aliases :
-    [], tm_scope : "source.gnuplot", ace_mode : "text", language_id : 131u64, filenames :
-    [], interpreters : ["gnuplot"], }, Go => { name : "Go", r#type : "programming", color
-    : "#00ADD8", extensions : [".go"], aliases : ["golang"], tm_scope : "source.go",
+    interpreters : [], }, Gno => { name : "Gno", r#type : "programming", color :
+    "#226c57", extensions : [".gno"], aliases : ["gnolang"], tm_scope : "source.gno",
+    ace_mode : "golang", language_id : 279301301u64, codemirror_mode : "go",
+    codemirror_mime_type : "text/x-go", filenames : [], interpreters : [], }, Gnuplot =>
+    { name : "Gnuplot", r#type : "programming", color : "#f0a9f0", extensions : [".gp",
+    ".gnu", ".gnuplot", ".p", ".plot", ".plt"], aliases : [], tm_scope :
+    "source.gnuplot", ace_mode : "text", language_id : 131u64, filenames : [],
+    interpreters : ["gnuplot"], }, Go => { name : "Go", r#type : "programming", color :
+    "#00ADD8", extensions : [".go"], aliases : ["golang"], tm_scope : "source.go",
     ace_mode : "golang", language_id : 132u64, codemirror_mode : "go",
     codemirror_mime_type : "text/x-go", filenames : [], interpreters : [], }, GoChecksums
     => { name : "Go Checksums", r#type : "data", color : "#00ADD8", extensions : [],
@@ -1037,20 +1040,20 @@ define_languages! {
     ["geojson", "jsonl", "sarif", "topojson"], tm_scope : "source.json", ace_mode :
     "json", language_id : 174u64, codemirror_mode : "javascript", codemirror_mime_type :
     "application/json", filenames : [".all-contributorsrc", ".arcconfig",
-    ".auto-changelog", ".c8rc", ".htmlhintrc", ".imgbotconfig", ".nycrc", ".tern-config",
-    ".tern-project", ".watchmanconfig", "MODULE.bazel.lock", "Package.resolved",
-    "Pipfile.lock", "bun.lock", "composer.lock", "deno.lock", "flake.lock",
-    "mcmod.info"], interpreters : [], }, JSONWithComments => { name :
-    "JSON with Comments", r#type : "data", color : "#292929", extensions : [".jsonc",
-    ".code-snippets", ".code-workspace", ".sublime-build", ".sublime-color-scheme",
-    ".sublime-commands", ".sublime-completions", ".sublime-keymap", ".sublime-macro",
-    ".sublime-menu", ".sublime-mousemap", ".sublime-project", ".sublime-settings",
-    ".sublime-theme", ".sublime-workspace", ".sublime_metrics", ".sublime_session",
-    ".tsconfig.json"], aliases : ["jsonc"], tm_scope : "source.json.comments", ace_mode :
-    "javascript", language_id : 423u64, codemirror_mode : "javascript",
-    codemirror_mime_type : "text/javascript", filenames : [".babelrc",
-    ".devcontainer.json", ".eslintrc.json", ".jscsrc", ".jshintrc", ".jslintrc",
-    ".oxlintrc.json", ".swcrc", "api-extractor.json", "devcontainer.json",
+    ".auto-changelog", ".c8rc", ".htmlhintrc", ".imgbotconfig", ".nycrc",
+    ".secrets.baseline", ".tern-config", ".tern-project", ".watchmanconfig",
+    "MODULE.bazel.lock", "Package.resolved", "Pipfile.lock", "bun.lock", "composer.lock",
+    "deno.lock", "flake.lock", "mcmod.info"], interpreters : [], }, JSONWithComments => {
+    name : "JSON with Comments", r#type : "data", color : "#292929", extensions :
+    [".jsonc", ".code-snippets", ".code-workspace", ".sublime-build",
+    ".sublime-color-scheme", ".sublime-commands", ".sublime-completions",
+    ".sublime-keymap", ".sublime-macro", ".sublime-menu", ".sublime-mousemap",
+    ".sublime-project", ".sublime-settings", ".sublime-theme", ".sublime-workspace",
+    ".sublime_metrics", ".sublime_session", ".tsconfig.json"], aliases : ["jsonc"],
+    tm_scope : "source.json.comments", ace_mode : "javascript", language_id : 423u64,
+    codemirror_mode : "javascript", codemirror_mime_type : "text/javascript", filenames :
+    [".babelrc", ".devcontainer.json", ".eslintrc.json", ".jscsrc", ".jshintrc",
+    ".jslintrc", ".oxlintrc.json", ".swcrc", "api-extractor.json", "devcontainer.json",
     "jsconfig.json", "language-configuration.json", "tsconfig.json", "tslint.json"],
     group : "JSON", interpreters : [], }, JSON5 => { name : "JSON5", r#type : "data",
     color : "#267CB9", extensions : [".json5"], aliases : [], tm_scope : "source.js",
@@ -2925,62 +2928,62 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     ".glyphs" => & [OpenStepPropertyList::info], ".gmi" => & [Gemini::info], ".gml" => &
     [GameMakerLanguage::info, GerberImage::info, GraphModelingLanguage::info, XML::info],
     ".gms" => & [GAMS::info], ".gmx" => & [XML::info], ".gn" => & [GN::info], ".gni" => &
-    [GN::info], ".gnu" => & [Gnuplot::info], ".gnuplot" => & [Gnuplot::info], ".go" => &
-    [Go::info], ".god" => & [Ruby::info], ".gohtml" => & [GoTemplate::info], ".golo" => &
-    [Golo::info], ".gotmpl" => & [GoTemplate::info], ".gp" => & [Gnuplot::info], ".gpb"
-    => & [GerberImage::info], ".gpt" => & [GerberImage::info], ".gpx" => & [XML::info],
-    ".gql" => & [GraphQL::info], ".grace" => & [Grace::info], ".gradle" => &
-    [Gradle::info], ".gradle.kts" => & [GradleKotlinDSL::info], ".graphql" => &
-    [GraphQL::info], ".graphqls" => & [GraphQL::info], ".groovy" => & [Groovy::info],
-    ".grt" => & [Groovy::info], ".grxml" => & [XML::info], ".gs" => & [GLSL::info,
-    Genie::info, Gosu::info, JavaScript::info], ".gsc" => & [GSC::info], ".gsh" => &
-    [GSC::info], ".gshader" => & [GLSL::info], ".gsp" => & [GroovyServerPages::info],
-    ".gst" => & [Gosu::info, XML::info], ".gsx" => & [Gosu::info], ".gtkrc" => &
-    [GtkRC::info], ".gtl" => & [GerberImage::info], ".gto" => & [GerberImage::info],
-    ".gtp" => & [GerberImage::info], ".gtpl" => & [Groovy::info], ".gts" => &
-    [GerberImage::info, GlimmerTS::info], ".gv" => & [GraphvizDOT::info], ".gvy" => &
-    [Groovy::info], ".gyp" => & [Python::info], ".gypi" => & [Python::info], ".h" => &
-    [C::info, Cpp::info, ObjectiveC::info], ".h++" => & [Cpp::info], ".h.in" => &
-    [C::info], ".ha" => & [Hare::info], ".hack" => & [Hack::info], ".haml" => &
-    [Haml::info], ".haml.deface" => & [Haml::info], ".handlebars" => &
-    [Handlebars::info], ".har" => & [JSON::info], ".hats" => & [ATS::info], ".hb" => &
-    [Harbour::info], ".hbs" => & [Handlebars::info], ".hc" => & [HolyC::info], ".hcl" =>
-    & [HCL::info], ".heex" => & [HTMLpEEX::info], ".hh" => & [Cpp::info, Hack::info],
-    ".hhi" => & [Hack::info], ".hic" => & [Clojure::info], ".hip" => & [HIP::info],
-    ".hlean" => & [Lean::info], ".hlsl" => & [HLSL::info], ".hlsli" => & [HLSL::info],
-    ".hocon" => & [HOCON::info], ".hoon" => & [Hoon::info], ".hpp" => & [Cpp::info],
-    ".hqf" => & [SQF::info], ".hql" => & [HiveQL::info], ".hrl" => & [Erlang::info],
-    ".hs" => & [Haskell::info], ".hs-boot" => & [Haskell::info], ".hsc" => &
-    [Haskell::info], ".hta" => & [HTML::info], ".htm" => & [HTML::info], ".html" => &
-    [Ecmarkup::info, HTML::info], ".html.eex" => & [HTMLpEEX::info], ".html.hl" => &
-    [HTML::info], ".html.tmpl" => & [GoTemplate::info], ".http" => & [HTTP::info],
-    ".hurl" => & [Hurl::info], ".hx" => & [Haxe::info], ".hxml" => & [HXML::info],
-    ".hxsl" => & [Haxe::info], ".hxx" => & [Cpp::info], ".hy" => & [Hy::info], ".hzp" =>
-    & [XML::info], ".i" => & [Assembly::info, Motorola68KAssembly::info, SWIG::info],
-    ".i3" => & [Modula3::info], ".i7x" => & [Inform7::info], ".ical" => &
-    [ICalendar::info], ".ice" => & [JSON::info, Slice::info], ".iced" => &
-    [CoffeeScript::info], ".icl" => & [Clean::info], ".icls" => & [XML::info], ".ics" =>
-    & [ICalendar::info], ".idc" => & [C::info], ".idr" => & [Idris::info], ".ig" => &
-    [Modula3::info], ".ihlp" => & [Stata::info], ".ijm" => & [ImageJMacro::info], ".ijs"
-    => & [J::info], ".ik" => & [Ioke::info], ".il" => & [ILAssembly::info], ".ily" => &
-    [LilyPond::info], ".imba" => & [Imba::info], ".iml" => & [XML::info], ".inc" => &
-    [Assembly::info, BitBake::info, Cpp::info, HTML::info, Motorola68KAssembly::info,
-    NASL::info, PHP::info, POVRaySDL::info, Pascal::info, Pawn::info, SQL::info,
-    SourcePawn::info], ".ini" => & [INI::info], ".ink" => & [Ink::info], ".inl" => &
-    [Cpp::info], ".ino" => & [Cpp::info], ".ins" => & [TeX::info], ".intr" => &
-    [Dylan::info], ".io" => & [Io::info], ".iol" => & [Jolie::info], ".ipf" => &
-    [IGORPro::info], ".ipp" => & [Cpp::info], ".ipynb" => & [JupyterNotebook::info],
-    ".irclog" => & [IRCLog::info], ".isl" => & [InnoSetup::info], ".ispc" => &
-    [ISPC::info], ".iss" => & [InnoSetup::info], ".iuml" => & [PlantUML::info], ".ivy" =>
-    & [XML::info], ".ixx" => & [Cpp::info], ".j" => & [Jasmin::info, ObjectiveJ::info],
-    ".j2" => & [Jinja::info], ".jac" => & [Jac::info], ".jade" => & [Pug::info], ".jai"
-    => & [Jai::info], ".jake" => & [JavaScript::info], ".janet" => & [Janet::info],
-    ".jav" => & [Java::info], ".java" => & [Java::info], ".javascript" => &
-    [JavaScript::info], ".jbuilder" => & [Ruby::info], ".jcl" => & [JCL::info], ".jelly"
-    => & [XML::info], ".jflex" => & [JFlex::info], ".jinja" => & [Jinja::info], ".jinja2"
-    => & [Jinja::info], ".jison" => & [Jison::info], ".jisonlex" => & [JisonLex::info],
-    ".jl" => & [Julia::info], ".jq" => & [JSONiq::info, Jq::info], ".js" => &
-    [JavaScript::info], ".js.erb" => & [JavaScriptpERB::info], ".jsb" => &
+    [GN::info], ".gno" => & [Gno::info], ".gnu" => & [Gnuplot::info], ".gnuplot" => &
+    [Gnuplot::info], ".go" => & [Go::info], ".god" => & [Ruby::info], ".gohtml" => &
+    [GoTemplate::info], ".golo" => & [Golo::info], ".gotmpl" => & [GoTemplate::info],
+    ".gp" => & [Gnuplot::info], ".gpb" => & [GerberImage::info], ".gpt" => &
+    [GerberImage::info], ".gpx" => & [XML::info], ".gql" => & [GraphQL::info], ".grace"
+    => & [Grace::info], ".gradle" => & [Gradle::info], ".gradle.kts" => &
+    [GradleKotlinDSL::info], ".graphql" => & [GraphQL::info], ".graphqls" => &
+    [GraphQL::info], ".groovy" => & [Groovy::info], ".grt" => & [Groovy::info], ".grxml"
+    => & [XML::info], ".gs" => & [GLSL::info, Genie::info, Gosu::info, JavaScript::info],
+    ".gsc" => & [GSC::info], ".gsh" => & [GSC::info], ".gshader" => & [GLSL::info],
+    ".gsp" => & [GroovyServerPages::info], ".gst" => & [Gosu::info, XML::info], ".gsx" =>
+    & [Gosu::info], ".gtkrc" => & [GtkRC::info], ".gtl" => & [GerberImage::info], ".gto"
+    => & [GerberImage::info], ".gtp" => & [GerberImage::info], ".gtpl" => &
+    [Groovy::info], ".gts" => & [GerberImage::info, GlimmerTS::info], ".gv" => &
+    [GraphvizDOT::info], ".gvy" => & [Groovy::info], ".gyp" => & [Python::info], ".gypi"
+    => & [Python::info], ".h" => & [C::info, Cpp::info, ObjectiveC::info], ".h++" => &
+    [Cpp::info], ".h.in" => & [C::info], ".ha" => & [Hare::info], ".hack" => &
+    [Hack::info], ".haml" => & [Haml::info], ".haml.deface" => & [Haml::info],
+    ".handlebars" => & [Handlebars::info], ".har" => & [JSON::info], ".hats" => &
+    [ATS::info], ".hb" => & [Harbour::info], ".hbs" => & [Handlebars::info], ".hc" => &
+    [HolyC::info], ".hcl" => & [HCL::info], ".heex" => & [HTMLpEEX::info], ".hh" => &
+    [Cpp::info, Hack::info], ".hhi" => & [Hack::info], ".hic" => & [Clojure::info],
+    ".hip" => & [HIP::info], ".hlean" => & [Lean::info], ".hlsl" => & [HLSL::info],
+    ".hlsli" => & [HLSL::info], ".hocon" => & [HOCON::info], ".hoon" => & [Hoon::info],
+    ".hpp" => & [Cpp::info], ".hqf" => & [SQF::info], ".hql" => & [HiveQL::info], ".hrl"
+    => & [Erlang::info], ".hs" => & [Haskell::info], ".hs-boot" => & [Haskell::info],
+    ".hsc" => & [Haskell::info], ".hta" => & [HTML::info], ".htm" => & [HTML::info],
+    ".html" => & [Ecmarkup::info, HTML::info], ".html.eex" => & [HTMLpEEX::info],
+    ".html.hl" => & [HTML::info], ".html.tmpl" => & [GoTemplate::info], ".http" => &
+    [HTTP::info], ".hurl" => & [Hurl::info], ".hx" => & [Haxe::info], ".hxml" => &
+    [HXML::info], ".hxsl" => & [Haxe::info], ".hxx" => & [Cpp::info], ".hy" => &
+    [Hy::info], ".hzp" => & [XML::info], ".i" => & [Assembly::info,
+    Motorola68KAssembly::info, SWIG::info], ".i3" => & [Modula3::info], ".i7x" => &
+    [Inform7::info], ".ical" => & [ICalendar::info], ".ice" => & [JSON::info,
+    Slice::info], ".iced" => & [CoffeeScript::info], ".icl" => & [Clean::info], ".icls"
+    => & [XML::info], ".ics" => & [ICalendar::info], ".idc" => & [C::info], ".idr" => &
+    [Idris::info], ".ig" => & [Modula3::info], ".ihlp" => & [Stata::info], ".ijm" => &
+    [ImageJMacro::info], ".ijs" => & [J::info], ".ik" => & [Ioke::info], ".il" => &
+    [ILAssembly::info], ".ily" => & [LilyPond::info], ".imba" => & [Imba::info], ".iml"
+    => & [XML::info], ".inc" => & [Assembly::info, BitBake::info, Cpp::info, HTML::info,
+    Motorola68KAssembly::info, NASL::info, PHP::info, POVRaySDL::info, Pascal::info,
+    Pawn::info, SQL::info, SourcePawn::info], ".ini" => & [INI::info], ".ink" => &
+    [Ink::info], ".inl" => & [Cpp::info], ".ino" => & [Cpp::info], ".ins" => &
+    [TeX::info], ".intr" => & [Dylan::info], ".io" => & [Io::info], ".iol" => &
+    [Jolie::info], ".ipf" => & [IGORPro::info], ".ipp" => & [Cpp::info], ".ipynb" => &
+    [JupyterNotebook::info], ".irclog" => & [IRCLog::info], ".isl" => &
+    [InnoSetup::info], ".ispc" => & [ISPC::info], ".iss" => & [InnoSetup::info], ".iuml"
+    => & [PlantUML::info], ".ivy" => & [XML::info], ".ixx" => & [Cpp::info], ".j" => &
+    [Jasmin::info, ObjectiveJ::info], ".j2" => & [Jinja::info], ".jac" => & [Jac::info],
+    ".jade" => & [Pug::info], ".jai" => & [Jai::info], ".jake" => & [JavaScript::info],
+    ".janet" => & [Janet::info], ".jav" => & [Java::info], ".java" => & [Java::info],
+    ".javascript" => & [JavaScript::info], ".jbuilder" => & [Ruby::info], ".jcl" => &
+    [JCL::info], ".jelly" => & [XML::info], ".jflex" => & [JFlex::info], ".jinja" => &
+    [Jinja::info], ".jinja2" => & [Jinja::info], ".jison" => & [Jison::info], ".jisonlex"
+    => & [JisonLex::info], ".jl" => & [Julia::info], ".jq" => & [JSONiq::info, Jq::info],
+    ".js" => & [JavaScript::info], ".js.erb" => & [JavaScriptpERB::info], ".jsb" => &
     [JavaScript::info], ".jscad" => & [JavaScript::info], ".jsfl" => &
     [JavaScript::info], ".jsh" => & [Java::info], ".jslib" => & [JavaScript::info],
     ".jsm" => & [JavaScript::info], ".json" => & [JSON::info, OASv2Json::info,
