@@ -650,14 +650,17 @@ define_languages! {
     tm_scope : "source.firrtl", ace_mode : "text", language_id : 906694254u64, filenames
     : [], interpreters : [], }, FLUX => { name : "FLUX", r#type : "programming", color :
     "#88ccff", extensions : [".fx", ".flux"], aliases : [], tm_scope : "none", ace_mode :
-    "text", language_id : 106u64, filenames : [], interpreters : [], }, Factor => { name
-    : "Factor", r#type : "programming", color : "#636746", extensions : [".factor"],
-    aliases : [], tm_scope : "source.factor", ace_mode : "text", language_id : 108u64,
-    codemirror_mode : "factor", codemirror_mime_type : "text/x-factor", filenames :
-    [".factor-boot-rc", ".factor-rc"], interpreters : [], }, Fancy => { name : "Fancy",
-    r#type : "programming", color : "#7b9db4", extensions : [".fy", ".fancypack"],
-    aliases : [], tm_scope : "source.fancy", ace_mode : "text", language_id : 109u64,
-    filenames : ["Fakefile"], interpreters : [], }, Fantom => { name : "Fantom", r#type :
+    "text", language_id : 106u64, filenames : [], interpreters : [], }, FPP => { name :
+    "FPP", r#type : "programming", color : "#d37327", extensions : [".fpp", ".fppi"],
+    aliases : [], tm_scope : "source.fpp", ace_mode : "text", language_id : 252360067u64,
+    filenames : [], interpreters : [], }, Factor => { name : "Factor", r#type :
+    "programming", color : "#636746", extensions : [".factor"], aliases : [], tm_scope :
+    "source.factor", ace_mode : "text", language_id : 108u64, codemirror_mode : "factor",
+    codemirror_mime_type : "text/x-factor", filenames : [".factor-boot-rc",
+    ".factor-rc"], interpreters : [], }, Fancy => { name : "Fancy", r#type :
+    "programming", color : "#7b9db4", extensions : [".fy", ".fancypack"], aliases : [],
+    tm_scope : "source.fancy", ace_mode : "text", language_id : 109u64, filenames :
+    ["Fakefile"], interpreters : [], }, Fantom => { name : "Fantom", r#type :
     "programming", color : "#14253c", extensions : [".fan"], aliases : [], tm_scope :
     "source.fan", ace_mode : "text", language_id : 110u64, filenames : [], interpreters :
     [], }, Faust => { name : "Faust", r#type : "programming", color : "#c37240",
@@ -1893,41 +1896,45 @@ define_languages! {
     filenames : ["m3makefile", "m3overrides"], interpreters : [], }, QuakeC => { name :
     "QuakeC", r#type : "programming", color : "#975777", extensions : [".qc"], aliases :
     [], tm_scope : "source.quakec", ace_mode : "text", language_id : 472308069u64,
-    filenames : [], interpreters : [], }, QuickBASIC => { name : "QuickBASIC", r#type :
-    "programming", color : "#008080", extensions : [".bas", ".bi"], aliases : ["qb",
-    "qbasic", "qb64", "classic qbasic", "classic quickbasic"], tm_scope : "source.QB64",
-    ace_mode : "text", language_id : 593107205u64, codemirror_mode : "vb",
-    codemirror_mime_type : "text/x-vb", filenames : [], interpreters : [], }, Quint => {
-    name : "Quint", r#type : "programming", color : "#9d6ce5", extensions : [".qnt"],
-    aliases : [], tm_scope : "source.quint", ace_mode : "text", language_id :
-    562056483u64, filenames : [], interpreters : [], }, R => { name : "R", r#type :
-    "programming", color : "#198CE7", extensions : [".r", ".rd", ".rhistory", ".rsx"],
-    aliases : ["Rscript", "splus"], tm_scope : "source.r", ace_mode : "r", language_id :
-    307u64, codemirror_mode : "r", codemirror_mime_type : "text/x-rsrc", filenames :
-    [".Rapp.history", ".Rhistory", ".Rprofile", "expr-dist"], interpreters : ["Rscript"],
-    }, RAML => { name : "RAML", r#type : "markup", color : "#77d9fb", extensions :
-    [".raml"], aliases : [], tm_scope : "source.yaml", ace_mode : "yaml", language_id :
-    308u64, codemirror_mode : "yaml", codemirror_mime_type : "text/x-yaml", filenames :
-    [], interpreters : [], }, RAScript => { name : "RAScript", r#type : "programming",
-    color : "#2C97FA", extensions : [".rascript"], aliases : [], tm_scope :
-    "source.rascript", ace_mode : "text", language_id : 601118790u64, filenames : [],
-    interpreters : [], }, RBS => { name : "RBS", r#type : "data", color : "#701516",
-    extensions : [".rbs"], aliases : [], tm_scope : "source.rbs", ace_mode : "ruby",
-    language_id : 899227493u64, codemirror_mode : "ruby", codemirror_mime_type :
-    "text/x-ruby", filenames : [], group : "Ruby", interpreters : [], }, RDoc => { name :
-    "RDoc", r#type : "prose", color : "#701516", extensions : [".rdoc"], aliases : [],
-    tm_scope : "text.rdoc", ace_mode : "rdoc", language_id : 309u64, wrap : true,
-    filenames : [], interpreters : [], }, REALbasic => { name : "REALbasic", r#type :
-    "programming", color : "#000000", extensions : [".rbbas", ".rbfrm", ".rbmnu",
-    ".rbres", ".rbtbar", ".rbuistate"], aliases : [], tm_scope : "source.vbnet", ace_mode
-    : "text", language_id : 310u64, filenames : [], interpreters : [], }, REXX => { name
-    : "REXX", r#type : "programming", color : "#d90e09", extensions : [".rexx", ".pprx",
-    ".rex"], aliases : ["arexx"], tm_scope : "source.rexx", ace_mode : "text",
-    language_id : 311u64, filenames : [], interpreters : ["regina", "rexx"], }, RMarkdown
-    => { name : "RMarkdown", r#type : "prose", color : "#198ce7", extensions : [".qmd",
-    ".rmd"], aliases : [], tm_scope : "text.md", ace_mode : "markdown", language_id :
-    313u64, codemirror_mode : "gfm", codemirror_mime_type : "text/x-gfm", wrap : true,
-    filenames : [], interpreters : [], }, RON => { name : "RON", r#type : "data", color :
+    filenames : [], interpreters : [], }, QuartusSimulationIP => { name :
+    "Quartus Simulation IP", r#type : "data", color : "#58C42E", extensions : [".sip"],
+    aliases : [], tm_scope : "source.tcl", ace_mode : "tcl", language_id : 828144309u64,
+    codemirror_mode : "tcl", codemirror_mime_type : "text/x-tcl", filenames : [],
+    interpreters : [], }, QuickBASIC => { name : "QuickBASIC", r#type : "programming",
+    color : "#008080", extensions : [".bas", ".bi"], aliases : ["qb", "qbasic", "qb64",
+    "classic qbasic", "classic quickbasic"], tm_scope : "source.QB64", ace_mode : "text",
+    language_id : 593107205u64, codemirror_mode : "vb", codemirror_mime_type :
+    "text/x-vb", filenames : [], interpreters : [], }, Quint => { name : "Quint", r#type
+    : "programming", color : "#9d6ce5", extensions : [".qnt"], aliases : [], tm_scope :
+    "source.quint", ace_mode : "text", language_id : 562056483u64, filenames : [],
+    interpreters : [], }, R => { name : "R", r#type : "programming", color : "#198CE7",
+    extensions : [".r", ".rd", ".rhistory", ".rsx"], aliases : ["Rscript", "splus"],
+    tm_scope : "source.r", ace_mode : "r", language_id : 307u64, codemirror_mode : "r",
+    codemirror_mime_type : "text/x-rsrc", filenames : [".Rapp.history", ".Rhistory",
+    ".Rprofile", "expr-dist"], interpreters : ["Rscript"], }, RAML => { name : "RAML",
+    r#type : "markup", color : "#77d9fb", extensions : [".raml"], aliases : [], tm_scope
+    : "source.yaml", ace_mode : "yaml", language_id : 308u64, codemirror_mode : "yaml",
+    codemirror_mime_type : "text/x-yaml", filenames : [], interpreters : [], }, RAScript
+    => { name : "RAScript", r#type : "programming", color : "#2C97FA", extensions :
+    [".rascript"], aliases : [], tm_scope : "source.rascript", ace_mode : "text",
+    language_id : 601118790u64, filenames : [], interpreters : [], }, RBS => { name :
+    "RBS", r#type : "data", color : "#701516", extensions : [".rbs"], aliases : [],
+    tm_scope : "source.rbs", ace_mode : "ruby", language_id : 899227493u64,
+    codemirror_mode : "ruby", codemirror_mime_type : "text/x-ruby", filenames : [], group
+    : "Ruby", interpreters : [], }, RDoc => { name : "RDoc", r#type : "prose", color :
+    "#701516", extensions : [".rdoc"], aliases : [], tm_scope : "text.rdoc", ace_mode :
+    "rdoc", language_id : 309u64, wrap : true, filenames : [], interpreters : [], },
+    REALbasic => { name : "REALbasic", r#type : "programming", color : "#000000",
+    extensions : [".rbbas", ".rbfrm", ".rbmnu", ".rbres", ".rbtbar", ".rbuistate"],
+    aliases : [], tm_scope : "source.vbnet", ace_mode : "text", language_id : 310u64,
+    filenames : [], interpreters : [], }, REXX => { name : "REXX", r#type :
+    "programming", color : "#d90e09", extensions : [".rexx", ".pprx", ".rex"], aliases :
+    ["arexx"], tm_scope : "source.rexx", ace_mode : "text", language_id : 311u64,
+    filenames : [], interpreters : ["regina", "rexx"], }, RMarkdown => { name :
+    "RMarkdown", r#type : "prose", color : "#198ce7", extensions : [".qmd", ".rmd"],
+    aliases : [], tm_scope : "text.md", ace_mode : "markdown", language_id : 313u64,
+    codemirror_mode : "gfm", codemirror_mime_type : "text/x-gfm", wrap : true, filenames
+    : [], interpreters : [], }, RON => { name : "RON", r#type : "data", color :
     "#a62c00", extensions : [".ron"], aliases : [], tm_scope : "source.ron", ace_mode :
     "rust", language_id : 587855233u64, filenames : [], interpreters : [], },
     ROSInterface => { name : "ROS Interface", r#type : "data", color : "#22314e",
@@ -2071,36 +2078,40 @@ define_languages! {
     color : "#000000", extensions : [".te"], aliases : ["SELinux Kernel Policy Language",
     "sepolicy"], tm_scope : "source.sepolicy", ace_mode : "text", language_id :
     880010326u64, filenames : ["file_contexts", "genfs_contexts", "initial_sids",
-    "port_contexts", "security_classes"], interpreters : [], }, SMT => { name : "SMT",
-    r#type : "programming", color : "#000000", extensions : [".smt2", ".smt", ".z3"],
-    aliases : [], tm_scope : "source.smt", ace_mode : "text", language_id : 330u64,
-    filenames : [], interpreters : ["boolector", "cvc4", "mathsat5", "opensmt",
-    "smtinterpol", "smt-rat", "stp", "verit", "yices2", "z3"], }, SPARQL => { name :
-    "SPARQL", r#type : "data", color : "#0C4597", extensions : [".sparql", ".rq"],
-    aliases : [], tm_scope : "source.sparql", ace_mode : "sparql", language_id : 331u64,
-    codemirror_mode : "sparql", codemirror_mime_type : "application/sparql-query",
-    filenames : [], interpreters : [], }, SQF => { name : "SQF", r#type : "programming",
-    color : "#3F3F3F", extensions : [".sqf", ".hqf"], aliases : [], tm_scope :
-    "source.sqf", ace_mode : "text", language_id : 332u64, filenames : [], interpreters :
-    [], }, SQL => { name : "SQL", r#type : "data", color : "#e38c00", extensions :
-    [".sql", ".ddl", ".inc", ".mysql", ".prc", ".tab", ".udf", ".viw"], aliases : [],
-    tm_scope : "source.sql", ace_mode : "sql", language_id : 333u64, codemirror_mode :
+    "port_contexts", "security_classes"], interpreters : [], }, SIP => { name : "SIP",
+    r#type : "programming", color : "#4E8D83", extensions : [".sip"], aliases : [],
+    tm_scope : "source.c++", ace_mode : "c_cpp", language_id : 796891177u64,
+    codemirror_mode : "clike", codemirror_mime_type : "text/x-c++src", filenames : [],
+    interpreters : [], }, SMT => { name : "SMT", r#type : "programming", color :
+    "#000000", extensions : [".smt2", ".smt", ".z3"], aliases : [], tm_scope :
+    "source.smt", ace_mode : "text", language_id : 330u64, filenames : [], interpreters :
+    ["boolector", "cvc4", "mathsat5", "opensmt", "smtinterpol", "smt-rat", "stp",
+    "verit", "yices2", "z3"], }, SPARQL => { name : "SPARQL", r#type : "data", color :
+    "#0C4597", extensions : [".sparql", ".rq"], aliases : [], tm_scope : "source.sparql",
+    ace_mode : "sparql", language_id : 331u64, codemirror_mode : "sparql",
+    codemirror_mime_type : "application/sparql-query", filenames : [], interpreters : [],
+    }, SQF => { name : "SQF", r#type : "programming", color : "#3F3F3F", extensions :
+    [".sqf", ".hqf"], aliases : [], tm_scope : "source.sqf", ace_mode : "text",
+    language_id : 332u64, filenames : [], interpreters : [], }, SQL => { name : "SQL",
+    r#type : "data", color : "#e38c00", extensions : [".sql", ".ddl", ".inc", ".mysql",
+    ".prc", ".tab", ".udf", ".viw"], aliases : [], tm_scope : "source.sql", ace_mode :
+    "sql", language_id : 333u64, codemirror_mode : "sql", codemirror_mime_type :
+    "text/x-sql", filenames : [], interpreters : [], }, SQLPL => { name : "SQLPL", r#type
+    : "programming", color : "#e38c00", extensions : [".sql", ".db2"], aliases : [],
+    tm_scope : "source.sql", ace_mode : "sql", language_id : 334u64, codemirror_mode :
     "sql", codemirror_mime_type : "text/x-sql", filenames : [], interpreters : [], },
-    SQLPL => { name : "SQLPL", r#type : "programming", color : "#e38c00", extensions :
-    [".sql", ".db2"], aliases : [], tm_scope : "source.sql", ace_mode : "sql",
-    language_id : 334u64, codemirror_mode : "sql", codemirror_mime_type : "text/x-sql",
-    filenames : [], interpreters : [], }, SRecodeTemplate => { name : "SRecode Template",
-    r#type : "markup", color : "#348a34", extensions : [".srt"], aliases : [], tm_scope :
-    "source.lisp", ace_mode : "lisp", language_id : 335u64, codemirror_mode :
-    "commonlisp", codemirror_mime_type : "text/x-common-lisp", filenames : [],
-    interpreters : [], }, SSHConfig => { name : "SSH Config", r#type : "data", color :
-    "#000000", extensions : [], aliases : ["sshconfig", "sshdconfig", "ssh_config",
-    "sshd_config"], tm_scope : "source.ssh-config", ace_mode : "text", language_id :
-    554920715u64, filenames : ["ssh-config", "ssh_config", "sshconfig", "sshconfig.snip",
-    "sshd-config", "sshd_config"], group : "INI", interpreters : [], }, STAR => { name :
-    "STAR", r#type : "data", color : "#000000", extensions : [".star"], aliases : [],
-    tm_scope : "source.star", ace_mode : "text", language_id : 424510560u64, filenames :
-    [], interpreters : [], }, STL => { name : "STL", r#type : "data", color : "#373b5e",
+    SRecodeTemplate => { name : "SRecode Template", r#type : "markup", color : "#348a34",
+    extensions : [".srt"], aliases : [], tm_scope : "source.lisp", ace_mode : "lisp",
+    language_id : 335u64, codemirror_mode : "commonlisp", codemirror_mime_type :
+    "text/x-common-lisp", filenames : [], interpreters : [], }, SSHConfig => { name :
+    "SSH Config", r#type : "data", color : "#000000", extensions : [], aliases :
+    ["sshconfig", "sshdconfig", "ssh_config", "sshd_config"], tm_scope :
+    "source.ssh-config", ace_mode : "text", language_id : 554920715u64, filenames :
+    ["ssh-config", "ssh_config", "sshconfig", "sshconfig.snip", "sshd-config",
+    "sshd_config"], group : "INI", interpreters : [], }, STAR => { name : "STAR", r#type
+    : "data", color : "#000000", extensions : [".star"], aliases : [], tm_scope :
+    "source.star", ace_mode : "text", language_id : 424510560u64, filenames : [],
+    interpreters : [], }, STL => { name : "STL", r#type : "data", color : "#373b5e",
     extensions : [".stl"], aliases : ["ascii stl", "stla"], tm_scope : "source.stl",
     ace_mode : "text", language_id : 455361735u64, filenames : [], interpreters : [], },
     STON => { name : "STON", r#type : "data", color : "#000000", extensions : [".ston"],
@@ -2477,17 +2488,20 @@ define_languages! {
     interpreters : [], }, Verse => { name : "Verse", r#type : "programming", color :
     "#518ef8", extensions : [".verse"], aliases : [], tm_scope : "source.verse", ace_mode
     : "text", language_id : 180832205u64, filenames : [], interpreters : [], },
-    VimHelpFile => { name : "Vim Help File", r#type : "prose", color : "#199f4b",
-    extensions : [".txt"], aliases : ["help", "vimhelp"], tm_scope : "text.vim-help",
-    ace_mode : "text", language_id : 508563686u64, filenames : [], interpreters : [], },
-    VimScript => { name : "Vim Script", r#type : "programming", color : "#199f4b",
-    extensions : [".vim", ".vba", ".vimrc", ".vmb"], aliases : ["vim", "viml", "nvim",
-    "vimscript"], tm_scope : "source.viml", ace_mode : "text", language_id : 388u64,
-    filenames : [".exrc", ".gvimrc", ".nvimrc", ".vimrc", "_vimrc", "gvimrc", "nvimrc",
-    "vimrc"], interpreters : [], }, VimSnippet => { name : "Vim Snippet", r#type :
-    "markup", color : "#199f4b", extensions : [".snip", ".snippet", ".snippets"], aliases
-    : ["SnipMate", "UltiSnip", "UltiSnips", "NeoSnippet"], tm_scope :
-    "source.vim-snippet", ace_mode : "text", language_id : 81265970u64, filenames : [],
+    VespaSchemaDefinition => { name : "Vespa Schema Definition", r#type : "data", color :
+    "#61D790", extensions : [".sd"], aliases : ["vespa"], tm_scope :
+    "source.vespaSchema", ace_mode : "text", language_id : 587879709u64, filenames : [],
+    interpreters : [], }, VimHelpFile => { name : "Vim Help File", r#type : "prose",
+    color : "#199f4b", extensions : [".txt"], aliases : ["help", "vimhelp"], tm_scope :
+    "text.vim-help", ace_mode : "text", language_id : 508563686u64, filenames : [],
+    interpreters : [], }, VimSnippet => { name : "Vim Snippet", r#type : "markup", color
+    : "#199f4b", extensions : [".snip", ".snippet", ".snippets"], aliases : ["SnipMate",
+    "UltiSnip", "UltiSnips", "NeoSnippet"], tm_scope : "source.vim-snippet", ace_mode :
+    "text", language_id : 81265970u64, filenames : [], interpreters : [], }, VimScript =>
+    { name : "Vim script", r#type : "programming", color : "#199f4b", extensions :
+    [".vim", ".vba", ".vimrc", ".vmb"], aliases : ["vim", "viml", "nvim", "vimscript"],
+    tm_scope : "source.viml", ace_mode : "text", language_id : 388u64, filenames :
+    [".exrc", ".gvimrc", ".nvimrc", ".vimrc", "_vimrc", "gvimrc", "nvimrc", "vimrc"],
     interpreters : [], }, VisualBasicNET => { name : "Visual Basic .NET", r#type :
     "programming", color : "#945db7", extensions : [".vb", ".vbhtml"], aliases :
     ["visual basic", "vbnet", "vb .net", "vb.net"], tm_scope : "source.vbnet", ace_mode :
@@ -2941,54 +2955,55 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     [JFlex::info], ".flf" => & [FIGletFont::info], ".flix" => & [Flix::info], ".flux" =>
     & [FLUX::info], ".fnc" => & [PLSQL::info], ".fnl" => & [Fennel::info], ".for" => &
     [Formatted::info, Forth::info, Fortran::info], ".forth" => & [Forth::info], ".fp" =>
-    & [GLSL::info], ".fpp" => & [Fortran::info], ".fr" => & [Forth::info, Frege::info,
-    Text::info], ".frag" => & [GLSL::info, JavaScript::info], ".frg" => & [GLSL::info],
-    ".frm" => & [INI::info, VBA::info, VisualBasic60::info], ".frt" => & [Forth::info],
-    ".fs" => & [Fsharp::info, Filterscript::info, Forth::info, GLSL::info], ".fsh" => &
-    [GLSL::info], ".fshader" => & [GLSL::info], ".fsi" => & [Fsharp::info], ".fsproj" =>
-    & [XML::info], ".fst" => & [Fstar::info], ".fsti" => & [Fstar::info], ".fsx" => &
-    [Fsharp::info], ".fth" => & [Forth::info], ".ftl" => & [Fluent::info,
-    FreeMarker::info], ".ftlh" => & [FreeMarker::info], ".fun" => & [StandardML::info],
-    ".fut" => & [Futhark::info], ".fx" => & [FLUX::info, HLSL::info], ".fxh" => &
-    [HLSL::info], ".fxml" => & [XML::info], ".fy" => & [Fancy::info], ".g" => &
-    [GCode::info, GAP::info], ".g4" => & [ANTLR::info], ".gaml" => & [GAML::info], ".gap"
-    => & [GAP::info], ".gawk" => & [Awk::info], ".gbl" => & [GerberImage::info], ".gbo"
-    => & [GerberImage::info], ".gbp" => & [GerberImage::info], ".gbr" => &
-    [GerberImage::info], ".gbs" => & [GerberImage::info], ".gco" => & [GCode::info],
-    ".gcode" => & [GCode::info], ".gd" => & [GAP::info, GDScript::info], ".gdb" => &
-    [GDB::info], ".gdbinit" => & [GDB::info], ".gdnlib" => & [GodotResource::info],
-    ".gdns" => & [GodotResource::info], ".gdshader" => & [GDShader::info], ".gdshaderinc"
-    => & [GDShader::info], ".ged" => & [GEDCOM::info], ".gemspec" => & [Ruby::info],
-    ".geo" => & [GLSL::info], ".geojson" => & [JSON::info], ".geom" => & [GLSL::info],
-    ".gf" => & [GrammaticalFramework::info], ".gi" => & [GAP::info], ".gitconfig" => &
-    [GitConfig::info], ".gitignore" => & [IgnoreList::info], ".gjs" => &
-    [GlimmerJS::info], ".gko" => & [GerberImage::info], ".glade" => & [XML::info],
-    ".gleam" => & [Gleam::info], ".glf" => & [Glyph::info], ".glsl" => & [GLSL::info],
-    ".glslf" => & [GLSL::info], ".glslv" => & [GLSL::info], ".gltf" => & [JSON::info],
-    ".glyphs" => & [OpenStepPropertyList::info], ".gmi" => & [Gemini::info], ".gml" => &
-    [GameMakerLanguage::info, GerberImage::info, GraphModelingLanguage::info, XML::info],
-    ".gms" => & [GAMS::info], ".gmx" => & [XML::info], ".gn" => & [GN::info], ".gni" => &
-    [GN::info], ".gno" => & [Gno::info], ".gnu" => & [Gnuplot::info], ".gnuplot" => &
-    [Gnuplot::info], ".go" => & [Go::info], ".god" => & [Ruby::info], ".gohtml" => &
-    [GoTemplate::info], ".golo" => & [Golo::info], ".gotmpl" => & [GoTemplate::info],
-    ".gp" => & [Gnuplot::info], ".gpb" => & [GerberImage::info], ".gpt" => &
-    [GerberImage::info], ".gpx" => & [XML::info], ".gql" => & [GraphQL::info], ".grace"
-    => & [Grace::info], ".gradle" => & [Gradle::info], ".gradle.kts" => &
-    [GradleKotlinDSL::info], ".graphql" => & [GraphQL::info], ".graphqls" => &
-    [GraphQL::info], ".groovy" => & [Groovy::info], ".grt" => & [Groovy::info], ".grxml"
-    => & [XML::info], ".gs" => & [GLSL::info, Genie::info, Gosu::info, JavaScript::info],
-    ".gsc" => & [GSC::info], ".gsh" => & [GSC::info], ".gshader" => & [GLSL::info],
-    ".gsp" => & [GroovyServerPages::info], ".gst" => & [Gosu::info, XML::info], ".gsx" =>
-    & [Gosu::info], ".gtkrc" => & [GtkRC::info], ".gtl" => & [GerberImage::info], ".gto"
-    => & [GerberImage::info], ".gtp" => & [GerberImage::info], ".gtpl" => &
-    [Groovy::info], ".gts" => & [GerberImage::info, GlimmerTS::info], ".gv" => &
-    [GraphvizDOT::info], ".gvy" => & [Groovy::info], ".gyp" => & [Python::info], ".gypi"
-    => & [Python::info], ".h" => & [C::info, Cpp::info, ObjectiveC::info], ".h++" => &
-    [Cpp::info], ".h.in" => & [C::info], ".ha" => & [Hare::info], ".hack" => &
-    [Hack::info], ".haml" => & [Haml::info], ".haml.deface" => & [Haml::info],
-    ".handlebars" => & [Handlebars::info], ".har" => & [JSON::info], ".hats" => &
-    [ATS::info], ".hb" => & [Harbour::info], ".hbs" => & [Handlebars::info], ".hc" => &
-    [HolyC::info], ".hcl" => & [HCL::info], ".heex" => & [HTMLpEEX::info], ".hexpat" => &
+    & [GLSL::info], ".fpp" => & [FPP::info, Fortran::info], ".fppi" => & [FPP::info],
+    ".fr" => & [Forth::info, Frege::info, Text::info], ".frag" => & [GLSL::info,
+    JavaScript::info], ".frg" => & [GLSL::info], ".frm" => & [INI::info, VBA::info,
+    VisualBasic60::info], ".frt" => & [Forth::info], ".fs" => & [Fsharp::info,
+    Filterscript::info, Forth::info, GLSL::info], ".fsh" => & [GLSL::info], ".fshader" =>
+    & [GLSL::info], ".fsi" => & [Fsharp::info], ".fsproj" => & [XML::info], ".fst" => &
+    [Fstar::info], ".fsti" => & [Fstar::info], ".fsx" => & [Fsharp::info], ".fth" => &
+    [Forth::info], ".ftl" => & [Fluent::info, FreeMarker::info], ".ftlh" => &
+    [FreeMarker::info], ".fun" => & [StandardML::info], ".fut" => & [Futhark::info],
+    ".fx" => & [FLUX::info, HLSL::info], ".fxh" => & [HLSL::info], ".fxml" => &
+    [XML::info], ".fy" => & [Fancy::info], ".g" => & [GCode::info, GAP::info], ".g4" => &
+    [ANTLR::info], ".gaml" => & [GAML::info], ".gap" => & [GAP::info], ".gawk" => &
+    [Awk::info], ".gbl" => & [GerberImage::info], ".gbo" => & [GerberImage::info], ".gbp"
+    => & [GerberImage::info], ".gbr" => & [GerberImage::info], ".gbs" => &
+    [GerberImage::info], ".gco" => & [GCode::info], ".gcode" => & [GCode::info], ".gd" =>
+    & [GAP::info, GDScript::info], ".gdb" => & [GDB::info], ".gdbinit" => & [GDB::info],
+    ".gdnlib" => & [GodotResource::info], ".gdns" => & [GodotResource::info], ".gdshader"
+    => & [GDShader::info], ".gdshaderinc" => & [GDShader::info], ".ged" => &
+    [GEDCOM::info], ".gemspec" => & [Ruby::info], ".geo" => & [GLSL::info], ".geojson" =>
+    & [JSON::info], ".geom" => & [GLSL::info], ".gf" => & [GrammaticalFramework::info],
+    ".gi" => & [GAP::info], ".gitconfig" => & [GitConfig::info], ".gitignore" => &
+    [IgnoreList::info], ".gjs" => & [GlimmerJS::info], ".gko" => & [GerberImage::info],
+    ".glade" => & [XML::info], ".gleam" => & [Gleam::info], ".glf" => & [Glyph::info],
+    ".glsl" => & [GLSL::info], ".glslf" => & [GLSL::info], ".glslv" => & [GLSL::info],
+    ".gltf" => & [JSON::info], ".glyphs" => & [OpenStepPropertyList::info], ".gmi" => &
+    [Gemini::info], ".gml" => & [GameMakerLanguage::info, GerberImage::info,
+    GraphModelingLanguage::info, XML::info], ".gms" => & [GAMS::info], ".gmx" => &
+    [XML::info], ".gn" => & [GN::info], ".gni" => & [GN::info], ".gno" => & [Gno::info],
+    ".gnu" => & [Gnuplot::info], ".gnuplot" => & [Gnuplot::info], ".go" => & [Go::info],
+    ".god" => & [Ruby::info], ".gohtml" => & [GoTemplate::info], ".golo" => &
+    [Golo::info], ".gotmpl" => & [GoTemplate::info], ".gp" => & [Gnuplot::info], ".gpb"
+    => & [GerberImage::info], ".gpt" => & [GerberImage::info], ".gpx" => & [XML::info],
+    ".gql" => & [GraphQL::info], ".grace" => & [Grace::info], ".gradle" => &
+    [Gradle::info], ".gradle.kts" => & [GradleKotlinDSL::info], ".graphql" => &
+    [GraphQL::info], ".graphqls" => & [GraphQL::info], ".groovy" => & [Groovy::info],
+    ".grt" => & [Groovy::info], ".grxml" => & [XML::info], ".gs" => & [GLSL::info,
+    Genie::info, Gosu::info, JavaScript::info], ".gsc" => & [GSC::info], ".gsh" => &
+    [GSC::info], ".gshader" => & [GLSL::info], ".gsp" => & [GroovyServerPages::info],
+    ".gst" => & [Gosu::info, XML::info], ".gsx" => & [Gosu::info], ".gtkrc" => &
+    [GtkRC::info], ".gtl" => & [GerberImage::info], ".gto" => & [GerberImage::info],
+    ".gtp" => & [GerberImage::info], ".gtpl" => & [Groovy::info], ".gts" => &
+    [GerberImage::info, GlimmerTS::info], ".gv" => & [GraphvizDOT::info], ".gvy" => &
+    [Groovy::info], ".gyp" => & [Python::info], ".gypi" => & [Python::info], ".h" => &
+    [C::info, Cpp::info, ObjectiveC::info], ".h++" => & [Cpp::info], ".h.in" => &
+    [C::info], ".ha" => & [Hare::info], ".hack" => & [Hack::info], ".haml" => &
+    [Haml::info], ".haml.deface" => & [Haml::info], ".handlebars" => &
+    [Handlebars::info], ".har" => & [JSON::info], ".hats" => & [ATS::info], ".hb" => &
+    [Harbour::info], ".hbs" => & [Handlebars::info], ".hc" => & [HolyC::info], ".hcl" =>
+    & [HCL::info], ".heex" => & [HTMLpEEX::info], ".hexpat" => &
     [ImHexPatternLanguage::info], ".hh" => & [Cpp::info, Hack::info], ".hhi" => &
     [Hack::info], ".hic" => & [Clojure::info], ".hip" => & [HIP::info], ".hlean" => &
     [Lean::info], ".hlsl" => & [HLSL::info], ".hlsli" => & [HLSL::info], ".hocon" => &
@@ -3235,19 +3250,20 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     KiCadSchematic::info, Scheme::info, XML::info], ".sci" => & [Scilab::info], ".scm" =>
     & [Scheme::info, TreeSitterQuery::info], ".sco" => & [CsoundScore::info], ".scpt" =>
     & [AppleScript::info], ".scrbl" => & [Racket::info], ".scss" => & [SCSS::info],
-    ".scxml" => & [XML::info], ".sdc" => & [Tcl::info], ".sed" => & [Sed::info], ".self"
-    => & [_Self::info], ".service" => & [INI::info], ".sexp" => & [CommonLisp::info],
-    ".sfd" => & [SplineFontDatabase::info], ".sfproj" => & [XML::info], ".sfv" => &
-    [SimpleFileVerification::info], ".sh" => & [Shell::info], ".sh-session" => &
-    [ShellSession::info], ".sh.in" => & [Shell::info], ".sha1" => & [Checksums::info],
-    ".sha2" => & [Checksums::info], ".sha224" => & [Checksums::info], ".sha256" => &
-    [Checksums::info], ".sha256sum" => & [Checksums::info], ".sha3" => &
-    [Checksums::info], ".sha384" => & [Checksums::info], ".sha512" => &
-    [Checksums::info], ".shader" => & [GLSL::info, ShaderLab::info], ".shen" => &
-    [Shen::info], ".shproj" => & [XML::info], ".sieve" => & [Sieve::info], ".sig" => &
-    [StandardML::info], ".sj" => & [ObjectiveJ::info], ".sjs" => & [JavaScript::info],
-    ".sl" => & [Slash::info], ".slang" => & [Slang::info], ".sld" => & [Scheme::info],
-    ".slim" => & [Slim::info], ".slint" => & [Slint::info], ".sln" => &
+    ".scxml" => & [XML::info], ".sd" => & [VespaSchemaDefinition::info], ".sdc" => &
+    [Tcl::info], ".sed" => & [Sed::info], ".self" => & [_Self::info], ".service" => &
+    [INI::info], ".sexp" => & [CommonLisp::info], ".sfd" => & [SplineFontDatabase::info],
+    ".sfproj" => & [XML::info], ".sfv" => & [SimpleFileVerification::info], ".sh" => &
+    [Shell::info], ".sh-session" => & [ShellSession::info], ".sh.in" => & [Shell::info],
+    ".sha1" => & [Checksums::info], ".sha2" => & [Checksums::info], ".sha224" => &
+    [Checksums::info], ".sha256" => & [Checksums::info], ".sha256sum" => &
+    [Checksums::info], ".sha3" => & [Checksums::info], ".sha384" => & [Checksums::info],
+    ".sha512" => & [Checksums::info], ".shader" => & [GLSL::info, ShaderLab::info],
+    ".shen" => & [Shen::info], ".shproj" => & [XML::info], ".sieve" => & [Sieve::info],
+    ".sig" => & [StandardML::info], ".sip" => & [QuartusSimulationIP::info, SIP::info],
+    ".sj" => & [ObjectiveJ::info], ".sjs" => & [JavaScript::info], ".sl" => &
+    [Slash::info], ".slang" => & [Slang::info], ".sld" => & [Scheme::info], ".slim" => &
+    [Slim::info], ".slint" => & [Slint::info], ".sln" => &
     [MicrosoftVisualStudioSolution::info], ".slnlaunch" => & [JSON::info], ".slnx" => &
     [XML::info], ".sls" => & [Salt::info, Scheme::info], ".slurm" => & [Shell::info],
     ".sma" => & [Pawn::info], ".smali" => & [Smali::info], ".smithy" => & [Smithy::info],
