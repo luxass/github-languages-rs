@@ -2014,51 +2014,54 @@ define_languages! {
     language_id : 323u64, filenames : [], interpreters : [], }, Rez => { name : "Rez",
     r#type : "programming", color : "#FFDAB3", extensions : [".r"], aliases : [],
     tm_scope : "source.rez", ace_mode : "text", language_id : 498022874u64, filenames :
-    [], interpreters : [], }, RichTextFormat => { name : "Rich Text Format", r#type :
-    "markup", color : "#000000", extensions : [".rtf"], aliases : [], tm_scope :
-    "text.rtf", ace_mode : "text", language_id : 51601661u64, filenames : [],
-    interpreters : [], }, Ring => { name : "Ring", r#type : "programming", color :
-    "#2D54CB", extensions : [".ring"], aliases : [], tm_scope : "source.ring", ace_mode :
-    "text", language_id : 431u64, filenames : [], interpreters : [], }, Riot => { name :
-    "Riot", r#type : "markup", color : "#A71E49", extensions : [".riot"], aliases : [],
-    tm_scope : "text.html.riot", ace_mode : "html", language_id : 878396783u64, filenames
-    : [], interpreters : [], }, RobotFramework => { name : "RobotFramework", r#type :
-    "programming", color : "#00c0b5", extensions : [".robot", ".resource"], aliases : [],
-    tm_scope : "text.robot", ace_mode : "robot", language_id : 324u64, filenames : [],
-    interpreters : [], }, RobotsExclusionRules => { name : "Robots Exclusion Rules",
-    r#type : "data", color : "#000000", extensions : [], aliases : ["robots",
-    "robots txt", "robotx.txt"], tm_scope : "text.robots-txt", ace_mode : "text",
-    language_id : 674736065u64, filenames : ["robots.txt"], interpreters : [], }, Roc =>
-    { name : "Roc", r#type : "programming", color : "#7c38f5", extensions : [".roc"],
-    aliases : [], tm_scope : "source.roc", ace_mode : "text", language_id : 440182480u64,
-    filenames : [], interpreters : [], }, RocqProver => { name : "Rocq Prover", r#type :
-    "programming", color : "#d0b68c", extensions : [".v", ".coq"], aliases : ["coq",
-    "rocq"], tm_scope : "source.coq", ace_mode : "text", language_id : 69u64, filenames :
-    [], interpreters : [], }, Roff => { name : "Roff", r#type : "markup", color :
-    "#ecdebe", extensions : [".roff", ".1", ".1in", ".1m", ".1x", ".2", ".3", ".3in",
-    ".3m", ".3p", ".3pm", ".3qt", ".3x", ".4", ".5", ".6", ".7", ".8", ".9", ".l",
-    ".man", ".mdoc", ".me", ".ms", ".n", ".nr", ".rno", ".tmac"], aliases : ["groff",
-    "man", "manpage", "man page", "man-page", "mdoc", "nroff", "troff"], tm_scope :
-    "text.roff", ace_mode : "text", language_id : 141u64, codemirror_mode : "troff",
-    codemirror_mime_type : "text/troff", wrap : true, filenames : ["eqnrc", "mmn", "mmt",
-    "troffrc", "troffrc-end"], interpreters : [], }, RoffManpage => { name :
-    "Roff Manpage", r#type : "markup", color : "#ecdebe", extensions : [".1", ".1in",
-    ".1m", ".1x", ".2", ".3", ".3in", ".3m", ".3p", ".3pm", ".3qt", ".3x", ".4", ".5",
-    ".6", ".7", ".8", ".9", ".man", ".mdoc"], aliases : [], tm_scope : "text.roff",
-    ace_mode : "text", language_id : 612669833u64, codemirror_mode : "troff",
-    codemirror_mime_type : "text/troff", wrap : true, filenames : [], group : "Roff",
-    interpreters : [], }, Rouge => { name : "Rouge", r#type : "programming", color :
-    "#cc0088", extensions : [".rg"], aliases : [], tm_scope : "source.clojure", ace_mode
-    : "clojure", language_id : 325u64, codemirror_mode : "clojure", codemirror_mime_type
-    : "text/x-clojure", filenames : [], interpreters : [], }, RouterOSScript => { name :
-    "RouterOS Script", r#type : "programming", color : "#DE3941", extensions : [".rsc"],
-    aliases : [], tm_scope : "none", ace_mode : "text", language_id : 592853203u64,
-    filenames : [], interpreters : ["RouterOS"], }, Ruby => { name : "Ruby", r#type :
-    "programming", color : "#701516", extensions : [".rb", ".builder", ".eye", ".fcgi",
-    ".gemspec", ".god", ".jbuilder", ".mspec", ".pluginspec", ".podspec", ".prawn",
-    ".rabl", ".rake", ".rbi", ".rbuild", ".rbw", ".rbx", ".ru", ".ruby", ".spec",
-    ".thor", ".watchr"], aliases : ["jruby", "macruby", "rake", "rb", "rbx"], tm_scope :
-    "source.ruby", ace_mode : "ruby", language_id : 326u64, codemirror_mode : "ruby",
+    [], interpreters : [], }, Rhai => { name : "Rhai", r#type : "programming", color :
+    "#FBA63B", extensions : [".rhai"], aliases : [], tm_scope : "source.rhai", ace_mode :
+    "text", language_id : 713228814u64, filenames : [], interpreters : [], },
+    RichTextFormat => { name : "Rich Text Format", r#type : "markup", color : "#000000",
+    extensions : [".rtf"], aliases : [], tm_scope : "text.rtf", ace_mode : "text",
+    language_id : 51601661u64, filenames : [], interpreters : [], }, Ring => { name :
+    "Ring", r#type : "programming", color : "#2D54CB", extensions : [".ring"], aliases :
+    [], tm_scope : "source.ring", ace_mode : "text", language_id : 431u64, filenames :
+    [], interpreters : [], }, Riot => { name : "Riot", r#type : "markup", color :
+    "#A71E49", extensions : [".riot"], aliases : [], tm_scope : "text.html.riot",
+    ace_mode : "html", language_id : 878396783u64, filenames : [], interpreters : [], },
+    RobotFramework => { name : "RobotFramework", r#type : "programming", color :
+    "#00c0b5", extensions : [".robot", ".resource"], aliases : [], tm_scope :
+    "text.robot", ace_mode : "robot", language_id : 324u64, filenames : [], interpreters
+    : [], }, RobotsExclusionRules => { name : "Robots Exclusion Rules", r#type : "data",
+    color : "#000000", extensions : [], aliases : ["robots", "robots txt", "robotx.txt"],
+    tm_scope : "text.robots-txt", ace_mode : "text", language_id : 674736065u64,
+    filenames : ["robots.txt"], interpreters : [], }, Roc => { name : "Roc", r#type :
+    "programming", color : "#7c38f5", extensions : [".roc"], aliases : [], tm_scope :
+    "source.roc", ace_mode : "text", language_id : 440182480u64, filenames : [],
+    interpreters : [], }, RocqProver => { name : "Rocq Prover", r#type : "programming",
+    color : "#d0b68c", extensions : [".v", ".coq"], aliases : ["coq", "rocq"], tm_scope :
+    "source.coq", ace_mode : "text", language_id : 69u64, filenames : [], interpreters :
+    [], }, Roff => { name : "Roff", r#type : "markup", color : "#ecdebe", extensions :
+    [".roff", ".1", ".1in", ".1m", ".1x", ".2", ".3", ".3in", ".3m", ".3p", ".3pm",
+    ".3qt", ".3x", ".4", ".5", ".6", ".7", ".8", ".9", ".l", ".man", ".mdoc", ".me",
+    ".ms", ".n", ".nr", ".rno", ".tmac"], aliases : ["groff", "man", "manpage",
+    "man page", "man-page", "mdoc", "nroff", "troff"], tm_scope : "text.roff", ace_mode :
+    "text", language_id : 141u64, codemirror_mode : "troff", codemirror_mime_type :
+    "text/troff", wrap : true, filenames : ["eqnrc", "mmn", "mmt", "troffrc",
+    "troffrc-end"], interpreters : [], }, RoffManpage => { name : "Roff Manpage", r#type
+    : "markup", color : "#ecdebe", extensions : [".1", ".1in", ".1m", ".1x", ".2", ".3",
+    ".3in", ".3m", ".3p", ".3pm", ".3qt", ".3x", ".4", ".5", ".6", ".7", ".8", ".9",
+    ".man", ".mdoc"], aliases : [], tm_scope : "text.roff", ace_mode : "text",
+    language_id : 612669833u64, codemirror_mode : "troff", codemirror_mime_type :
+    "text/troff", wrap : true, filenames : [], group : "Roff", interpreters : [], },
+    Rouge => { name : "Rouge", r#type : "programming", color : "#cc0088", extensions :
+    [".rg"], aliases : [], tm_scope : "source.clojure", ace_mode : "clojure", language_id
+    : 325u64, codemirror_mode : "clojure", codemirror_mime_type : "text/x-clojure",
+    filenames : [], interpreters : [], }, RouterOSScript => { name : "RouterOS Script",
+    r#type : "programming", color : "#DE3941", extensions : [".rsc"], aliases : [],
+    tm_scope : "none", ace_mode : "text", language_id : 592853203u64, filenames : [],
+    interpreters : ["RouterOS"], }, Ruby => { name : "Ruby", r#type : "programming",
+    color : "#701516", extensions : [".rb", ".builder", ".eye", ".fcgi", ".gemspec",
+    ".god", ".jbuilder", ".mspec", ".pluginspec", ".podspec", ".prawn", ".rabl", ".rake",
+    ".rbi", ".rbuild", ".rbw", ".rbx", ".ru", ".ruby", ".spec", ".thor", ".watchr"],
+    aliases : ["jruby", "macruby", "rake", "rb", "rbx"], tm_scope : "source.ruby",
+    ace_mode : "ruby", language_id : 326u64, codemirror_mode : "ruby",
     codemirror_mime_type : "text/x-ruby", filenames : [".irbrc", ".pryrc", ".simplecov",
     "Appraisals", "Berksfile", "Brewfile", "Buildfile", "Capfile", "Dangerfile",
     "Deliverfile", "Fastfile", "Gemfile", "Guardfile", "Jarfile", "Mavenfile", "Podfile",
@@ -3226,74 +3229,75 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     XML::info], ".resi" => & [ReScript::info], ".resource" => & [RobotFramework::info],
     ".rest" => & [ReStructuredText::info], ".rest.txt" => & [ReStructuredText::info],
     ".resx" => & [XML::info], ".rex" => & [REXX::info], ".rexx" => & [REXX::info], ".rg"
-    => & [Rouge::info], ".rhistory" => & [R::info], ".rhtml" => & [HTMLpERB::info],
-    ".ring" => & [Ring::info], ".riot" => & [Riot::info], ".rkt" => & [Racket::info],
-    ".rktd" => & [Racket::info], ".rktl" => & [Racket::info], ".rl" => & [Ragel::info],
-    ".rmd" => & [RMarkdown::info], ".rmiss" => & [GLSL::info], ".rnh" => &
-    [RUNOFF::info], ".rno" => & [RUNOFF::info, Roff::info], ".rnw" => & [Sweave::info],
-    ".robot" => & [RobotFramework::info], ".roc" => & [Roc::info], ".rockspec" => &
-    [Lua::info], ".roff" => & [Roff::info], ".ron" => & [RON::info], ".ronn" => &
-    [Markdown::info], ".rpgle" => & [RPGLE::info], ".rpy" => & [Python::info,
-    RenPy::info], ".rq" => & [SPARQL::info], ".rs" => & [RenderScript::info, Rust::info,
-    XML::info], ".rs.in" => & [Rust::info], ".rsc" => & [Rascal::info,
-    RouterOSScript::info], ".rsh" => & [RenderScript::info], ".rss" => & [XML::info],
-    ".rst" => & [ReStructuredText::info], ".rst.txt" => & [ReStructuredText::info],
-    ".rsx" => & [R::info], ".rtf" => & [RichTextFormat::info], ".ru" => & [Ruby::info],
-    ".ruby" => & [Ruby::info], ".rviz" => & [YAML::info], ".s" => & [Assembly::info,
-    Motorola68KAssembly::info, UnixAssembly::info], ".sage" => & [Sage::info], ".sagews"
-    => & [Sage::info], ".sail" => & [Sail::info], ".sarif" => & [JSON::info], ".sas" => &
-    [SAS::info], ".sass" => & [Sass::info], ".sats" => & [ATS::info], ".sbatch" => &
-    [Shell::info], ".sbt" => & [Scala::info], ".sc" => & [Scala::info,
-    SuperCollider::info], ".scad" => & [OpenSCAD::info], ".scala" => & [Scala::info],
-    ".scaml" => & [Scaml::info], ".scd" => & [Markdown::info, SuperCollider::info],
-    ".sce" => & [Scilab::info], ".scenic" => & [Scenic::info], ".sch" => & [Eagle::info,
-    KiCadSchematic::info, Scheme::info, XML::info], ".sci" => & [Scilab::info], ".scm" =>
-    & [Scheme::info, TreeSitterQuery::info], ".sco" => & [CsoundScore::info], ".scpt" =>
-    & [AppleScript::info], ".scrbl" => & [Racket::info], ".scss" => & [SCSS::info],
-    ".scxml" => & [XML::info], ".sd" => & [VespaSchemaDefinition::info], ".sdc" => &
-    [Tcl::info], ".sed" => & [Sed::info], ".self" => & [_Self::info], ".service" => &
-    [INI::info], ".sexp" => & [CommonLisp::info], ".sfd" => & [SplineFontDatabase::info],
-    ".sfproj" => & [XML::info], ".sfv" => & [SimpleFileVerification::info], ".sh" => &
-    [Shell::info], ".sh-session" => & [ShellSession::info], ".sh.in" => & [Shell::info],
-    ".sha1" => & [Checksums::info], ".sha2" => & [Checksums::info], ".sha224" => &
-    [Checksums::info], ".sha256" => & [Checksums::info], ".sha256sum" => &
-    [Checksums::info], ".sha3" => & [Checksums::info], ".sha384" => & [Checksums::info],
-    ".sha512" => & [Checksums::info], ".shader" => & [GLSL::info, ShaderLab::info],
-    ".shen" => & [Shen::info], ".shproj" => & [XML::info], ".sieve" => & [Sieve::info],
-    ".sig" => & [StandardML::info], ".sip" => & [QuartusSimulationIP::info, SIP::info],
-    ".sj" => & [ObjectiveJ::info], ".sjs" => & [JavaScript::info], ".sl" => &
-    [Slash::info], ".slang" => & [Slang::info], ".sld" => & [Scheme::info], ".slim" => &
-    [Slim::info], ".slint" => & [Slint::info], ".sln" => &
-    [MicrosoftVisualStudioSolution::info], ".slnlaunch" => & [JSON::info], ".slnx" => &
-    [XML::info], ".sls" => & [Salt::info, Scheme::info], ".slurm" => & [Shell::info],
-    ".sma" => & [Pawn::info], ".smali" => & [Smali::info], ".smithy" => & [Smithy::info],
-    ".smk" => & [Snakemake::info], ".sml" => & [StandardML::info], ".smt" => &
-    [SMT::info], ".smt2" => & [SMT::info], ".snakefile" => & [Snakemake::info], ".snap"
-    => & [JestSnapshot::info], ".snip" => & [VimSnippet::info], ".snippet" => &
-    [VimSnippet::info], ".snippets" => & [VimSnippet::info], ".socket" => & [INI::info],
-    ".sol" => & [GerberImage::info, Solidity::info], ".soy" => &
-    [ClosureTemplates::info], ".sp" => & [SourcePawn::info], ".sparql" => &
-    [SPARQL::info], ".spc" => & [PLSQL::info], ".spec" => & [Python::info, RPMSpec::info,
-    Ruby::info], ".spin" => & [PropellerSpin::info], ".sps" => & [Scheme::info], ".sqf"
-    => & [SQF::info], ".sql" => & [PLSQL::info, PLpgSQL::info, SQL::info, SQLPL::info,
-    TSQL::info], ".sqlrpgle" => & [RPGLE::info], ".sra" => & [PowerBuilder::info],
-    ".srdf" => & [XML::info], ".srt" => & [SRecodeTemplate::info, SubRipText::info],
-    ".sru" => & [PowerBuilder::info], ".srv" => & [ROSInterface::info], ".srw" => &
-    [PowerBuilder::info], ".ss" => & [Scheme::info], ".ssjs" => & [JavaScript::info],
-    ".sss" => & [SugarSS::info], ".st" => & [Smalltalk::info, StringTemplate::info],
-    ".stTheme" => & [XMLPropertyList::info], ".stan" => & [Stan::info], ".star" => &
-    [STAR::info, Starlark::info], ".sthlp" => & [Stata::info], ".stl" => & [STL::info],
-    ".ston" => & [STON::info], ".story" => & [Gherkin::info], ".storyboard" => &
-    [XML::info], ".sty" => & [TeX::info], ".styl" => & [Stylus::info], ".sublime-build"
-    => & [JSONWithComments::info], ".sublime-color-scheme" => & [JSONWithComments::info],
-    ".sublime-commands" => & [JSONWithComments::info], ".sublime-completions" => &
-    [JSONWithComments::info], ".sublime-keymap" => & [JSONWithComments::info],
-    ".sublime-macro" => & [JSONWithComments::info], ".sublime-menu" => &
-    [JSONWithComments::info], ".sublime-mousemap" => & [JSONWithComments::info],
-    ".sublime-project" => & [JSONWithComments::info], ".sublime-settings" => &
-    [JSONWithComments::info], ".sublime-snippet" => & [XML::info], ".sublime-syntax" => &
-    [YAML::info], ".sublime-theme" => & [JSONWithComments::info], ".sublime-workspace" =>
-    & [JSONWithComments::info], ".sublime_metrics" => & [JSONWithComments::info],
+    => & [Rouge::info], ".rhai" => & [Rhai::info], ".rhistory" => & [R::info], ".rhtml"
+    => & [HTMLpERB::info], ".ring" => & [Ring::info], ".riot" => & [Riot::info], ".rkt"
+    => & [Racket::info], ".rktd" => & [Racket::info], ".rktl" => & [Racket::info], ".rl"
+    => & [Ragel::info], ".rmd" => & [RMarkdown::info], ".rmiss" => & [GLSL::info], ".rnh"
+    => & [RUNOFF::info], ".rno" => & [RUNOFF::info, Roff::info], ".rnw" => &
+    [Sweave::info], ".robot" => & [RobotFramework::info], ".roc" => & [Roc::info],
+    ".rockspec" => & [Lua::info], ".roff" => & [Roff::info], ".ron" => & [RON::info],
+    ".ronn" => & [Markdown::info], ".rpgle" => & [RPGLE::info], ".rpy" => &
+    [Python::info, RenPy::info], ".rq" => & [SPARQL::info], ".rs" => &
+    [RenderScript::info, Rust::info, XML::info], ".rs.in" => & [Rust::info], ".rsc" => &
+    [Rascal::info, RouterOSScript::info], ".rsh" => & [RenderScript::info], ".rss" => &
+    [XML::info], ".rst" => & [ReStructuredText::info], ".rst.txt" => &
+    [ReStructuredText::info], ".rsx" => & [R::info], ".rtf" => & [RichTextFormat::info],
+    ".ru" => & [Ruby::info], ".ruby" => & [Ruby::info], ".rviz" => & [YAML::info], ".s"
+    => & [Assembly::info, Motorola68KAssembly::info, UnixAssembly::info], ".sage" => &
+    [Sage::info], ".sagews" => & [Sage::info], ".sail" => & [Sail::info], ".sarif" => &
+    [JSON::info], ".sas" => & [SAS::info], ".sass" => & [Sass::info], ".sats" => &
+    [ATS::info], ".sbatch" => & [Shell::info], ".sbt" => & [Scala::info], ".sc" => &
+    [Scala::info, SuperCollider::info], ".scad" => & [OpenSCAD::info], ".scala" => &
+    [Scala::info], ".scaml" => & [Scaml::info], ".scd" => & [Markdown::info,
+    SuperCollider::info], ".sce" => & [Scilab::info], ".scenic" => & [Scenic::info],
+    ".sch" => & [Eagle::info, KiCadSchematic::info, Scheme::info, XML::info], ".sci" => &
+    [Scilab::info], ".scm" => & [Scheme::info, TreeSitterQuery::info], ".sco" => &
+    [CsoundScore::info], ".scpt" => & [AppleScript::info], ".scrbl" => & [Racket::info],
+    ".scss" => & [SCSS::info], ".scxml" => & [XML::info], ".sd" => &
+    [VespaSchemaDefinition::info], ".sdc" => & [Tcl::info], ".sed" => & [Sed::info],
+    ".self" => & [_Self::info], ".service" => & [INI::info], ".sexp" => &
+    [CommonLisp::info], ".sfd" => & [SplineFontDatabase::info], ".sfproj" => &
+    [XML::info], ".sfv" => & [SimpleFileVerification::info], ".sh" => & [Shell::info],
+    ".sh-session" => & [ShellSession::info], ".sh.in" => & [Shell::info], ".sha1" => &
+    [Checksums::info], ".sha2" => & [Checksums::info], ".sha224" => & [Checksums::info],
+    ".sha256" => & [Checksums::info], ".sha256sum" => & [Checksums::info], ".sha3" => &
+    [Checksums::info], ".sha384" => & [Checksums::info], ".sha512" => &
+    [Checksums::info], ".shader" => & [GLSL::info, ShaderLab::info], ".shen" => &
+    [Shen::info], ".shproj" => & [XML::info], ".sieve" => & [Sieve::info], ".sig" => &
+    [StandardML::info], ".sip" => & [QuartusSimulationIP::info, SIP::info], ".sj" => &
+    [ObjectiveJ::info], ".sjs" => & [JavaScript::info], ".sl" => & [Slash::info],
+    ".slang" => & [Slang::info], ".sld" => & [Scheme::info], ".slim" => & [Slim::info],
+    ".slint" => & [Slint::info], ".sln" => & [MicrosoftVisualStudioSolution::info],
+    ".slnlaunch" => & [JSON::info], ".slnx" => & [XML::info], ".sls" => & [Salt::info,
+    Scheme::info], ".slurm" => & [Shell::info], ".sma" => & [Pawn::info], ".smali" => &
+    [Smali::info], ".smithy" => & [Smithy::info], ".smk" => & [Snakemake::info], ".sml"
+    => & [StandardML::info], ".smt" => & [SMT::info], ".smt2" => & [SMT::info],
+    ".snakefile" => & [Snakemake::info], ".snap" => & [JestSnapshot::info], ".snip" => &
+    [VimSnippet::info], ".snippet" => & [VimSnippet::info], ".snippets" => &
+    [VimSnippet::info], ".socket" => & [INI::info], ".sol" => & [GerberImage::info,
+    Solidity::info], ".soy" => & [ClosureTemplates::info], ".sp" => & [SourcePawn::info],
+    ".sparql" => & [SPARQL::info], ".spc" => & [PLSQL::info], ".spec" => & [Python::info,
+    RPMSpec::info, Ruby::info], ".spin" => & [PropellerSpin::info], ".sps" => &
+    [Scheme::info], ".sqf" => & [SQF::info], ".sql" => & [PLSQL::info, PLpgSQL::info,
+    SQL::info, SQLPL::info, TSQL::info], ".sqlrpgle" => & [RPGLE::info], ".sra" => &
+    [PowerBuilder::info], ".srdf" => & [XML::info], ".srt" => & [SRecodeTemplate::info,
+    SubRipText::info], ".sru" => & [PowerBuilder::info], ".srv" => &
+    [ROSInterface::info], ".srw" => & [PowerBuilder::info], ".ss" => & [Scheme::info],
+    ".ssjs" => & [JavaScript::info], ".sss" => & [SugarSS::info], ".st" => &
+    [Smalltalk::info, StringTemplate::info], ".stTheme" => & [XMLPropertyList::info],
+    ".stan" => & [Stan::info], ".star" => & [STAR::info, Starlark::info], ".sthlp" => &
+    [Stata::info], ".stl" => & [STL::info], ".ston" => & [STON::info], ".story" => &
+    [Gherkin::info], ".storyboard" => & [XML::info], ".sty" => & [TeX::info], ".styl" =>
+    & [Stylus::info], ".sublime-build" => & [JSONWithComments::info],
+    ".sublime-color-scheme" => & [JSONWithComments::info], ".sublime-commands" => &
+    [JSONWithComments::info], ".sublime-completions" => & [JSONWithComments::info],
+    ".sublime-keymap" => & [JSONWithComments::info], ".sublime-macro" => &
+    [JSONWithComments::info], ".sublime-menu" => & [JSONWithComments::info],
+    ".sublime-mousemap" => & [JSONWithComments::info], ".sublime-project" => &
+    [JSONWithComments::info], ".sublime-settings" => & [JSONWithComments::info],
+    ".sublime-snippet" => & [XML::info], ".sublime-syntax" => & [YAML::info],
+    ".sublime-theme" => & [JSONWithComments::info], ".sublime-workspace" => &
+    [JSONWithComments::info], ".sublime_metrics" => & [JSONWithComments::info],
     ".sublime_session" => & [JSONWithComments::info], ".surql" => & [SurrealQL::info],
     ".sv" => & [SystemVerilog::info], ".svelte" => & [Svelte::info], ".svg" => &
     [SVG::info], ".svh" => & [SystemVerilog::info], ".svx" => & [SurvexData::info,
