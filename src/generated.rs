@@ -119,30 +119,34 @@ define_languages! {
     language_id : 19u64, filenames : [], interpreters : ["osascript"], }, Arc => { name :
     "Arc", r#type : "programming", color : "#aa2afe", extensions : [".arc"], aliases :
     [], tm_scope : "none", ace_mode : "text", language_id : 20u64, filenames : [],
-    interpreters : [], }, AsciiDoc => { name : "AsciiDoc", r#type : "prose", color :
-    "#73a0c5", extensions : [".asciidoc", ".adoc", ".asc"], aliases : [], tm_scope :
-    "text.html.asciidoc", ace_mode : "asciidoc", language_id : 22u64, wrap : true,
-    filenames : [], interpreters : [], }, AspectJ => { name : "AspectJ", r#type :
-    "programming", color : "#a957b0", extensions : [".aj"], aliases : [], tm_scope :
-    "source.aspectj", ace_mode : "text", language_id : 23u64, filenames : [],
-    interpreters : [], }, Assembly => { name : "Assembly", r#type : "programming", color
-    : "#6E4C13", extensions : [".asm", ".a51", ".i", ".inc", ".nas", ".nasm", ".s"],
-    aliases : ["asm", "nasm"], tm_scope : "source.assembly", ace_mode : "assembly_x86",
-    language_id : 24u64, filenames : [], interpreters : [], }, Astro => { name : "Astro",
-    r#type : "markup", color : "#ff5a03", extensions : [".astro"], aliases : [], tm_scope
-    : "source.astro", ace_mode : "astro", language_id : 578209015u64, codemirror_mode :
-    "jsx", codemirror_mime_type : "text/jsx", filenames : [], interpreters : [], },
-    Asymptote => { name : "Asymptote", r#type : "programming", color : "#ff0000",
-    extensions : [".asy"], aliases : [], tm_scope : "source.c++", ace_mode : "c_cpp",
-    language_id : 591605007u64, codemirror_mode : "clike", codemirror_mime_type :
-    "text/x-kotlin", filenames : [], interpreters : ["asy"], }, Augeas => { name :
-    "Augeas", r#type : "programming", color : "#9CC134", extensions : [".aug"], aliases :
-    [], tm_scope : "none", ace_mode : "text", language_id : 25u64, filenames : [],
-    interpreters : [], }, AutoHotkey => { name : "AutoHotkey", r#type : "programming",
-    color : "#6594b9", extensions : [".ahk", ".ah1", ".ah2", ".ahkl"], aliases : ["ahk"],
-    tm_scope : "source.ahk", ace_mode : "autohotkey", language_id : 26u64, filenames :
-    [], interpreters : [], }, AutoIt => { name : "AutoIt", r#type : "programming", color
-    : "#1C3552", extensions : [".au3"], aliases : ["au3", "AutoIt3", "AutoItScript"],
+    interpreters : [], }, ArkTS => { name : "ArkTS", r#type : "programming", color :
+    "#0080ff", extensions : [".ets"], aliases : [], tm_scope : "source.ets", ace_mode :
+    "typescript", language_id : 56341321u64, codemirror_mode : "javascript",
+    codemirror_mime_type : "application/typescript", filenames : [], interpreters : [],
+    }, AsciiDoc => { name : "AsciiDoc", r#type : "prose", color : "#73a0c5", extensions :
+    [".asciidoc", ".adoc", ".asc"], aliases : [], tm_scope : "text.html.asciidoc",
+    ace_mode : "asciidoc", language_id : 22u64, wrap : true, filenames : [], interpreters
+    : [], }, AspectJ => { name : "AspectJ", r#type : "programming", color : "#a957b0",
+    extensions : [".aj"], aliases : [], tm_scope : "source.aspectj", ace_mode : "text",
+    language_id : 23u64, filenames : [], interpreters : [], }, Assembly => { name :
+    "Assembly", r#type : "programming", color : "#6E4C13", extensions : [".asm", ".a51",
+    ".i", ".inc", ".nas", ".nasm", ".s"], aliases : ["asm", "nasm"], tm_scope :
+    "source.assembly", ace_mode : "assembly_x86", language_id : 24u64, filenames : [],
+    interpreters : [], }, Astro => { name : "Astro", r#type : "markup", color :
+    "#ff5a03", extensions : [".astro"], aliases : [], tm_scope : "source.astro", ace_mode
+    : "astro", language_id : 578209015u64, codemirror_mode : "jsx", codemirror_mime_type
+    : "text/jsx", filenames : [], interpreters : [], }, Asymptote => { name :
+    "Asymptote", r#type : "programming", color : "#ff0000", extensions : [".asy"],
+    aliases : [], tm_scope : "source.c++", ace_mode : "c_cpp", language_id :
+    591605007u64, codemirror_mode : "clike", codemirror_mime_type : "text/x-kotlin",
+    filenames : [], interpreters : ["asy"], }, Augeas => { name : "Augeas", r#type :
+    "programming", color : "#9CC134", extensions : [".aug"], aliases : [], tm_scope :
+    "none", ace_mode : "text", language_id : 25u64, filenames : [], interpreters : [], },
+    AutoHotkey => { name : "AutoHotkey", r#type : "programming", color : "#6594b9",
+    extensions : [".ahk", ".ah1", ".ah2", ".ahkl"], aliases : ["ahk"], tm_scope :
+    "source.ahk", ace_mode : "autohotkey", language_id : 26u64, filenames : [],
+    interpreters : [], }, AutoIt => { name : "AutoIt", r#type : "programming", color :
+    "#1C3552", extensions : [".au3"], aliases : ["au3", "AutoIt3", "AutoItScript"],
     tm_scope : "source.autoit", ace_mode : "autohotkey", language_id : 27u64, filenames :
     [], interpreters : [], }, AvroIDL => { name : "Avro IDL", r#type : "data", color :
     "#0040FF", extensions : [".avdl"], aliases : [], tm_scope : "source.avro", ace_mode :
@@ -1221,44 +1225,47 @@ define_languages! {
     filenames : [], interpreters : [], }, LLVM => { name : "LLVM", r#type :
     "programming", color : "#185619", extensions : [".ll"], aliases : [], tm_scope :
     "source.llvm", ace_mode : "text", language_id : 191u64, filenames : [], interpreters
-    : [], }, LOLCODE => { name : "LOLCODE", r#type : "programming", color : "#cc9900",
-    extensions : [".lol"], aliases : [], tm_scope : "source.lolcode", ace_mode : "text",
-    language_id : 192u64, filenames : [], interpreters : [], }, LSL => { name : "LSL",
-    r#type : "programming", color : "#3d9970", extensions : [".lsl", ".lslp"], aliases :
-    [], tm_scope : "source.lsl", ace_mode : "lsl", language_id : 193u64, filenames : [],
-    interpreters : ["lsl"], }, LTspiceSymbol => { name : "LTspice Symbol", r#type :
-    "data", color : "#000000", extensions : [".asy"], aliases : [], tm_scope :
-    "source.ltspice.symbol", ace_mode : "text", language_id : 1013566805u64,
-    codemirror_mode : "spreadsheet", codemirror_mime_type : "text/x-spreadsheet",
-    filenames : [], interpreters : [], }, LabVIEW => { name : "LabVIEW", r#type :
-    "programming", color : "#fede06", extensions : [".lvproj", ".lvclass", ".lvlib"],
-    aliases : [], tm_scope : "text.xml", ace_mode : "xml", language_id : 194u64,
-    codemirror_mode : "xml", codemirror_mime_type : "text/xml", filenames : [],
-    interpreters : [], }, Lambdapi => { name : "Lambdapi", r#type : "programming", color
-    : "#8027a3", extensions : [".lp"], aliases : [], tm_scope : "source.lp", ace_mode :
-    "text", language_id : 759240513u64, filenames : [], interpreters : [], }, Langium =>
-    { name : "Langium", r#type : "programming", color : "#2c8c87", extensions :
-    [".langium"], aliases : [], tm_scope : "source.langium", ace_mode : "text",
-    language_id : 548603830u64, filenames : [], interpreters : [], }, Lark => { name :
-    "Lark", r#type : "data", color : "#2980B9", extensions : [".lark"], aliases : [],
-    tm_scope : "source.lark", ace_mode : "text", language_id : 758480799u64,
-    codemirror_mode : "ebnf", codemirror_mime_type : "text/x-ebnf", filenames : [],
-    interpreters : [], }, Lasso => { name : "Lasso", r#type : "programming", color :
-    "#999999", extensions : [".lasso", ".las", ".lasso8", ".lasso9"], aliases :
-    ["lassoscript"], tm_scope : "file.lasso", ace_mode : "text", language_id : 195u64,
-    filenames : [], interpreters : [], }, Latte => { name : "Latte", r#type : "markup",
-    color : "#f2a542", extensions : [".latte"], aliases : [], tm_scope :
-    "text.html.smarty", ace_mode : "latte", language_id : 196u64, codemirror_mode :
-    "smarty", codemirror_mime_type : "text/x-smarty", filenames : [], interpreters : [],
-    }, Lean => { name : "Lean", r#type : "programming", color : "#000000", extensions :
-    [".lean", ".hlean"], aliases : [], tm_scope : "source.lean", ace_mode : "text",
-    language_id : 197u64, filenames : [], interpreters : [], }, Lean4 => { name :
-    "Lean 4", r#type : "programming", color : "#000000", extensions : [".lean"], aliases
-    : ["lean4"], tm_scope : "source.lean4", ace_mode : "text", language_id :
-    455147478u64, filenames : [], group : "Lean", interpreters : [], }, Leo => { name :
-    "Leo", r#type : "programming", color : "#C4FFC2", extensions : [".leo"], aliases :
-    [], tm_scope : "source.leo", ace_mode : "text", language_id : 916034822u64, wrap :
-    true, filenames : [], interpreters : [], }, Less => { name : "Less", r#type :
+    : [], }, LLVMTableGen => { name : "LLVM TableGen", r#type : "programming", color :
+    "#6E8B3D", extensions : [".td"], aliases : ["tablegen"], tm_scope :
+    "source.tablegen", ace_mode : "text", language_id : 184265095u64, filenames : [],
+    interpreters : [], }, LOLCODE => { name : "LOLCODE", r#type : "programming", color :
+    "#cc9900", extensions : [".lol"], aliases : [], tm_scope : "source.lolcode", ace_mode
+    : "text", language_id : 192u64, filenames : [], interpreters : [], }, LSL => { name :
+    "LSL", r#type : "programming", color : "#3d9970", extensions : [".lsl", ".lslp"],
+    aliases : [], tm_scope : "source.lsl", ace_mode : "lsl", language_id : 193u64,
+    filenames : [], interpreters : ["lsl"], }, LTspiceSymbol => { name :
+    "LTspice Symbol", r#type : "data", color : "#000000", extensions : [".asy"], aliases
+    : [], tm_scope : "source.ltspice.symbol", ace_mode : "text", language_id :
+    1013566805u64, codemirror_mode : "spreadsheet", codemirror_mime_type :
+    "text/x-spreadsheet", filenames : [], interpreters : [], }, LabVIEW => { name :
+    "LabVIEW", r#type : "programming", color : "#fede06", extensions : [".lvproj",
+    ".lvclass", ".lvlib"], aliases : [], tm_scope : "text.xml", ace_mode : "xml",
+    language_id : 194u64, codemirror_mode : "xml", codemirror_mime_type : "text/xml",
+    filenames : [], interpreters : [], }, Lambdapi => { name : "Lambdapi", r#type :
+    "programming", color : "#8027a3", extensions : [".lp"], aliases : [], tm_scope :
+    "source.lp", ace_mode : "text", language_id : 759240513u64, filenames : [],
+    interpreters : [], }, Langium => { name : "Langium", r#type : "programming", color :
+    "#2c8c87", extensions : [".langium"], aliases : [], tm_scope : "source.langium",
+    ace_mode : "text", language_id : 548603830u64, filenames : [], interpreters : [], },
+    Lark => { name : "Lark", r#type : "data", color : "#2980B9", extensions : [".lark"],
+    aliases : [], tm_scope : "source.lark", ace_mode : "text", language_id :
+    758480799u64, codemirror_mode : "ebnf", codemirror_mime_type : "text/x-ebnf",
+    filenames : [], interpreters : [], }, Lasso => { name : "Lasso", r#type :
+    "programming", color : "#999999", extensions : [".lasso", ".las", ".lasso8",
+    ".lasso9"], aliases : ["lassoscript"], tm_scope : "file.lasso", ace_mode : "text",
+    language_id : 195u64, filenames : [], interpreters : [], }, Latte => { name :
+    "Latte", r#type : "markup", color : "#f2a542", extensions : [".latte"], aliases : [],
+    tm_scope : "text.html.smarty", ace_mode : "latte", language_id : 196u64,
+    codemirror_mode : "smarty", codemirror_mime_type : "text/x-smarty", filenames : [],
+    interpreters : [], }, Lean => { name : "Lean", r#type : "programming", color :
+    "#000000", extensions : [".lean", ".hlean"], aliases : [], tm_scope : "source.lean",
+    ace_mode : "text", language_id : 197u64, filenames : [], interpreters : [], }, Lean4
+    => { name : "Lean 4", r#type : "programming", color : "#000000", extensions :
+    [".lean"], aliases : ["lean4"], tm_scope : "source.lean4", ace_mode : "text",
+    language_id : 455147478u64, filenames : [], group : "Lean", interpreters : [], }, Leo
+    => { name : "Leo", r#type : "programming", color : "#C4FFC2", extensions : [".leo"],
+    aliases : [], tm_scope : "source.leo", ace_mode : "text", language_id : 916034822u64,
+    wrap : true, filenames : [], interpreters : [], }, Less => { name : "Less", r#type :
     "markup", color : "#1d365d", extensions : [".less"], aliases : ["less-css"], tm_scope
     : "source.css.less", ace_mode : "less", language_id : 198u64, codemirror_mode :
     "css", codemirror_mime_type : "text/x-less", filenames : [], interpreters : [], },
@@ -2945,9 +2952,9 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     ".epsi" => & [PostScript::info], ".eq" => & [EQ::info], ".erb" => & [HTMLpERB::info],
     ".erb.deface" => & [HTMLpERB::info], ".erl" => & [Erlang::info], ".es" => &
     [Erlang::info, JavaScript::info], ".es6" => & [JavaScript::info], ".escript" => &
-    [Erlang::info], ".esdl" => & [EdgeQL::info], ".ex" => & [Elixir::info,
-    Euphoria::info], ".exs" => & [Elixir::info], ".eye" => & [Ruby::info], ".f" => &
-    [FilebenchWML::info, Forth::info, Fortran::info], ".f03" => &
+    [Erlang::info], ".esdl" => & [EdgeQL::info], ".ets" => & [ArkTS::info], ".ex" => &
+    [Elixir::info, Euphoria::info], ".exs" => & [Elixir::info], ".eye" => & [Ruby::info],
+    ".f" => & [FilebenchWML::info, Forth::info, Fortran::info], ".f03" => &
     [FortranFreeForm::info], ".f08" => & [FortranFreeForm::info], ".f77" => &
     [Fortran::info], ".f90" => & [FortranFreeForm::info], ".f95" => &
     [FortranFreeForm::info], ".factor" => & [Factor::info], ".fan" => & [Fantom::info],
@@ -3307,16 +3314,17 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     => & [Python::info], ".tact" => & [JSON::info, Tact::info], ".tag" => &
     [JavaServerPages::info], ".talon" => & [Talon::info], ".tape" => & [Tape::info],
     ".target" => & [INI::info], ".targets" => & [XML::info], ".tcc" => & [Cpp::info],
-    ".tcl" => & [Tcl::info], ".tcl.in" => & [Tcl::info], ".tcsh" => & [Tcsh::info], ".te"
-    => & [SELinuxPolicy::info], ".tea" => & [Tea::info], ".templ" => & [Templ::info],
-    ".tesc" => & [GLSL::info], ".tese" => & [GLSL::info], ".tex" => & [TeX::info],
-    ".texi" => & [Texinfo::info], ".texinfo" => & [Texinfo::info], ".textile" => &
-    [Textile::info], ".textproto" => & [ProtocolBufferTextFormat::info], ".tf" => &
-    [HCL::info], ".tfstate" => & [JSON::info], ".tfstate.backup" => & [JSON::info],
-    ".tftpl" => & [TerraformTemplate::info], ".tfvars" => & [HCL::info], ".thor" => &
-    [Ruby::info], ".thrift" => & [Thrift::info], ".thy" => & [Isabelle::info], ".timer"
-    => & [INI::info], ".tl" => & [Teal::info, TypeLanguage::info], ".tla" => &
-    [TLA::info], ".tlv" => & [TLVerilog::info], ".tm" => & [Tcl::info], ".tmCommand" => &
+    ".tcl" => & [Tcl::info], ".tcl.in" => & [Tcl::info], ".tcsh" => & [Tcsh::info], ".td"
+    => & [LLVMTableGen::info], ".te" => & [SELinuxPolicy::info], ".tea" => & [Tea::info],
+    ".templ" => & [Templ::info], ".tesc" => & [GLSL::info], ".tese" => & [GLSL::info],
+    ".tex" => & [TeX::info], ".texi" => & [Texinfo::info], ".texinfo" => &
+    [Texinfo::info], ".textile" => & [Textile::info], ".textproto" => &
+    [ProtocolBufferTextFormat::info], ".tf" => & [HCL::info], ".tfstate" => &
+    [JSON::info], ".tfstate.backup" => & [JSON::info], ".tftpl" => &
+    [TerraformTemplate::info], ".tfvars" => & [HCL::info], ".thor" => & [Ruby::info],
+    ".thrift" => & [Thrift::info], ".thy" => & [Isabelle::info], ".timer" => &
+    [INI::info], ".tl" => & [Teal::info, TypeLanguage::info], ".tla" => & [TLA::info],
+    ".tlv" => & [TLVerilog::info], ".tm" => & [Tcl::info], ".tmCommand" => &
     [XMLPropertyList::info], ".tmLanguage" => & [XMLPropertyList::info], ".tmPreferences"
     => & [XMLPropertyList::info], ".tmSnippet" => & [XMLPropertyList::info], ".tmTheme"
     => & [XMLPropertyList::info], ".tmac" => & [Roff::info], ".tmdl" => & [TMDL::info],
