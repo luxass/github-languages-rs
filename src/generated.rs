@@ -609,7 +609,7 @@ define_languages! {
     "programming", color : "#4d6977", extensions : [".e"], aliases : [], tm_scope :
     "source.eiffel", ace_mode : "eiffel", language_id : 99u64, codemirror_mode :
     "eiffel", codemirror_mime_type : "text/x-eiffel", filenames : [], interpreters : [],
-    }, Elixir => { name : "Elixir", r#type : "programming", color : "#6e4a7e", extensions
+    }, Elixir => { name : "Elixir", r#type : "programming", color : "#8847B9", extensions
     : [".ex", ".exs"], aliases : [], tm_scope : "source.elixir", ace_mode : "elixir",
     language_id : 100u64, filenames : ["mix.lock"], interpreters : ["elixir"], }, Elm =>
     { name : "Elm", r#type : "programming", color : "#60B5CC", extensions : [".elm"],
