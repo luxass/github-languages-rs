@@ -190,209 +190,211 @@ define_languages! {
     filenames : [], interpreters : [], }, Befunge => { name : "Befunge", r#type :
     "programming", color : "#000000", extensions : [".befunge", ".bf"], aliases : [],
     tm_scope : "source.befunge", ace_mode : "text", language_id : 30u64, filenames : [],
-    interpreters : [], }, Berry => { name : "Berry", r#type : "programming", color :
-    "#15A13C", extensions : [".be"], aliases : ["be"], tm_scope : "source.berry",
-    ace_mode : "text", language_id : 121855308u64, filenames : [], interpreters : [], },
-    BibTeX => { name : "BibTeX", r#type : "markup", color : "#778899", extensions :
-    [".bib", ".bibtex"], aliases : [], tm_scope : "text.bibtex", ace_mode : "bibtex",
-    language_id : 982188347u64, codemirror_mode : "stex", codemirror_mime_type :
-    "text/x-stex", filenames : [], group : "TeX", interpreters : [], }, BibTeXStyle => {
-    name : "BibTeX Style", r#type : "programming", color : "#000000", extensions :
-    [".bst"], aliases : [], tm_scope : "source.bst", ace_mode : "text", language_id :
-    909569041u64, filenames : [], interpreters : [], }, Bicep => { name : "Bicep", r#type
-    : "programming", color : "#519aba", extensions : [".bicep", ".bicepparam"], aliases :
-    [], tm_scope : "source.bicep", ace_mode : "text", language_id : 321200902u64,
-    filenames : [], interpreters : [], }, Bikeshed => { name : "Bikeshed", r#type :
-    "markup", color : "#5562ac", extensions : [".bs"], aliases : [], tm_scope :
-    "source.csswg", ace_mode : "html", language_id : 1055528081u64, codemirror_mode :
-    "htmlmixed", codemirror_mime_type : "text/html", filenames : [], interpreters : [],
-    }, Bison => { name : "Bison", r#type : "programming", color : "#6A463F", extensions :
-    [".bison"], aliases : [], tm_scope : "source.yacc", ace_mode : "text", language_id :
-    31u64, filenames : [], group : "Yacc", interpreters : [], }, BitBake => { name :
-    "BitBake", r#type : "programming", color : "#00bce4", extensions : [".bb",
-    ".bbappend", ".bbclass", ".inc"], aliases : [], tm_scope : "source.bb", ace_mode :
-    "text", language_id : 32u64, filenames : [], interpreters : [], }, Blade => { name :
-    "Blade", r#type : "markup", color : "#f7523f", extensions : [".blade", ".blade.php"],
-    aliases : [], tm_scope : "text.html.php.blade", ace_mode : "php_laravel_blade",
-    language_id : 33u64, filenames : [], interpreters : [], }, BlitzBasic => { name :
-    "BlitzBasic", r#type : "programming", color : "#00FFAE", extensions : [".bb",
-    ".decls"], aliases : ["b3d", "blitz3d", "blitzplus", "bplus"], tm_scope :
-    "source.blitzmax", ace_mode : "text", language_id : 34u64, filenames : [],
-    interpreters : [], }, BlitzMax => { name : "BlitzMax", r#type : "programming", color
-    : "#cd6400", extensions : [".bmx"], aliases : ["bmax"], tm_scope : "source.blitzmax",
-    ace_mode : "text", language_id : 35u64, filenames : [], interpreters : [], },
-    Blueprint => { name : "Blueprint", r#type : "markup", color : "#3584E4", extensions :
-    [".blp"], aliases : ["blp"], tm_scope : "source.blueprint", ace_mode : "text",
-    language_id : 765545512u64, filenames : [], interpreters : [], }, Bluespec => { name
-    : "Bluespec", r#type : "programming", color : "#12223c", extensions : [".bsv"],
-    aliases : ["bluespec bsv", "bsv"], tm_scope : "source.bsv", ace_mode : "verilog",
-    language_id : 36u64, codemirror_mode : "verilog", codemirror_mime_type :
-    "text/x-systemverilog", filenames : [], interpreters : [], }, BluespecBH => { name :
-    "Bluespec BH", r#type : "programming", color : "#12223c", extensions : [".bs"],
-    aliases : ["bh", "bluespec classic"], tm_scope : "source.bh", ace_mode : "haskell",
-    language_id : 641580358u64, codemirror_mode : "haskell", codemirror_mime_type :
-    "text/x-haskell", filenames : [], group : "Bluespec", interpreters : [], }, Boo => {
-    name : "Boo", r#type : "programming", color : "#d4bec1", extensions : [".boo"],
-    aliases : [], tm_scope : "source.boo", ace_mode : "text", language_id : 37u64,
-    filenames : [], interpreters : [], }, Boogie => { name : "Boogie", r#type :
-    "programming", color : "#c80fa0", extensions : [".bpl"], aliases : [], tm_scope :
-    "source.boogie", ace_mode : "text", language_id : 955017407u64, filenames : [],
-    interpreters : ["boogie"], }, Brainfuck => { name : "Brainfuck", r#type :
-    "programming", color : "#2F2530", extensions : [".b", ".bf"], aliases : [], tm_scope
-    : "source.bf", ace_mode : "text", language_id : 38u64, codemirror_mode : "brainfuck",
-    codemirror_mime_type : "text/x-brainfuck", filenames : [], interpreters : [], },
-    BrighterScript => { name : "BrighterScript", r#type : "programming", color :
-    "#66AABB", extensions : [".bs"], aliases : [], tm_scope : "source.brs", ace_mode :
-    "text", language_id : 943571030u64, filenames : [], interpreters : [], },
-    Brightscript => { name : "Brightscript", r#type : "programming", color : "#662D91",
-    extensions : [".brs"], aliases : [], tm_scope : "source.brs", ace_mode : "text",
-    language_id : 39u64, filenames : [], interpreters : [], }, Browserslist => { name :
-    "Browserslist", r#type : "data", color : "#ffd539", extensions : [], aliases : [],
-    tm_scope : "text.browserslist", ace_mode : "text", language_id : 153503348u64,
-    filenames : [".browserslistrc", "browserslist"], interpreters : [], }, Bru => { name
-    : "Bru", r#type : "markup", color : "#F4AA41", extensions : [".bru"], aliases : [],
-    tm_scope : "source.bru", ace_mode : "text", language_id : 906627898u64, filenames :
-    [], interpreters : [], }, BuildStream => { name : "BuildStream", r#type : "data",
-    color : "#006bff", extensions : [".bst"], aliases : [], tm_scope : "source.yaml",
-    ace_mode : "yaml", language_id : 84359046u64, filenames : [], interpreters : [], }, C
-    => { name : "C", r#type : "programming", color : "#555555", extensions : [".c",
-    ".cats", ".h", ".h.in", ".idc"], aliases : [], tm_scope : "source.c", ace_mode :
-    "c_cpp", language_id : 41u64, codemirror_mode : "clike", codemirror_mime_type :
-    "text/x-csrc", filenames : [], interpreters : ["tcc"], }, Csharp => { name : "C#",
-    r#type : "programming", color : "#7355dd", extensions : [".cs", ".cake", ".cs.pp",
-    ".csx", ".linq"], aliases : ["csharp", "cake", "cakescript"], tm_scope : "source.cs",
-    ace_mode : "csharp", language_id : 42u64, codemirror_mode : "clike",
-    codemirror_mime_type : "text/x-csharp", filenames : [], interpreters : [], }, Cpp =>
-    { name : "C++", r#type : "programming", color : "#f34b7d", extensions : [".cpp",
-    ".c++", ".cc", ".cp", ".cppm", ".cxx", ".h", ".h++", ".hh", ".hpp", ".hxx", ".inc",
-    ".inl", ".ino", ".ipp", ".ixx", ".re", ".tcc", ".tpp", ".txx"], aliases : ["cpp"],
-    tm_scope : "source.c++", ace_mode : "c_cpp", language_id : 43u64, codemirror_mode :
-    "clike", codemirror_mime_type : "text/x-c++src", filenames : [], interpreters : [],
-    }, CObjDump => { name : "C-ObjDump", r#type : "data", color : "#000000", extensions :
-    [".c-objdump"], aliases : [], tm_scope : "objdump.x86asm", ace_mode : "assembly_x86",
-    language_id : 44u64, filenames : [], interpreters : [], }, C2hsHaskell => { name :
-    "C2hs Haskell", r#type : "programming", color : "#000000", extensions : [".chs"],
-    aliases : ["c2hs"], tm_scope : "source.haskell", ace_mode : "haskell", language_id :
-    45u64, codemirror_mode : "haskell", codemirror_mime_type : "text/x-haskell",
-    filenames : [], group : "Haskell", interpreters : [], }, C3 => { name : "C3", r#type
-    : "programming", color : "#2563eb", extensions : [".c3"], aliases : [], tm_scope :
-    "source.c3", ace_mode : "c_cpp", language_id : 769248603u64, codemirror_mode :
-    "clike", codemirror_mime_type : "text/x-csrc", filenames : [], interpreters : [], },
-    CAPCDS => { name : "CAP CDS", r#type : "programming", color : "#0092d1", extensions :
-    [".cds"], aliases : ["cds"], tm_scope : "source.cds", ace_mode : "text", language_id
-    : 390788699u64, filenames : [], interpreters : [], }, CIL => { name : "CIL", r#type :
-    "data", color : "#000000", extensions : [".cil"], aliases : [], tm_scope :
-    "source.cil", ace_mode : "text", language_id : 29176339u64, filenames : [],
-    interpreters : [], }, CLIPS => { name : "CLIPS", r#type : "programming", color :
-    "#00A300", extensions : [".clp"], aliases : [], tm_scope : "source.clips", ace_mode :
-    "text", language_id : 46u64, filenames : [], interpreters : [], }, CMake => { name :
-    "CMake", r#type : "programming", color : "#DA3434", extensions : [".cmake",
-    ".cmake.in"], aliases : [], tm_scope : "source.cmake", ace_mode : "text", language_id
-    : 47u64, codemirror_mode : "cmake", codemirror_mime_type : "text/x-cmake", filenames
-    : ["CMakeLists.txt"], interpreters : [], }, COBOL => { name : "COBOL", r#type :
-    "programming", color : "#000000", extensions : [".cob", ".cbl", ".ccp", ".cobol",
-    ".cpy"], aliases : [], tm_scope : "source.cobol", ace_mode : "cobol", language_id :
-    48u64, codemirror_mode : "cobol", codemirror_mime_type : "text/x-cobol", filenames :
-    [], interpreters : [], }, CODEOWNERS => { name : "CODEOWNERS", r#type : "data", color
-    : "#000000", extensions : [], aliases : [], tm_scope : "text.codeowners", ace_mode :
-    "gitignore", language_id : 321684729u64, filenames : ["CODEOWNERS"], interpreters :
-    [], }, COLLADA => { name : "COLLADA", r#type : "data", color : "#F1A42B", extensions
-    : [".dae"], aliases : [], tm_scope : "text.xml", ace_mode : "xml", language_id :
-    49u64, codemirror_mode : "xml", codemirror_mime_type : "text/xml", filenames : [],
-    interpreters : [], }, CQL => { name : "CQL", r#type : "programming", color :
-    "#006091", extensions : [".cql"], aliases : [], tm_scope : "source.cql", ace_mode :
-    "text", language_id : 71155397u64, filenames : [], interpreters : [], }, CSON => {
-    name : "CSON", r#type : "data", color : "#244776", extensions : [".cson"], aliases :
-    [], tm_scope : "source.coffee", ace_mode : "coffee", language_id : 424u64,
-    codemirror_mode : "coffeescript", codemirror_mime_type : "text/x-coffeescript",
-    filenames : [], interpreters : [], }, CSS => { name : "CSS", r#type : "markup", color
-    : "#663399", extensions : [".css"], aliases : [], tm_scope : "source.css", ace_mode :
-    "css", language_id : 50u64, codemirror_mode : "css", codemirror_mime_type :
-    "text/css", filenames : [], interpreters : [], }, CSV => { name : "CSV", r#type :
-    "data", color : "#237346", extensions : [".csv"], aliases : [], tm_scope :
-    "source.csv", ace_mode : "csv", language_id : 51u64, filenames : [], interpreters :
-    [], }, CUE => { name : "CUE", r#type : "programming", color : "#5886E1", extensions :
-    [".cue"], aliases : [], tm_scope : "source.cue", ace_mode : "text", language_id :
-    356063509u64, filenames : [], interpreters : [], }, CWeb => { name : "CWeb", r#type :
-    "programming", color : "#00007a", extensions : [".w"], aliases : [], tm_scope :
-    "none", ace_mode : "text", language_id : 657332628u64, filenames : [], interpreters :
-    [], }, CabalConfig => { name : "Cabal Config", r#type : "data", color : "#483465",
-    extensions : [".cabal"], aliases : ["Cabal"], tm_scope : "source.cabal", ace_mode :
-    "haskell_cabal", language_id : 677095381u64, codemirror_mode : "haskell",
-    codemirror_mime_type : "text/x-haskell", filenames : ["cabal.config",
-    "cabal.project"], interpreters : [], }, Caddyfile => { name : "Caddyfile", r#type :
-    "data", color : "#22b638", extensions : [".caddyfile"], aliases : ["Caddy"], tm_scope
-    : "source.Caddyfile", ace_mode : "text", language_id : 615465151u64, filenames :
-    ["Caddyfile"], interpreters : [], }, Cadence => { name : "Cadence", r#type :
-    "programming", color : "#00ef8b", extensions : [".cdc"], aliases : [], tm_scope :
-    "source.cadence", ace_mode : "text", language_id : 270184138u64, filenames : [],
-    interpreters : [], }, Cairo => { name : "Cairo", r#type : "programming", color :
-    "#ff4a48", extensions : [".cairo"], aliases : [], tm_scope : "source.cairo", ace_mode
-    : "text", language_id : 620599567u64, filenames : [], group : "Cairo", interpreters :
-    [], }, CairoZero => { name : "Cairo Zero", r#type : "programming", color : "#ff4a48",
-    extensions : [".cairo"], aliases : [], tm_scope : "source.cairo0", ace_mode : "text",
-    language_id : 891399890u64, filenames : [], group : "Cairo", interpreters : [], },
-    CameLIGO => { name : "CameLIGO", r#type : "programming", color : "#3be133",
-    extensions : [".mligo"], aliases : [], tm_scope : "source.mligo", ace_mode : "ocaml",
-    language_id : 829207807u64, codemirror_mode : "mllike", codemirror_mime_type :
-    "text/x-ocaml", filenames : [], group : "LigoLANG", interpreters : [], }, Cangjie =>
-    { name : "Cangjie", r#type : "programming", color : "#00868B", extensions : [".cj"],
-    aliases : [], tm_scope : "source.cj", ace_mode : "swift", language_id : 581895317u64,
-    codemirror_mode : "swift", codemirror_mime_type : "text/x-swift", filenames : [],
-    interpreters : [], }, CapnProto => { name : "Cap'n Proto", r#type : "programming",
-    color : "#c42727", extensions : [".capnp"], aliases : [], tm_scope : "source.capnp",
-    ace_mode : "text", language_id : 52u64, filenames : [], interpreters : [], }, Carbon
-    => { name : "Carbon", r#type : "programming", color : "#222222", extensions :
-    [".carbon"], aliases : [], tm_scope : "source.carbon", ace_mode : "text", language_id
-    : 55627273u64, filenames : [], interpreters : [], }, CartoCSS => { name : "CartoCSS",
-    r#type : "programming", color : "#000000", extensions : [".mss"], aliases :
-    ["Carto"], tm_scope : "source.css.mss", ace_mode : "text", language_id : 53u64,
-    filenames : [], interpreters : [], }, Ceylon => { name : "Ceylon", r#type :
-    "programming", color : "#dfa535", extensions : [".ceylon"], aliases : [], tm_scope :
-    "source.ceylon", ace_mode : "text", language_id : 54u64, filenames : [], interpreters
-    : [], }, Chapel => { name : "Chapel", r#type : "programming", color : "#8dc63f",
-    extensions : [".chpl"], aliases : ["chpl"], tm_scope : "source.chapel", ace_mode :
-    "text", language_id : 55u64, filenames : [], interpreters : [], }, Charity => { name
-    : "Charity", r#type : "programming", color : "#000000", extensions : [".ch"], aliases
-    : [], tm_scope : "none", ace_mode : "text", language_id : 56u64, filenames : [],
-    interpreters : [], }, Checksums => { name : "Checksums", r#type : "data", color :
-    "#000000", extensions : [".crc32", ".md2", ".md4", ".md5", ".sha1", ".sha2",
-    ".sha224", ".sha256", ".sha256sum", ".sha3", ".sha384", ".sha512"], aliases :
-    ["checksum", "hash", "hashes", "sum", "sums"], tm_scope : "text.checksums", ace_mode
-    : "text", language_id : 372063053u64, filenames : ["MD5SUMS", "SHA1SUMS",
-    "SHA256SUMS", "SHA256SUMS.txt", "SHA512SUMS", "checksums.txt", "cksums",
-    "md5sum.txt"], interpreters : [], }, ChucK => { name : "ChucK", r#type :
-    "programming", color : "#3f8000", extensions : [".ck"], aliases : [], tm_scope :
-    "source.java", ace_mode : "java", language_id : 57u64, codemirror_mode : "clike",
-    codemirror_mime_type : "text/x-java", filenames : [], interpreters : [], }, Circom =>
-    { name : "Circom", r#type : "programming", color : "#707575", extensions :
-    [".circom"], aliases : [], tm_scope : "source.circom", ace_mode : "text", language_id
-    : 1042332086u64, filenames : [], interpreters : [], }, Cirru => { name : "Cirru",
-    r#type : "programming", color : "#ccccff", extensions : [".cirru"], aliases : [],
-    tm_scope : "source.cirru", ace_mode : "cirru", language_id : 58u64, filenames : [],
-    interpreters : [], }, Clarion => { name : "Clarion", r#type : "programming", color :
-    "#db901e", extensions : [".clw"], aliases : [], tm_scope : "source.clarion", ace_mode
-    : "text", language_id : 59u64, filenames : [], interpreters : [], }, Clarity => {
-    name : "Clarity", r#type : "programming", color : "#5546ff", extensions : [".clar"],
-    aliases : [], tm_scope : "source.clar", ace_mode : "lisp", language_id : 91493841u64,
-    filenames : [], interpreters : [], }, ClassicASP => { name : "Classic ASP", r#type :
-    "programming", color : "#6a40fd", extensions : [".asp"], aliases : ["asp"], tm_scope
-    : "text.html.asp", ace_mode : "text", language_id : 8u64, filenames : [],
-    interpreters : [], }, Clean => { name : "Clean", r#type : "programming", color :
-    "#3F85AF", extensions : [".icl", ".dcl"], aliases : [], tm_scope : "source.clean",
-    ace_mode : "text", language_id : 60u64, filenames : [], interpreters : [], }, Click
-    => { name : "Click", r#type : "programming", color : "#E4E6F3", extensions :
-    [".click"], aliases : [], tm_scope : "source.click", ace_mode : "text", language_id :
-    61u64, filenames : [], interpreters : [], }, Clojure => { name : "Clojure", r#type :
-    "programming", color : "#db5855", extensions : [".clj", ".bb", ".boot", ".cl2",
-    ".cljc", ".cljs", ".cljs.hl", ".cljscm", ".cljx", ".hic"], aliases : [], tm_scope :
-    "source.clojure", ace_mode : "clojure", language_id : 62u64, codemirror_mode :
-    "clojure", codemirror_mime_type : "text/x-clojure", filenames : ["riemann.config"],
-    interpreters : ["bb"], }, ClosureTemplates => { name : "Closure Templates", r#type :
-    "markup", color : "#0d948f", extensions : [".soy"], aliases : ["soy"], tm_scope :
-    "text.html.soy", ace_mode : "soy_template", language_id : 357046146u64,
-    codemirror_mode : "soy", codemirror_mime_type : "text/x-soy", filenames : [],
-    interpreters : [], }, CloudFirestoreSecurityRules => { name :
+    interpreters : [], }, Bend => { name : "Bend", r#type : "programming", color :
+    "#000000", extensions : [".bend"], aliases : ["bend2"], tm_scope : "source.bend",
+    ace_mode : "text", language_id : 571794812u64, filenames : [], interpreters : [], },
+    Berry => { name : "Berry", r#type : "programming", color : "#15A13C", extensions :
+    [".be"], aliases : ["be"], tm_scope : "source.berry", ace_mode : "text", language_id
+    : 121855308u64, filenames : [], interpreters : [], }, BibTeX => { name : "BibTeX",
+    r#type : "markup", color : "#778899", extensions : [".bib", ".bibtex"], aliases : [],
+    tm_scope : "text.bibtex", ace_mode : "bibtex", language_id : 982188347u64,
+    codemirror_mode : "stex", codemirror_mime_type : "text/x-stex", filenames : [], group
+    : "TeX", interpreters : [], }, BibTeXStyle => { name : "BibTeX Style", r#type :
+    "programming", color : "#000000", extensions : [".bst"], aliases : [], tm_scope :
+    "source.bst", ace_mode : "text", language_id : 909569041u64, filenames : [],
+    interpreters : [], }, Bicep => { name : "Bicep", r#type : "programming", color :
+    "#519aba", extensions : [".bicep", ".bicepparam"], aliases : [], tm_scope :
+    "source.bicep", ace_mode : "text", language_id : 321200902u64, filenames : [],
+    interpreters : [], }, Bikeshed => { name : "Bikeshed", r#type : "markup", color :
+    "#5562ac", extensions : [".bs"], aliases : [], tm_scope : "source.csswg", ace_mode :
+    "html", language_id : 1055528081u64, codemirror_mode : "htmlmixed",
+    codemirror_mime_type : "text/html", filenames : [], interpreters : [], }, Bison => {
+    name : "Bison", r#type : "programming", color : "#6A463F", extensions : [".bison"],
+    aliases : [], tm_scope : "source.yacc", ace_mode : "text", language_id : 31u64,
+    filenames : [], group : "Yacc", interpreters : [], }, BitBake => { name : "BitBake",
+    r#type : "programming", color : "#00bce4", extensions : [".bb", ".bbappend",
+    ".bbclass", ".inc"], aliases : [], tm_scope : "source.bb", ace_mode : "text",
+    language_id : 32u64, filenames : [], interpreters : [], }, Blade => { name : "Blade",
+    r#type : "markup", color : "#f7523f", extensions : [".blade", ".blade.php"], aliases
+    : [], tm_scope : "text.html.php.blade", ace_mode : "php_laravel_blade", language_id :
+    33u64, filenames : [], interpreters : [], }, BlitzBasic => { name : "BlitzBasic",
+    r#type : "programming", color : "#00FFAE", extensions : [".bb", ".decls"], aliases :
+    ["b3d", "blitz3d", "blitzplus", "bplus"], tm_scope : "source.blitzmax", ace_mode :
+    "text", language_id : 34u64, filenames : [], interpreters : [], }, BlitzMax => { name
+    : "BlitzMax", r#type : "programming", color : "#cd6400", extensions : [".bmx"],
+    aliases : ["bmax"], tm_scope : "source.blitzmax", ace_mode : "text", language_id :
+    35u64, filenames : [], interpreters : [], }, Blueprint => { name : "Blueprint",
+    r#type : "markup", color : "#3584E4", extensions : [".blp"], aliases : ["blp"],
+    tm_scope : "source.blueprint", ace_mode : "text", language_id : 765545512u64,
+    filenames : [], interpreters : [], }, Bluespec => { name : "Bluespec", r#type :
+    "programming", color : "#12223c", extensions : [".bsv"], aliases : ["bluespec bsv",
+    "bsv"], tm_scope : "source.bsv", ace_mode : "verilog", language_id : 36u64,
+    codemirror_mode : "verilog", codemirror_mime_type : "text/x-systemverilog", filenames
+    : [], interpreters : [], }, BluespecBH => { name : "Bluespec BH", r#type :
+    "programming", color : "#12223c", extensions : [".bs"], aliases : ["bh",
+    "bluespec classic"], tm_scope : "source.bh", ace_mode : "haskell", language_id :
+    641580358u64, codemirror_mode : "haskell", codemirror_mime_type : "text/x-haskell",
+    filenames : [], group : "Bluespec", interpreters : [], }, Boo => { name : "Boo",
+    r#type : "programming", color : "#d4bec1", extensions : [".boo"], aliases : [],
+    tm_scope : "source.boo", ace_mode : "text", language_id : 37u64, filenames : [],
+    interpreters : [], }, Boogie => { name : "Boogie", r#type : "programming", color :
+    "#c80fa0", extensions : [".bpl"], aliases : [], tm_scope : "source.boogie", ace_mode
+    : "text", language_id : 955017407u64, filenames : [], interpreters : ["boogie"], },
+    Brainfuck => { name : "Brainfuck", r#type : "programming", color : "#2F2530",
+    extensions : [".b", ".bf"], aliases : [], tm_scope : "source.bf", ace_mode : "text",
+    language_id : 38u64, codemirror_mode : "brainfuck", codemirror_mime_type :
+    "text/x-brainfuck", filenames : [], interpreters : [], }, BrighterScript => { name :
+    "BrighterScript", r#type : "programming", color : "#66AABB", extensions : [".bs"],
+    aliases : [], tm_scope : "source.brs", ace_mode : "text", language_id : 943571030u64,
+    filenames : [], interpreters : [], }, Brightscript => { name : "Brightscript", r#type
+    : "programming", color : "#662D91", extensions : [".brs"], aliases : [], tm_scope :
+    "source.brs", ace_mode : "text", language_id : 39u64, filenames : [], interpreters :
+    [], }, Browserslist => { name : "Browserslist", r#type : "data", color : "#ffd539",
+    extensions : [], aliases : [], tm_scope : "text.browserslist", ace_mode : "text",
+    language_id : 153503348u64, filenames : [".browserslistrc", "browserslist"],
+    interpreters : [], }, Bru => { name : "Bru", r#type : "markup", color : "#F4AA41",
+    extensions : [".bru"], aliases : [], tm_scope : "source.bru", ace_mode : "text",
+    language_id : 906627898u64, filenames : [], interpreters : [], }, BuildStream => {
+    name : "BuildStream", r#type : "data", color : "#006bff", extensions : [".bst"],
+    aliases : [], tm_scope : "source.yaml", ace_mode : "yaml", language_id : 84359046u64,
+    filenames : [], interpreters : [], }, C => { name : "C", r#type : "programming",
+    color : "#555555", extensions : [".c", ".cats", ".h", ".h.in", ".idc"], aliases : [],
+    tm_scope : "source.c", ace_mode : "c_cpp", language_id : 41u64, codemirror_mode :
+    "clike", codemirror_mime_type : "text/x-csrc", filenames : [], interpreters :
+    ["tcc"], }, Csharp => { name : "C#", r#type : "programming", color : "#7355dd",
+    extensions : [".cs", ".cake", ".cs.pp", ".csx", ".linq"], aliases : ["csharp",
+    "cake", "cakescript"], tm_scope : "source.cs", ace_mode : "csharp", language_id :
+    42u64, codemirror_mode : "clike", codemirror_mime_type : "text/x-csharp", filenames :
+    [], interpreters : [], }, Cpp => { name : "C++", r#type : "programming", color :
+    "#f34b7d", extensions : [".cpp", ".c++", ".cc", ".cp", ".cppm", ".cxx", ".h", ".h++",
+    ".hh", ".hpp", ".hxx", ".inc", ".inl", ".ino", ".ipp", ".ixx", ".re", ".tcc", ".tpp",
+    ".txx"], aliases : ["cpp"], tm_scope : "source.c++", ace_mode : "c_cpp", language_id
+    : 43u64, codemirror_mode : "clike", codemirror_mime_type : "text/x-c++src", filenames
+    : [], interpreters : [], }, CObjDump => { name : "C-ObjDump", r#type : "data", color
+    : "#000000", extensions : [".c-objdump"], aliases : [], tm_scope : "objdump.x86asm",
+    ace_mode : "assembly_x86", language_id : 44u64, filenames : [], interpreters : [], },
+    C2hsHaskell => { name : "C2hs Haskell", r#type : "programming", color : "#000000",
+    extensions : [".chs"], aliases : ["c2hs"], tm_scope : "source.haskell", ace_mode :
+    "haskell", language_id : 45u64, codemirror_mode : "haskell", codemirror_mime_type :
+    "text/x-haskell", filenames : [], group : "Haskell", interpreters : [], }, C3 => {
+    name : "C3", r#type : "programming", color : "#2563eb", extensions : [".c3"], aliases
+    : [], tm_scope : "source.c3", ace_mode : "c_cpp", language_id : 769248603u64,
+    codemirror_mode : "clike", codemirror_mime_type : "text/x-csrc", filenames : [],
+    interpreters : [], }, CAPCDS => { name : "CAP CDS", r#type : "programming", color :
+    "#0092d1", extensions : [".cds"], aliases : ["cds"], tm_scope : "source.cds",
+    ace_mode : "text", language_id : 390788699u64, filenames : [], interpreters : [], },
+    CIL => { name : "CIL", r#type : "data", color : "#000000", extensions : [".cil"],
+    aliases : [], tm_scope : "source.cil", ace_mode : "text", language_id : 29176339u64,
+    filenames : [], interpreters : [], }, CLIPS => { name : "CLIPS", r#type :
+    "programming", color : "#00A300", extensions : [".clp"], aliases : [], tm_scope :
+    "source.clips", ace_mode : "text", language_id : 46u64, filenames : [], interpreters
+    : [], }, CMake => { name : "CMake", r#type : "programming", color : "#DA3434",
+    extensions : [".cmake", ".cmake.in"], aliases : [], tm_scope : "source.cmake",
+    ace_mode : "text", language_id : 47u64, codemirror_mode : "cmake",
+    codemirror_mime_type : "text/x-cmake", filenames : ["CMakeLists.txt"], interpreters :
+    [], }, COBOL => { name : "COBOL", r#type : "programming", color : "#000000",
+    extensions : [".cob", ".cbl", ".ccp", ".cobol", ".cpy"], aliases : [], tm_scope :
+    "source.cobol", ace_mode : "cobol", language_id : 48u64, codemirror_mode : "cobol",
+    codemirror_mime_type : "text/x-cobol", filenames : [], interpreters : [], },
+    CODEOWNERS => { name : "CODEOWNERS", r#type : "data", color : "#000000", extensions :
+    [], aliases : [], tm_scope : "text.codeowners", ace_mode : "gitignore", language_id :
+    321684729u64, filenames : ["CODEOWNERS"], interpreters : [], }, COLLADA => { name :
+    "COLLADA", r#type : "data", color : "#F1A42B", extensions : [".dae"], aliases : [],
+    tm_scope : "text.xml", ace_mode : "xml", language_id : 49u64, codemirror_mode :
+    "xml", codemirror_mime_type : "text/xml", filenames : [], interpreters : [], }, CQL
+    => { name : "CQL", r#type : "programming", color : "#006091", extensions : [".cql"],
+    aliases : [], tm_scope : "source.cql", ace_mode : "text", language_id : 71155397u64,
+    filenames : [], interpreters : [], }, CSON => { name : "CSON", r#type : "data", color
+    : "#244776", extensions : [".cson"], aliases : [], tm_scope : "source.coffee",
+    ace_mode : "coffee", language_id : 424u64, codemirror_mode : "coffeescript",
+    codemirror_mime_type : "text/x-coffeescript", filenames : [], interpreters : [], },
+    CSS => { name : "CSS", r#type : "markup", color : "#663399", extensions : [".css"],
+    aliases : [], tm_scope : "source.css", ace_mode : "css", language_id : 50u64,
+    codemirror_mode : "css", codemirror_mime_type : "text/css", filenames : [],
+    interpreters : [], }, CSV => { name : "CSV", r#type : "data", color : "#237346",
+    extensions : [".csv"], aliases : [], tm_scope : "source.csv", ace_mode : "csv",
+    language_id : 51u64, filenames : [], interpreters : [], }, CUE => { name : "CUE",
+    r#type : "programming", color : "#5886E1", extensions : [".cue"], aliases : [],
+    tm_scope : "source.cue", ace_mode : "text", language_id : 356063509u64, filenames :
+    [], interpreters : [], }, CWeb => { name : "CWeb", r#type : "programming", color :
+    "#00007a", extensions : [".w"], aliases : [], tm_scope : "none", ace_mode : "text",
+    language_id : 657332628u64, filenames : [], interpreters : [], }, CabalConfig => {
+    name : "Cabal Config", r#type : "data", color : "#483465", extensions : [".cabal"],
+    aliases : ["Cabal"], tm_scope : "source.cabal", ace_mode : "haskell_cabal",
+    language_id : 677095381u64, codemirror_mode : "haskell", codemirror_mime_type :
+    "text/x-haskell", filenames : ["cabal.config", "cabal.project"], interpreters : [],
+    }, Caddyfile => { name : "Caddyfile", r#type : "data", color : "#22b638", extensions
+    : [".caddyfile"], aliases : ["Caddy"], tm_scope : "source.Caddyfile", ace_mode :
+    "text", language_id : 615465151u64, filenames : ["Caddyfile"], interpreters : [], },
+    Cadence => { name : "Cadence", r#type : "programming", color : "#00ef8b", extensions
+    : [".cdc"], aliases : [], tm_scope : "source.cadence", ace_mode : "text", language_id
+    : 270184138u64, filenames : [], interpreters : [], }, Cairo => { name : "Cairo",
+    r#type : "programming", color : "#ff4a48", extensions : [".cairo"], aliases : [],
+    tm_scope : "source.cairo", ace_mode : "text", language_id : 620599567u64, filenames :
+    [], group : "Cairo", interpreters : [], }, CairoZero => { name : "Cairo Zero", r#type
+    : "programming", color : "#ff4a48", extensions : [".cairo"], aliases : [], tm_scope :
+    "source.cairo0", ace_mode : "text", language_id : 891399890u64, filenames : [], group
+    : "Cairo", interpreters : [], }, CameLIGO => { name : "CameLIGO", r#type :
+    "programming", color : "#3be133", extensions : [".mligo"], aliases : [], tm_scope :
+    "source.mligo", ace_mode : "ocaml", language_id : 829207807u64, codemirror_mode :
+    "mllike", codemirror_mime_type : "text/x-ocaml", filenames : [], group : "LigoLANG",
+    interpreters : [], }, Cangjie => { name : "Cangjie", r#type : "programming", color :
+    "#00868B", extensions : [".cj"], aliases : [], tm_scope : "source.cj", ace_mode :
+    "swift", language_id : 581895317u64, codemirror_mode : "swift", codemirror_mime_type
+    : "text/x-swift", filenames : [], interpreters : [], }, CapnProto => { name :
+    "Cap'n Proto", r#type : "programming", color : "#c42727", extensions : [".capnp"],
+    aliases : [], tm_scope : "source.capnp", ace_mode : "text", language_id : 52u64,
+    filenames : [], interpreters : [], }, Carbon => { name : "Carbon", r#type :
+    "programming", color : "#222222", extensions : [".carbon"], aliases : [], tm_scope :
+    "source.carbon", ace_mode : "text", language_id : 55627273u64, filenames : [],
+    interpreters : [], }, CartoCSS => { name : "CartoCSS", r#type : "programming", color
+    : "#000000", extensions : [".mss"], aliases : ["Carto"], tm_scope : "source.css.mss",
+    ace_mode : "text", language_id : 53u64, filenames : [], interpreters : [], }, Ceylon
+    => { name : "Ceylon", r#type : "programming", color : "#dfa535", extensions :
+    [".ceylon"], aliases : [], tm_scope : "source.ceylon", ace_mode : "text", language_id
+    : 54u64, filenames : [], interpreters : [], }, Chapel => { name : "Chapel", r#type :
+    "programming", color : "#8dc63f", extensions : [".chpl"], aliases : ["chpl"],
+    tm_scope : "source.chapel", ace_mode : "text", language_id : 55u64, filenames : [],
+    interpreters : [], }, Charity => { name : "Charity", r#type : "programming", color :
+    "#000000", extensions : [".ch"], aliases : [], tm_scope : "none", ace_mode : "text",
+    language_id : 56u64, filenames : [], interpreters : [], }, Checksums => { name :
+    "Checksums", r#type : "data", color : "#000000", extensions : [".crc32", ".md2",
+    ".md4", ".md5", ".sha1", ".sha2", ".sha224", ".sha256", ".sha256sum", ".sha3",
+    ".sha384", ".sha512"], aliases : ["checksum", "hash", "hashes", "sum", "sums"],
+    tm_scope : "text.checksums", ace_mode : "text", language_id : 372063053u64, filenames
+    : ["MD5SUMS", "SHA1SUMS", "SHA256SUMS", "SHA256SUMS.txt", "SHA512SUMS",
+    "checksums.txt", "cksums", "md5sum.txt"], interpreters : [], }, ChucK => { name :
+    "ChucK", r#type : "programming", color : "#3f8000", extensions : [".ck"], aliases :
+    [], tm_scope : "source.java", ace_mode : "java", language_id : 57u64, codemirror_mode
+    : "clike", codemirror_mime_type : "text/x-java", filenames : [], interpreters : [],
+    }, Circom => { name : "Circom", r#type : "programming", color : "#707575", extensions
+    : [".circom"], aliases : [], tm_scope : "source.circom", ace_mode : "text",
+    language_id : 1042332086u64, filenames : [], interpreters : [], }, Cirru => { name :
+    "Cirru", r#type : "programming", color : "#ccccff", extensions : [".cirru"], aliases
+    : [], tm_scope : "source.cirru", ace_mode : "cirru", language_id : 58u64, filenames :
+    [], interpreters : [], }, Clarion => { name : "Clarion", r#type : "programming",
+    color : "#db901e", extensions : [".clw"], aliases : [], tm_scope : "source.clarion",
+    ace_mode : "text", language_id : 59u64, filenames : [], interpreters : [], }, Clarity
+    => { name : "Clarity", r#type : "programming", color : "#5546ff", extensions :
+    [".clar"], aliases : [], tm_scope : "source.clar", ace_mode : "lisp", language_id :
+    91493841u64, filenames : [], interpreters : [], }, ClassicASP => { name :
+    "Classic ASP", r#type : "programming", color : "#6a40fd", extensions : [".asp"],
+    aliases : ["asp"], tm_scope : "text.html.asp", ace_mode : "text", language_id : 8u64,
+    filenames : [], interpreters : [], }, Clean => { name : "Clean", r#type :
+    "programming", color : "#3F85AF", extensions : [".icl", ".dcl"], aliases : [],
+    tm_scope : "source.clean", ace_mode : "text", language_id : 60u64, filenames : [],
+    interpreters : [], }, Click => { name : "Click", r#type : "programming", color :
+    "#E4E6F3", extensions : [".click"], aliases : [], tm_scope : "source.click", ace_mode
+    : "text", language_id : 61u64, filenames : [], interpreters : [], }, Clojure => {
+    name : "Clojure", r#type : "programming", color : "#db5855", extensions : [".clj",
+    ".bb", ".boot", ".cl2", ".cljc", ".cljs", ".cljs.hl", ".cljscm", ".cljx", ".hic"],
+    aliases : [], tm_scope : "source.clojure", ace_mode : "clojure", language_id : 62u64,
+    codemirror_mode : "clojure", codemirror_mime_type : "text/x-clojure", filenames :
+    ["riemann.config"], interpreters : ["bb"], }, ClosureTemplates => { name :
+    "Closure Templates", r#type : "markup", color : "#0d948f", extensions : [".soy"],
+    aliases : ["soy"], tm_scope : "text.html.soy", ace_mode : "soy_template", language_id
+    : 357046146u64, codemirror_mode : "soy", codemirror_mime_type : "text/x-soy",
+    filenames : [], interpreters : [], }, CloudFirestoreSecurityRules => { name :
     "Cloud Firestore Security Rules", r#type : "data", color : "#FFA000", extensions :
     [], aliases : [], tm_scope : "source.firestore", ace_mode : "less", language_id :
     407996372u64, codemirror_mode : "css", codemirror_mime_type : "text/css", filenames :
@@ -1478,38 +1480,38 @@ define_languages! {
     tm_scope : "none", ace_mode : "text", language_id : 237u64, filenames : [],
     interpreters : [], }, MoonBit => { name : "MoonBit", r#type : "programming", color :
     "#b92381", extensions : [".mbt"], aliases : [], tm_scope : "source.moonbit", ace_mode
-    : "text", language_id : 181453007u64, filenames : [], interpreters : [], },
-    MoonScript => { name : "MoonScript", r#type : "programming", color : "#ff4585",
-    extensions : [".moon"], aliases : [], tm_scope : "source.moonscript", ace_mode :
-    "text", language_id : 238u64, filenames : [], interpreters : ["moon"], }, Motoko => {
-    name : "Motoko", r#type : "programming", color : "#fbb03b", extensions : [".mo"],
-    aliases : [], tm_scope : "source.mo", ace_mode : "text", language_id : 202937027u64,
-    filenames : [], interpreters : [], }, Motorola68KAssembly => { name :
-    "Motorola 68K Assembly", r#type : "programming", color : "#005daa", extensions :
-    [".asm", ".i", ".inc", ".s", ".x68"], aliases : ["m68k"], tm_scope : "source.m68k",
-    ace_mode : "assembly_x86", language_id : 477582706u64, filenames : [], group :
-    "Assembly", interpreters : [], }, MoveLang => { name : "Move", r#type :
-    "programming", color : "#4a137a", extensions : [".move"], aliases : [], tm_scope :
-    "source.move", ace_mode : "text", language_id : 638334599u64, filenames : [],
-    interpreters : [], }, Muse => { name : "Muse", r#type : "prose", color : "#000000",
-    extensions : [".muse"], aliases : ["amusewiki", "emacs muse"], tm_scope :
-    "text.muse", ace_mode : "text", language_id : 474864066u64, wrap : true, filenames :
-    [], interpreters : [], }, Mustache => { name : "Mustache", r#type : "markup", color :
-    "#724b3b", extensions : [".mustache"], aliases : [], tm_scope : "text.html.smarty",
-    ace_mode : "smarty", language_id : 638334590u64, codemirror_mode : "smarty",
-    codemirror_mime_type : "text/x-smarty", filenames : [], interpreters : [], }, Myghty
-    => { name : "Myghty", r#type : "programming", color : "#000000", extensions :
-    [".myt"], aliases : [], tm_scope : "none", ace_mode : "text", language_id : 239u64,
-    filenames : [], interpreters : [], }, NASL => { name : "NASL", r#type :
-    "programming", color : "#000000", extensions : [".nasl", ".inc"], aliases : [],
-    tm_scope : "source.nasl", ace_mode : "text", language_id : 171666519u64, filenames :
-    [], interpreters : [], }, NCL => { name : "NCL", r#type : "programming", color :
-    "#28431f", extensions : [".ncl"], aliases : [], tm_scope : "source.ncl", ace_mode :
-    "text", language_id : 240u64, filenames : [], interpreters : [], }, NEON => { name :
-    "NEON", r#type : "data", color : "#000000", extensions : [".neon"], aliases :
-    ["nette object notation", "ne-on"], tm_scope : "source.neon", ace_mode : "text",
-    language_id : 481192983u64, filenames : [], interpreters : [], }, NL => { name :
-    "NL", r#type : "data", color : "#000000", extensions : [".nl"], aliases : [],
+    : "text", language_id : 181453007u64, filenames : ["moon.mod", "moon.pkg"],
+    interpreters : [], }, MoonScript => { name : "MoonScript", r#type : "programming",
+    color : "#ff4585", extensions : [".moon"], aliases : [], tm_scope :
+    "source.moonscript", ace_mode : "text", language_id : 238u64, filenames : [],
+    interpreters : ["moon"], }, Motoko => { name : "Motoko", r#type : "programming",
+    color : "#fbb03b", extensions : [".mo"], aliases : [], tm_scope : "source.mo",
+    ace_mode : "text", language_id : 202937027u64, filenames : [], interpreters : [], },
+    Motorola68KAssembly => { name : "Motorola 68K Assembly", r#type : "programming",
+    color : "#005daa", extensions : [".asm", ".i", ".inc", ".s", ".x68"], aliases :
+    ["m68k"], tm_scope : "source.m68k", ace_mode : "assembly_x86", language_id :
+    477582706u64, filenames : [], group : "Assembly", interpreters : [], }, MoveLang => {
+    name : "Move", r#type : "programming", color : "#4a137a", extensions : [".move"],
+    aliases : [], tm_scope : "source.move", ace_mode : "text", language_id :
+    638334599u64, filenames : [], interpreters : [], }, Muse => { name : "Muse", r#type :
+    "prose", color : "#000000", extensions : [".muse"], aliases : ["amusewiki",
+    "emacs muse"], tm_scope : "text.muse", ace_mode : "text", language_id : 474864066u64,
+    wrap : true, filenames : [], interpreters : [], }, Mustache => { name : "Mustache",
+    r#type : "markup", color : "#724b3b", extensions : [".mustache"], aliases : [],
+    tm_scope : "text.html.smarty", ace_mode : "smarty", language_id : 638334590u64,
+    codemirror_mode : "smarty", codemirror_mime_type : "text/x-smarty", filenames : [],
+    interpreters : [], }, Myghty => { name : "Myghty", r#type : "programming", color :
+    "#000000", extensions : [".myt"], aliases : [], tm_scope : "none", ace_mode : "text",
+    language_id : 239u64, filenames : [], interpreters : [], }, NASL => { name : "NASL",
+    r#type : "programming", color : "#000000", extensions : [".nasl", ".inc"], aliases :
+    [], tm_scope : "source.nasl", ace_mode : "text", language_id : 171666519u64,
+    filenames : [], interpreters : [], }, NCL => { name : "NCL", r#type : "programming",
+    color : "#28431f", extensions : [".ncl"], aliases : [], tm_scope : "source.ncl",
+    ace_mode : "text", language_id : 240u64, filenames : [], interpreters : [], }, NEON
+    => { name : "NEON", r#type : "data", color : "#000000", extensions : [".neon"],
+    aliases : ["nette object notation", "ne-on"], tm_scope : "source.neon", ace_mode :
+    "text", language_id : 481192983u64, filenames : [], interpreters : [], }, NL => {
+    name : "NL", r#type : "data", color : "#000000", extensions : [".nl"], aliases : [],
     tm_scope : "none", ace_mode : "text", language_id : 241u64, filenames : [],
     interpreters : [], }, NMODL => { name : "NMODL", r#type : "programming", color :
     "#00356B", extensions : [".mod"], aliases : [], tm_scope : "none", ace_mode : "text",
@@ -2857,14 +2859,14 @@ static BY_EXTENSION: phf::Map<&'static str, &'static [fn() -> LanguageInfo]> = p
     BlitzBasic::info, Clojure::info], ".bbappend" => & [BitBake::info], ".bbclass" => &
     [BitBake::info], ".bbcode" => & [BBCode::info], ".bbx" => & [TeX::info], ".bdf" => &
     [GlyphBitmapDistributionFormat::info], ".bdy" => & [PLSQL::info], ".be" => &
-    [Berry::info], ".befunge" => & [Befunge::info], ".bf" => & [Beef::info,
-    Befunge::info, Brainfuck::info, HyPhy::info], ".bi" => & [FreeBASIC::info,
-    QuickBASIC::info], ".bib" => & [BibTeX::info], ".bibtex" => & [BibTeX::info],
-    ".bicep" => & [Bicep::info], ".bicepparam" => & [Bicep::info], ".bison" => &
-    [Bison::info], ".blade" => & [Blade::info], ".blade.php" => & [Blade::info], ".blp"
-    => & [Blueprint::info], ".bmx" => & [BlitzMax::info], ".bones" => &
-    [JavaScript::info], ".boo" => & [Boo::info], ".boot" => & [Clojure::info], ".bpl" =>
-    & [Boogie::info], ".bqn" => & [BQN::info], ".brd" => & [Eagle::info,
+    [Berry::info], ".befunge" => & [Befunge::info], ".bend" => & [Bend::info], ".bf" => &
+    [Beef::info, Befunge::info, Brainfuck::info, HyPhy::info], ".bi" => &
+    [FreeBASIC::info, QuickBASIC::info], ".bib" => & [BibTeX::info], ".bibtex" => &
+    [BibTeX::info], ".bicep" => & [Bicep::info], ".bicepparam" => & [Bicep::info],
+    ".bison" => & [Bison::info], ".blade" => & [Blade::info], ".blade.php" => &
+    [Blade::info], ".blp" => & [Blueprint::info], ".bmx" => & [BlitzMax::info], ".bones"
+    => & [JavaScript::info], ".boo" => & [Boo::info], ".boot" => & [Clojure::info],
+    ".bpl" => & [Boogie::info], ".bqn" => & [BQN::info], ".brd" => & [Eagle::info,
     KiCadLegacyLayout::info], ".bro" => & [Zeek::info], ".brs" => & [Brightscript::info],
     ".bru" => & [Bru::info], ".bs" => & [Bikeshed::info, BluespecBH::info,
     BrighterScript::info], ".bsl" => & [_1CEnterprise::info], ".bst" => &
