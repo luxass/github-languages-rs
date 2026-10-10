@@ -15,7 +15,7 @@ quote = "1.0"
 serde = { version = "1.0", features = ["derive"] }
 serde_yaml = "0.9"
 prettyplease = "0.2.22"
-syn = { version = "2", default-features = false, features = [
+syn = { version = "3", default-features = false, features = [
     "full",
     "parsing",
 ] }
