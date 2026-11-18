@@ -278,7 +278,7 @@ jobs:
 
           I don't know what they changed, but I'm sure it's important. I couldn't write a summary this time, because $REASON, so this PR is a draft.
 
-          Can you take a look? Give it a proper title and summary, remove \`[incomplete]\` from the title and the hidden marker at the top of this description, and mark it ready for review. I won't release anything until then 🤖
+          Can you take a look? Give it a proper title and summary, remove \`[incomplete]\` from the title and the hidden marker at the top of this description, and mark it ready for review. I won't release anything until then 👋
           EOF
           fi
 
@@ -293,7 +293,7 @@ jobs:
           fi
 
           if [ "$INCOMPLETE" = false ]; then
-            printf '\nI will be waiting for your approval 🤖\n' >> "$BODY_PATH"
+            printf '\nI will be waiting for your approval 👋\n' >> "$BODY_PATH"
           fi
           printf '\nThis is an automated PR to update GitHub Languages.\n' >> "$BODY_PATH"
           printf 'title=%s\nincomplete=%s\n' "$TITLE" "$INCOMPLETE" >> "$GITHUB_OUTPUT"
