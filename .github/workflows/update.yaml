@@ -35,14 +35,14 @@ jobs:
       deployment: false
     if: github.repository == 'luxass/github-languages-rs'
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
         with:
           ref: main
           persist-credentials: false
 
       - name: turn yaml to json (old)
         id: old-languages-json
-        uses: mikefarah/yq@0f4fb8d35ec1a939d78dd6862f494d19ec589f19 # v4.52.5
+        uses: mikefarah/yq@f2944b823f84906a127dbd29e4c2a3e60c4e550e # v4.54.3
         with:
           cmd: yq -p yaml -o json languages.yml > languages.json
 
@@ -62,7 +62,7 @@ jobs:
 
       - name: turn yaml to json
         id: languages-json
-        uses: mikefarah/yq@0f4fb8d35ec1a939d78dd6862f494d19ec589f19 # v4.52.5
+        uses: mikefarah/yq@f2944b823f84906a127dbd29e4c2a3e60c4e550e # v4.54.3
         with:
           cmd: yq -p yaml -o json languages.yml > languages.json
 
@@ -307,7 +307,7 @@ jobs:
 
       - name: generate token
         if: ${{ !inputs.dry-run && steps.existing-pr.outputs.up-to-date != 'true' }}
-        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        uses: actions/create-github-app-token@f418cff399f7aef4c2f0ad47e25ca7a6abbdd6fc # v3.4.0
         id: app-token
         with:
           repositories: github-languages-rs
@@ -319,7 +319,7 @@ jobs:
       # Run on no-change days too, so the action can reconcile an existing update branch.
       - name: create pull request
         id: create-pr
-        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        uses: peter-evans/create-pull-request@3ffccacd46053766916f087ce41d627c0b8cf2d1 # v8.1.3
         if: ${{ !inputs.dry-run && steps.existing-pr.outputs.up-to-date != 'true' }}
         with:
           token: ${{ steps.app-token.outputs.token }}
